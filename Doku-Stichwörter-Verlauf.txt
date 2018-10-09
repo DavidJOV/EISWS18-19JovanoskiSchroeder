@@ -1,0 +1,10 @@
+Brainstorming:
+
+1. Idee: App "Bring" mit Preisvergleich (x) -> Keine Api für Discounterpreise 
+2. Idee: App Arzt-Planer (x) -> Keinen zugriff auf Places Api - popular times
+3. Idee: Bestell-App mit Preisvergleich der einzelnen Lebensmittel (?)
+4. Idee: Kochapp, mit vorheriger Eingabe von Zutaten (x) -> vorhanden
+5. Idee: Muisker - Event - App (?)
+6. Idee: Disaster Warning app (x) -> vorhanden
+
+7. Idee: Astronomie- App -> Sternenbilder+Planeten beobachten abhängig von Wetteruind Standort -> Empfehlung berechnen, wo man am besten sieht. (!)
