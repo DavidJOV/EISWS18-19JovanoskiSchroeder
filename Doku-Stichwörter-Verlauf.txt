@@ -2,10 +2,12 @@ Brainstorming:
 
 1. Idee: App "Bring" mit Preisvergleich (x) -> Keine Api für Discounterpreise 
 2. Idee: App Arzt-Planer (x) -> Keinen zugriff auf Places Api - popular times
-3. Idee: Bestell-App mit Preisvergleich der einzelnen Lebensmittel (?)
+3. Idee: Bestell-App mit Preisvergleich der einzelnen Lebensmittel (x)
 4. Idee: Kochapp, mit vorheriger Eingabe von Zutaten (x) -> vorhanden
 5. Idee: Muisker - Event - App -> Finden von Bandmitgliedern / Bands -> Erstellen von Events, bei denen sich Bands anmelden können (?)
 6. Idee: Disaster Warning app (x) -> vorhanden
 7. Idee: Astronomie- App -> Sternenbilder+Planeten beobachten abhängig von Wetteruind Standort -> Empfehlung berechnen, wo man am besten sieht. (!)
 							-> API Visibilty of Planets (???) 
 8. Idee: Food - Tracker -> Normaler Tracker + Gruppenbildung für sport- oder kochsessions in der Nähe?
+9. Idee: Anwendung, für Kurzurlaube in Abhängigkeit von Wetterangaben, und eventuell anderen Filtern (?) 
+10. Idee: "Einkaufshelfer-Anwendung" speziell für alte Menschen (?)
