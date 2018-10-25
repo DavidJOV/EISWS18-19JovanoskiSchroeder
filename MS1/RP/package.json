@@ -1,0 +1,23 @@
+{
+  "name": "sistersplan",
+  "version": "1.0.0",
+  "description": "Helping nurses planing their shifts",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidJOV/EISWS18-19JovanoskiSchroeder.git"
+  },
+  "author": "David Jovanoski & Marco Schröder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DavidJOV/EISWS18-19JovanoskiSchroeder/issues"
+  },
+  "homepage": "https://github.com/DavidJOV/EISWS18-19JovanoskiSchroeder#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}
