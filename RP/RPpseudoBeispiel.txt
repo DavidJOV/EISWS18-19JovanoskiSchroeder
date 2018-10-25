@@ -1,0 +1,11 @@
+Krankmeldung;
+
+if(Krankmeldung = true){
+ freieMitarbeiter = getFreieMitarbeiter();
+  
+sendeMail(freieMitarbeiter);
+ 
+ersatzMitarbeiter = warteAufErsteAntwort();
+  
+setzeErsatz(ersatzMitarbeiter);
+}
