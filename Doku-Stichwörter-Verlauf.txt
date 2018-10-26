@@ -40,3 +40,5 @@ Beginn der Arbeiten zu MS1:
 - Expose / Domänenmodell 
 - Marktrecherche 
 - Domänenrecherche
+- Anforderungen aus Domänenrechereche
+- USP
