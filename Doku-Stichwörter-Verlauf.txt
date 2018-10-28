@@ -42,3 +42,4 @@ Beginn der Arbeiten zu MS1:
 - Domänenrecherche
 - Anforderungen aus Domänenrechereche
 - USP
+- Stakeholderanalyse
