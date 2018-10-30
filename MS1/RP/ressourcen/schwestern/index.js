@@ -24,18 +24,21 @@ router.post('/', bodyParser.json(), (req, res) => {
         start: req.body.start
 
     };
+    console.log(schwester)
     // Falls keine Email angegeben wurde, darf nicht in die DB geschrieben werden.
     if (schwester.email != undefined) {
         var sql = "INSERT INTO pfleger (vorname, name, email, telefon, beschaeftigungsArt, start) VALUES ( \"" + schwester.vorname + "\",\"" + schwester.name + "\",\"" + schwester.email + "\",\"" + schwester.telefon + "\",\"" + schwester.beschaeftigungsArt + "\",\"" + schwester.start + "\")";
 
 
         connection.query(sql, function (err, result) {
-            if (err) res.status(400).send(errorMsgDB);
-            res.status(200).send(schwester);
-            console.log("1 Neuer Mitarbeiter");
+            if (err) res.status(400).send(dbConnection.errorMsgDB);
+            else {
+                res.status(200).send(krankmeldung);
+                console.log("1 neue Krankmeldung");
+            }
         });
     } else {
-        res.status(400).send(errorMsgDB);
+        res.status(400).send(dbConnection.errorMsgDB);
     }
 
 
