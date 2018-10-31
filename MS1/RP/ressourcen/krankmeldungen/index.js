@@ -2,7 +2,10 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 var dbConnection = require("../../DB/dbConnector");// importieren der DB Verbindung
+var eventListener = require("../../helper/eventListener"); // importieren des Eventlisteners
+
 var hello = "hello world";
+
 var connection = dbConnection.connection; // DB Verbindung
 
 router.get('/', (req, res) => {
@@ -31,6 +34,7 @@ router.post('/', bodyParser.json(), (req, res) => {
             if (err) res.status(400).send(dbConnection.errorMsgDB);
             else {
                 res.status(200).send(krankmeldung);
+                eventListener.eventEmitter.emit("Krankmeldung-eingereicht");
                 console.log("1 neue Krankmeldung");
             }
         });
