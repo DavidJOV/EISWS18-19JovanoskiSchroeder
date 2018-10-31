@@ -35,8 +35,8 @@ router.post('/', bodyParser.json(), (req, res) => {
         connection.query(sql, function (err, result) {
             if (err) res.status(400).send(dbConnection.errorMsgDB);
             else {
-                res.status(200).send(krankmeldung);
-                console.log("1 neue Krankmeldung");
+                res.status(200).send(schwester);
+                console.log("1 neue schwester");
             }
         });
     } else {
