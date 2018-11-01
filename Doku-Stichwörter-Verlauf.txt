@@ -43,4 +43,6 @@ Beginn der Arbeiten zu MS1:
 - Anforderungen aus Domänenrechereche
 - USP
 - Stakeholderanalyse
+- Vorgehensmodell 
 - Prototyp
+- Ziele
