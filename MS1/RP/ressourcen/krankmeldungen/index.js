@@ -22,21 +22,23 @@ router.post('/', bodyParser.json(), (req, res) => {
     const krankmeldung = {
 
         pflegerID: req.body.pflegerID,
+        stationID : req.body.stationID,
         ende: req.body.ende,
-        start: req.body.start
+        start: req.body.start,
+        dienstArt : req.body.dienstArt
 
     };
     
     console.log(krankmeldung);
     // Nur wenn ein Integer als PflegerID übermittelt wurde, darf in die DB geschrieben werden.
     if (krankmeldung.pflegerID != undefined || Number.isInteger(krankmeldung.pflegerID) === false) {
-        var sql = "INSERT INTO krankmeldungen (pflegerID, start, ende) VALUES ( \"" + krankmeldung.pflegerID + "\",\"" + krankmeldung.start + "\",\"" + krankmeldung.ende + "\")";
+        var sql = "INSERT INTO krankmeldungen (pflegerID, stationID, start, ende, dienstArt) VALUES ( \"" + krankmeldung.pflegerID + "\",\"" + krankmeldung.stationID + "\",\"" + krankmeldung.start + "\",\"" + krankmeldung.ende + "\",\"" + krankmeldung.dienstArt + "\")";
         console.log(sql)
         connection.query(sql, function (err, result) {
             if (err) res.status(400).send(dbConnection.errorMsgDB);
             else {
                 res.status(200).send(krankmeldung);
-                eventListener.eventEmitter.emit("Krankmeldung-eingereicht");
+                eventListener.eventEmitter.emit("Krankmeldung-eingereicht",krankmeldung);
                 console.log("1 neue Krankmeldung");
             }
         });

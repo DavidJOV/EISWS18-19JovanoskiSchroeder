@@ -6,7 +6,9 @@
 var events = require('events');
 var eventHandler = require("./eventHandler");
 var eventEmitter = new events.EventEmitter();
-var handler = function(){eventHandler.messageCrew();}
-eventEmitter.on("Krankmeldung-eingereicht",handler());
+
+eventEmitter.on("Krankmeldung-eingereicht", function (krankmeldung) {
+    eventHandler.messageCrew(krankmeldung);
+});
 
 exports.eventEmitter = eventEmitter; 

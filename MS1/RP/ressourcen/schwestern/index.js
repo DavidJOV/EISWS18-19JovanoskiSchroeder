@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 router.post('/', bodyParser.json(), (req, res) => {
 
     const schwester = {
-
+        stationID : req.body.stationID,
         vorname: req.body.vorname,
         name: req.body.name,
         email: req.body.email,
@@ -29,7 +29,7 @@ router.post('/', bodyParser.json(), (req, res) => {
     console.log(schwester)
     // Falls keine Email angegeben wurde, darf nicht in die DB geschrieben werden.
     if (schwester.email != undefined) {
-        var sql = "INSERT INTO pfleger (vorname, name, email, telefon, beschaeftigungsArt, start) VALUES ( \"" + schwester.vorname + "\",\"" + schwester.name + "\",\"" + schwester.email + "\",\"" + schwester.telefon + "\",\"" + schwester.beschaeftigungsArt + "\",\"" + schwester.start + "\")";
+        var sql = "INSERT INTO pfleger (stationID,vorname, name, email, telefon, beschaeftigungsArt, start) VALUES ( \"" + schwester.stationID + "\",\"" + schwester.vorname + "\",\"" + schwester.name + "\",\"" + schwester.email + "\",\"" + schwester.telefon + "\",\"" + schwester.beschaeftigungsArt + "\",\"" + schwester.start + "\")";
 
 
         connection.query(sql, function (err, result) {
