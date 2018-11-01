@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Erstellungszeit: 01. Nov 2018 um 11:49
+-- Erstellungszeit: 01. Nov 2018 um 13:35
 -- Server-Version: 5.6.34-log
 -- PHP-Version: 7.1.7
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `krankmeldungen` (
+  `id` int(30) NOT NULL,
   `pflegerID` int(11) NOT NULL,
   `stationID` int(30) NOT NULL,
   `start` date NOT NULL,
@@ -40,15 +41,18 @@ CREATE TABLE `krankmeldungen` (
 -- Daten für Tabelle `krankmeldungen`
 --
 
-INSERT INTO `krankmeldungen` (`pflegerID`, `stationID`, `start`, `ende`, `dienstArt`) VALUES
-(8, 1, '2018-12-01', '2018-12-31', 'Fruehdienst'),
-(8, 1, '2018-12-02', '2018-12-31', 'Fruehdienst'),
-(8, 1, '2018-12-03', '2018-12-31', 'Fruehdienst'),
-(8, 1, '2018-12-04', '2018-12-31', 'Fruehdienst'),
-(8, 1, '2018-12-05', '2018-12-31', 'Fruehdienst'),
-(9, 1, '2018-12-01', '2018-12-31', 'Fruehdienst'),
-(9, 1, '2018-12-04', '2018-12-31', 'Fruehdienst'),
-(9, 1, '2018-12-05', '2018-12-31', 'Fruehdienst');
+INSERT INTO `krankmeldungen` (`id`, `pflegerID`, `stationID`, `start`, `ende`, `dienstArt`) VALUES
+(8, 10, 1, '2018-12-19', '2018-12-31', 'Fruehdienst'),
+(9, 10, 1, '2018-12-01', '2018-12-31', 'Fruehdienst'),
+(10, 10, 1, '2018-12-02', '2018-12-31', 'Fruehdienst'),
+(11, 10, 1, '2018-12-03', '2018-12-31', 'Fruehdienst'),
+(12, 10, 1, '2018-12-04', '2018-12-31', 'Fruehdienst'),
+(13, 10, 1, '2018-12-05', '2018-12-31', 'Fruehdienst'),
+(14, 10, 1, '2018-12-06', '2018-12-31', 'Fruehdienst'),
+(15, 10, 1, '2018-12-07', '2018-12-31', 'Fruehdienst'),
+(16, 10, 1, '2018-12-08', '2018-12-31', 'Fruehdienst'),
+(17, 10, 1, '2018-12-09', '2018-12-31', 'Fruehdienst'),
+(18, 10, 1, '2018-12-10', '2018-12-31', 'Fruehdienst');
 
 -- --------------------------------------------------------
 
@@ -73,8 +77,8 @@ CREATE TABLE `pfleger` (
 --
 
 INSERT INTO `pfleger` (`id`, `stationID`, `anrede`, `vorname`, `name`, `email`, `telefon`, `beschaeftigungsArt`, `start`) VALUES
-(8, 1, 'Herr', 'David', 'Jova', 'davidjova94@gmail.com', '017727327', 'Vollzeit', '2017-09-13'),
-(9, 1, 'Frau', 'Hannelore', 'König', 'davidjova94@gmail.com', '017727327', 'Vollzeit', '2017-09-13');
+(10, 1, 'Frau', 'Hannelore', 'König', 'HK@gmail.com', '017727327', 'Vollzeit', '2017-09-13'),
+(12, 1, 'Herr', 'David', 'Jova', 'davidjova94@gmail.com', '017727327', 'Vollzeit', '2017-09-13');
 
 -- --------------------------------------------------------
 
@@ -99,7 +103,7 @@ CREATE TABLE `station` (
 --
 
 INSERT INTO `station` (`StationID`, `StationsArt`, `Name`, `Ort`, `PLZ`, `Straße`, `Hausnummer`, `Telefon`, `Email`) VALUES
-(1, 'Ambulanz', 'ZNA Leverkusen', 'Leverkusen', 51375, 'Krankenhausstrasse', 17, 20103213, 'zna@kh-lev.de');
+(1, 'Ambulanz', 'ZNA Leverkusen', 'Leverkusen', 51375, 'Krankenhausstrasse', 32, 20210210, 'kh@lev.de');
 
 --
 -- Indizes der exportierten Tabellen
@@ -109,7 +113,9 @@ INSERT INTO `station` (`StationID`, `StationsArt`, `Name`, `Ort`, `PLZ`, `Straß
 -- Indizes für die Tabelle `krankmeldungen`
 --
 ALTER TABLE `krankmeldungen`
-  ADD PRIMARY KEY (`pflegerID`,`start`,`ende`),
+  ADD PRIMARY KEY (`id`,`start`,`ende`),
+  ADD UNIQUE KEY `id` (`id`),
+  ADD KEY `Pfleger-Krankmeldung` (`pflegerID`),
   ADD KEY `Station-Krankmeldung` (`stationID`);
 
 --
@@ -130,15 +136,20 @@ ALTER TABLE `station`
 --
 
 --
+-- AUTO_INCREMENT für Tabelle `krankmeldungen`
+--
+ALTER TABLE `krankmeldungen`
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+--
 -- AUTO_INCREMENT für Tabelle `pfleger`
 --
 ALTER TABLE `pfleger`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT für Tabelle `station`
 --
 ALTER TABLE `station`
-  MODIFY `StationID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `StationID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Constraints der exportierten Tabellen
 --
@@ -147,7 +158,7 @@ ALTER TABLE `station`
 -- Constraints der Tabelle `krankmeldungen`
 --
 ALTER TABLE `krankmeldungen`
-  ADD CONSTRAINT `Pfleger-Krankmeldungen` FOREIGN KEY (`pflegerID`) REFERENCES `pfleger` (`id`),
+  ADD CONSTRAINT `Pfleger-Krankmeldung` FOREIGN KEY (`pflegerID`) REFERENCES `pfleger` (`id`),
   ADD CONSTRAINT `Station-Krankmeldung` FOREIGN KEY (`stationID`) REFERENCES `station` (`StationID`);
 
 --

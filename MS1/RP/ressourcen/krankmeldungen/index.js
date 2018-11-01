@@ -3,6 +3,7 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var dbConnection = require("../../DB/dbConnector");// importieren der DB Verbindung
 var eventListener = require("../../helper/eventListener"); // importieren des Eventlisteners
+var base64 = require('js-base64');
 
 var hello = "hello world";
 
@@ -16,6 +17,7 @@ router.get('/', (req, res) => {
     }
 });
 
+// Erstellen einer neuen Krankmeldung
 
 router.post('/', bodyParser.json(), (req, res) => {
 
@@ -35,7 +37,8 @@ router.post('/', bodyParser.json(), (req, res) => {
         var sql = "INSERT INTO krankmeldungen (pflegerID, stationID, start, ende, dienstArt) VALUES ( \"" + krankmeldung.pflegerID + "\",\"" + krankmeldung.stationID + "\",\"" + krankmeldung.start + "\",\"" + krankmeldung.ende + "\",\"" + krankmeldung.dienstArt + "\")";
         console.log(sql)
         connection.query(sql, function (err, result) {
-            if (err) res.status(400).send(dbConnection.errorMsgDB);
+            if (err) {console.log(err)
+                res.status(400).send(dbConnection.errorMsgDB);}
             else {
                 res.status(200).send(krankmeldung);
                 eventListener.eventEmitter.emit("Krankmeldung-eingereicht",krankmeldung);
@@ -48,5 +51,13 @@ router.post('/', bodyParser.json(), (req, res) => {
 
 
 });
+
+router.post('/ersatz/:id', bodyParser.json(), (req, res) => {
+
+
+
+
+
+})
 
 module.exports = router;    
