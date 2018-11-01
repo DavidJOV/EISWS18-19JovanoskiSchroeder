@@ -27,7 +27,7 @@ function getCrew(krankmeldung) {
         // Alle Mitarbeiter die auf der selben Station arbeiten, und nicht die kranke Person sind. -> im späteren Verlauf noch zu dezimieren auf Mitarbeiter die an Tag X nicht im Dienst sind.
 
         let sql = "SELECT id,stationID,email,name,anrede FROM pfleger WHERE stationID = " + krankmeldung.stationID + " AND id != " + krankmeldung.pflegerID;
-        console.log(sql);
+        
         connection.query(sql, function (err, result) {
             if (err) reject(err);
             else {
@@ -45,7 +45,7 @@ function getCrew(krankmeldung) {
 
 var messageCrew = function messageCrew(krankmeldung) {
     let sql = "SELECT id FROM krankmeldungen WHERE stationID = " + krankmeldung.stationID + " AND pflegerID = " + krankmeldung.pflegerID + " AND start= \"" + krankmeldung.start + "\" AND ende= \"" +  krankmeldung.ende+"\"";
-    console.log(sql)
+    
     connection.query(sql, function (err, result) {
         if (err) reject(err);
         else {
