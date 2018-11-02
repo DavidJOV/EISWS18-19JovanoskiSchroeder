@@ -59,17 +59,29 @@ router.post('/', bodyParser.json(), (req, res) => {
 
 router.post('/ersatz/:id', bodyParser.json(), (req, res) => {
     var id = req.params.id;
-    let mitarbeiterID = decoder.decode(req.query.mitarbeiter);
+    let pflegerID = decoder.decode(req.query.mitarbeiter);
     let stationID = decoder.decode(req.query.station);
-    let sql = "UPDATE krankmeldungen SET ersatzPfleger = "+mitarbeiterID+", ersatzGefunden = 1 WHERE id = " + id + " AND stationID = " + stationID + " AND ersatzGefunden = 0";
+    let sql = "UPDATE krankmeldungen SET ersatzPfleger = "+pflegerID+", ersatzGefunden = 1 WHERE id = " + id + " AND stationID = " + stationID + " AND ersatzGefunden = 0";
     connection.query(sql, function (err, result) {
         if (err) {
             console.log(err)
             res.status(400).send(dbConnection.errorMsgDB);
         }
         else {
-            res.status(200).send(result);
+            let sql2  = "SELECT start,dienstArt,ersatzPfleger,stationID FROM krankmeldungen WHERE stationID = " + stationID + " AND id = " + id;
+            connection.query(sql2, function (err, result) {
+                if (err) {
+                    console.log(err)
+                    console.log("Ersatz wurde eingetragen aber konnte nicht darüber Informiert werden.")
+                    res.status(400).send(dbConnection.errorMsgDB);
+                }
+                else {
+                    eventListener.eventEmitter.emit("Ersatzeintragung-erfolgt",JSON.stringify(result));
+                    console.log(JSON.stringify(result)+"Ersatz Benachrichtigt")
+                    res.status(200).send("Created Confirm");
 
+                }
+            })
         }
     });
 

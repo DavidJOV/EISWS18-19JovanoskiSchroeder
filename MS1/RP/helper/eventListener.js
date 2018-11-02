@@ -11,4 +11,8 @@ eventEmitter.on("Krankmeldung-eingereicht", function (krankmeldung) {
     eventHandler.messageCrew(krankmeldung);
 });
 
+eventEmitter.on("Ersatzeintragung-erfolgt", function (data) {
+    eventHandler.sendConfirm(data);
+})
+
 exports.eventEmitter = eventEmitter; 
