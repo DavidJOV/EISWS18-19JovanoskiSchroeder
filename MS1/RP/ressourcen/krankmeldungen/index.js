@@ -3,7 +3,7 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var dbConnection = require("../../DB/dbConnector");// importieren der DB Verbindung
 var eventListener = require("../../helper/eventListener"); // importieren des Eventlisteners
-var base64 = require('js-base64');
+var base64 = require('js-base64'); // zum decoden
 var decoder = base64.Base64;
 var hello = "hello world";
 
@@ -12,7 +12,7 @@ var connection = dbConnection.connection; // DB Verbindung
 router.get('/', (req, res) => {
     if (hello === undefined) res.status(500).send("Could not read DATA");
     else {
-
+        console.log(req.headers.host)
         res.status(200).send(hello);
     }
 });
@@ -46,7 +46,7 @@ router.post('/', bodyParser.json(), (req, res) => {
 
                 // Event auslösen
 
-                eventListener.eventEmitter.emit("Krankmeldung-eingereicht", krankmeldung);
+                eventListener.eventEmitter.emit("Krankmeldung-eingereicht", krankmeldung,req.headers.host);
                 console.log("1 neue Krankmeldung");
             }
         });

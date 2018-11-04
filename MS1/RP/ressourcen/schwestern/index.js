@@ -34,7 +34,9 @@ router.post('/', bodyParser.json(), (req, res) => {
 
 
         connection.query(sql, function (err, result) {
-            if (err) res.status(400).send(dbConnection.errorMsgDB);
+            if (err) {res.status(400).send(dbConnection.errorMsgDB);
+                        console.log(err);                                                        
+            }
             else {
                 res.status(200).send(schwester);
                 console.log("1 neue schwester");

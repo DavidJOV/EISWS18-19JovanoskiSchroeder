@@ -3,8 +3,9 @@ var mailHandler = require("./mailHandler");
 
 // Allen Personen außer der Kranken Person eine Ersatz Anfrage senden
 
-var messageCrew = function messageCrew(krankmeldung) {
+var messageCrew = function messageCrew(krankmeldung,host) {
     var krankmeldungID;
+    
     sqlHandler.getKrankmeldungID(krankmeldung)
         .then(function setID(id) { krankmeldungID = id[0].id; });
 
@@ -14,7 +15,7 @@ var messageCrew = function messageCrew(krankmeldung) {
 
             // Ersatz Anfrage Mail an alle Kollegen schicken.
 
-            mailHandler.ersatzAnfrage(crew, krankmeldung, krankmeldungID);
+            mailHandler.ersatzAnfrage(crew, krankmeldung, krankmeldungID,host);
         })
 }
 
