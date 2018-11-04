@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 var dbConnection = require("../../DB/dbConnector"); // importieren der DB Verbindung
+var sqlHandler = require("../../helper/sqlHandler");
 
 var hello = "hello world";
 
@@ -17,8 +18,8 @@ router.get('/', (req, res) => {
 router.post('/', bodyParser.json(), (req, res) => {
 
     const schwester = {
-        stationID : req.body.stationID,
-        anrede : req.body.anrede,
+        stationID: req.body.stationID,
+        anrede: req.body.anrede,
         vorname: req.body.vorname,
         name: req.body.name,
         email: req.body.email,
@@ -27,26 +28,13 @@ router.post('/', bodyParser.json(), (req, res) => {
         start: req.body.start
 
     };
-    console.log(schwester)
-    // Falls keine Email angegeben wurde, darf nicht in die DB geschrieben werden.
-    if (schwester.email != undefined) {
-        var sql = "INSERT INTO pfleger (stationID, anrede, vorname, name, email, telefon, beschaeftigungsArt, start) VALUES ( \"" + schwester.stationID + "\",\"" + schwester.anrede + "\",\"" + schwester.vorname + "\",\"" + schwester.name + "\",\"" + schwester.email + "\",\"" + schwester.telefon + "\",\"" + schwester.beschaeftigungsArt + "\",\"" + schwester.start + "\")";
 
-
-        connection.query(sql, function (err, result) {
-            if (err) {res.status(400).send(dbConnection.errorMsgDB);
-                        console.log(err);                                                        
-            }
-            else {
-                res.status(200).send(schwester);
-                console.log("1 neue schwester");
-            }
+    sqlHandler.neuerPfleger(schwester)
+        .then(function (pfleger) {
+            res.status(200).send(pfleger);
+        }).catch(function () {
+            res.status(400).send(dbConnection.errorMsgDB);
         });
-    } else {
-        res.status(400).send(dbConnection.errorMsgDB);
-    }
-
-
 });
 
 
