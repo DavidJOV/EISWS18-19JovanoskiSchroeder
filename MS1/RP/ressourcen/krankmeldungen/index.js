@@ -1,14 +1,14 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
-var dbConnection = require("../../DB/dbConnector");// importieren der DB Verbindung
+//var dbConnection = require("../../DB/dbConnector");// importieren der DB Verbindung
 var eventListener = require("../../helper/eventListener"); // importieren des Eventlisteners
 var sqlHandler = require("../..//helper/sqlHandler");
 var base64 = require('js-base64'); // zum decoden
 var decoder = base64.Base64;
 var hello = "hello world";
 
-var connection = dbConnection.connection; // DB Verbindung
+//var connection = dbConnection.connection; // DB Verbindung
 
 router.get('/', (req, res) => {
     if (hello === undefined) res.status(500).send("Could not read DATA");
@@ -54,10 +54,10 @@ router.get('/ersatz/:id', bodyParser.json(), (req, res) => {
     var id = req.params.id;
     let pflegerID = decoder.decode(req.query.mitarbeiter);
     let stationID = decoder.decode(req.query.station);
-    sqlHandler.dbConnection.ersatzEintragen(id, pflegerID, stationID)
+    sqlHandler.ersatzEintragen(id, pflegerID, stationID)
         .then(function () {
 
-            sqlHandler.dbConnection.getKrankmeldungErsatzInfo(id, stationID)
+            sqlHandler.getKrankmeldungErsatzInfo(id, stationID)
                 .then(function (result) {
                     eventListener.eventEmitter.emit("Ersatzeintragung-erfolgt", JSON.stringify(result));
                     console.log(JSON.stringify(result) + "Ersatz Benachrichtigt")
