@@ -57,7 +57,7 @@ router.post('/', bodyParser.json(), (req, res) => {
 
 });
 
-router.post('/ersatz/:id', bodyParser.json(), (req, res) => {
+router.get('/ersatz/:id', bodyParser.json(), (req, res) => {
     var id = req.params.id;
     let pflegerID = decoder.decode(req.query.mitarbeiter);
     let stationID = decoder.decode(req.query.station);
