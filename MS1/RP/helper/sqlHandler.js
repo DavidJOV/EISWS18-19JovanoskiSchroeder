@@ -136,8 +136,12 @@ var ersatzEintragen = function ersatzEintragen(id, pflegerID, stationID) {
             if (err) {
                 console.log(err);
                 reject(err);
+            } //Falls Ersatz bereits gefunden wurde soll der Promise erfolglos sein
+            else if (result.affectedRows === 0) {
+                reject(result);
             }
             else {
+                
                 resolve(result);
             }
 
@@ -169,8 +173,8 @@ var getKrankmeldungErsatzInfo = function getKrankmeldungErsatzInfo(id, stationID
 
 
 
-exports.ersatzEintragen=ersatzEintragen;
-exports.getKrankmeldungErsatzInfo=getKrankmeldungErsatzInfo;
+exports.ersatzEintragen = ersatzEintragen;
+exports.getKrankmeldungErsatzInfo = getKrankmeldungErsatzInfo;
 exports.neueKrankmeldung = neueKrankmeldung;
 exports.neuerPfleger = neuerPfleger;
 exports.getPfleger = getPfleger;
