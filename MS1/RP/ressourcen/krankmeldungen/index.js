@@ -42,7 +42,7 @@ router.post('/', bodyParser.json(), (req, res) => {
             console.log("1 neue Krankmeldung");
         })
         .catch(function () {
-            res.status(400).send(dbConnection.errorMsgDB);
+            res.status(400).send("Error");
         });
 });
 
@@ -67,14 +67,14 @@ router.get('/ersatz/:id', bodyParser.json(), (req, res) => {
                 .catch(function (err) {
                     console.log(err)
                     console.log("Ersatz wurde eingetragen aber konnte nicht darüber Informiert werden.")
-                    res.status(400).send(dbConnection.errorMsgDB);
+                    res.status(400).send("Error");
 
                 })
 
         }) // Catch Falls der Ersatz nicht eingetragen werden konnte.
-        .catch(function(err){
+        .catch(function (err) {
             console.log(err);
-            res.status(400).send(dbConnection.errorMsgDB);
+            res.status(400).send("Error");
         });
 
 });

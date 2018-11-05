@@ -33,7 +33,7 @@ router.post('/', bodyParser.json(), (req, res) => {
         .then(function (pfleger) {
             res.status(200).send(pfleger);
         }).catch(function () {
-            res.status(400).send(dbConnection.errorMsgDB);
+            res.status(400).send("Error");
         });
 });
 
