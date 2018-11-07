@@ -30,5 +30,16 @@ var sendConfirm = function sendConfirm(data) {
 
 }
 
+var warteAufBestaetigung = async function warteAufBestaetigung(krankmeldung) {
+
+    try {
+        await sleep(3000)
+        console.log('Hallo Welt!')
+    } catch (ex) {
+        console.log(ex)
+    }
+};
+
+
 exports.messageCrew = messageCrew;
 exports.sendConfirm = sendConfirm;

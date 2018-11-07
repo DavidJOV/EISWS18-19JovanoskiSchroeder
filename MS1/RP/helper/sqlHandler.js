@@ -36,7 +36,7 @@ var neueKrankmeldung = function neueKrankmeldung(krankmeldung) {
 
         // Nur wenn ein Integer als PflegerID übermittelt wurde, darf in die DB geschrieben werden.
         if (krankmeldung.pflegerID != undefined || Number.isInteger(krankmeldung.pflegerID) === false) {
-            var sql = "INSERT INTO krankmeldungen (pflegerID, stationID, start, ende, dienstArt) VALUES ( \"" + krankmeldung.pflegerID + "\",\"" + krankmeldung.stationID + "\",\"" + krankmeldung.start + "\",\"" + krankmeldung.ende + "\",\"" + krankmeldung.dienstArt + "\")";
+            var sql = "INSERT INTO krankmeldungen (pflegerID, stationID, start, ende, dienstArt,dienstBeginn) VALUES ( \"" + krankmeldung.pflegerID + "\",\"" + krankmeldung.stationID + "\",\"" + krankmeldung.start + "\",\"" + krankmeldung.ende + "\",\"" + krankmeldung.dienstArt + "\",\"" + krankmeldung.dienstBeginn + "\")";
             console.log(sql)
             connection.query(sql, function (err, result) {
                 if (err) {

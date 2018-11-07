@@ -52,5 +52,7 @@ var bestaetigungsMail = function bestaetigungsMail(result) {
     });
 }
 
+var alternativeInformieren =
+
 exports.bestaetigungsMail = bestaetigungsMail;
 exports.ersatzAnfrage = ersatzAnfrage;
