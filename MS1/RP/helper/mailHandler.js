@@ -51,8 +51,8 @@ var bestaetigungsMail = function bestaetigungsMail(result) {
         }
     });
 }
-
-var alternativeInformieren =
-
+// noch zu erweitern
+var alternativeInformieren = function alternativeInformieren(){console.log("mail an Zeitarbeitsfirma"+ new Date())}
+exports.alternativeInformieren = alternativeInformieren;
 exports.bestaetigungsMail = bestaetigungsMail;
 exports.ersatzAnfrage = ersatzAnfrage;

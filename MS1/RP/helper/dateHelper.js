@@ -1,10 +1,9 @@
 
-function checkDifference(startDatum, schichtStart) {
+var getZeitInMs = function getZeitInMs(startDatum, schichtStart) {
     return new Promise(function (resolve, reject) {
         var krankAb = new Date(startDatum + "T" + schichtStart);
         var heute = new Date()
-        console.log(heute)
-        console.log(krankAb)
+        // Unterschied zwischen datum der Krankmeldung und Heute
         var msTimeDiff = krankAb.getTime() - heute.getTime();
 
         if (isNaN(msTimeDiff) === true) {
@@ -21,6 +20,6 @@ function checkDifference(startDatum, schichtStart) {
     });
 }
 
-checkDifference("2017-12-01", "21:20:10.995Z").catch(function (fehler) {
-    console.log(fehler);
-});
+
+exports.getZeitInMs = getZeitInMs;
+

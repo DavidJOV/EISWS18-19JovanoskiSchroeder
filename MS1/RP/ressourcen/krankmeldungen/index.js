@@ -29,8 +29,9 @@ router.post('/', bodyParser.json(), (req, res) => {
         pflegerID: req.body.pflegerID,
         stationID: req.body.stationID,
         ende: req.body.ende,
-        start: req.body.start,
-        dienstArt: req.body.dienstArt
+        start: req.body.start, //<- noch abzufangen das,dass Datum in der Zukunft liegen muss.
+        dienstArt: req.body.dienstArt,
+        dienstBeginn: req.body.dienstBeginn
 
     };
 
@@ -40,6 +41,7 @@ router.post('/', bodyParser.json(), (req, res) => {
             // Event auslösen
 
             eventListener.eventEmitter.emit("Krankmeldung-eingereicht", krankmeldung, req.headers.host);
+            eventListener.eventEmitter.emit("WarteAufRueckmeldung",krankmeldung);
             res.status(200).send(krankmeldung);
             console.log("1 neue Krankmeldung");
         })

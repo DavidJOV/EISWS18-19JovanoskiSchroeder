@@ -2,12 +2,12 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
-var date = new Date();
+
 
 
 
 app.use((req, res, next) => {
-    console.log("Time: %d" + " Request-Pfad: " + req.path, date);
+    console.log("Time: "+ new Date() + " Request-Pfad: " + req.path);
     next();
 })
 

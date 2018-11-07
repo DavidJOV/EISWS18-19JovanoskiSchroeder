@@ -10,6 +10,9 @@ var eventEmitter = new events.EventEmitter();
 eventEmitter.on("Krankmeldung-eingereicht", function (krankmeldung, host) {
     eventHandler.messageCrew(krankmeldung, host);
 });
+eventEmitter.on("WarteAufRueckmeldung", function (krankmeldung) {
+    eventHandler.warteAufBestaetigung(krankmeldung);
+});
 
 eventEmitter.on("Ersatzeintragung-erfolgt", function (data) {
     eventHandler.sendConfirm(data);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Erstellungszeit: 04. Nov 2018 um 19:00
+-- Erstellungszeit: 07. Nov 2018 um 22:54
 -- Server-Version: 5.6.34-log
 -- PHP-Version: 7.1.7
 
@@ -35,16 +35,10 @@ CREATE TABLE `krankmeldungen` (
   `start` date NOT NULL,
   `ende` date NOT NULL,
   `dienstArt` varchar(50) NOT NULL,
+  `dienstBeginn` time NOT NULL,
   `ersatzGefunden` tinyint(1) NOT NULL,
   `ersatzPfleger` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Daten für Tabelle `krankmeldungen`
---
-
-INSERT INTO `krankmeldungen` (`id`, `pflegerID`, `stationID`, `start`, `ende`, `dienstArt`, `ersatzGefunden`, `ersatzPfleger`) VALUES
-(41, 13, 1, '2018-09-27', '2018-10-12', 'Spaetdienst', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -71,8 +65,7 @@ CREATE TABLE `pfleger` (
 INSERT INTO `pfleger` (`id`, `stationID`, `anrede`, `vorname`, `name`, `email`, `telefon`, `beschaeftigungsArt`, `start`) VALUES
 (10, 1, 'Frau', 'Hannelore', 'König', 'HK@gmail.com', '017727327', 'Vollzeit', '2017-09-13'),
 (12, 1, 'Herr', 'David', 'Jova', 'davidjova94@gmail.com', '017727327', 'Vollzeit', '2017-09-13'),
-(13, 1, 'Herr', 'Marco', 'Schroeder', 'marco.schroeder@smail.th-koeln.de', '017727327', 'Vollzeit', '2017-09-13'),
-(18, 1, 'Herr', 'Antonio', 'Jova', 'ajovanoski.1999@gamil', '017727327', 'Vollzeit', '2017-09-13');
+(13, 1, 'Herr', 'Marco', 'Schroeder', 'marco.schroeder@smail.th-koeln.de', '017727327', 'Vollzeit', '2017-09-13');
 
 -- --------------------------------------------------------
 
@@ -134,12 +127,12 @@ ALTER TABLE `station`
 -- AUTO_INCREMENT für Tabelle `krankmeldungen`
 --
 ALTER TABLE `krankmeldungen`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 --
 -- AUTO_INCREMENT für Tabelle `pfleger`
 --
 ALTER TABLE `pfleger`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT für Tabelle `station`
 --
