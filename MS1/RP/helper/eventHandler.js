@@ -38,6 +38,11 @@ var sendConfirm = function sendConfirm(data) {
         })
 
 }
+/*Der Code liest sich synchron, wird intern aber asynchron ausgeführt. 
+  Das await wartet also nicht in dem Sinne, dass der ausführende Thread blockiert.
+  Stattdessen wird der Aufruf vom Compiler in eine Koroutine zerlegt,
+  sodass während des Wartens anderer asynchroner Code laufen kann.
+  "Golo Roden https://www.heise.de/developer/artikel/async-und-await-fuer-Node-js-3633105.html 08.11.2018*/ 
 // Warten blockiert nicht! #async #await
 
 var warteAufBestaetigung = async function warteAufBestaetigung(krankmeldung) {

@@ -5,8 +5,8 @@ var encoder = base64.Base64;
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'eisws1819@gmail.com',
-        pass: 'nodeJS18'
+        user: encoder.decode('ZWlzd3MxODE5QGdtYWlsLmNvbQ=='),
+        pass: encoder.decode('bm9kZUpTMTg=')
     }
 });
 

@@ -21,5 +21,6 @@ var getZeitInMs = function getZeitInMs(startDatum, schichtStart) {
 }
 
 
+
 exports.getZeitInMs = getZeitInMs;
 
