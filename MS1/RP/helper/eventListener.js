@@ -7,11 +7,11 @@ var events = require('events');
 var eventHandler = require("./eventHandler");
 var eventEmitter = new events.EventEmitter();
 
-eventEmitter.on("Krankmeldung-eingereicht", function (krankmeldung, host) {
-    eventHandler.messageCrew(krankmeldung, host);
+eventEmitter.on("abwesenheitsMeldung-eingereicht", function (abwesenheitsMeldung, host) {
+    eventHandler.messageCrew(abwesenheitsMeldung, host);
 });
-eventEmitter.on("WarteAufRueckmeldung", function (krankmeldung) {
-    eventHandler.warteAufBestaetigung(krankmeldung);
+eventEmitter.on("WarteAufRueckmeldung", function (abwesenheitsMeldung) {
+    eventHandler.warteAufBestaetigung(abwesenheitsMeldung);
 });
 
 eventEmitter.on("Ersatzeintragung-erfolgt", function (data) {

@@ -12,19 +12,19 @@ const sleep = function (ms) {
 
 // Allen Personen außer der Kranken Person eine Ersatz Anfrage senden
 
-var messageCrew = function messageCrew(krankmeldung, host) {
-    var krankmeldungID;
+var messageCrew = function messageCrew(abwesenheitsMeldung, host) {
+    var abwesenheitsMeldungID;
 
-    sqlHandler.getKrankmeldungID(krankmeldung)
-        .then(function setID(id) { krankmeldungID = id[0].id; });
+    sqlHandler.getAbwesenheitsMeldungID(abwesenheitsMeldung)
+        .then(function setID(id) { abwesenheitsMeldungID = id[0].id; });
+        
 
-
-    sqlHandler.getCrew(krankmeldung)
+    sqlHandler.getCrew(abwesenheitsMeldung)
         .then(function sendMSG(crew) {
-
+            
             // Ersatz Anfrage Mail an alle Kollegen schicken.
 
-            mailHandler.ersatzAnfrage(crew, krankmeldung, krankmeldungID, host);
+            mailHandler.ersatzAnfrage(crew, abwesenheitsMeldung, abwesenheitsMeldungID, host);
         })
 }
 
@@ -45,7 +45,7 @@ var sendConfirm = function sendConfirm(data) {
   "Golo Roden https://www.heise.de/developer/artikel/async-und-await-fuer-Node-js-3633105.html 08.11.2018*/ 
 // Warten blockiert nicht! #async #await
 
-var warteAufBestaetigung = async function warteAufBestaetigung(krankmeldung) {
+var warteAufBestaetigung = async function warteAufBestaetigung(abwesenheitsMeldung) {
 
     // 48H in Millisekunden
 
@@ -67,7 +67,7 @@ var warteAufBestaetigung = async function warteAufBestaetigung(krankmeldung) {
 
     var achtZehn = 18 * 60 * 60 * 1000;
 
-    dateHelper.getZeitInMs(krankmeldung.start, krankmeldung.dienstBeginn)
+    dateHelper.getZeitInMs(abwesenheitsMeldung.start, abwesenheitsMeldung.dienstBeginn)
         .then(async function (zeit) {
 
 

@@ -20,11 +20,11 @@ router.get('/', (req, res) => {
     }
 });
 
-// Erstellen einer neuen Krankmeldung
+// Erstellen einer neuen abwesenheitsMeldung
 
 router.post('/', bodyParser.json(), (req, res) => {
 
-    const krankmeldung = {
+    const abwesenheitsMeldung = {
 
         pflegerID: req.body.pflegerID,
         stationID: req.body.stationID,
@@ -35,18 +35,18 @@ router.post('/', bodyParser.json(), (req, res) => {
 
     };
 
-    sqlHandler.neueKrankmeldung(krankmeldung)
+    sqlHandler.neueAbwesenheitsMeldung(abwesenheitsMeldung)
         .then(function () {
-
+            console.log("test")
             // Event auslösen
 
-            eventListener.eventEmitter.emit("Krankmeldung-eingereicht", krankmeldung, req.headers.host);
-            eventListener.eventEmitter.emit("WarteAufRueckmeldung",krankmeldung);
-            res.status(200).send(krankmeldung);
-            console.log("1 neue Krankmeldung");
+            eventListener.eventEmitter.emit("abwesenheitsMeldung-eingereicht", abwesenheitsMeldung, req.headers.host);
+            eventListener.eventEmitter.emit("WarteAufRueckmeldung",abwesenheitsMeldung);
+            res.status(200).send(abwesenheitsMeldung);
+            console.log("1 neue abwesenheitsMeldung");
         })
-        .catch(function () {
-            res.status(400).send("Error");
+        .catch(function (error) {
+            res.status(400).send(error);
         });
 });
 
@@ -64,7 +64,7 @@ router.get('/ersatz/:id', bodyParser.json(), (req, res) => {
         sqlHandler.ersatzEintragen(id, pflegerID, stationID)
             .then(function () {
 
-                sqlHandler.getKrankmeldungErsatzInfo(id, stationID)
+                sqlHandler.getAbwesenheitsErsatzInfo(id, stationID)
                     .then(function (result) {
                         eventListener.eventEmitter.emit("Ersatzeintragung-erfolgt", JSON.stringify(result));
                         console.log(JSON.stringify(result) + "Ersatz Benachrichtigt")

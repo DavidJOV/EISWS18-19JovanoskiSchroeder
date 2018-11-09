@@ -1,10 +1,10 @@
 
 var getZeitInMs = function getZeitInMs(startDatum, schichtStart) {
     return new Promise(function (resolve, reject) {
-        var krankAb = new Date(startDatum + "T" + schichtStart);
+        var abwesendAb = new Date(startDatum + "T" + schichtStart);
         var heute = new Date()
         // Unterschied zwischen datum der Krankmeldung und Heute
-        var msTimeDiff = krankAb.getTime() - heute.getTime();
+        var msTimeDiff = abwesendAb.getTime() - heute.getTime();
 
         if (isNaN(msTimeDiff) === true) {
             reject("Erro Datum muss wie folgt aussehen: JJJJ-MM-TT ");

@@ -31,12 +31,12 @@ var neuerPfleger = function neuerPfleger(pfleger) {
 
 
 
-var neueKrankmeldung = function neueKrankmeldung(krankmeldung) {
+var neueAbwesenheitsMeldung = function neueAbwesenheitsMeldung(abwesenheitsMeldung) {
     return new Promise(function (resolve, reject) {
 
         // Nur wenn ein Integer als PflegerID übermittelt wurde, darf in die DB geschrieben werden.
-        if (krankmeldung.pflegerID != undefined || Number.isInteger(krankmeldung.pflegerID) === false) {
-            var sql = "INSERT INTO krankmeldungen (pflegerID, stationID, start, ende, dienstArt,dienstBeginn) VALUES ( \"" + krankmeldung.pflegerID + "\",\"" + krankmeldung.stationID + "\",\"" + krankmeldung.start + "\",\"" + krankmeldung.ende + "\",\"" + krankmeldung.dienstArt + "\",\"" + krankmeldung.dienstBeginn + "\")";
+        if (abwesenheitsMeldung.pflegerID != undefined || Number.isInteger(abwesenheitsMeldung.pflegerID) === false) {
+            var sql = "INSERT INTO krankmeldungen (pflegerID, stationID, start, ende, dienstArt,dienstBeginn) VALUES ( \"" + abwesenheitsMeldung.pflegerID + "\",\"" + abwesenheitsMeldung.stationID + "\",\"" + abwesenheitsMeldung.start + "\",\"" + abwesenheitsMeldung.ende + "\",\"" + abwesenheitsMeldung.dienstArt + "\",\"" + abwesenheitsMeldung.dienstBeginn + "\")";
             console.log(sql)
             connection.query(sql, function (err, result) {
                 if (err) {
@@ -44,7 +44,7 @@ var neueKrankmeldung = function neueKrankmeldung(krankmeldung) {
                     reject(err);
                 }
                 else {
-                    resolve(krankmeldung);
+                    resolve(abwesenheitsMeldung);
                 }
             })
         }
@@ -60,13 +60,13 @@ var neueKrankmeldung = function neueKrankmeldung(krankmeldung) {
 
 
 
-var getCrew = function getCrew(krankmeldung) {
+var getCrew = function getCrew(abwesenheitsMeldung) {
     var mitarbeiter;
     return new Promise(function (resolve, reject) {
 
         // Alle Mitarbeiter die auf der selben Station arbeiten, und nicht die kranke Person sind. -> im späteren Verlauf noch zu dezimieren auf Mitarbeiter die an Tag X nicht im Dienst sind.
 
-        let sql = "SELECT id,stationID,email,name,anrede FROM pfleger WHERE stationID = " + krankmeldung.stationID + " AND id != " + krankmeldung.pflegerID;
+        let sql = "SELECT id,stationID,email,name,anrede FROM pfleger WHERE stationID = " + abwesenheitsMeldung.stationID + " AND id != " + abwesenheitsMeldung.pflegerID;
 
         connection.query(sql, function (err, result) {
             if (err) reject(err);
@@ -83,22 +83,22 @@ var getCrew = function getCrew(krankmeldung) {
     });
 }
 
-var getKrankmeldungID = function getKrankmeldungID(krankmeldung) {
+var getAbwesenheitsMeldungID = function getAbwesenheitsMeldungID(abwesenheitsMeldung) {
     return new Promise(function (resolve, reject) {
 
         // ID der Krankmeldung, die als Parameter übergeben wird. Warum haben wir die ID nicht schon? -> Weil die ID über AUTO_INCREMENT von der DB vergeben wird.
 
-        let sql = "SELECT id FROM krankmeldungen WHERE stationID = " + krankmeldung.stationID + " AND pflegerID = " + krankmeldung.pflegerID + " AND start= \"" + krankmeldung.start + "\" AND ende= \"" + krankmeldung.ende + "\"";
+        let sql = "SELECT id FROM krankmeldungen WHERE stationID = " + abwesenheitsMeldung.stationID + " AND pflegerID = " + abwesenheitsMeldung.pflegerID + " AND start= \"" + abwesenheitsMeldung.start + "\" AND ende= \"" + abwesenheitsMeldung.ende + "\"";
         connection.query(sql, function (err, result) {
             if (err) reject(err);
             else {
 
                 // Datenbank Daten aufbereiten.
 
-                let krankmeldungIDString = JSON.stringify(result);
-                var krankmeldungID = JSON.parse(krankmeldungIDString);
+                let abwesenheitsMeldungIDString = JSON.stringify(result);
+                var abwesenheitsMeldungID = JSON.parse(abwesenheitsMeldungIDString);
 
-                resolve(krankmeldungID);
+                resolve(abwesenheitsMeldungID);
             }
         });
     });
@@ -151,7 +151,7 @@ var ersatzEintragen = function ersatzEintragen(id, pflegerID, stationID) {
 }
 
 
-var getKrankmeldungErsatzInfo = function getKrankmeldungErsatzInfo(id, stationID) {
+var getAbwesenheitsErsatzInfo = function getAbwesenheitsErsatzInfo(id, stationID) {
     return new Promise(function (resolve, reject) {
         let sql2 = "SELECT start,dienstArt,ersatzPfleger,stationID FROM krankmeldungen WHERE stationID = " + stationID + " AND id = " + id;
         connection.query(sql2, function (err, result) {
@@ -174,9 +174,9 @@ var getKrankmeldungErsatzInfo = function getKrankmeldungErsatzInfo(id, stationID
 
 
 exports.ersatzEintragen = ersatzEintragen;
-exports.getKrankmeldungErsatzInfo = getKrankmeldungErsatzInfo;
-exports.neueKrankmeldung = neueKrankmeldung;
+exports.getAbwesenheitsErsatzInfo = getAbwesenheitsErsatzInfo;
+exports.neueAbwesenheitsMeldung = neueAbwesenheitsMeldung;
 exports.neuerPfleger = neuerPfleger;
 exports.getPfleger = getPfleger;
 exports.getCrew = getCrew;
-exports.getKrankmeldungID = getKrankmeldungID;
+exports.getAbwesenheitsMeldungID = getAbwesenheitsMeldungID;

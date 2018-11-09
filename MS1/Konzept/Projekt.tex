@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{hyperref}
+\usepackage{longtable}
 
 \title{\textbf{Sister Shift} \\ Konzept \\ erstellt von}
 
@@ -45,7 +46,22 @@ Gesetzliche Bestimmungen zum Schutz der Arbeitnehmer müssen natürlich auch im 
 Der Arbeitgeber ist verpflichtet jeder Kraft nach Einsatz an einem Sonntag oder Feiertag einen Ersatzruhetag in den folgenden zwei Wochen zu gewähren. Jeder Arbeitnehmer hat das Recht auf 24 Urlaubstage in einem Kalenderjahr. (vgl. Arbeitszeitgesetz § 5 Ruhezeit, § 11 Ausgleich für Sonn- und Feiertagsbeschäftigung, Bundesurlaubsgesetz § 3 Dauer des Urlaubs)
 Bei Jugendlichen und Auszubildenden unter 18 Jahren, muss die Ruhezeit laut Jugendarbeitsschutzgesetz mindestens 14 Stunden betragen. (vgl. Jugendarbeitsschutzgesetz §14 Nachtruhe). Jugendliche dürfen maximal zwei Samstage und zwei Sonntage im Monat Arbeiten. Zusätzlich ist vorgeschrieben, dass sie nicht am 24 und 31 Dezember arbeiten dürfen. Die Beendigung des Arbeitstages muss vor einem Berufsschultag um spätestens 20 Uhr erfolgen. Jeder angestellte Jugendliche hat das Recht auf 25 Urlaubstage in einem Kalenderjahr (vgl. Jugendarbeitsschutzgesetz §17 Sonntagsruhe, §16 Samstagruhe, §18 Feiertagsruhe, §19 Urlaub, §14 Nachtruhe).
 \section{Stakeholderanalyse}
-Noch zu Ergänzen
+\begin{longtable}{ |  p{3cm} |  p{3cm} | p{3cm} | p{3cm} |}
+    \hline
+    Bezeichnung & Bezug zum System & Objektbereich & Erfordernis/Erwartung \\ \hline
+    Gesundheits-und Krankenpfleger & Interesse & Erstellung fairer Dienstpläne | Wunschäußerung | Automatisierte Ersatzfindung bei Personalausfall | Individualisierbarkeit des Dienstplans & Dienstpläne sind Fair gestaltet und Wünsche werden so gut wie möglich miteingebunden | Das System automatisiert das finden von Ersatzpersonal im Falle eines Personalausfalls | Individualisierbarkeit des Dienstplans ist nach der Erstellung dieses mit gewissen Einschränkungen möglich | Das System ist einfach zu verstehen und zu bedienen \\ \hline
+    Stationsleitung & Interesse & Automatisierte Diensplanerstellung | Ersatzfindung bei Personalausfall | Individualisierbarkeit des Dienstplans & Faire Dienstpläne werden automatisch, ohne viel Zutun von Mensch gesteuertem Input generiert | Mitarbeiter können Ihren Dienstplan selbstständig Individualisieren | Das System automatisiert das finden von Ersatzpersonal im Falle eines Personalausfalls | Unterstützung beim Personalmanagement + Zeitgewinnung für andere Aufgaben | Das System ist einfach zu verstehen und zu bedienen | Benachrichtigung bei etwaigen Personalausfällen \\ \hline
+    Patient & Interesse & Druchgängige Zuteilung einer Pflegekraft auf die entsprechende Station  & Es ist permanent die richtige Besetzung an Pflegekräften eingeteilt um bei etwaigen Bedürfnissen der Patienten helfen zu können \\
+    \hline
+    Krankenhaus & Anspruch & Umfassende Unterstützung der Dienstplanerstellung  & Dienstpläne sind zuverlässig und mit den Bedingungen in einem Krankenhaus vereinbar \\
+    \hline
+    Politik & Anrecht & Einhaltung gesetzlicher Vorschriften | Faire Behandlung der Arbeitnehmer in Bezug auf Einsatzplanung  & Die Dienstpläne müssen nachweisbar die Gesetzesvorlagen einhalten \\
+    \hline
+    Fachgesellschaft & Anteil & Automatisierte Dienstplanerstellung und Reaktion auf Abwesenheitsmeldung | Individualisierbarkeit  & Das System muss auch in extrem Situationen (Viele Abwesenheitsvorfälle o.ä.) einen vernüftigen und fairen Dienstplan generieren | Individualisierbarkeit muss mit Bedingungen konform sein | Ersatzfindung im Falle von Personalausfall muss problemlos funktionieren \\
+    \hline
+    Dienstleistungs- gesellschaft (Zeitarbeitsfirmen) & Interesse & Heranziehen von externem Personal bei Personalmangel  & Rechtzeitiges Einplanen der externen Personalkräfte, um ordnungsgemäße Zeitarbeitsverträge abschliessen zu können \\
+    \hline
+\end{longtable}
 \section{Anforderungen und Erfordernisse}
 \subsection{Erfordernisse}
 [E01] Als Gesundheits- und Krankenpfleger in einem Krankenhaus muss man persönlichen Zugriff auf die aktuellen Dienstpläne haben, um die jeweiligen Arbeitszeiten in Erfahrung zu bringen

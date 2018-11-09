@@ -1,0 +1,16 @@
+\begin{tabular}{ | l | l | l | p{8cm} |}
+    \hline
+    Bezeichnung & Bezug zum System & Objektbereich & Erfordernis/Erwartung \\ \hline
+    Gesundheits-und Krankenpfleger & Interesse & Erstellung fairer Dienstpläne | Wunschäußerung | Automatisierte Ersatzfindung bei Personalausfall | Individualisierbarkeit des Dienstplans & Dienstpläne sind Fair gestaltet und Wünsche werden so gut wie möglich miteingebunden | Das System automatisiert das finden von Ersatzpersonal im Falle eines Personalausfalls | Individualisierbarkeit des Dienstplans ist nach der Erstellung dieses mit gewissen Einschränkungen möglich | Das System ist einfach zu verstehen und zu bedienen \\ \hline
+    Stationsleitung & Interesse & Automatisierte Diensplanerstellung | Ersatzfindung bei Personalausfall | Individualisierbarkeit des Dienstplans & Faire Dienstpläne werden automatisch, ohne viel Zutun von Mensch gesteuertem Input generiert | Mitarbeiter können Ihren Dienstplan selbstständig Individualisieren | Das System automatisiert das finden von Ersatzpersonal im Falle eines Personalausfalls | Unterstützung beim Personalmanagement + Zeitgewinnung für andere Aufgaben | Das System ist einfach zu verstehen und zu bedienen | Benachrichtigung bei etwaigen Personalausfällen \\ \hline
+    Patient & Interesse & Druchgängige Zuteilung einer Pflegekraft auf die entsprechende Station  & Es ist permanent die richtige Besetzung an Pflegekräften eingeteilt um bei etwaigen Bedürfnissen der Patienten helfen zu können \\
+    \hline
+    Krankenhaus & Anspruch & Umfassende Unterstützung der Dienstplanerstellung  & Dienstpläne sind zuverlässig und mit den Bedingungen in einem Krankenhaus vereinbar \\
+    \hline
+    Politik & Anrecht & Einhaltung gesetzlicher Vorschriften | Faire Behandlung der Arbeitnehmer in Bezug auf Einsatzplanung  & Die Dienstpläne müssen nachweisbar die Gesetzesvorlagen einhalten \\
+    \hline
+    Fachgesellschaft & Anteil & Automatisierte Dienstplanerstellung und Reaktion auf Abwesenheitsmeldung | Individualisierbarkeit  & Das System muss auch in extrem Situationen (Viele Abwesenheitsvorfälle o.ä.) einen vernüftigen und fairen Dienstplan generieren | Individualisierbarkeit muss mit Bedingungen konform sein | Ersatzfindung im Falle von Personalausfall muss problemlos funktionieren \\
+    \hline
+    Dienstleistungsgesellschaft (Zeitarbeitsfirmen) & Interesse & Heranziehen von externem Personal bei Personalmangel  & Rechtzeitiges Einplanen der externen Personalkräfte, um ordnungsgemäße Zeitarbeitsverträge abschliessen zu können \\
+    \hline
+    \end{tabular}

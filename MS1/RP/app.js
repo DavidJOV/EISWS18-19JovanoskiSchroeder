@@ -19,8 +19,8 @@ const settings = {
 const krankenpfleger = require('./ressourcen/krankenpfleger/index.js');
 app.use('/krankenpfleger', krankenpfleger);
 
-const krankmeldungen = require('./ressourcen/krankmeldungen/index.js');
-app.use('/krankmeldungen', krankmeldungen);
+const abwesenheiten = require('./ressourcen/abwesenheiten/index.js');
+app.use('/abwesenheiten', abwesenheiten);
 
 
 app.listen(settings.port, () => console.log("Express app listening on port: " + settings.port + "!"))

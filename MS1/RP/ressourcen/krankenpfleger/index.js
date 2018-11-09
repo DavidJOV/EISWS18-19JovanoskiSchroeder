@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 // Erstellen eines neuen Mitarbeiters
 router.post('/', bodyParser.json(), (req, res) => {
 
-    const schwester = {
+    const krankenpfleger = {
         stationID: req.body.stationID,
         anrede: req.body.anrede,
         vorname: req.body.vorname,
@@ -29,7 +29,7 @@ router.post('/', bodyParser.json(), (req, res) => {
 
     };
 
-    sqlHandler.neuerPfleger(schwester)
+    sqlHandler.neuerPfleger(krankenpfleger)
         .then(function (pfleger) {
             res.status(200).send(pfleger);
         }).catch(function () {
