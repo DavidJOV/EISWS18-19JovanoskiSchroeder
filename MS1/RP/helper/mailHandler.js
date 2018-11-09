@@ -25,7 +25,7 @@ var ersatzAnfrage = function ersatzAnfrage(crew, abwesenheitsMeldung, abwesenhei
 
         let personalLink = host+"/abwesenheiten/ersatz/" + abwesenheitsMeldungID + "/?mitarbeiter=" + encoder.encode(crew[i].id.toString()) + "&station=" + encoder.encode(crew[i].stationID.toString());
         mailOptions.to = crew[i].email;
-        mailOptions.text = "Hallo " + crew[i].anrede + " " + crew[i].name + ",\nfalls es für Sie möglich ist am " + abwesenheitsMeldung.start + " in einem " + abwesenheitsMeldung.dienstArt + " zu arbeiten. \nBitten wir Sie auf Folgenden Link zu klicken : " + personalLink + " \nBeachten Sie, dass Sie erst zur Schicht antreten müssen wenn Sie eine Bestätigung erhalten.\n\nVielen Dank \nIhre Stationsleitung"
+        mailOptions.text = "Hallo " + crew[i].anrede + " " + crew[i].name + ",\nfalls es für Sie möglich ist am " + abwesenheitsMeldung.start + " in einem " + abwesenheitsMeldung.dienstArt + " zu arbeiten. \nBitten wir Sie auf Folgenden Link zu klicken : " + personalLink + " \nBeachten Sie das Sie erst zur Schicht antreten müssen wenn Sie eine Bestätigung erhalten.\n\nVielen Dank \nIhre Stationsleitung"
         transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
                 console.log(error);

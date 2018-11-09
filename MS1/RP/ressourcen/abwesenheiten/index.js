@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var eventListener = require("../../helper/eventListener"); // importieren des Eventlisteners
 var sqlHandler = require("../..//helper/sqlHandler");
 var base64 = require('js-base64'); // zum decoden
-var semaphore = require("semaphore")(1); // Semaphore die mit 1 initiiert wird.
+var semaphore = require("../..//helper/semaphoreHelper").semaphore;
 var decoder = base64.Base64;
 var hello = "hello world";
 
@@ -67,7 +67,7 @@ router.get('/ersatz/:id', bodyParser.json(), (req, res) => {
                 sqlHandler.getAbwesenheitsErsatzInfo(id, stationID)
                     .then(function (result) {
                         eventListener.eventEmitter.emit("Ersatzeintragung-erfolgt", JSON.stringify(result));
-                        console.log(JSON.stringify(result) + "Ersatz Benachrichtigt")
+                       console.log("Ersatz Benachrichtigt")
                         res.status(200).send("Created Confirm");
 
                     })  // Catch falls nicht Benachrichtigt werden konnte aber in die DB geschrieben wurde.

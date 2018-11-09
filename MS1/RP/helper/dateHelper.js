@@ -5,7 +5,7 @@ var getZeitInMs = function getZeitInMs(startDatum, schichtStart) {
         startDatum = JSON.stringify(startDatum).slice(1, 11)
 
         var abwesendAb = new Date(startDatum + "T" + schichtStart);
-        
+
 
         var heute = new Date()
         // Unterschied zwischen datum der Krankmeldung und Heute
@@ -19,13 +19,13 @@ var getZeitInMs = function getZeitInMs(startDatum, schichtStart) {
         }
         else {
             resolve(msTimeDiff)
-            console.log("Millisekunden Unterschied: " + msTimeDiff);
+            // console.log("Millisekunden Unterschied: " + msTimeDiff);
         }
 
     });
 }
 
-var stundenInMS = function stundenInMS(stunden){
+var stundenInMS = function stundenInMS(stunden) {
     return stunden * 60 * 60 * 1000;
 }
 

@@ -1,5 +1,6 @@
 
 var dbConnection = require("../DB/dbConnector");// importieren der DB Verbindung
+var semaphore = require("../helper/semaphoreHelper").semaphore;
 var connection = dbConnection.connection;
 
 
@@ -141,7 +142,7 @@ var ersatzEintragen = function ersatzEintragen(id, pflegerID, stationID) {
                 reject(result);
             }
             else {
-                
+
                 resolve(result);
             }
 
@@ -149,6 +150,30 @@ var ersatzEintragen = function ersatzEintragen(id, pflegerID, stationID) {
 
     });
 }
+
+var benachrichtigungVermerken = function benachrichtigungVermerken(id, stationID) {
+    return new Promise(function (resolve, reject) {
+
+        let sql = "UPDATE krankmeldungen SET ersatzGefunden = 2 WHERE id = " + id + " AND stationID = " + stationID + " AND ersatzGefunden = 0";
+
+        connection.query(sql, function (err, result) {
+            if (err) {
+                console.log(err);
+                reject(err);
+            } //Falls Ersatz bereits gefunden wurde soll der Promise erfolglos sein
+            else if (result.affectedRows === 0) {
+                reject(result);
+            }
+            else {
+
+                resolve(result);
+            }
+
+        });
+
+    });
+}
+
 
 
 var getAbwesenheitsErsatzInfo = function getAbwesenheitsErsatzInfo(id, stationID) {
@@ -168,26 +193,31 @@ var getAbwesenheitsErsatzInfo = function getAbwesenheitsErsatzInfo(id, stationID
     });
 }
 
-var getAbwesenheitenOhneErsatz = function getAbwesenheitenOhneErsatz(){
+var getAbwesenheitenOhneErsatz = function getAbwesenheitenOhneErsatz() {
     return new Promise(function (resolve, reject) {
-        let sql = "SELECT start,dienstArt,dienstBeginn,stationID,zeitStempel FROM krankmeldungen WHERE ersatzGefunden = 0 AND start >= SYSDATE()";
-        connection.query(sql, function (err, result) {
-            if (err) {
-                console.log(err)
-                console.log("Fehler bei der Datenbank Anfrage")
-                reject(err);
-            }
-            else {
-                resolve(result);
-                console.log(result)
-            };
+        let sql = "SELECT id,start,dienstArt,dienstBeginn,stationID,zeitStempel FROM krankmeldungen WHERE ersatzGefunden = 0 AND start >= SYSDATE()";
+        semaphore.take(function () {
+            connection.query(sql, function (err, result) {
+                if (err) {
+                    console.log(err)
+                    console.log("Fehler bei der Datenbank Anfrage")
+                    reject(err);
+
+                }
+                else {
+                    resolve(result);
+
+
+                };
+            });
         });
-});
+        semaphore.leave();
+    });
 }
 
 
 
-
+exports.benachrichtigungVermerken =benachrichtigungVermerken;
 exports.getAbwesenheitenOhneErsatz = getAbwesenheitenOhneErsatz;
 exports.ersatzEintragen = ersatzEintragen;
 exports.getAbwesenheitsErsatzInfo = getAbwesenheitsErsatzInfo;

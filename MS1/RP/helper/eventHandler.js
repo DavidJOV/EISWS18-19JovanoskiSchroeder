@@ -17,11 +17,11 @@ var messageCrew = function messageCrew(abwesenheitsMeldung, host) {
 
     sqlHandler.getAbwesenheitsMeldungID(abwesenheitsMeldung)
         .then(function setID(id) { abwesenheitsMeldungID = id[0].id; });
-        
+
 
     sqlHandler.getCrew(abwesenheitsMeldung)
         .then(function sendMSG(crew) {
-            
+
             // Ersatz Anfrage Mail an alle Kollegen schicken.
 
             mailHandler.ersatzAnfrage(crew, abwesenheitsMeldung, abwesenheitsMeldungID, host);
@@ -42,7 +42,7 @@ var sendConfirm = function sendConfirm(data) {
   Das await wartet also nicht in dem Sinne, dass der ausführende Thread blockiert.
   Stattdessen wird der Aufruf vom Compiler in eine Koroutine zerlegt,
   sodass während des Wartens anderer asynchroner Code laufen kann.
-  "Golo Roden https://www.heise.de/developer/artikel/async-und-await-fuer-Node-js-3633105.html 08.11.2018*/ 
+  "Golo Roden https://www.heise.de/developer/artikel/async-und-await-fuer-Node-js-3633105.html 08.11.2018
 // Warten blockiert nicht! #async #await
 
 var warteAufBestaetigung = async function warteAufBestaetigung(abwesenheitsMeldung) {
@@ -138,8 +138,8 @@ var warteAufBestaetigung = async function warteAufBestaetigung(abwesenheitsMeldu
         .catch(function (fehler) {
             console.log(fehler);
         })
-}
+}*/ //-> diese Idee verworfen, cron job scheint sinnvoller in /helper/checkAbwesenheiten.js
 
-exports.warteAufBestaetigung = warteAufBestaetigung;
+//exports.warteAufBestaetigung = warteAufBestaetigung;
 exports.messageCrew = messageCrew;
 exports.sendConfirm = sendConfirm;
