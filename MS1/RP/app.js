@@ -2,6 +2,9 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
+var cronJob = require("./helper/checkAbwesenheiten")
+// Alle 30 min Prüfen ob es noch offene Meldungen gibt.
+cronJob.prüfeMeldungen();
 
 
 

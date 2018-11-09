@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Erstellungszeit: 07. Nov 2018 um 22:54
+-- Erstellungszeit: 09. Nov 2018 um 16:17
 -- Server-Version: 5.6.34-log
 -- PHP-Version: 7.1.7
 
@@ -32,65 +32,50 @@ CREATE TABLE `krankmeldungen` (
   `id` int(30) NOT NULL,
   `pflegerID` int(11) NOT NULL,
   `stationID` int(30) NOT NULL,
-  `start` date NOT NULL,
+  `start` varchar(30) NOT NULL,
   `ende` date NOT NULL,
   `dienstArt` varchar(50) NOT NULL,
   `dienstBeginn` time NOT NULL,
   `ersatzGefunden` tinyint(1) NOT NULL,
-  `ersatzPfleger` int(11) DEFAULT NULL
+  `ersatzPfleger` int(11) DEFAULT NULL,
+  `zeitStempel` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
 --
--- Tabellenstruktur für Tabelle `pfleger`
+-- Daten für Tabelle `krankmeldungen`
 --
 
-CREATE TABLE `pfleger` (
-  `id` int(11) NOT NULL,
-  `stationID` int(30) NOT NULL,
-  `anrede` varchar(20) NOT NULL,
-  `vorname` varchar(30) NOT NULL,
-  `name` varchar(30) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `telefon` varchar(30) NOT NULL,
-  `beschaeftigungsArt` varchar(30) NOT NULL,
-  `start` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Daten für Tabelle `pfleger`
---
-
-INSERT INTO `pfleger` (`id`, `stationID`, `anrede`, `vorname`, `name`, `email`, `telefon`, `beschaeftigungsArt`, `start`) VALUES
-(10, 1, 'Frau', 'Hannelore', 'König', 'HK@gmail.com', '017727327', 'Vollzeit', '2017-09-13'),
-(12, 1, 'Herr', 'David', 'Jova', 'davidjova94@gmail.com', '017727327', 'Vollzeit', '2017-09-13'),
-(13, 1, 'Herr', 'Marco', 'Schroeder', 'marco.schroeder@smail.th-koeln.de', '017727327', 'Vollzeit', '2017-09-13');
-
--- --------------------------------------------------------
-
---
--- Tabellenstruktur für Tabelle `station`
---
-
-CREATE TABLE `station` (
-  `StationID` int(30) NOT NULL,
-  `StationsArt` varchar(50) NOT NULL,
-  `Name` varchar(50) NOT NULL,
-  `Ort` varchar(50) NOT NULL,
-  `PLZ` int(5) NOT NULL,
-  `Straße` varchar(50) NOT NULL,
-  `Hausnummer` int(5) NOT NULL,
-  `Telefon` int(30) NOT NULL,
-  `Email` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Daten für Tabelle `station`
---
-
-INSERT INTO `station` (`StationID`, `StationsArt`, `Name`, `Ort`, `PLZ`, `Straße`, `Hausnummer`, `Telefon`, `Email`) VALUES
-(1, 'Ambulanz', 'ZNA Leverkusen', 'Leverkusen', 51375, 'Krankenhausstrasse', 32, 20210210, 'kh@lev.de');
+INSERT INTO `krankmeldungen` (`id`, `pflegerID`, `stationID`, `start`, `ende`, `dienstArt`, `dienstBeginn`, `ersatzGefunden`, `ersatzPfleger`, `zeitStempel`) VALUES
+(68, 13, 1, '2018-11-08', '2018-03-11', 'Spaetdienst', '18:00:00', 1, 12, '2018-11-09 14:31:22'),
+(69, 13, 1, '2018-11-08', '2018-02-11', 'Spaetdienst', '18:00:00', 0, NULL, '2018-11-09 14:31:22'),
+(70, 13, 1, '2018-10-08', '2018-02-11', 'Spaetdienst', '18:00:00', 0, NULL, '2018-11-09 14:31:22'),
+(71, 13, 1, '2018-10-07', '2018-02-11', 'Spaetdienst', '18:00:00', 0, NULL, '2018-11-09 14:31:22'),
+(72, 13, 1, '2018-11-12', '2018-02-11', 'Spaetdienst', '18:00:00', 0, NULL, '2018-11-09 14:31:22'),
+(73, 13, 1, '2018-11-12', '2018-02-01', 'Spaetdienst', '18:00:00', 0, NULL, '2018-11-09 14:31:22'),
+(74, 13, 1, '2018-11-12', '2018-02-02', 'Spaetdienst', '18:00:00', 0, NULL, '2018-11-09 14:31:22'),
+(75, 13, 1, '2018-11-12', '2018-02-03', 'Spaetdienst', '18:00:00', 0, NULL, '2018-11-09 14:31:22'),
+(76, 13, 1, '2018-11-12', '2018-02-04', 'Spaetdienst', '18:00:00', 0, NULL, '2018-11-09 14:31:22'),
+(78, 13, 1, '2018-11-12', '2018-02-05', 'Spaetdienst', '18:00:00', 0, NULL, '2018-11-09 14:31:22'),
+(79, 13, 1, '2018-11-12', '2018-02-06', 'Spaetdienst', '18:00:00', 0, NULL, '2018-11-09 14:31:22'),
+(80, 13, 1, '2018-11-12', '2018-02-07', 'Spaetdienst', '18:00:00', 0, NULL, '2018-11-09 14:31:22'),
+(82, 13, 1, '2018-11-12', '2018-02-08', 'Spaetdienst', '18:00:00', 0, NULL, '2018-11-09 14:31:22'),
+(83, 13, 1, '2018-11-02', '2018-02-08', 'Spaetdienst', '18:00:00', 0, NULL, '2018-11-09 14:31:22'),
+(84, 13, 1, '2018-11-02', '2018-02-01', 'Spaetdienst', '18:00:00', 0, NULL, '2018-11-09 14:31:22'),
+(85, 13, 1, '2018-11-02', '2018-02-02', 'Spaetdienst', '18:00:00', 0, NULL, '2018-11-09 14:31:22'),
+(86, 13, 1, '2018-11-02', '2018-02-03', 'Spaetdienst', '18:00:00', 0, NULL, '2018-11-09 14:31:22'),
+(87, 13, 1, '2018-11-02', '2018-02-04', 'Spaetdienst', '18:00:00', 0, NULL, '2018-11-09 14:31:22'),
+(88, 13, 1, '2018-11-11', '2019-02-04', 'Spaetdienst', '18:00:00', 0, NULL, '2018-11-09 14:31:22'),
+(89, 13, 1, '2018-11-11', '2019-02-03', 'Spaetdienst', '18:00:00', 1, 12, '2018-11-09 14:31:22'),
+(91, 13, 1, '2018-11-11', '2019-02-05', 'Spaetdienst', '18:00:00', 1, 12, '2018-11-09 14:31:22'),
+(92, 13, 1, '2018-11-12', '2019-02-05', 'Spaetdienst', '18:00:00', 1, 12, '2018-11-09 14:31:22'),
+(93, 13, 1, '2018-11-24', '2019-02-05', 'Spaetdienst', '18:00:00', 0, NULL, '2018-11-09 14:32:03'),
+(94, 13, 1, '2018-11-10', '2019-02-05', 'Fruehdienst', '06:00:00', 0, NULL, '2018-11-09 15:21:30'),
+(95, 13, 1, '2018-11-11', '2019-02-05', 'Fruehdienst', '06:00:00', 0, NULL, '2018-11-09 15:35:00'),
+(96, 13, 1, '2018-11-12', '2019-02-05', 'Fruehdienst', '06:00:00', 1, 12, '2018-11-09 15:42:43'),
+(98, 13, 1, '2018-11-13', '2019-02-05', 'Fruehdienst', '06:00:00', 0, NULL, '2018-11-09 15:43:45'),
+(99, 13, 1, '2018-11-14', '2019-02-05', 'Fruehdienst', '06:00:00', 0, NULL, '2018-11-09 15:48:05'),
+(100, 13, 1, '2018-11-15', '2019-02-05', 'Fruehdienst', '06:00:00', 0, NULL, '2018-11-09 15:58:32'),
+(101, 13, 1, '2018-11-17', '2019-02-05', 'Fruehdienst', '06:00:00', 1, 12, '2018-11-09 16:16:26');
 
 --
 -- Indizes der exportierten Tabellen
@@ -106,20 +91,6 @@ ALTER TABLE `krankmeldungen`
   ADD KEY `ersatzPfleger` (`ersatzPfleger`);
 
 --
--- Indizes für die Tabelle `pfleger`
---
-ALTER TABLE `pfleger`
-  ADD PRIMARY KEY (`id`,`stationID`),
-  ADD UNIQUE KEY `stationID` (`stationID`,`vorname`,`name`,`email`);
-
---
--- Indizes für die Tabelle `station`
---
-ALTER TABLE `station`
-  ADD PRIMARY KEY (`StationID`),
-  ADD UNIQUE KEY `StationsArt` (`StationsArt`,`Name`,`Ort`,`PLZ`,`Straße`,`Hausnummer`);
-
---
 -- AUTO_INCREMENT für exportierte Tabellen
 --
 
@@ -127,17 +98,7 @@ ALTER TABLE `station`
 -- AUTO_INCREMENT für Tabelle `krankmeldungen`
 --
 ALTER TABLE `krankmeldungen`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
---
--- AUTO_INCREMENT für Tabelle `pfleger`
---
-ALTER TABLE `pfleger`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
---
--- AUTO_INCREMENT für Tabelle `station`
---
-ALTER TABLE `station`
-  MODIFY `StationID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 --
 -- Constraints der exportierten Tabellen
 --
@@ -149,12 +110,6 @@ ALTER TABLE `krankmeldungen`
   ADD CONSTRAINT `Pfleger-Krankmeldung` FOREIGN KEY (`pflegerID`) REFERENCES `pfleger` (`id`),
   ADD CONSTRAINT `Station-Krankmeldung` FOREIGN KEY (`stationID`) REFERENCES `station` (`StationID`),
   ADD CONSTRAINT `ersatzPfleger` FOREIGN KEY (`ersatzPfleger`) REFERENCES `pfleger` (`id`);
-
---
--- Constraints der Tabelle `pfleger`
---
-ALTER TABLE `pfleger`
-  ADD CONSTRAINT `Station-Pfleger` FOREIGN KEY (`stationID`) REFERENCES `station` (`StationID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

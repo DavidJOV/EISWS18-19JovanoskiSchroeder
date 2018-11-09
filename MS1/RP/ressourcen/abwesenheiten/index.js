@@ -41,7 +41,7 @@ router.post('/', bodyParser.json(), (req, res) => {
             // Event auslösen
 
             eventListener.eventEmitter.emit("abwesenheitsMeldung-eingereicht", abwesenheitsMeldung, req.headers.host);
-            eventListener.eventEmitter.emit("WarteAufRueckmeldung",abwesenheitsMeldung);
+            //eventListener.eventEmitter.emit("WarteAufRueckmeldung",abwesenheitsMeldung); - bessere Lösung cron Job ?
             res.status(200).send(abwesenheitsMeldung);
             console.log("1 neue abwesenheitsMeldung");
         })

@@ -153,11 +153,10 @@ var ersatzEintragen = function ersatzEintragen(id, pflegerID, stationID) {
 
 var getAbwesenheitsErsatzInfo = function getAbwesenheitsErsatzInfo(id, stationID) {
     return new Promise(function (resolve, reject) {
-        let sql2 = "SELECT start,dienstArt,ersatzPfleger,stationID FROM krankmeldungen WHERE stationID = " + stationID + " AND id = " + id;
-        connection.query(sql2, function (err, result) {
+        let sql = "SELECT start,dienstArt,ersatzPfleger,stationID FROM krankmeldungen WHERE stationID = " + stationID + " AND id = " + id;
+        connection.query(sql, function (err, result) {
             if (err) {
                 console.log(err)
-                console.log("Ersatz wurde eingetragen aber konnte nicht darüber Informiert werden.")
                 reject(err);
             }
             else {
@@ -169,10 +168,27 @@ var getAbwesenheitsErsatzInfo = function getAbwesenheitsErsatzInfo(id, stationID
     });
 }
 
+var getAbwesenheitenOhneErsatz = function getAbwesenheitenOhneErsatz(){
+    return new Promise(function (resolve, reject) {
+        let sql = "SELECT start,dienstArt,dienstBeginn,stationID,zeitStempel FROM krankmeldungen WHERE ersatzGefunden = 0 AND start >= SYSDATE()";
+        connection.query(sql, function (err, result) {
+            if (err) {
+                console.log(err)
+                console.log("Fehler bei der Datenbank Anfrage")
+                reject(err);
+            }
+            else {
+                resolve(result);
+                console.log(result)
+            };
+        });
+});
+}
 
 
 
 
+exports.getAbwesenheitenOhneErsatz = getAbwesenheitenOhneErsatz;
 exports.ersatzEintragen = ersatzEintragen;
 exports.getAbwesenheitsErsatzInfo = getAbwesenheitsErsatzInfo;
 exports.neueAbwesenheitsMeldung = neueAbwesenheitsMeldung;
