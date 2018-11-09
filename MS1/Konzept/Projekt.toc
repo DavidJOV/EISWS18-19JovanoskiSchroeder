@@ -4,81 +4,82 @@
 \contentsline {subsection}{\numberline {1.2}Zielsetzung}{4}{subsection.1.2}
 \contentsline {subsection}{\numberline {1.3}Verteilung der Anwendungslogik}{4}{subsection.1.3}
 \contentsline {subsection}{\numberline {1.4}Gesellschaftlicher Aspekt}{4}{subsection.1.4}
-\contentsline {section}{\numberline {2}Dom\IeC {\"a}nenrecherche}{4}{section.2}
-\contentsline {subsection}{\numberline {2.1}Krankenhaus}{4}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}gesetzliche Rahmenbedingungen}{5}{subsection.2.2}
-\contentsline {section}{\numberline {3}Stakeholderanalyse}{6}{section.3}
-\contentsline {section}{\numberline {4}Anforderungen und Erfordernisse}{6}{section.4}
-\contentsline {subsection}{\numberline {4.1}Erfordernisse}{6}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Anforderungen}{6}{subsection.4.2}
-\contentsline {section}{\numberline {5}Zielhierarchie}{7}{section.5}
-\contentsline {subsection}{\numberline {5.1}Strategische Ziele}{7}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Taktische Ziele}{7}{subsection.5.2}
+\contentsline {section}{\numberline {2}Dom\IeC {\"a}nenrecherche}{5}{section.2}
+\contentsline {subsection}{\numberline {2.1}Krankenhaus}{5}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}gesetzliche Rahmenbedingungen}{6}{subsection.2.2}
+\contentsline {section}{\numberline {3}Stakeholderanalyse}{7}{section.3}
+\contentsline {section}{\numberline {4}Anforderungen und Erfordernisse}{7}{section.4}
+\contentsline {subsection}{\numberline {4.1}Erfordernisse}{7}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Anforderungen}{7}{subsection.4.2}
+\contentsline {section}{\numberline {5}Zielhierarchie}{8}{section.5}
+\contentsline {subsection}{\numberline {5.1}Strategische Ziele}{8}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Taktische Ziele}{8}{subsection.5.2}
 \contentsline {subsection}{\numberline {5.3}Operative Ziele}{8}{subsection.5.3}
-\contentsline {section}{\numberline {6}Marktrecherche}{8}{section.6}
-\contentsline {subsection}{\numberline {6.1}Allgemein}{8}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Wettbewerb}{9}{subsection.6.2}
-\contentsline {subsection}{\numberline {6.3}Potential f\IeC {\"u}r neue Software}{9}{subsection.6.3}
+\contentsline {section}{\numberline {6}Marktrecherche}{9}{section.6}
+\contentsline {subsection}{\numberline {6.1}Allgemein}{9}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Wettbewerb}{10}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Potential f\IeC {\"u}r neue Software}{10}{subsection.6.3}
 \contentsline {subsection}{\numberline {6.4}Fazit}{10}{subsection.6.4}
-\contentsline {section}{\numberline {7}Alleinstellungsmerkmale}{10}{section.7}
-\contentsline {subsection}{\numberline {7.1}Automatisierte Dienstplanerstellung mit Spezialisierung auf die Branche Gesundheitswesen (im Detail Krankenh\IeC {\"a}user) }{10}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Handling von unerwarteten Mitarbeiterausf\IeC {\"a}llen}{10}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}Individualisierbarkeit ausgehend vom Arbeitnehmer}{11}{subsection.7.3}
+\contentsline {section}{\numberline {7}Alleinstellungsmerkmale}{11}{section.7}
+\contentsline {subsection}{\numberline {7.1}Automatisierte Dienstplanerstellung mit Spezialisierung auf die Branche Gesundheitswesen (im Detail Krankenh\IeC {\"a}user) }{11}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Handling von unerwarteten Mitarbeiterausf\IeC {\"a}llen}{11}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Individualisierbarkeit ausgehend vom Arbeitnehmer}{12}{subsection.7.3}
 \contentsline {section}{\numberline {8}Vorgehensmodell}{12}{section.8}
-\contentsline {section}{\numberline {9}Kommunikationsmodelle}{14}{section.9}
-\contentsline {subsection}{\numberline {9.1}Noch zu erg\IeC {\"a}nzen}{14}{subsection.9.1}
-\contentsline {section}{\numberline {10}Aufgabenmodellierung}{14}{section.10}
-\contentsline {subsection}{\numberline {10.1}Deskriptive Aufgabenmodellierung}{14}{subsection.10.1}
-\contentsline {subsection}{\numberline {10.2}SWOT Analyse}{16}{subsection.10.2}
-\contentsline {subsubsection}{\numberline {10.2.1}Strengths}{16}{subsubsection.10.2.1}
-\contentsline {subsubsection}{\numberline {10.2.2}Weaknesses}{16}{subsubsection.10.2.2}
-\contentsline {subsubsection}{\numberline {10.2.3}Opportunities}{17}{subsubsection.10.2.3}
-\contentsline {subsubsection}{\numberline {10.2.4}Threats}{17}{subsubsection.10.2.4}
-\contentsline {subsection}{\numberline {10.3}Pr\IeC {\"a}skriptive Aufgabenmodellierung}{17}{subsection.10.3}
-\contentsline {section}{\numberline {11}Systemarchitektur}{19}{section.11}
-\contentsline {subsection}{\numberline {11.1}Systembegr\IeC {\"u}ndung}{19}{subsection.11.1}
-\contentsline {subsubsection}{\numberline {11.1.1}Client-Server}{19}{subsubsection.11.1.1}
-\contentsline {subsubsection}{\numberline {11.1.2}Peer to Peer}{19}{subsubsection.11.1.2}
-\contentsline {subsubsection}{\numberline {11.1.3}Fazit}{19}{subsubsection.11.1.3}
-\contentsline {subsection}{\numberline {11.2}Architekturstil REST}{20}{subsection.11.2}
-\contentsline {subsubsection}{\numberline {11.2.1}Lose Kopplung}{20}{subsubsection.11.2.1}
-\contentsline {subsubsection}{\numberline {11.2.2}Interoperabilit\IeC {\"a}t}{20}{subsubsection.11.2.2}
-\contentsline {subsubsection}{\numberline {11.2.3}Wiederverwendbarkeit}{20}{subsubsection.11.2.3}
-\contentsline {subsubsection}{\numberline {11.2.4}Performance und Skalierbarkeit}{20}{subsubsection.11.2.4}
-\contentsline {subsection}{\numberline {11.3}Systemkomponenten}{21}{subsection.11.3}
-\contentsline {subsubsection}{\numberline {11.3.1}Server}{21}{subsubsection.11.3.1}
-\contentsline {subsubsection}{\numberline {11.3.2}Client}{21}{subsubsection.11.3.2}
-\contentsline {subsubsection}{\numberline {11.3.3}Message Broker}{22}{subsubsection.11.3.3}
-\contentsline {subsubsection}{\numberline {11.3.4}Datenhaltung}{22}{subsubsection.11.3.4}
-\contentsline {subsubsection}{\numberline {11.3.5}Kommunikation}{22}{subsubsection.11.3.5}
-\contentsline {section}{\numberline {12}Risikoanalyse}{22}{section.12}
-\contentsline {subsection}{\numberline {12.1}Allgemeine Risiken}{22}{subsection.12.1}
-\contentsline {subsubsection}{\numberline {12.1.1}Bereitschaft der Gesundheits- und Krankenpfleger}{22}{subsubsection.12.1.1}
-\contentsline {subsubsection}{\numberline {12.1.2}Unzufriedenheit}{22}{subsubsection.12.1.2}
-\contentsline {subsection}{\numberline {12.2}Projektspezifische Risiken}{22}{subsection.12.2}
-\contentsline {subsubsection}{\numberline {12.2.1}R\IeC {\"u}ckmeldung auf Abwesenheitsmeldung}{22}{subsubsection.12.2.1}
-\contentsline {subsubsection}{\numberline {12.2.2}Simultane R\IeC {\"u}ckmeldung auf Ersatzanfrage}{23}{subsubsection.12.2.2}
-\contentsline {subsubsection}{\numberline {12.2.3}Schichtentausch}{23}{subsubsection.12.2.3}
-\contentsline {subsubsection}{\numberline {12.2.4}Benachrichtigen bei Abwesenheitsmeldung}{23}{subsubsection.12.2.4}
-\contentsline {subsubsection}{\numberline {12.2.5}W\IeC {\"u}nsche zur Einsatzplanung}{23}{subsubsection.12.2.5}
-\contentsline {section}{\numberline {13}Proof of Concept}{23}{section.13}
-\contentsline {subsection}{\numberline {13.1}R\IeC {\"u}ckmeldung auf Abwesenheitsmeldung}{23}{subsection.13.1}
-\contentsline {subsubsection}{\numberline {13.1.1}Exit:}{23}{subsubsection.13.1.1}
-\contentsline {subsubsection}{\numberline {13.1.2}Fail:}{23}{subsubsection.13.1.2}
-\contentsline {subsubsection}{\numberline {13.1.3}Fallback:}{23}{subsubsection.13.1.3}
-\contentsline {subsection}{\numberline {13.2}Simultane R\IeC {\"u}ckmeldung auf Ersatzanfrage}{23}{subsection.13.2}
-\contentsline {subsubsection}{\numberline {13.2.1}Exit:}{24}{subsubsection.13.2.1}
-\contentsline {subsubsection}{\numberline {13.2.2}Fail:}{24}{subsubsection.13.2.2}
-\contentsline {subsubsection}{\numberline {13.2.3}Fallback:}{24}{subsubsection.13.2.3}
-\contentsline {subsection}{\numberline {13.3}Schichtentausch}{24}{subsection.13.3}
-\contentsline {subsubsection}{\numberline {13.3.1}Exit:}{24}{subsubsection.13.3.1}
-\contentsline {subsubsection}{\numberline {13.3.2}Fail:}{24}{subsubsection.13.3.2}
-\contentsline {subsubsection}{\numberline {13.3.3}Fallback:}{24}{subsubsection.13.3.3}
-\contentsline {subsection}{\numberline {13.4}Benachrichtigen bei Abwesenheitsmeldung}{24}{subsection.13.4}
-\contentsline {subsubsection}{\numberline {13.4.1}Exit:}{24}{subsubsection.13.4.1}
-\contentsline {subsubsection}{\numberline {13.4.2}Fail:}{24}{subsubsection.13.4.2}
-\contentsline {subsubsection}{\numberline {13.4.3}Fallback:}{24}{subsubsection.13.4.3}
-\contentsline {subsection}{\numberline {13.5}W\IeC {\"u}nsche zur Einsatzplanung}{25}{subsection.13.5}
-\contentsline {subsubsection}{\numberline {13.5.1}Exit:}{25}{subsubsection.13.5.1}
-\contentsline {subsubsection}{\numberline {13.5.2}Fail:}{25}{subsubsection.13.5.2}
-\contentsline {subsubsection}{\numberline {13.5.3}Fallback:}{25}{subsubsection.13.5.3}
+\contentsline {section}{\numberline {9}Kommunikationsmodelle}{15}{section.9}
+\contentsline {subsection}{\numberline {9.1}Deskriptives Modell}{15}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}Pr\IeC {\"a}skriptives Modell}{16}{subsection.9.2}
+\contentsline {section}{\numberline {10}Aufgabenmodellierung}{16}{section.10}
+\contentsline {subsection}{\numberline {10.1}Deskriptive Aufgabenmodellierung}{16}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.2}SWOT Analyse}{18}{subsection.10.2}
+\contentsline {subsubsection}{\numberline {10.2.1}Strengths}{18}{subsubsection.10.2.1}
+\contentsline {subsubsection}{\numberline {10.2.2}Weaknesses}{18}{subsubsection.10.2.2}
+\contentsline {subsubsection}{\numberline {10.2.3}Opportunities}{19}{subsubsection.10.2.3}
+\contentsline {subsubsection}{\numberline {10.2.4}Threats}{19}{subsubsection.10.2.4}
+\contentsline {subsection}{\numberline {10.3}Pr\IeC {\"a}skriptive Aufgabenmodellierung}{19}{subsection.10.3}
+\contentsline {section}{\numberline {11}Systemarchitektur}{21}{section.11}
+\contentsline {subsection}{\numberline {11.1}Systembegr\IeC {\"u}ndung}{21}{subsection.11.1}
+\contentsline {subsubsection}{\numberline {11.1.1}Client-Server}{21}{subsubsection.11.1.1}
+\contentsline {subsubsection}{\numberline {11.1.2}Peer to Peer}{21}{subsubsection.11.1.2}
+\contentsline {subsubsection}{\numberline {11.1.3}Fazit}{21}{subsubsection.11.1.3}
+\contentsline {subsection}{\numberline {11.2}Architekturstil REST}{22}{subsection.11.2}
+\contentsline {subsubsection}{\numberline {11.2.1}Lose Kopplung}{22}{subsubsection.11.2.1}
+\contentsline {subsubsection}{\numberline {11.2.2}Interoperabilit\IeC {\"a}t}{22}{subsubsection.11.2.2}
+\contentsline {subsubsection}{\numberline {11.2.3}Wiederverwendbarkeit}{22}{subsubsection.11.2.3}
+\contentsline {subsubsection}{\numberline {11.2.4}Performance und Skalierbarkeit}{22}{subsubsection.11.2.4}
+\contentsline {subsection}{\numberline {11.3}Systemkomponenten}{23}{subsection.11.3}
+\contentsline {subsubsection}{\numberline {11.3.1}Server}{23}{subsubsection.11.3.1}
+\contentsline {subsubsection}{\numberline {11.3.2}Client}{23}{subsubsection.11.3.2}
+\contentsline {subsubsection}{\numberline {11.3.3}Message Broker}{24}{subsubsection.11.3.3}
+\contentsline {subsubsection}{\numberline {11.3.4}Datenhaltung}{24}{subsubsection.11.3.4}
+\contentsline {subsubsection}{\numberline {11.3.5}Kommunikation}{24}{subsubsection.11.3.5}
+\contentsline {section}{\numberline {12}Risikoanalyse}{24}{section.12}
+\contentsline {subsection}{\numberline {12.1}Allgemeine Risiken}{24}{subsection.12.1}
+\contentsline {subsubsection}{\numberline {12.1.1}Bereitschaft der Gesundheits- und Krankenpfleger}{24}{subsubsection.12.1.1}
+\contentsline {subsubsection}{\numberline {12.1.2}Unzufriedenheit}{24}{subsubsection.12.1.2}
+\contentsline {subsection}{\numberline {12.2}Projektspezifische Risiken}{24}{subsection.12.2}
+\contentsline {subsubsection}{\numberline {12.2.1}R\IeC {\"u}ckmeldung auf Abwesenheitsmeldung}{24}{subsubsection.12.2.1}
+\contentsline {subsubsection}{\numberline {12.2.2}Simultane R\IeC {\"u}ckmeldung auf Ersatzanfrage}{25}{subsubsection.12.2.2}
+\contentsline {subsubsection}{\numberline {12.2.3}Schichtentausch}{25}{subsubsection.12.2.3}
+\contentsline {subsubsection}{\numberline {12.2.4}Benachrichtigen bei Abwesenheitsmeldung}{25}{subsubsection.12.2.4}
+\contentsline {subsubsection}{\numberline {12.2.5}W\IeC {\"u}nsche zur Einsatzplanung}{25}{subsubsection.12.2.5}
+\contentsline {section}{\numberline {13}Proof of Concept}{25}{section.13}
+\contentsline {subsection}{\numberline {13.1}R\IeC {\"u}ckmeldung auf Abwesenheitsmeldung}{25}{subsection.13.1}
+\contentsline {subsubsection}{\numberline {13.1.1}Exit:}{25}{subsubsection.13.1.1}
+\contentsline {subsubsection}{\numberline {13.1.2}Fail:}{25}{subsubsection.13.1.2}
+\contentsline {subsubsection}{\numberline {13.1.3}Fallback:}{25}{subsubsection.13.1.3}
+\contentsline {subsection}{\numberline {13.2}Simultane R\IeC {\"u}ckmeldung auf Ersatzanfrage}{25}{subsection.13.2}
+\contentsline {subsubsection}{\numberline {13.2.1}Exit:}{26}{subsubsection.13.2.1}
+\contentsline {subsubsection}{\numberline {13.2.2}Fail:}{26}{subsubsection.13.2.2}
+\contentsline {subsubsection}{\numberline {13.2.3}Fallback:}{26}{subsubsection.13.2.3}
+\contentsline {subsection}{\numberline {13.3}Schichtentausch}{26}{subsection.13.3}
+\contentsline {subsubsection}{\numberline {13.3.1}Exit:}{26}{subsubsection.13.3.1}
+\contentsline {subsubsection}{\numberline {13.3.2}Fail:}{26}{subsubsection.13.3.2}
+\contentsline {subsubsection}{\numberline {13.3.3}Fallback:}{26}{subsubsection.13.3.3}
+\contentsline {subsection}{\numberline {13.4}Benachrichtigen bei Abwesenheitsmeldung}{26}{subsection.13.4}
+\contentsline {subsubsection}{\numberline {13.4.1}Exit:}{26}{subsubsection.13.4.1}
+\contentsline {subsubsection}{\numberline {13.4.2}Fail:}{26}{subsubsection.13.4.2}
+\contentsline {subsubsection}{\numberline {13.4.3}Fallback:}{26}{subsubsection.13.4.3}
+\contentsline {subsection}{\numberline {13.5}W\IeC {\"u}nsche zur Einsatzplanung}{27}{subsection.13.5}
+\contentsline {subsubsection}{\numberline {13.5.1}Exit:}{27}{subsubsection.13.5.1}
+\contentsline {subsubsection}{\numberline {13.5.2}Fail:}{27}{subsubsection.13.5.2}
+\contentsline {subsubsection}{\numberline {13.5.3}Fallback:}{27}{subsubsection.13.5.3}

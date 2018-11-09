@@ -16,8 +16,8 @@ const settings = {
 };
 
 
-const schwestern = require('./ressourcen/schwestern/index.js');
-app.use('/schwestern', schwestern);
+const krankenpfleger = require('./ressourcen/krankenpfleger/index.js');
+app.use('/krankenpfleger', krankenpfleger);
 
 const krankmeldungen = require('./ressourcen/krankmeldungen/index.js');
 app.use('/krankmeldungen', krankmeldungen);
