@@ -1,0 +1,17 @@
+1. /DB/pflegerDB.sql bei PHPMYADMIN importieren, zuvor eine Datenbank "krankenpfleger" anlegen und diese auswählen.
+2. ggf port anpassen in /DB/dbConnector.js
+var connection = mysql.createConnection({
+    host: 'localhost',
+    port: '3306',
+    user: 'root',
+    password: 'root',
+    database: 'krankenpfleger',
+    multipleStatements : false // Sicherheits Aspekt - keine Sql injections.
+});
+3. node app.js
+4. JSON Formate aus dem github Wiki entnehmen
+5. Post an /krankenpfleger bzw. /abwesenheiten mit JSONs, für das bestätigen einer Übernahme muss eine empfänger Mailadresse im JSON angegeben werden.
+6. ggf. eigene Mailadresse eintragen und schauen ob man Benachrichtigt wurde, falls jemand anderes krank gemeldet wurde.
+
+PS: ggf. ist der Service Sister Shift, unter sistershift.ddns.net/krankenpfleger bzw. sistershift.ddns.net/abwesenheiten online, dann können die Funktionen auch dort getestet werden.
+GET req an sistershift.ddns.net/krankenpfleger senden -> res - > hello world Sister Shift = online.

@@ -13,6 +13,12 @@
 \title{\textbf{Sister Shift} \\ Konzept \\ erstellt von}
 
 \author{David Jovanoski & Marco Schröder}
+\date{\parbox{\linewidth}{\centering%
+  \today\endgraf\bigskip
+  Prof. Dr. Kristian Fischer \hspace*{1cm} Prof. Dr. Gerhard Hartmann\endgraf\medskip
+ Entwicklungsprojekt interaktive Systeme \endgraf
+ \vspace{0.5cm}
+  TH Köln}}
 \begin{document}
 \begin{figure}
 \includegraphics[scale=1]{Bilder/Logo_TH-Koeln_RGB_17pt.jpg}
@@ -310,4 +316,6 @@ Der Dienstplan beinhaltet den Wunsch.
 Der Wunsch wurde in der Dienstplanerstellung nicht berücksichtigt.
 \subsubsection{Fallback:}
 Es ist wichtig, dass Krankenpfleger Wünsche zur Einsatzplanung äußern können. Die Berücksichtigung dieser ist nicht immer gewährleistet. Das System verteilt den Grad der Berücksichtigung durch ein Rating fair auf alle Krankenpfleger.
+\section{Rapid Prototype}
+Der Rapid Prototype adressiert das Alleinstellungsmerkmal 7.2 Handling von unerwarteten Mitarbeiterausfällen. Es ist für einen Krankenpfleger möglich sich Krank zu melden. Erfolgt dies, benachrichtigt das System alle anderen Kollegen und fragt diese als Ersatzkräfte an. Zu dem prüft das System in einem Intervall ob sich bereits jemand als Ersatz gefunden hat. Ist dies nicht der Fall und der Zeitpunkt des Krankheitsfalls rückt näher, ohne dass sich jemand gemeldet hat, wird eine im Vertrag mit der Station stehende Zeitarbeitsfirma automatisch benachrichtigt. Es werden bereits Verschlüsselungstechniken, sowie eine Zugriffsteuerung über Semaphore genutzt. Ein Defizit ist zurzeit, die Verletzung der Idempotenz eines GET Requests.
 \end{document}
