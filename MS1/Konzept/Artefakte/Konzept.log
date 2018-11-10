@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.20)  9 NOV 2018 21:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.20)  10 NOV 2018 15:42
 entering extended mode
 **./Konzept.tex
 (Konzept.tex
@@ -405,7 +405,7 @@ LaTeX Info: Redefining \nameref on input line 22.
 \@outlinefile=\write3
 \openout3 = `Konzept.out'.
 
-<Bilder/Logo_TH-Koeln_RGB_17pt.jpg, id=343, 88.8921pt x 47.6982pt>
+<Bilder/Logo_TH-Koeln_RGB_17pt.jpg, id=347, 88.8921pt x 47.6982pt>
 File: Bilder/Logo_TH-Koeln_RGB_17pt.jpg Graphic file (type jpg)
 <use Bilder/Logo_TH-Koeln_RGB_17pt.jpg>
 Package pdftex.def Info: Bilder/Logo_TH-Koeln_RGB_17pt.jpg  used on input line 
@@ -426,16 +426,16 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.27 \tableofcontents
-                     
+l.27 \newpage
+             
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
-(Konzept.toc [1
+[1
 
 {C:/Users/DavidJovanoski/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./
-Bilder/Logo_TH-Koeln_RGB_17pt.jpg>] [2])
+Bilder/Logo_TH-Koeln_RGB_17pt.jpg>] (Konzept.toc [2] [3])
 \tf@toc=\write4
 \openout4 = `Konzept.toc'.
 
@@ -443,481 +443,481 @@ Bilder/Logo_TH-Koeln_RGB_17pt.jpg>] [2])
 \tf@lof=\write5
 \openout5 = `Konzept.lof'.
 
- [3]
-<Bilder/Domaenenmodell.jpg, id=477, 553.06625pt x 512.91624pt>
-File: Bilder/Domaenenmodell.jpg Graphic file (type jpg)
-<use Bilder/Domaenenmodell.jpg>
-Package pdftex.def Info: Bilder/Domaenenmodell.jpg  used on input line 40.
-(pdftex.def)             Requested size: 331.8423pt x 307.75212pt.
 
 [4]
-Overfull \hbox (1.47095pt too wide) in paragraph at lines 44--50
+<Bilder/Domaenenmodell.jpg, id=487, 553.06625pt x 512.91624pt>
+File: Bilder/Domaenenmodell.jpg Graphic file (type jpg)
+<use Bilder/Domaenenmodell.jpg>
+Package pdftex.def Info: Bilder/Domaenenmodell.jpg  used on input line 41.
+(pdftex.def)             Requested size: 331.8423pt x 307.75212pt.
+ [5]
+Overfull \hbox (1.47095pt too wide) in paragraph at lines 45--51
 \T1/cmr/m/n/10 den täg-li-chen Rou-ti-ne-be-trieb zu be-wäl-ti-gen und die Funk
 -ti-ons-fä-hig-keit des Kran-
  []
 
-[5 <./Bilder/Domaenenmodell.jpg>] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 57--57
+[6 <./Bilder/Domaenenmodell.jpg>] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 58--58
 []|\T1/cmr/m/n/10 Erfordernis/Erwar
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--58
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
 []|\T1/cmr/m/n/10 Gesundheits-und
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--58
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
 []|\T1/cmr/m/n/10 Erstellung fai-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--58
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
 \T1/cmr/m/n/10 rer Dienst-plä-ne;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--58
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
 \T1/cmr/m/n/10 Wunsch-äu-ÿe-rung;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--58
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
 \T1/cmr/m/n/10 Au-to-ma-ti-sier-te
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--58
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
 \T1/cmr/m/n/10 Er-satz-fin-dung bei
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--58
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
 \T1/cmr/m/n/10 di-vi-dua-li-sier-bar-keit
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--58
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
 []|\T1/cmr/m/n/10 Dienstpläne sind
  []
 
 
-Underfull \hbox (badness 1082) in paragraph at lines 58--58
+Underfull \hbox (badness 1082) in paragraph at lines 59--59
 \T1/cmr/m/n/10 Fair ge-stal-tet und
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--58
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
 \T1/cmr/m/n/10 Wün-sche wer-den
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--58
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
 \T1/cmr/m/n/10 mit-ein-ge-bun-den;
  []
 
 
-Underfull \hbox (badness 1331) in paragraph at lines 58--58
+Underfull \hbox (badness 1331) in paragraph at lines 59--59
 \T1/cmr/m/n/10 Das Sy-stem au-to-
  []
 
 
-Underfull \hbox (badness 1478) in paragraph at lines 58--58
+Underfull \hbox (badness 1478) in paragraph at lines 59--59
 \T1/cmr/m/n/10 so-nal-aus-falls; In-di-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--58
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
 \T1/cmr/m/n/10 vi-dua-li-sier-bar-keit
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--58
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
 \T1/cmr/m/n/10 Ein-schrän-kun-gen
  []
 
 
-Underfull \hbox (badness 4168) in paragraph at lines 58--58
+Underfull \hbox (badness 4168) in paragraph at lines 59--59
 \T1/cmr/m/n/10 mög-lich; Das Sy-
  []
 
 
-Underfull \hbox (badness 3439) in paragraph at lines 58--58
+Underfull \hbox (badness 3439) in paragraph at lines 59--59
 \T1/cmr/m/n/10 ver-ste-hen und zu
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 []|\T1/cmr/m/n/10 Automatisierte
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 \T1/cmr/m/n/10 Diens-pla-ner-stel-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 \T1/cmr/m/n/10 bei Per-so-nal-aus-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 \T1/cmr/m/n/10 fall; In-di-vi-dua-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 \T1/cmr/m/n/10 li-sier-bar-keit des
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 []|\T1/cmr/m/n/10 Faire Dienst-plä-ne
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 \T1/cmr/m/n/10 wer-den au-to-ma-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 \T1/cmr/m/n/10 tisch, oh-ne viel
  []
 
 
-Underfull \hbox (badness 3735) in paragraph at lines 59--59
+Underfull \hbox (badness 3735) in paragraph at lines 60--60
 \T1/cmr/m/n/10 ge-steu-er-tem In-put
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 \T1/cmr/m/n/10 ge-ne-riert; Mit-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 \T1/cmr/m/n/10 ar-bei-ter kön-nen
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 \T1/cmr/m/n/10 Ih-ren Dienst-plan
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 59--59
+Underfull \hbox (badness 2591) in paragraph at lines 60--60
 \T1/cmr/m/n/10 selbst-stän-dig In-di-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 \T1/cmr/m/n/10 vi-dua-li-sie-ren; Das
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 \T1/cmr/m/n/10 Sy-stem au-to-ma-
  []
 
 
-Underfull \hbox (badness 4543) in paragraph at lines 59--59
+Underfull \hbox (badness 4543) in paragraph at lines 60--60
 \T1/cmr/m/n/10 ti-siert das fin-den
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 \T1/cmr/m/n/10 so-nal-aus-falls; Un-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 \T1/cmr/m/n/10 ter-stüt-zung beim
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 \T1/cmr/m/n/10 Per-so-nal-ma-na-ge-
  []
 
 
-Overfull \hbox (7.95229pt too wide) in paragraph at lines 59--59
+Overfull \hbox (7.95229pt too wide) in paragraph at lines 60--60
 \T1/cmr/m/n/10 ment+Zeitgewinnung
  []
 
 
-Underfull \hbox (badness 1292) in paragraph at lines 59--59
+Underfull \hbox (badness 1292) in paragraph at lines 60--60
 \T1/cmr/m/n/10 für an-de-re Auf-ga-
  []
 
 
-Underfull \hbox (badness 4726) in paragraph at lines 59--59
+Underfull \hbox (badness 4726) in paragraph at lines 60--60
 \T1/cmr/m/n/10 ben; Das Sy-stem
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 \T1/cmr/m/n/10 ist ein-fach zu
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 \T1/cmr/m/n/10 ver-ste-hen und
  []
 
 
-Underfull \hbox (badness 5203) in paragraph at lines 59--59
+Underfull \hbox (badness 5203) in paragraph at lines 60--60
 \T1/cmr/m/n/10 zu be-die-nen; Be-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 \T1/cmr/m/n/10 nach-rich-ti-gung
  []
 
 
-Underfull \hbox (badness 2426) in paragraph at lines 59--59
+Underfull \hbox (badness 2426) in paragraph at lines 60--60
 \T1/cmr/m/n/10 bei et-wai-gen Per-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 \T1/cmr/m/n/10 so-nal-aus-fäl-len/
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 \T1/cmr/m/n/10 Dienst-plan-än-de-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--60
+Underfull \hbox (badness 10000) in paragraph at lines 61--61
 []|\T1/cmr/m/n/10 Druchgängige
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--60
+Underfull \hbox (badness 10000) in paragraph at lines 61--61
 \T1/cmr/m/n/10 Zu-tei-lung ei-ner
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--60
+Underfull \hbox (badness 10000) in paragraph at lines 61--61
 \T1/cmr/m/n/10 Pfle-ge-kraft auf
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--60
+Underfull \hbox (badness 10000) in paragraph at lines 61--61
 \T1/cmr/m/n/10 die ent-spre-chen-de
  []
 
 
-Underfull \hbox (badness 3260) in paragraph at lines 60--61
+Underfull \hbox (badness 3260) in paragraph at lines 61--62
 []|\T1/cmr/m/n/10 Es ist per-ma-nent
  []
 
 
-Underfull \hbox (badness 3525) in paragraph at lines 60--61
+Underfull \hbox (badness 3525) in paragraph at lines 61--62
 \T1/cmr/m/n/10 ten ein-ge-teilt um
  []
 
 
-Underfull \hbox (badness 5939) in paragraph at lines 60--61
+Underfull \hbox (badness 5939) in paragraph at lines 61--62
 \T1/cmr/m/n/10 bei et-wai-gen Be-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--62
+Underfull \hbox (badness 10000) in paragraph at lines 63--63
 []|\T1/cmr/m/n/10 Umfassende Un-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--62
+Underfull \hbox (badness 10000) in paragraph at lines 63--63
 \T1/cmr/m/n/10 ter-stüt-zung der
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--62
+Underfull \hbox (badness 10000) in paragraph at lines 63--63
 \T1/cmr/m/n/10 Dienst-pla-ner-stel-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
 []|\T1/cmr/m/n/10 Dienstpläne sind
  []
 
 
-Underfull \hbox (badness 1454) in paragraph at lines 64--64
+Underfull \hbox (badness 1454) in paragraph at lines 65--65
 []|\T1/cmr/m/n/10 Einhaltung ge-setz-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--64
+Underfull \hbox (badness 10000) in paragraph at lines 65--65
 \T1/cmr/m/n/10 Faire Be-hand-lung
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--64
+Underfull \hbox (badness 10000) in paragraph at lines 65--65
 \T1/cmr/m/n/10 der Ar-beit-neh-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
 []|\T1/cmr/m/n/10 Die Dienst-plä-ne
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
 \T1/cmr/m/n/10 müs-sen nach-weis-
  []
 
 
-Underfull \hbox (badness 3323) in paragraph at lines 64--65
+Underfull \hbox (badness 3323) in paragraph at lines 65--66
 \T1/cmr/m/n/10 bar die Ge-set-zes-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--66
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
 []|\T1/cmr/m/n/10 Automatisierte
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--66
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
 \T1/cmr/m/n/10 Dienst-pla-ner-stel-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--66
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
 \T1/cmr/m/n/10 auf Ab-we-sen-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--66
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
 \T1/cmr/m/n/10 heits-mel-dung;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--66
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
 \T1/cmr/m/n/10 In-di-vi-dua-li-sier-bar-
  []
 
 
-Underfull \hbox (badness 2088) in paragraph at lines 66--67
+Underfull \hbox (badness 2088) in paragraph at lines 67--68
 []|\T1/cmr/m/n/10 Das Sy-stem muss
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 \T1/cmr/m/n/10 auch in ex-trem
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 \T1/cmr/m/n/10 Si-tua-tio-nen(Viele
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 \T1/cmr/m/n/10 Ab-we-sen-heits-vor-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 \T1/cmr/m/n/10 fäl-le o.ä.) einen
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 \T1/cmr/m/n/10 ver-nüf-ti-gen und
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 \T1/cmr/m/n/10 fai-ren Dienst-plan
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 \T1/cmr/m/n/10 ge-ne-rie-ren; In-di-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 \T1/cmr/m/n/10 vi-dua-li-sier-bar-keit
  []
 
 
-Underfull \hbox (badness 6575) in paragraph at lines 66--67
+Underfull \hbox (badness 6575) in paragraph at lines 67--68
 \T1/cmr/m/n/10 muss mit Be-din-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 \T1/cmr/m/n/10 gun-gen kon-form
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 \T1/cmr/m/n/10 sein; Er-satz-fin-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 \T1/cmr/m/n/10 Per-so-nal-aus-fall
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 \T1/cmr/m/n/10 muss pro-blem-los
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+Underfull \hbox (badness 10000) in paragraph at lines 69--69
 []|\T1/cmr/m/n/10 Dienstleistungs-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+Underfull \hbox (badness 10000) in paragraph at lines 69--69
 []|\T1/cmr/m/n/10 Heranziehen von
  []
 
 
-Underfull \hbox (badness 2065) in paragraph at lines 68--68
+Underfull \hbox (badness 2065) in paragraph at lines 69--69
 \T1/cmr/m/n/10 ex-ter-nem Per-so-nal
  []
 
 
-Underfull \hbox (badness 6526) in paragraph at lines 68--69
+Underfull \hbox (badness 6526) in paragraph at lines 69--70
 []|\T1/cmr/m/n/10 Rechtzeitiges Ein-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--69
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
 \T1/cmr/m/n/10 ord-nungs-ge-mä-ÿe
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--69
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
 \T1/cmr/m/n/10 Zeit-ar-beits-ver-trä-ge
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--69
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
 \T1/cmr/m/n/10 ab-sch-lies-sen zu
  []
 
 
-Overfull \hbox (44.43304pt too wide) in alignment at lines 55--70
+Overfull \hbox (44.43304pt too wide) in alignment at lines 56--71
  [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 70
+Underfull \vbox (badness 10000) detected at line 71
  []
 
-[7] [8] [9] [10]
+[8] [9] [10] [11]
 ! Misplaced alignment tab character &.
-l.121 ...nstplan erstellen: Gesetzliche Regelung &
+l.122 ...nstplan erstellen: Gesetzliche Regelung &
                                                    Rechte des Arbeitnehmers)
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -926,9 +926,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[11]
+[12]
 ! Misplaced alignment tab character &.
-l.127 ... der SoftwarefÃ¼hrer: NEXUS/ Dienstplan &
+l.128 ... der SoftwarefÃ¼hrer: NEXUS/ Dienstplan &
                                                    NEXUS/ PERSONALMANAGEMENT)
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -937,148 +937,175 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[12] [13]
-<Bilder/USP.jpg, id=522, 763.85374pt x 703.62875pt>
+[13] [14]
+<Bilder/USP.jpg, id=531, 763.85374pt x 703.62875pt>
 File: Bilder/USP.jpg Graphic file (type jpg)
 <use Bilder/USP.jpg>
-Package pdftex.def Info: Bilder/USP.jpg  used on input line 142.
+Package pdftex.def Info: Bilder/USP.jpg  used on input line 143.
 (pdftex.def)             Requested size: 343.731pt x 316.63pt.
- [14]
-<Bilder/Vorgehensmodell.png, id=527, 622.57594pt x 384.6872pt>
+ [15]
+<Bilder/Vorgehensmodell.png, id=536, 622.57594pt x 384.6872pt>
 File: Bilder/Vorgehensmodell.png Graphic file (type png)
 <use Bilder/Vorgehensmodell.png>
-Package pdftex.def Info: Bilder/Vorgehensmodell.png  used on input line 149.
+Package pdftex.def Info: Bilder/Vorgehensmodell.png  used on input line 150.
 (pdftex.def)             Requested size: 342.41782pt x 211.5786pt.
- [15 <./Bilder/USP.jpg>]
-<Bilder/1200px-Waterfall_model.jpg, id=532, 903.375pt x 677.53125pt>
+ [16 <./Bilder/USP.jpg>]
+<Bilder/1200px-Waterfall_model.jpg, id=541, 903.375pt x 677.53125pt>
 File: Bilder/1200px-Waterfall_model.jpg Graphic file (type jpg)
 <use Bilder/1200px-Waterfall_model.jpg>
 Package pdftex.def Info: Bilder/1200px-Waterfall_model.jpg  used on input line 
-159.
+160.
 (pdftex.def)             Requested size: 352.31483pt x 264.23611pt.
 
-Overfull \hbox (7.31483pt too wide) in paragraph at lines 159--160
+Overfull \hbox (7.31483pt too wide) in paragraph at lines 160--161
 [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16 <./Bilder/Vorgehensmodell.png>]
-<Bilder/KommunikationsmodellierungDeskriptiv.jpg, id=537, 1192.455pt x 757.8312
+[17 <./Bilder/Vorgehensmodell.png>]
+<Bilder/KommunikationsmodellierungDeskriptiv.jpg, id=546, 1192.455pt x 757.8312
 5pt>
 File: Bilder/KommunikationsmodellierungDeskriptiv.jpg Graphic file (type jpg)
 <use Bilder/KommunikationsmodellierungDeskriptiv.jpg>
 Package pdftex.def Info: Bilder/KommunikationsmodellierungDeskriptiv.jpg  used 
-on input line 167.
+on input line 168.
 (pdftex.def)             Requested size: 357.73926pt x 227.35112pt.
 
-Overfull \hbox (12.73926pt too wide) in paragraph at lines 167--168
+Overfull \hbox (12.73926pt too wide) in paragraph at lines 168--169
 [][] 
  []
 
-[17 <./Bilder/1200px-Waterfall_model.jpg>]
-<Bilder/PraeskriptivesKommunikationsmodell.jpg, id=542, 1211.52625pt x 515.9275
+[18 <./Bilder/1200px-Waterfall_model.jpg>]
+<Bilder/PraeskriptivesKommunikationsmodell.jpg, id=551, 1211.52625pt x 515.9275
 pt>
 File: Bilder/PraeskriptivesKommunikationsmodell.jpg Graphic file (type jpg)
 <use Bilder/PraeskriptivesKommunikationsmodell.jpg>
 Package pdftex.def Info: Bilder/PraeskriptivesKommunikationsmodell.jpg  used on
- input line 174.
+ input line 175.
 (pdftex.def)             Requested size: 363.46068pt x 154.77943pt.
 
-Overfull \hbox (18.46068pt too wide) in paragraph at lines 174--175
+Overfull \hbox (18.46068pt too wide) in paragraph at lines 175--176
 [][] 
  []
 
-[18 <./Bilder/KommunikationsmodellierungDeskriptiv.jpg>]
-<Bilder/Dienstplanerstellung.jpg, id=547, 816.04875pt x 575.14874pt>
+[19 <./Bilder/KommunikationsmodellierungDeskriptiv.jpg>]
+<Bilder/Dienstplanerstellung.jpg, id=557, 816.04875pt x 575.14874pt>
 File: Bilder/Dienstplanerstellung.jpg Graphic file (type jpg)
 <use Bilder/Dienstplanerstellung.jpg>
 Package pdftex.def Info: Bilder/Dienstplanerstellung.jpg  used on input line 18
-2.
+3.
 (pdftex.def)             Requested size: 326.41371pt x 230.05542pt.
-<Bilder/Ersatzplanung.jpg, id=548, 816.04875pt x 575.14874pt>
+<Bilder/Ersatzplanung.jpg, id=558, 816.04875pt x 575.14874pt>
 File: Bilder/Ersatzplanung.jpg Graphic file (type jpg)
 <use Bilder/Ersatzplanung.jpg>
-Package pdftex.def Info: Bilder/Ersatzplanung.jpg  used on input line 185.
+Package pdftex.def Info: Bilder/Ersatzplanung.jpg  used on input line 186.
 (pdftex.def)             Requested size: 326.41371pt x 230.05542pt.
-<Bilder/Individualisierung.jpg, id=549, 746.79pt x 557.08125pt>
+<Bilder/Individualisierung.jpg, id=559, 746.79pt x 557.08125pt>
 File: Bilder/Individualisierung.jpg Graphic file (type jpg)
 <use Bilder/Individualisierung.jpg>
-Package pdftex.def Info: Bilder/Individualisierung.jpg  used on input line 190.
+Package pdftex.def Info: Bilder/Individualisierung.jpg  used on input line 191.
 
 (pdftex.def)             Requested size: 298.7107pt x 222.82855pt.
- [19 <./Bilder/PraeskriptivesKommunikationsmodell.jpg>] [20 <./Bilder/Dienstpla
-nerstellung.jpg> <./Bilder/Ersatzplanung.jpg>] [21 <./Bilder/Individualisierung
+ [20 <./Bilder/PraeskriptivesKommunikationsmodell.jpg>] [21 <./Bilder/Dienstpla
+nerstellung.jpg> <./Bilder/Ersatzplanung.jpg>] [22 <./Bilder/Individualisierung
 .jpg>]
-<Bilder/DPerstellung.jpg, id=563, 769.87625pt x 262.9825pt>
+<Bilder/DPerstellung.jpg, id=572, 769.87625pt x 262.9825pt>
 File: Bilder/DPerstellung.jpg Graphic file (type jpg)
 <use Bilder/DPerstellung.jpg>
-Package pdftex.def Info: Bilder/DPerstellung.jpg  used on input line 212.
+Package pdftex.def Info: Bilder/DPerstellung.jpg  used on input line 213.
 (pdftex.def)             Requested size: 346.44112pt x 118.34102pt.
 
-Overfull \hbox (1.44112pt too wide) in paragraph at lines 212--213
+Overfull \hbox (1.44112pt too wide) in paragraph at lines 213--214
 [][] 
  []
 
-<Bilder/ersatzplanungP.jpg, id=564, 452.69125pt x 598.235pt>
+<Bilder/ersatzplanungP.jpg, id=573, 452.69125pt x 598.235pt>
 File: Bilder/ersatzplanungP.jpg Graphic file (type jpg)
 <use Bilder/ersatzplanungP.jpg>
-Package pdftex.def Info: Bilder/ersatzplanungP.jpg  used on input line 215.
+Package pdftex.def Info: Bilder/ersatzplanungP.jpg  used on input line 216.
 (pdftex.def)             Requested size: 248.98096pt x 329.03026pt.
-<Bilder/IndiPraes.jpg, id=565, 616.3025pt x 244.915pt>
+<Bilder/IndiPraes.jpg, id=574, 616.3025pt x 244.915pt>
 File: Bilder/IndiPraes.jpg Graphic file (type jpg)
 <use Bilder/IndiPraes.jpg>
-Package pdftex.def Info: Bilder/IndiPraes.jpg  used on input line 220.
+Package pdftex.def Info: Bilder/IndiPraes.jpg  used on input line 221.
 (pdftex.def)             Requested size: 308.1505pt x 122.45718pt.
-[22]
+[23]
 Overfull \vbox (70.08658pt too high) has occurred while \output is active []
 
 
-[23 <./Bilder/DPerstellung.jpg> <./Bilder/ersatzplanungP.jpg>] [24 <./Bilder/In
+[24 <./Bilder/DPerstellung.jpg> <./Bilder/ersatzplanungP.jpg>] [25 <./Bilder/In
 diPraes.jpg>]
-<Bilder/Architekturdiagramm.jpg, id=578, 816.04875pt x 773.89125pt>
+<Bilder/Architekturdiagramm.jpg, id=588, 816.04875pt x 773.89125pt>
 File: Bilder/Architekturdiagramm.jpg Graphic file (type jpg)
 <use Bilder/Architekturdiagramm.jpg>
-Package pdftex.def Info: Bilder/Architekturdiagramm.jpg  used on input line 244
+Package pdftex.def Info: Bilder/Architekturdiagramm.jpg  used on input line 245
 .
 (pdftex.def)             Requested size: 367.21855pt x 348.24785pt.
 
-Overfull \hbox (22.21855pt too wide) in paragraph at lines 244--245
+Overfull \hbox (22.21855pt too wide) in paragraph at lines 245--246
 [][] 
  []
 
-[25] [26 <./Bilder/Architekturdiagramm.jpg>] [27] [28] [29]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 321.
- [30]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 321.
+[26] [27 <./Bilder/Architekturdiagramm.jpg>] [28] [29] [30]
+! Misplaced alignment tab character &.
+l.337 ...nstplan erstellen: Gesetzliche Regelung &
+                                                   Rechte des Arbeitnehmers,...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.339 ... der SoftwarefÃ¼hrer: NEXUS/ Dienstplan &
+                                                   NEXUS/ PERSONALMANAGEMENT...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Overfull \hbox (4.45866pt too wide) in paragraph at lines 341--343
+[]\T1/cmr/m/n/10 Papershift GmbH: Dienst-plan (HR-Lexikon), [on-li-ne] []Link z
+ur Sei-te[] (23.10.2018) 
+ []
+
+[31]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 350.
+ [32]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 350.
  (Konzept.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 321.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 321.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 350.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 350.
 Package rerunfilecheck Info: File `Konzept.out' has not changed.
-(rerunfilecheck)             Checksum: 46A7B70CBDA0A1EFAD176B5D65F8EDF7;6238.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 321.
+(rerunfilecheck)             Checksum: 3ABAB5594D844C6E50323FF36CDECCBD;6283.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 350.
  ) 
 Here is how much of TeX's memory you used:
- 7121 strings out of 492970
- 104909 string characters out of 3122597
+ 7128 strings out of 492970
+ 105060 string characters out of 3122597
  212670 words of memory out of 3000000
- 10750 multiletter control sequences out of 15000+200000
+ 10754 multiletter control sequences out of 15000+200000
  16151 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,7n,30p,1887b,492s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,7n,30p,1887b,488s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\DavidJovanoski\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\e
 c\dpi600\ecbx1200.pk> <C:\Users\DavidJovanoski\AppData\Local\MiKTeX\2.9\fonts\p
-k\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\DavidJovanoski\AppData\Local
-\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1000.pk> <C:\Users\DavidJova
-noski\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> 
+k\ljfour\jknappen\ec\dpi600\ecbx1000.pk> <C:\Users\DavidJovanoski\AppData\Local
+\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\DavidJova
+noski\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> 
 <C:\Users\DavidJovanoski\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\d
 pi600\ecrm1200.pk> <C:\Users\DavidJovanoski\AppData\Local\MiKTeX\2.9\fonts\pk\l
 jfour\jknappen\ec\dpi600\ecrm1728.pk> <C:\Users\DavidJovanoski\AppData\Local\Mi
 KTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk>
-Output written on Konzept.pdf (30 pages, 1447535 bytes).
+Output written on Konzept.pdf (32 pages, 1453391 bytes).
 PDF statistics:
- 972 PDF objects out of 1000 (max. 8388607)
- 132 named destinations out of 1000 (max. 500000)
- 751 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 998 PDF objects out of 1000 (max. 8388607)
+ 135 named destinations out of 1000 (max. 500000)
+ 759 words of extra memory for PDF output out of 10000 (max. 10000000)
 

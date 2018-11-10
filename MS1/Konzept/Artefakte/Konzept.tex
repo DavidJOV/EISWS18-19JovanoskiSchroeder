@@ -24,6 +24,7 @@
 \includegraphics[scale=1]{Bilder/Logo_TH-Koeln_RGB_17pt.jpg}
 \end{figure}
 \maketitle
+\newpage
 \tableofcontents
 \listoffigures
 \section{Exposé}
@@ -34,7 +35,7 @@ Das Projekt soll die im Nutzungsproblem dargestellte Aufgabe der Stationsleitung
 \subsection{Verteilung der Anwendungslogik}
 Für die Berechnung des Dienstplans, sind zunächst die Richtlinien des zuständigen Krankenhauses, einzupflegen. Die Mitarbeiter müssen in einem gewissen Zeitintervall ihre Wünsche äußern. Falls es zu Konflikten im Dienstplan kommt, soll es in Abhängigkeit von Eigenschaften der Personen oder Vorhergegangenen Dienstplänen zu einer Entscheidung kommen. Bei Personenausfällen sollen freie Mitarbeiter prioritätsbezogen benachrichtigt werden und je nach Antwort, der Dienstplan der betroffenen Personen angepasst werden. Eine Möglichkeit zum Einsehen und Tauschen von Diensten muss gegeben sein.
 \subsection{Gesellschaftlicher Aspekt}
-Den Krankenschwestern eines Krankenhauses wird aufgrund der besonderen Fairness, der vereinfachten Planung und Individualisierbarkeit geholfen eine hohe Arbeitsmoral beizubehalten. Die Zu-friedenheit der Mitarbeiter ist eines der wichtigsten Ziele in einer Organisation. Da das Planen und umstrukturieren weitestgehend als Aufgabe der Stationsleitung entfällt, hat diese nun mehr Zeit sich mit anderen Problemen der Mitarbeiter zu befassen und sich mehr den Patienten und deren Bedürfnissen zuzuwenden.
+Den Krankenschwestern eines Krankenhauses wird aufgrund der besonderen Fairness, der vereinfachten Planung und Individualisierbarkeit geholfen eine hohe Arbeitsmoral beizubehalten. Die Zufriedenheit der Mitarbeiter ist eines der wichtigsten Ziele in einer Organisation. Da das Planen und umstrukturieren weitestgehend als Aufgabe der Stationsleitung entfällt, hat diese nun mehr Zeit sich mit anderen Problemen der Mitarbeiter zu befassen und sich mehr den Patienten und deren Bedürfnissen zuzuwenden.
 \section{Domänenrecherche}
 \begin{figure}[H]
 \includegraphics[scale=0.6]{Bilder/Domaenenmodell.jpg}{\centering}
@@ -73,7 +74,7 @@ Bei Jugendlichen und Auszubildenden unter 18 Jahren, muss die Ruhezeit laut Juge
 
   [E01] Als Gesundheits- und Krankenpfleger in einem Krankenhaus muss man persönlichen Zugriff auf die aktuellen Dienstpläne haben, um die jeweiligen Arbeitszeiten in Erfahrung zu bringen.
 
-[E02] Die Stationsleitung muss die gesetzlichen und Krankenhaus spezifischen Vorgaben zu Dienstplänen von Gesundheits- und Krankenpflegern wissen, um korrekte Dienstpläne erstellen zu können.
+[E02] Die Stationsleitung muss die gesetzlichen und Krankenhaus spezifischen Vorgaben zu Dienstplänen von Gesundheits- und Krankenpflegern kennen, um korrekte Dienstpläne erstellen zu können.
 
 [E03] Als Gesundheits- und Krankenpfleger muss man eine E-Mail-Adresse oder Telefonnummer besitzen, um über Änderungen am Dienstplan informiert zu werden, und um im Falle eines Personalausfalls einen Ersatz zu organisieren.
 
@@ -116,7 +117,7 @@ Das System soll entlang des menschzentrierten Entwicklungsprozesses entwickelt w
 Die Umsetzung der automatisierten Dienstplanerstellung muss mit Hilfe einer geeigneten verteilten Anwendungslogik und passenden Algorithmen realisiert werden. Der Austausch von Schichten ist durch Benutzerkontoinformationen und Überprüfung der Vorgaben aus der Dienstplanerstellung zu realisieren.  Die automatisierte Ersatzpersonalplanung muss ebenfalls alle Vorgaben aus der Dienstplanerstellung beachten und ist durch ein Benachrichtigungsverfahren zu realisieren. Die Verantwortliche Person der Personalplanung soll nach Ersatzfindung ebenfalls eine Benachrichtigung erhalten.
 \section{Marktrecherche}
 \subsection{Allgemein}
-Ein Dienstplan bildet die Grundlage der Personaleinsatzplanung. Dienstpläne werden in privaten Unternehmen, Einrichtungen und Institutionen des öffentlichen Sektors, Sicherheitsbehörden oder auch in sozialen Bereichen wie der Pflege verwendet. Ziel ist die optimale und effektivste Verwendung des Personals, um die jeweilig aufkommenden Aufgaben zu bestmöglich zu erfüllen. Dabei müssen rechtliche Grundlagen und Bestimmungen stehts bewahrt werden. 
+Ein Dienstplan bildet die Grundlage der Personaleinsatzplanung. Dienstpläne werden in privaten Unternehmen, Einrichtungen und Institutionen des öffentlichen Sektors, Sicherheitsbehörden oder auch in sozialen Bereichen wie der Pflege verwendet. Ziel ist die optimale und effektivste Verwendung des Personals, um die jeweilig aufkommenden Aufgaben bestmöglich zu erfüllen. Dabei müssen rechtliche Grundlagen und Bestimmungen stehts bewahrt werden. 
 Viele Unternehmen und Behörden fangen an von der klassischen Weise mittels Vordruckes, auf moderne Software zu Erstellung von Dienstplänen zu setzen. Durch Verwendung von Software können Planungsfehler und Fehlkalkulationen vermindert werden. Diese Tatsache ist besonders in Berufsfeldern wie der Pflege wichtig. Software für die Erstellung von Dienstplänen reicht von open-source bis hin zu monatlich zu bezahlenden Produkten. In vielen Unternehmen wird allerdings auch nur Microsofts Excel zu Erstellung der Dienstpläne verwendet. (vgl. Papershift GmbH: Dienstplan (HR-Lexikon))
 Beim Erstellen eines Dienstplans übt ein Arbeitgeber das ihm zustehende Weisungsrecht gegenüber dem jeweiligen Arbeitnehmer aus. Es gibt keine Regelungen bezüglich eines Dienstplans, aber dennoch muss vor allem das Arbeitsgesetz vom Arbeitgeber beachtet werden. Dies gilt zum Beispiel für die zulässige Arbeitszeit pro Tag, die einzuhaltenden Pausen und vieles mehr. Zusätzlich sind Branchenspezifische Vorschriften zu beachten. (vgl. JuraForum.de-Redaktion: Dienstplan erstellen: Gesetzliche Regelung & Rechte des Arbeitnehmers)
 Durch Verminderung von Fehlern und Einhaltung gesetzlicher Rahmenbedingungen bietet sich für Software, welche die Erstellung und Planung von Dienstplänen unterstützt große Chancen aktiv am Markt teilzunehmen. Viele open-source Softwareprodukte stoßen schnell an Ihre Grenzen und erfordern andernfalls ein fortgeschrittenes Verständnis dieser Software. (vgl. Papershift GmbH: Dienstplan (HR-Lexikon))
@@ -318,4 +319,32 @@ Der Wunsch wurde in der Dienstplanerstellung nicht berücksichtigt.
 Es ist wichtig, dass Krankenpfleger Wünsche zur Einsatzplanung äußern können. Die Berücksichtigung dieser ist nicht immer gewährleistet. Das System verteilt den Grad der Berücksichtigung durch ein Rating fair auf alle Krankenpfleger.
 \section{Rapid Prototype}
 Der Rapid Prototype adressiert das Alleinstellungsmerkmal 7.2 Handling von unerwarteten Mitarbeiterausfällen. Es ist für einen Krankenpfleger möglich sich Krank zu melden. Erfolgt dies, benachrichtigt das System alle anderen Kollegen und fragt diese als Ersatzkräfte an. Zu dem prüft das System in einem Intervall ob sich bereits jemand als Ersatz gefunden hat. Ist dies nicht der Fall und der Zeitpunkt des Krankheitsfalls rückt näher, ohne dass sich jemand gemeldet hat, wird eine im Vertrag mit der Station stehende Zeitarbeitsfirma automatisch benachrichtigt. Es werden bereits Verschlüsselungstechniken, sowie eine Zugriffsteuerung über Semaphore genutzt. Ein Defizit ist zurzeit, die Verletzung der Idempotenz eines GET Requests.
+\section{Quellen}
+\begin{description}
+\item
+Interviews mit Gesundheits- und Krankenpflegerinnen aus dem Klinikum Leverkusen und der LVR Klinik Langenfeld
+\item
+Ralph Grossmann und Hubert Lobnig (03.06.2013): Organisationsentwicklung im Krankenhaus – Grundlagen und Interventionskonzepte, [online] \href{http://www.mwv-berlin.de/buecher-bestellen-2016/images/product_images/leseproben_images/9783954660025_Leseprobe.pdf}{Link zur Seite} (28.10.2018)
+\item
+Arbeitszeitgesetz [online] \href{https://www.gesetze-im-internet.de/arbzg/BJNR117100994.html}{Link zur Seite} (23.10.2018)
+\item
+Jugendarbeitsschutzgesetz, [online]\href{https://www.gesetze-im-internet.de/jarbschg/}{Link zur Seite} (23.10.2018)
+\item
+Bundesurlaubsgesetz, [online] \href{https://www.gesetze-im-internet.de/burlg/}{Link zur Seite} (23.10.2018)
+\item
+Dr. Jürgen Fleig (08.07.2016): Vorgehensweise bei einer Marktanalyse, [online] \href{https://www.business-wissen.de/hb/vorgehensweise-bei-einer-marktanalyse/}{Link zur Seite} (23.10.2018)
+\item
+JuraForum.de-Redaktion (02.10.2017): Dienstplan erstellen: Gesetzliche Regelung & Rechte des Arbeitnehmers, [online] \href{https://www.juraforum.de/ratgeber/arbeitsrecht/dienstplan-erstellen-gesetzliche-regelung-und-rechte-des-arbeitnehmers}{Link zur Seite} (26.10.2018)
+\item
+Softguide der Softwareführer: NEXUS/ Dienstplan & NEXUS/ PERSONALMANAGEMENT, [online] \href{https://www.softguide.de/programm/nexus-dienstplan}{Link zur Seite} (30.10.2018)
+\item
+Papershift GmbH: Dienstplan (HR-Lexikon), [online] \href{https://www.papershift.com/lexikon/dienstplan}{Link zur Seite} (23.10.2018)
+\item
+„REST und HTTP" Stefan Tilkov Dpunkt Verlag ISBN:978-3-86490-120-1
+\item
+Waterfall-Model: [online]
+\href{https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Waterfall_model.svg/1200px-Waterfall_model.svg.png}{Link zur Seite}
+\item
+ISO-EN-DIN 9241, Teil 210
+\end{description}
 \end{document}
