@@ -1,0 +1,36 @@
+{
+    "id": "/SchichtTauschPOST",
+    "type": "object",
+    "properties": {
+        "stationID": {
+            "description": "ID der zuständigen Station",
+            "type": "number",
+            "minimum":0
+        },
+        "pflegerID1": {
+            "description": "ID des 1. Krankenpflegers",
+            "type": "number",
+            "minimum":0
+        },
+        "pflegerID2": {
+            "description": "ID des 2. Krankenpflegers",
+            "type": "number",
+            "minimum":0
+        },
+        "tauschID": {
+            "description": "ID des Tauschs",
+            "type": "number",
+            "minimum":0
+        },
+        "datumTausch": {
+            "description": "Datum des Tauschs der Schicht",
+            "type": "date"
+        },
+        "schichtArt": {
+            "description": "Schichtart des Tauschs der Schicht",
+            "type": "string"
+        }
+    },
+    "required":["stationID","pflegerID1","pflegerID2","tauschID","datumTausch","schichtArt"]
+
+}

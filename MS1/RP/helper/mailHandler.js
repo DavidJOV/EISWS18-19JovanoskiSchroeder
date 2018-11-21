@@ -3,7 +3,9 @@ var base64 = require('js-base64');
 var encoder = base64.Base64;
 
 var transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: "gmail",
+    secure: true,
+    port: 465,
     auth: {
         user: encoder.decode('ZWlzd3MxODE5QGdtYWlsLmNvbQ=='),
         pass: encoder.decode('bm9kZUpTMTg=')

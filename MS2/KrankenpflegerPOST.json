@@ -1,0 +1,36 @@
+{
+    "id": "/KrankenpflegerPOST",
+    "type": "object",
+    "properties": {
+        "anrede": {
+            "description": "Anrede eines Krankenpflegers",
+            "type": "string"
+        },
+        "vorname": {
+            "description": "Vorname eines Krankenpflegers",
+            "type": "string"
+        },
+        "name": {
+            "description": "Nachname eines Krankenpflegers",
+            "type": "string"
+        },
+        "email": {
+            "description": "Email eines Krankenpflegers",
+            "type": "string"
+        },
+        "telefon": {
+            "description": "Telefonnummer eines Krankenpflegers",
+            "type": "string"
+        },
+        "beschaeftigungsArt": {
+            "description": "Beschaeftigungsart eines Krankenpflegers(Vollzeit,Teilzeit,Minijob)",
+            "type": "string"
+        },
+        "start": {
+            "description": "Datum des Beginns der Arbeitsstelle eines Krankenpflegers",
+            "type": "date"
+        }
+    },
+    "required":["anrede","vorname","name","email","telefon","beschaeftigungArt","start"]
+
+}

@@ -1,0 +1,34 @@
+{
+    "id": "/WunschPOST",
+    "type": "object",
+    "properties": {
+        "stationID": {
+            "description": "ID einer Station",
+            "type": "number",
+            "minimum":0
+        },
+        "pflegerID": {
+            "description": "ID eines Krankenpflegers",
+            "type": "number",
+            "minimum":0
+        },
+        "wunschDatum": {
+            "description": "Datum des Wunschs",
+            "type": "date"
+        },
+        "wunschBeschreibung": {
+            "description": "Wunschbeschreibung eines Krankenpflegers",
+            "type": "string"
+        },
+        "dienstArt": {
+            "description": "Dienstart am Tag der Abwesenheit -> Wahrscheinlich unnötig-> kann aus dienstplan gezogen werden.",
+            "type": "string"
+        },
+        "dienstBeginn": {
+            "description": "Dienstbeginn am Tag der Abwesenheit -> Wahrscheinlich unnötig-> kann aus dienstplan gezogen werden.",
+            "type": "string"
+        }
+    },
+    "required":["stationID","pflegerID","wunschDatum","dienstArt","dienstBeginn"]
+
+}

@@ -1,0 +1,34 @@
+{
+    "id": "/KrankenpflegerPUT",
+    "type": "object",
+    "properties": {
+        "anrede": {
+            "description": "Anrede eines Krankenpflegers",
+            "type": ["string","null"]
+        },
+        "vorname": {
+            "description": "Vorname eines Krankenpflegers",
+            "type": ["string","null"]
+        },
+        "name": {
+            "description": "Nachname eines Krankenpflegers",
+            "type": ["string","null"]
+        },
+        "email": {
+            "description": "Email eines Krankenpflegers",
+            "type": ["string","null"]
+        },
+        "telefon": {
+            "description": "Telefonnummer eines Krankenpflegers",
+            "type": ["string","null"]
+        },
+        "beschaeftigungsart": {
+            "description": "Beschaeftigungsart eines Krankenpflegers(Vollzeit,Teilzeit,Minijob)",
+            "type": ["string","null"]
+        },
+        "start": {
+            "description": "Datum des Beginns der Arbeitsstelle eines Krankenpflegers",
+            "type": ["date","null"]
+        }
+    }
+}

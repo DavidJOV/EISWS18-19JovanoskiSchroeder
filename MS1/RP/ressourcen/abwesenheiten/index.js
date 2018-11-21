@@ -37,7 +37,7 @@ router.post('/', bodyParser.json(), (req, res) => {
 
     sqlHandler.neueAbwesenheitsMeldung(abwesenheitsMeldung)
         .then(function () {
-            console.log("test")
+           
             // Event auslösen
 
             eventListener.eventEmitter.emit("abwesenheitsMeldung-eingereicht", abwesenheitsMeldung, req.headers.host);
