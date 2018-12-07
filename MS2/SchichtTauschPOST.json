@@ -7,13 +7,8 @@
             "type": "number",
             "minimum":0
         },
-        "pflegerID1": {
-            "description": "ID des 1. Krankenpflegers",
-            "type": "number",
-            "minimum":0
-        },
-        "pflegerID2": {
-            "description": "ID des 2. Krankenpflegers",
+        "mitarbeiterID": {
+            "description": "ID des Mitarbeiters",
             "type": "number",
             "minimum":0
         },
@@ -26,11 +21,11 @@
             "description": "Datum des Tauschs der Schicht",
             "type": "date"
         },
-        "schichtArt": {
-            "description": "Schichtart des Tauschs der Schicht",
-            "type": "string"
+        "tauschVollzogen": {
+            "description": "Aussage ob der Tausch bereits vollzogen wurde oder nicht",
+            "type": "boolean"
         }
     },
-    "required":["stationID","pflegerID1","pflegerID2","tauschID","datumTausch","schichtArt"]
+    "required":["stationID","mitarbeiterID","datumTausch"]
 
 }

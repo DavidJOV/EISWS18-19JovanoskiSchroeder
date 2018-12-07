@@ -7,27 +7,19 @@
             "type": "number",
             "minimum":0
         },
-        "pflegerID": {
-            "description": "ID eines Krankenpflegers",
+        "mitarbeiterID": {
+            "description": "ID eines Mitarbeiters",
             "type": "number",
             "minimum":0
         },
-        "start": {
+        "datumBeginn": {
             "description": "Beginn der Abwesenheit eines Krankenpflegers",
             "type": "date"
         },
-        "ende": {
+        "datumEnde": {
             "description": "Ende der Abwesenheit eines Krankenpflegers",
             "type": "date"
-        },
-        "dienstArt": {
-            "description": "Dienstart am Tag der Abwesenheit -> Wahrscheinlich unnötig-> kann aus dienstplan gezogen werden.",
-            "type": "string"
-        },
-        "dienstBeginn": {
-            "description": "Dienstbeginn am Tag der Abwesenheit -> Wahrscheinlich unnötig-> kann aus dienstplan gezogen werden.",
-            "type": "string"
         }
     },
-    "required":["stationID","pflegerID","start","ende","dienstArt","dienstBeginn"]
+    "required":["stationID","pflegerID","datumBeginn","datumEnde"]
 }

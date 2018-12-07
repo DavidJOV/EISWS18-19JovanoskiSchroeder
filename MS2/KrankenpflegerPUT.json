@@ -1,34 +1,30 @@
 {
-    "id": "/KrankenpflegerPUT",
+    "id": "/MitarbeiterPUT",
     "type": "object",
     "properties": {
         "anrede": {
-            "description": "Anrede eines Krankenpflegers",
+            "description": "Anrede eines Mitarbeiters",
             "type": ["string","null"]
         },
         "vorname": {
-            "description": "Vorname eines Krankenpflegers",
+            "description": "Vorname eines Mitarbeiters",
             "type": ["string","null"]
         },
         "name": {
-            "description": "Nachname eines Krankenpflegers",
+            "description": "Nachname eines Mitarbeiters",
             "type": ["string","null"]
         },
-        "email": {
-            "description": "Email eines Krankenpflegers",
-            "type": ["string","null"]
-        },
-        "telefon": {
-            "description": "Telefonnummer eines Krankenpflegers",
-            "type": ["string","null"]
-        },
-        "beschaeftigungsart": {
-            "description": "Beschaeftigungsart eines Krankenpflegers(Vollzeit,Teilzeit,Minijob)",
+       "beschaeftigungsart": {
+            "description": "Beschaeftigungsart eines Mitarbeiters(Vollzeit,Teilzeit,Minijob)",
             "type": ["string","null"]
         },
         "start": {
             "description": "Datum des Beginns der Arbeitsstelle eines Krankenpflegers",
             "type": ["date","null"]
+        },
+        "rolle": {
+            "description": "Rolle eines Mitarbeiters",
+            "type": ["string","null"]
         }
     }
 }
