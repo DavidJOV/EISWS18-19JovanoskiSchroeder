@@ -1,0 +1,2166 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.20)  16 DEC 2018 03:32
+entering extended mode
+**./DokumentationSisterShift.tex
+(DokumentationSisterShift.tex
+LaTeX2e <2018-04-01> patch level 5
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\arti
+cle.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size
+11.clo"
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inpu
+tenc.sty"
+Package: inputenc 2018/04/06 v1.3b Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+)
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\b
+abel.sty"
+Package: babel 2018/09/26 3.24 The Babel package
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\s
+witch.def"
+File: switch.def 2018/09/26 3.24 Babel switching mechanism
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\arabi\bbl
+opts.cfg"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\babel-ger
+man\german.ldf"
+Language: german 2018/03/29 v2.10 German support for babel (pre-1996 orthograph
+y)
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\babel-ger
+man\germanb.ldf"
+Language: germanb 2018/03/29 v2.10 German support for babel (pre-1996 orthograp
+hy)
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\b
+abel.def"
+File: babel.def 2018/09/26 3.24 Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\t
+xtbabel.def")
+\bbl@dirlevel=\count89
+)
+Package babel Info: Making " an active character on input line 135.
+)))
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\font
+enc.sty"
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1en
+c.def"
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\a
+msmath.sty"
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\a
+mstext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\a
+msgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen104
+))
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\a
+msbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen105
+)
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\a
+msopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count90
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count91
+\leftroot@=\count92
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count93
+\DOTSCASE@=\count94
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count95
+\c@MaxMatrixCols=\count96
+\dotsspace@=\muskip10
+\c@parentequation=\count97
+\dspbrk@lvl=\count98
+\tag@help=\toks17
+\row@=\count99
+\column@=\count100
+\maxfields@=\count101
+\andhelp@=\toks18
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\
+amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\
+amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\
+graphicx.sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\
+keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\
+graphics.sty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\
+trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-
+cfg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-
+def\pdftex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
+)
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\flo
+at.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count102
+\float@exts=\toks22
+\float@box=\box28
+\@float@everytoks=\toks23
+\@floatcapt=\box29
+)
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\
+hyperref.sty"
+Package: hyperref 2018/09/30 v6.88a Hypertext links for LaTeX
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdie
+k\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdie
+k\hobsub-generic.sty"
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex
+\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\
+auxhook.sty"
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\
+kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen115
+\Hy@linkcounter=\count103
+\Hy@pagecounter=\count104
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\
+pd1enc.def"
+File: pd1enc.def 2018/09/30 v6.88a Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count105
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\
+hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4535.
+Package hyperref Info: Link nesting OFF on input line 4540.
+Package hyperref Info: Hyper index ON on input line 4543.
+Package hyperref Info: Plain pages OFF on input line 4550.
+Package hyperref Info: Backreferencing OFF on input line 4555.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4788.
+\c@Hy@tempcnt=\count106
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.s
+ty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5141.
+\XeTeXLinkMargin=\dimen116
+\Fld@menulength=\count107
+\Field@Width=\dimen117
+\Fld@charsize=\dimen118
+Package hyperref Info: Hyper figures OFF on input line 6396.
+Package hyperref Info: Link nesting OFF on input line 6401.
+Package hyperref Info: Hyper index ON on input line 6404.
+Package hyperref Info: backreferencing OFF on input line 6411.
+Package hyperref Info: Link coloring OFF on input line 6416.
+Package hyperref Info: Link coloring with OCG OFF on input line 6421.
+Package hyperref Info: PDF/A mode OFF on input line 6426.
+LaTeX Info: Redefining \ref on input line 6466.
+LaTeX Info: Redefining \pageref on input line 6470.
+\Hy@abspage=\count108
+\c@Item=\count109
+\c@Hfootnote=\count110
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\
+hpdftex.def"
+File: hpdftex.def 2018/09/30 v6.88a Hyperref driver for pdfTeX
+\Fld@listcount=\count111
+\c@bookmark@seq@number=\count112
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\
+rerunfilecheck.sty"
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip46
+)
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\lon
+gtable.sty"
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip47
+\LTright=\skip48
+\LTpre=\skip49
+\LTpost=\skip50
+\LTchunksize=\count113
+\LTcapwidth=\dimen119
+\LT@head=\box30
+\LT@firsthead=\box31
+\LT@foot=\box32
+\LT@lastfoot=\box33
+\LT@cols=\count114
+\LT@rows=\count115
+\c@LT@tables=\count116
+\c@LT@chunks=\count117
+\LT@p@ftn=\toks24
+)
+
+LaTeX Warning: Unused global option(s):
+    [paper=a4,bibtotocnumbered,liststotocnumbered,DIV=calc,tablecaptionabove,he
+adinclude].
+
+(DokumentationSisterShift.aux)
+\openout1 = `DokumentationSisterShift.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\su
+pp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count118
+\scratchdimen=\dimen120
+\scratchbox=\box34
+\nofMPsegments=\count119
+\nofMParguments=\count120
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count121
+\MPscratchDim=\dimen121
+\MPnumerator=\count122
+\makeMPintoPDFobject=\count123
+\everyMPtoPDFconversion=\toks26
+)
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\
+epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\
+grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+\AtBeginShipoutBox=\box35
+Package hyperref Info: Link coloring OFF on input line 32.
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\
+nameref.sty"
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdie
+k\gettitlestring.sty"
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count124
+)
+LaTeX Info: Redefining \ref on input line 32.
+LaTeX Info: Redefining \pageref on input line 32.
+LaTeX Info: Redefining \nameref on input line 32.
+ (DokumentationSisterShift.out)
+(DokumentationSisterShift.out)
+\@outlinefile=\write3
+\openout3 = `DokumentationSisterShift.out'.
+
+<Bilder/Logo_TH-Koeln_RGB_17pt.jpg, id=411, 88.8921pt x 47.6982pt>
+File: Bilder/Logo_TH-Koeln_RGB_17pt.jpg Graphic file (type jpg)
+<use Bilder/Logo_TH-Koeln_RGB_17pt.jpg>
+Package pdftex.def Info: Bilder/Logo_TH-Koeln_RGB_17pt.jpg  used on input line 
+34.
+(pdftex.def)             Requested size: 88.89188pt x 47.69806pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 37.
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\
+umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 37.
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\
+umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.37 \newpage
+             
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+[1
+
+{C:/Users/DavidJovanoski/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./
+Bilder/Logo_TH-Koeln_RGB_17pt.jpg>] (DokumentationSisterShift.toc [2]
+[3])
+\tf@toc=\write4
+\openout4 = `DokumentationSisterShift.toc'.
+
+ (DokumentationSisterShift.lof [4] [5])
+\tf@lof=\write5
+\openout5 = `DokumentationSisterShift.lof'.
+
+ [6] [7]
+<Bilder/Domaenenmodell.jpg, id=661, 593.21625pt x 362.35374pt>
+File: Bilder/Domaenenmodell.jpg Graphic file (type jpg)
+<use Bilder/Domaenenmodell.jpg>
+Package pdftex.def Info: Bilder/Domaenenmodell.jpg  used on input line 50.
+(pdftex.def)             Requested size: 593.2148pt x 362.35286pt.
+
+Overfull \hbox (233.2148pt too wide) in paragraph at lines 50--51
+[][] 
+ []
+
+[8 <./Bilder/Domaenenmodell.jpg>] [9] [10] [11]
+! Missing number, treated as zero.
+<to be read again> 
+                   F
+l.101 [FA02]
+             Das System muss bei der automatischen Erstellung der Dienstplä...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   F
+l.101 [FA02]
+             Das System muss bei der automatischen Erstellung der Dienstplä...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   F
+l.102 [FA03]
+             Das System sollte den Gesundheits- und Krankenpflegern die Mög...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   F
+l.102 [FA03]
+             Das System sollte den Gesundheits- und Krankenpflegern die Mög...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   F
+l.103 [FA04]
+             Das System muss fähig sein, einen umfassenden Dienstplan für ...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   F
+l.103 [FA04]
+             Das System muss fähig sein, einen umfassenden Dienstplan für ...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   F
+l.104 [FA05]
+             Das System muss den Mitarbeitern die Möglichkeit bieten, eine ...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   F
+l.104 [FA05]
+             Das System muss den Mitarbeitern die Möglichkeit bieten, eine ...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   F
+l.105 [FA06]
+             Sobald eine Abwesenheitsmeldung vorliegt, muss das System fähi...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   F
+l.105 [FA06]
+             Sobald eine Abwesenheitsmeldung vorliegt, muss das System fähi...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   F
+l.106 [FA07]
+             Ist ein Ersatz für einen Personalausfall gefunden und eingetei...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   F
+l.106 [FA07]
+             Ist ein Ersatz für einen Personalausfall gefunden und eingetei...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   F
+l.107 [FA08]
+             Falls kein Mitarbeiter aus dem eigenen Krankenhaus als Ersatz b...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   F
+l.107 [FA08]
+             Falls kein Mitarbeiter aus dem eigenen Krankenhaus als Ersatz b...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   F
+l.108 [FA09]
+             Das System muss den Gesundheits- und Krankenpflegern nachdem ei...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   F
+l.108 [FA09]
+             Das System muss den Gesundheits- und Krankenpflegern nachdem ei...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   F
+l.109 [FA10]
+             Falls ein Schichten-Tausch angestrebt wird, darf das System nur...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   F
+l.109 [FA10]
+             Falls ein Schichten-Tausch angestrebt wird, darf das System nur...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   F
+l.110 [FA11]
+             Das System muss der Stationsleitung die Möglichkeit bieten, As...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   F
+l.110 [FA11]
+             Das System muss der Stationsleitung die Möglichkeit bieten, As...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (2.8365pt too wide) in paragraph at lines 100--111
+\T1/cmr/m/n/10.95 Das Sy-stem muss den Gesundheits- und Kran-ken-pfle-gern nach
+-dem ein Dienst-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--111
+
+ []
+
+[12]
+! Missing number, treated as zero.
+<to be read again> 
+                   Q
+l.113 [QA02]
+             Das System eine hohe Systemstabilität aufweisen. Es soll also ...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   Q
+l.113 [QA02]
+             Das System eine hohe Systemstabilität aufweisen. Es soll also ...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   Q
+l.114 [QA03]
+             Das System soll zuverlässig sein. Die Dienste sollen immer zur...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   Q
+l.114 [QA03]
+             Das System soll zuverlässig sein. Die Dienste sollen immer zur...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--115
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--115
+
+ []
+
+[13]
+! Missing number, treated as zero.
+<to be read again> 
+                   O
+l.117 [OA02]
+             Das System muss jeden Mitarbeiter auffordern eine valide Kontak...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   O
+l.117 [OA02]
+             Das System muss jeden Mitarbeiter auffordern eine valide Kontak...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   O
+l.118 [OA03]
+             Die Daten der einzelnen Mitarbeiter und deren Dienstplänen mü...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   O
+l.118 [OA03]
+             Die Daten der einzelnen Mitarbeiter und deren Dienstplänen mü...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--120
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--120
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--120
+
+ []
+
+<Bilder/Tanforderungen.png, id=688, 375.65344pt x 514.92375pt>
+File: Bilder/Tanforderungen.png Graphic file (type png)
+<use Bilder/Tanforderungen.png>
+Package pdftex.def Info: Bilder/Tanforderungen.png  used on input line 123.
+(pdftex.def)             Requested size: 375.65251pt x 514.92249pt.
+
+Overfull \hbox (15.65251pt too wide) in paragraph at lines 123--124
+[][] 
+ []
+
+[14] [15 <./Bilder/Tanforderungen.png>] [16] [17]
+<Bilder/tabelleAuswert.jpg, id=705, 414.79968pt x 109.91063pt>
+File: Bilder/tabelleAuswert.jpg Graphic file (type jpg)
+<use Bilder/tabelleAuswert.jpg>
+Package pdftex.def Info: Bilder/tabelleAuswert.jpg  used on input line 164.
+(pdftex.def)             Requested size: 414.79868pt x 109.91034pt.
+
+Overfull \hbox (54.79868pt too wide) in paragraph at lines 164--165
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--167
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--167
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--167
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--167
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--167
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--167
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--167
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--167
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--167
+
+ []
+
+[18] [19 <./Bilder/tabelleAuswert.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 170--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--190
+
+ []
+
+
+Overfull \hbox (1.76434pt too wide) in paragraph at lines 170--190
+\T1/cmr/m/n/10.95 Zusatz: Ist die Sta-ti-ons-lei-tung oder de-ren Ver-tre-tung 
+aus Gr�n-den wie Krank-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--190
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 191--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--206
+
+ []
+
+[21] [22]
+Underfull \hbox (badness 10000) in paragraph at lines 207--213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--228
+
+ []
+
+[23]
+<Bilder/qualiUser.jpg, id=731, 373.395pt x 498.36188pt>
+File: Bilder/qualiUser.jpg Graphic file (type jpg)
+<use Bilder/qualiUser.jpg>
+Package pdftex.def Info: Bilder/qualiUser.jpg  used on input line 236.
+(pdftex.def)             Requested size: 373.39409pt x 498.36066pt.
+
+Overfull \hbox (13.39409pt too wide) in paragraph at lines 236--237
+[][] 
+ []
+
+[24]
+<Bilder/dienstplanAbfrage.jpg, id=736, 372.64218pt x 361.35pt>
+File: Bilder/dienstplanAbfrage.jpg Graphic file (type jpg)
+<use Bilder/dienstplanAbfrage.jpg>
+Package pdftex.def Info: Bilder/dienstplanAbfrage.jpg  used on input line 243.
+(pdftex.def)             Requested size: 372.64127pt x 361.34912pt.
+
+Overfull \hbox (12.64127pt too wide) in paragraph at lines 243--244
+[][] 
+ []
+
+<Bilder/meldenAbwesen.jpg, id=737, 371.88937pt x 357.58594pt>
+File: Bilder/meldenAbwesen.jpg Graphic file (type jpg)
+<use Bilder/meldenAbwesen.jpg>
+Package pdftex.def Info: Bilder/meldenAbwesen.jpg  used on input line 248.
+(pdftex.def)             Requested size: 371.88846pt x 357.58505pt.
+
+Overfull \hbox (11.88846pt too wide) in paragraph at lines 248--249
+[][] 
+ []
+
+<Bilder/Schichttausch.jpg, id=738, 371.88937pt x 360.59718pt>
+File: Bilder/Schichttausch.jpg Graphic file (type jpg)
+<use Bilder/Schichttausch.jpg>
+Package pdftex.def Info: Bilder/Schichttausch.jpg  used on input line 253.
+(pdftex.def)             Requested size: 371.88846pt x 360.5963pt.
+
+Overfull \hbox (11.88846pt too wide) in paragraph at lines 253--254
+[][] 
+ []
+
+<Bilder/wuensche.jpg, id=739, 371.88937pt x 371.13657pt>
+File: Bilder/wuensche.jpg Graphic file (type jpg)
+<use Bilder/wuensche.jpg>
+Package pdftex.def Info: Bilder/wuensche.jpg  used on input line 258.
+(pdftex.def)             Requested size: 371.88846pt x 371.13565pt.
+
+Overfull \hbox (11.88846pt too wide) in paragraph at lines 258--259
+[][] 
+ []
+
+[25] [26 <./Bilder/qualiUser.jpg>] [27 <./Bilder/dienstplanAbfrage.jpg>]
+[28 <./Bilder/meldenAbwesen.jpg>] [29 <./Bilder/Schichttausch.jpg>] [30 <./Bild
+er/wuensche.jpg>] [31] [32]
+<Bilder/farbfont.jpg, id=774, 366.61969pt x 222.07968pt>
+File: Bilder/farbfont.jpg Graphic file (type jpg)
+<use Bilder/farbfont.jpg>
+Package pdftex.def Info: Bilder/farbfont.jpg  used on input line 288.
+(pdftex.def)             Requested size: 366.61879pt x 222.07913pt.
+
+Overfull \hbox (6.61879pt too wide) in paragraph at lines 288--289
+[][] 
+ []
+
+[33]
+<Bilder/Hintergrundfarben.jpg, id=779, 302.63063pt x 109.1578pt>
+File: Bilder/Hintergrundfarben.jpg Graphic file (type jpg)
+<use Bilder/Hintergrundfarben.jpg>
+Package pdftex.def Info: Bilder/Hintergrundfarben.jpg  used on input line 293.
+(pdftex.def)             Requested size: 302.62988pt x 109.15753pt.
+<Bilder/Textfarben.jpg, id=780, 299.61937pt x 60.97781pt>
+File: Bilder/Textfarben.jpg Graphic file (type jpg)
+<use Bilder/Textfarben.jpg>
+Package pdftex.def Info: Bilder/Textfarben.jpg  used on input line 298.
+(pdftex.def)             Requested size: 299.61864pt x 60.97765pt.
+ [34 <./Bilder/farbfont.jpg> <./Bilder/Hintergrundfarben.jpg>]
+<Bilder/Typographie.jpg, id=785, 254.45062pt x 159.59625pt>
+File: Bilder/Typographie.jpg Graphic file (type jpg)
+<use Bilder/Typographie.jpg>
+Package pdftex.def Info: Bilder/Typographie.jpg  used on input line 304.
+(pdftex.def)             Requested size: 254.45pt x 159.59584pt.
+<Bilder/Logo.jpg, id=786, 146.79843pt x 125.71968pt>
+File: Bilder/Logo.jpg Graphic file (type jpg)
+<use Bilder/Logo.jpg>
+Package pdftex.def Info: Bilder/Logo.jpg  used on input line 310.
+(pdftex.def)             Requested size: 146.79807pt x 125.71936pt.
+ [35 <./Bilder/Textfarben.jpg> <./Bilder/Typographie.jpg>] [36 <./Bilder/Logo.j
+pg>] [37]
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 342--348
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--348
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--348
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--348
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--348
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--348
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--348
+
+ []
+
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 349--355
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--365
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--365
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--365
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--365
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--365
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--365
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--365
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--375
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--375
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--375
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--375
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--375
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--375
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--375
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--375
+
+ []
+
+[40] [41]
+Underfull \hbox (badness 10000) in paragraph at lines 376--377
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 376--377
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 378--380
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 378--380
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 378--380
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--383
+
+ []
+
+<Bilder/Wireframe.jpg, id=816, 431.81325pt x 528.2937pt>
+File: Bilder/Wireframe.jpg Graphic file (type jpg)
+<use Bilder/Wireframe.jpg>
+Package pdftex.def Info: Bilder/Wireframe.jpg  used on input line 386.
+(pdftex.def)             Requested size: 431.81218pt x 528.29242pt.
+
+Overfull \hbox (71.81218pt too wide) in paragraph at lines 386--387
+[][] 
+ []
+
+<Bilder/Wireframe2.jpg, id=817, 1452.17531pt x 1325.70282pt>
+File: Bilder/Wireframe2.jpg Graphic file (type jpg)
+<use Bilder/Wireframe2.jpg>
+Package pdftex.def Info: Bilder/Wireframe2.jpg  used on input line 390.
+(pdftex.def)             Requested size: 1452.17178pt x 1325.69958pt.
+
+Overfull \hbox (1092.17178pt too wide) in paragraph at lines 390--391
+[][] 
+ []
+
+[42]
+Overfull \vbox (12.62082pt too high) has occurred while \output is active []
+
+
+[43 <./Bilder/Wireframe.jpg>]
+Overfull \vbox (810.02798pt too high) has occurred while \output is active []
+
+
+[44 <./Bilder/Wireframe2.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 396--406
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--406
+
+ []
+
+<Bilder/Login.jpg, id=831, 792.71156pt x 624.08156pt>
+File: Bilder/Login.jpg Graphic file (type jpg)
+<use Bilder/Login.jpg>
+Package pdftex.def Info: Bilder/Login.jpg  used on input line 411.
+(pdftex.def)             Requested size: 792.70963pt x 624.08003pt.
+
+Overfull \hbox (432.70963pt too wide) in paragraph at lines 411--412
+[][] 
+ []
+
+
+Overfull \hbox (15.04747pt too wide) in paragraph at lines 409--413
+\T1/cmr/m/n/10.95 Der Login-Screen er-for-dert nur einen Be-nut-zer-na-men und 
+das pas-sen-de Passwort
+ []
+
+<Bilder/Dienstplanerstellung.jpg, id=832, 700.11563pt x 683.55376pt>
+File: Bilder/Dienstplanerstellung.jpg Graphic file (type jpg)
+<use Bilder/Dienstplanerstellung.jpg>
+Package pdftex.def Info: Bilder/Dienstplanerstellung.jpg  used on input line 41
+6.
+(pdftex.def)             Requested size: 700.11392pt x 683.5521pt.
+
+Underfull \hbox (badness 5359) in paragraph at lines 415--417
+\T1/cmr/m/n/10.95 In die-ser An-sicht m�s-sen vor der au-to-ma-ti-schen Ge-ne-r
+ie-rung ei-
+ []
+
+
+Underfull \hbox (badness 7362) in paragraph at lines 415--417
+\T1/cmr/m/n/10.95 nes Dienst-plans die zu se-hen-den Eck-da-ten ge-setzt wer-de
+n. Hat
+ []
+
+
+Underfull \hbox (badness 4036) in paragraph at lines 415--417
+\T1/cmr/m/n/10.95 der User al-le Eck-da-ten ge-setzt, kann durch den But-ton D
+ienst-
+ []
+
+
+Underfull \hbox (badness 1248) in paragraph at lines 415--417
+\T1/cmr/m/n/10.95 plan ge-ne-rie-ren ein neu-er Dienst-plan vom Sy-stem ge-ne-
+riert wer-den.
+ []
+
+
+Overfull \hbox (340.11392pt too wide) in paragraph at lines 415--417
+[] 
+ []
+
+[45]
+Overfull \vbox (108.40843pt too high) has occurred while \output is active []
+
+
+[46 <./Bilder/Login.jpg>]
+Overfull \vbox (240.76057pt too high) has occurred while \output is active []
+
+
+[47 <./Bilder/Dienstplanerstellung.jpg>]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.422 ...{Bilder/Mitarbeiter anlegen_loeschen.jpg}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: File `Bilder/Mitarbeiter anlegen_loeschen.jpg' not found on inpu
+t line 422.
+
+<Bilder/Mitarbeiter anlegen_loeschen.jpg, id=845, 694.09312pt x 682.04813pt>
+File: Bilder/Mitarbeiter anlegen_loeschen.jpg Graphic file (type jpg)
+<use Bilder/Mitarbeiter anlegen_loeschen.jpg>
+Package pdftex.def Info: Bilder/Mitarbeiter anlegen_loeschen.jpg  used on input
+ line 422.
+(pdftex.def)             Requested size: 694.09143pt x 682.04646pt.
+! Missing $ inserted.
+<inserted text> 
+                $
+l.422 ...{Bilder/Mitarbeiter anlegen_loeschen.jpg}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (430.47363pt too wide) in paragraph at lines 422--423
+[][] 
+ []
+
+[48]
+Overfull \vbox (166.98312pt too high) has occurred while \output is active []
+
+
+[49 <./Bilder/Mitarbeiter anlegen_loeschen.jpg>]
+<Bilder/Dienstplan-Kalender.jpg, id=857, 661.72218pt x 682.04813pt>
+File: Bilder/Dienstplan-Kalender.jpg Graphic file (type jpg)
+<use Bilder/Dienstplan-Kalender.jpg>
+Package pdftex.def Info: Bilder/Dienstplan-Kalender.jpg  used on input line 428
+.
+(pdftex.def)             Requested size: 661.72057pt x 682.04646pt.
+
+Overfull \hbox (301.72057pt too wide) in paragraph at lines 428--429
+[][] 
+ []
+
+[50]
+Overfull \vbox (166.37486pt too high) has occurred while \output is active []
+
+
+[51 <./Bilder/Dienstplan-Kalender.jpg>]
+<Bilder/Schichtdetails.jpg, id=866, 691.83469pt x 679.03688pt>
+File: Bilder/Schichtdetails.jpg Graphic file (type jpg)
+<use Bilder/Schichtdetails.jpg>
+Package pdftex.def Info: Bilder/Schichtdetails.jpg  used on input line 434.
+(pdftex.def)             Requested size: 691.833pt x 679.03522pt.
+
+Overfull \hbox (331.833pt too wide) in paragraph at lines 434--435
+[][] 
+ []
+
+
+Overfull \hbox (8.26207pt too wide) in paragraph at lines 432--436
+\T1/cmr/m/n/10.95 Zu die-ser An-sicht ge-langt der Nut-zer, so-bald er ei-ne Sc
+hicht aus der Dienstplan-
+ []
+
+[52]
+Overfull \vbox (163.36362pt too high) has occurred while \output is active []
+
+
+[53 <./Bilder/Schichtdetails.jpg>]
+Overfull \hbox (2.74055pt too wide) in paragraph at lines 437--437
+[]\T1/cmr/bx/n/12 Wunsch�u�erung, Tauschan-fra-ge und Ab-we-sen-heits-mel-
+ []
+
+<Bilder/Abwesenheit_Schichttausch_Wunsch.jpg, id=875, 695.59875pt x 682.80093pt
+>
+File: Bilder/Abwesenheit_Schichttausch_Wunsch.jpg Graphic file (type jpg)
+<use Bilder/Abwesenheit_Schichttausch_Wunsch.jpg>
+Package pdftex.def Info: Bilder/Abwesenheit_Schichttausch_Wunsch.jpg  used on i
+nput line 440.
+(pdftex.def)             Requested size: 695.59706pt x 682.79926pt.
+
+Overfull \hbox (335.59706pt too wide) in paragraph at lines 440--441
+[][] 
+ []
+
+[54]
+Overfull \vbox (167.12766pt too high) has occurred while \output is active []
+
+
+[55 <./Bilder/Abwesenheit_Schichttausch_Wunsch.jpg>]
+<Bilder/Benachrichtigungen-Mockup.jpg, id=885, 657.2053pt x 674.52pt>
+File: Bilder/Benachrichtigungen-Mockup.jpg Graphic file (type jpg)
+<use Bilder/Benachrichtigungen-Mockup.jpg>
+Package pdftex.def Info: Bilder/Benachrichtigungen-Mockup.jpg  used on input li
+ne 446.
+(pdftex.def)             Requested size: 657.20369pt x 674.51836pt.
+
+Overfull \hbox (297.20369pt too wide) in paragraph at lines 446--447
+[][] 
+ []
+
+[56]
+Overfull \vbox (158.84676pt too high) has occurred while \output is active []
+
+
+[57 <./Bilder/Benachrichtigungen-Mockup.jpg>]
+<Bilder/Dialogbox-Mockup.jpg, id=894, 608.2725pt x 598.48593pt>
+File: Bilder/Dialogbox-Mockup.jpg Graphic file (type jpg)
+<use Bilder/Dialogbox-Mockup.jpg>
+Package pdftex.def Info: Bilder/Dialogbox-Mockup.jpg  used on input line 452.
+(pdftex.def)             Requested size: 608.27103pt x 598.48447pt.
+
+Overfull \hbox (248.27103pt too wide) in paragraph at lines 452--453
+[][] 
+ []
+
+[58]
+Overfull \vbox (82.81287pt too high) has occurred while \output is active []
+
+
+[59 <./Bilder/Dialogbox-Mockup.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 458--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--470
+
+ []
+
+[60]
+Underfull \hbox (badness 10000) in paragraph at lines 473--474
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--474
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--483
+
+ []
+
+[61]
+Underfull \hbox (badness 10000) in paragraph at lines 484--491
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--491
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--491
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--491
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--491
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--491
+
+ []
+
+[62]
+<Bilder/Screens/Login-Screen.jpg, id=916, 1445.4pt x 1053.9375pt>
+File: Bilder/Screens/Login-Screen.jpg Graphic file (type jpg)
+<use Bilder/Screens/Login-Screen.jpg>
+Package pdftex.def Info: Bilder/Screens/Login-Screen.jpg  used on input line 50
+3.
+(pdftex.def)             Requested size: 360.0pt x 262.50273pt.
+ [63]
+<Bilder/Screens/Hauptfenster-Kalender.jpg, id=921, 1445.4pt x 1257.69875pt>
+File: Bilder/Screens/Hauptfenster-Kalender.jpg Graphic file (type jpg)
+<use Bilder/Screens/Hauptfenster-Kalender.jpg>
+Package pdftex.def Info: Bilder/Screens/Hauptfenster-Kalender.jpg  used on inpu
+t line 509.
+(pdftex.def)             Requested size: 360.0pt x 313.25327pt.
+ [64 <./Bilder/Screens/Login-Screen.jpg>]
+<Bilder/Screens/Schichtdetails.jpg, id=926, 1445.4pt x 1257.69875pt>
+File: Bilder/Screens/Schichtdetails.jpg Graphic file (type jpg)
+<use Bilder/Screens/Schichtdetails.jpg>
+Package pdftex.def Info: Bilder/Screens/Schichtdetails.jpg  used on input line 
+514.
+(pdftex.def)             Requested size: 360.0pt x 313.25327pt.
+ [65 <./Bilder/Screens/Hauptfenster-Kalender.jpg>]
+<Bilder/Screens/Hauptfenster-Kalender-Nutzungsrechte.jpg, id=931, 1445.4pt x 12
+58.7025pt>
+File: Bilder/Screens/Hauptfenster-Kalender-Nutzungsrechte.jpg Graphic file (typ
+e jpg)
+<use Bilder/Screens/Hauptfenster-Kalender-Nutzungsrechte.jpg>
+Package pdftex.def Info: Bilder/Screens/Hauptfenster-Kalender-Nutzungsrechte.jp
+g  used on input line 519.
+(pdftex.def)             Requested size: 360.0pt x 313.50327pt.
+ [66 <./Bilder/Screens/Schichtdetails.jpg>]
+<Bilder/Screens/Hauptfenster-Kalendermit2Nachrichten.jpg, id=936, 1445.4pt x 12
+57.69875pt>
+File: Bilder/Screens/Hauptfenster-Kalendermit2Nachrichten.jpg Graphic file (typ
+e jpg)
+<use Bilder/Screens/Hauptfenster-Kalendermit2Nachrichten.jpg>
+Package pdftex.def Info: Bilder/Screens/Hauptfenster-Kalendermit2Nachrichten.jp
+g  used on input line 524.
+(pdftex.def)             Requested size: 360.0pt x 313.25327pt.
+ [67 <./Bilder/Screens/Hauptfenster-Kalender-Nutzungsrechte.jpg>]
+<Bilder/Screens/Benachrichtigungen-Screen.jpg, id=942, 1445.4pt x 1259.70625pt>
+
+File: Bilder/Screens/Benachrichtigungen-Screen.jpg Graphic file (type jpg)
+<use Bilder/Screens/Benachrichtigungen-Screen.jpg>
+Package pdftex.def Info: Bilder/Screens/Benachrichtigungen-Screen.jpg  used on 
+input line 530.
+(pdftex.def)             Requested size: 360.0pt x 313.75328pt.
+ [68 <./Bilder/Screens/Hauptfenster-Kalendermit2Nachrichten.jpg>]
+<Bilder/Screens/NachrichtKrankenpflegerSchichttausch.jpg, id=947, 1445.4pt x 12
+59.70625pt>
+File: Bilder/Screens/NachrichtKrankenpflegerSchichttausch.jpg Graphic file (typ
+e jpg)
+<use Bilder/Screens/NachrichtKrankenpflegerSchichttausch.jpg>
+Package pdftex.def Info: Bilder/Screens/NachrichtKrankenpflegerSchichttausch.jp
+g  used on input line 535.
+(pdftex.def)             Requested size: 360.0pt x 313.75328pt.
+<Bilder/Screens/NachrichtKrankenpflegerAbwesenheitsmeldung.jpg, id=948, 1445.4p
+t x 1259.70625pt>
+File: Bilder/Screens/NachrichtKrankenpflegerAbwesenheitsmeldung.jpg Graphic fil
+e (type jpg)
+<use Bilder/Screens/NachrichtKrankenpflegerAbwesenheitsmeldung.jpg>
+Package pdftex.def Info: Bilder/Screens/NachrichtKrankenpflegerAbwesenheitsmeld
+ung.jpg  used on input line 539.
+(pdftex.def)             Requested size: 360.0pt x 313.75328pt.
+ [69 <./Bilder/Screens/Benachrichtigungen-Screen.jpg>]
+<Bilder/Screens/NachrichtKrankenpflegerErsatzanfrage.jpg, id=953, 1445.4pt x 12
+59.70625pt>
+File: Bilder/Screens/NachrichtKrankenpflegerErsatzanfrage.jpg Graphic file (typ
+e jpg)
+<use Bilder/Screens/NachrichtKrankenpflegerErsatzanfrage.jpg>
+Package pdftex.def Info: Bilder/Screens/NachrichtKrankenpflegerErsatzanfrage.jp
+g  used on input line 543.
+(pdftex.def)             Requested size: 360.0pt x 313.75328pt.
+ [70 <./Bilder/Screens/NachrichtKrankenpflegerSchichttausch.jpg>]
+[71 <./Bilder/Screens/NachrichtKrankenpflegerAbwesenheitsmeldung.jpg>]
+<Bilder/Screens/NachrichtErsatzanfrageangenommen.jpg, id=962, 1445.4pt x 1259.7
+0625pt>
+File: Bilder/Screens/NachrichtErsatzanfrageangenommen.jpg Graphic file (type jp
+g)
+<use Bilder/Screens/NachrichtErsatzanfrageangenommen.jpg>
+Package pdftex.def Info: Bilder/Screens/NachrichtErsatzanfrageangenommen.jpg  u
+sed on input line 548.
+(pdftex.def)             Requested size: 360.0pt x 313.75328pt.
+<Bilder/Screens/NachrichtErsatzanfrageabgelehnt.jpg, id=963, 1445.4pt x 1259.70
+625pt>
+File: Bilder/Screens/NachrichtErsatzanfrageabgelehnt.jpg Graphic file (type jpg
+)
+<use Bilder/Screens/NachrichtErsatzanfrageabgelehnt.jpg>
+Package pdftex.def Info: Bilder/Screens/NachrichtErsatzanfrageabgelehnt.jpg  us
+ed on input line 552.
+(pdftex.def)             Requested size: 360.0pt x 313.75328pt.
+ [72 <./Bilder/Screens/NachrichtKrankenpflegerErsatzanfrage.jpg>] [73 <./Bilder
+/Screens/NachrichtErsatzanfrageangenommen.jpg>]
+<Bilder/Screens/NachrichtStatleitungSchichttausch.jpg, id=973, 1445.4pt x 1259.
+70625pt>
+File: Bilder/Screens/NachrichtStatleitungSchichttausch.jpg Graphic file (type j
+pg)
+<use Bilder/Screens/NachrichtStatleitungSchichttausch.jpg>
+Package pdftex.def Info: Bilder/Screens/NachrichtStatleitungSchichttausch.jpg  
+used on input line 557.
+(pdftex.def)             Requested size: 360.0pt x 313.75328pt.
+<Bilder/Screens/NachrichtStatleitungAbwesenheit.jpg, id=974, 1445.4pt x 1259.70
+625pt>
+File: Bilder/Screens/NachrichtStatleitungAbwesenheit.jpg Graphic file (type jpg
+)
+<use Bilder/Screens/NachrichtStatleitungAbwesenheit.jpg>
+Package pdftex.def Info: Bilder/Screens/NachrichtStatleitungAbwesenheit.jpg  us
+ed on input line 561.
+(pdftex.def)             Requested size: 360.0pt x 313.75328pt.
+ [74 <./Bilder/Screens/NachrichtErsatzanfrageabgelehnt.jpg>]
+<Bilder/Screens/NachrichtStatleitungErsatzbestaetigung.jpg, id=979, 1445.4pt x 
+1259.70625pt>
+File: Bilder/Screens/NachrichtStatleitungErsatzbestaetigung.jpg Graphic file (t
+ype jpg)
+<use Bilder/Screens/NachrichtStatleitungErsatzbestaetigung.jpg>
+Package pdftex.def Info: Bilder/Screens/NachrichtStatleitungErsatzbestaetigung.
+jpg  used on input line 565.
+(pdftex.def)             Requested size: 360.0pt x 313.75328pt.
+ [75 <./Bilder/Screens/NachrichtStatleitungSchichttausch.jpg>]
+<Bilder/Screens/NachrichtStatleitungFehlenderErsatz.jpg, id=984, 1445.4pt x 125
+9.70625pt>
+File: Bilder/Screens/NachrichtStatleitungFehlenderErsatz.jpg Graphic file (type
+ jpg)
+<use Bilder/Screens/NachrichtStatleitungFehlenderErsatz.jpg>
+Package pdftex.def Info: Bilder/Screens/NachrichtStatleitungFehlenderErsatz.jpg
+  used on input line 569.
+(pdftex.def)             Requested size: 360.0pt x 313.75328pt.
+ [76 <./Bilder/Screens/NachrichtStatleitungAbwesenheit.jpg>] [77 <./Bilder/Scre
+ens/NachrichtStatleitungErsatzbestaetigung.jpg>]
+<Bilder/Screens/Dienstplaneinstellungen.jpg, id=993, 1445.4pt x 1257.69875pt>
+File: Bilder/Screens/Dienstplaneinstellungen.jpg Graphic file (type jpg)
+<use Bilder/Screens/Dienstplaneinstellungen.jpg>
+Package pdftex.def Info: Bilder/Screens/Dienstplaneinstellungen.jpg  used on in
+put line 575.
+(pdftex.def)             Requested size: 360.0pt x 313.25327pt.
+<Bilder/Screens/Dienstplaneinstellungen-Dialogbox.jpg, id=994, 1445.4pt x 1258.
+7025pt>
+File: Bilder/Screens/Dienstplaneinstellungen-Dialogbox.jpg Graphic file (type j
+pg)
+<use Bilder/Screens/Dienstplaneinstellungen-Dialogbox.jpg>
+Package pdftex.def Info: Bilder/Screens/Dienstplaneinstellungen-Dialogbox.jpg  
+used on input line 579.
+(pdftex.def)             Requested size: 360.0pt x 313.50327pt.
+ [78 <./Bilder/Screens/NachrichtStatleitungFehlenderErsatz.jpg>]
+<Bilder/Screens/Dienstplaneinstellungen-Dialogbox(2).jpg, id=999, 1445.4pt x 12
+58.7025pt>
+File: Bilder/Screens/Dienstplaneinstellungen-Dialogbox(2).jpg Graphic file (typ
+e jpg)
+<use Bilder/Screens/Dienstplaneinstellungen-Dialogbox(2).jpg>
+Package pdftex.def Info: Bilder/Screens/Dienstplaneinstellungen-Dialogbox(2).jp
+g  used on input line 583.
+(pdftex.def)             Requested size: 360.0pt x 313.50327pt.
+ [79 <./Bilder/Screens/Dienstplaneinstellungen.jpg>] [80 <./Bilder/Screens/Dien
+stplaneinstellungen-Dialogbox.jpg>]
+<Bilder/Screens/DropdownundUsersettings.jpg, id=1009, 1445.4pt x 1257.69875pt>
+File: Bilder/Screens/DropdownundUsersettings.jpg Graphic file (type jpg)
+<use Bilder/Screens/DropdownundUsersettings.jpg>
+Package pdftex.def Info: Bilder/Screens/DropdownundUsersettings.jpg  used on in
+put line 588.
+(pdftex.def)             Requested size: 360.0pt x 313.25327pt.
+ [81 <./Bilder/Screens/Dienstplaneinstellungen-Dialogbox(2).jpg>]
+<Bilder/Screens/Benutzereinstellungen.jpg, id=1014, 1445.4pt x 1257.69875pt>
+File: Bilder/Screens/Benutzereinstellungen.jpg Graphic file (type jpg)
+<use Bilder/Screens/Benutzereinstellungen.jpg>
+Package pdftex.def Info: Bilder/Screens/Benutzereinstellungen.jpg  used on inpu
+t line 594.
+(pdftex.def)             Requested size: 360.0pt x 313.25327pt.
+<Bilder/Screens/Benutzereinstellungen(1).jpg, id=1015, 1445.4pt x 1258.7025pt>
+File: Bilder/Screens/Benutzereinstellungen(1).jpg Graphic file (type jpg)
+<use Bilder/Screens/Benutzereinstellungen(1).jpg>
+Package pdftex.def Info: Bilder/Screens/Benutzereinstellungen(1).jpg  used on i
+nput line 598.
+(pdftex.def)             Requested size: 360.0pt x 313.50327pt.
+ [82 <./Bilder/Screens/DropdownundUsersettings.jpg>]
+<Bilder/Screens/Benutzereinstellungen(2).jpg, id=1020, 1445.4pt x 1258.7025pt>
+File: Bilder/Screens/Benutzereinstellungen(2).jpg Graphic file (type jpg)
+<use Bilder/Screens/Benutzereinstellungen(2).jpg>
+Package pdftex.def Info: Bilder/Screens/Benutzereinstellungen(2).jpg  used on i
+nput line 602.
+(pdftex.def)             Requested size: 360.0pt x 313.50327pt.
+ [83 <./Bilder/Screens/Benutzereinstellungen.jpg>] [84 <./Bilder/Screens/Benutz
+ereinstellungen(1).jpg>]
+<Bilder/Screens/MAanlegen_Loeschen.jpg, id=1029, 1445.4pt x 1257.69875pt>
+File: Bilder/Screens/MAanlegen_Loeschen.jpg Graphic file (type jpg)
+<use Bilder/Screens/MAanlegen_Loeschen.jpg>
+Package pdftex.def Info: Bilder/Screens/MAanlegen_Loeschen.jpg  used on input l
+ine 608.
+(pdftex.def)             Requested size: 360.0pt x 313.25327pt.
+<Bilder/Screens/loeschen-Dialogbox(1).jpg, id=1030, 1445.4pt x 1258.7025pt>
+File: Bilder/Screens/loeschen-Dialogbox(1).jpg Graphic file (type jpg)
+<use Bilder/Screens/loeschen-Dialogbox(1).jpg>
+Package pdftex.def Info: Bilder/Screens/loeschen-Dialogbox(1).jpg  used on inpu
+t line 612.
+(pdftex.def)             Requested size: 360.0pt x 313.50327pt.
+ [85 <./Bilder/Screens/Benutzereinstellungen(2).jpg>]
+<Bilder/Screens/loeschen-Dialogbox(2).jpg, id=1036, 1447.4075pt x 1259.70625pt>
+
+File: Bilder/Screens/loeschen-Dialogbox(2).jpg Graphic file (type jpg)
+<use Bilder/Screens/loeschen-Dialogbox(2).jpg>
+Package pdftex.def Info: Bilder/Screens/loeschen-Dialogbox(2).jpg  used on inpu
+t line 616.
+(pdftex.def)             Requested size: 360.0pt x 313.31117pt.
+ [86 <./Bilder/Screens/MAanlegen_Loeschen.jpg>]
+<Bilder/Screens/loeschen-Dialogbox(3).jpg, id=1041, 1447.4075pt x 1259.70625pt>
+
+File: Bilder/Screens/loeschen-Dialogbox(3).jpg Graphic file (type jpg)
+<use Bilder/Screens/loeschen-Dialogbox(3).jpg>
+Package pdftex.def Info: Bilder/Screens/loeschen-Dialogbox(3).jpg  used on inpu
+t line 620.
+(pdftex.def)             Requested size: 360.0pt x 313.31117pt.
+
+[87 <./Bilder/Screens/loeschen-Dialogbox(1).jpg>]
+<Bilder/Screens/loeschen-Dialogbox(1)-1.jpg, id=1046, 1445.4pt x 1258.7025pt>
+File: Bilder/Screens/loeschen-Dialogbox(1)-1.jpg Graphic file (type jpg)
+<use Bilder/Screens/loeschen-Dialogbox(1)-1.jpg>
+Package pdftex.def Info: Bilder/Screens/loeschen-Dialogbox(1)-1.jpg  used on in
+put line 624.
+(pdftex.def)             Requested size: 360.0pt x 313.50327pt.
+ [88 <./Bilder/Screens/loeschen-Dialogbox(2).jpg>] [89 <./Bilder/Screens/loesch
+en-Dialogbox(3).jpg>]
+<Bilder/Screens/Abwesenheitmelden.jpg, id=1055, 1445.4pt x 1257.69875pt>
+File: Bilder/Screens/Abwesenheitmelden.jpg Graphic file (type jpg)
+<use Bilder/Screens/Abwesenheitmelden.jpg>
+Package pdftex.def Info: Bilder/Screens/Abwesenheitmelden.jpg  used on input li
+ne 631.
+(pdftex.def)             Requested size: 360.0pt x 313.25327pt.
+
+Overfull \hbox (2.06963pt too wide) in paragraph at lines 628--633
+\T1/cmr/m/n/10.95 Auf die-sem Screen k�n-nen sich die Kran-ken-pfle-ger und Me-
+di-zi-ni-schen Fachan-
+ []
+
+[90 <./Bilder/Screens/loeschen-Dialogbox(1)-1.jpg>]
+<Bilder/Screens/Abwesenheitmelden-1.jpg, id=1060, 1445.4pt x 1258.7025pt>
+File: Bilder/Screens/Abwesenheitmelden-1.jpg Graphic file (type jpg)
+<use Bilder/Screens/Abwesenheitmelden-1.jpg>
+Package pdftex.def Info: Bilder/Screens/Abwesenheitmelden-1.jpg  used on input 
+line 636.
+(pdftex.def)             Requested size: 360.0pt x 313.50327pt.
+<Bilder/Screens/Abwesenheitmelden-2.jpg, id=1061, 1445.4pt x 1258.7025pt>
+File: Bilder/Screens/Abwesenheitmelden-2.jpg Graphic file (type jpg)
+<use Bilder/Screens/Abwesenheitmelden-2.jpg>
+Package pdftex.def Info: Bilder/Screens/Abwesenheitmelden-2.jpg  used on input 
+line 640.
+(pdftex.def)             Requested size: 360.0pt x 313.50327pt.
+ [91 <./Bilder/Screens/Abwesenheitmelden.jpg>] [92 <./Bilder/Screens/Abwesenhei
+tmelden-1.jpg>]
+<Bilder/Screens/Schichttausch.jpg, id=1071, 1445.4pt x 1257.69875pt>
+File: Bilder/Screens/Schichttausch.jpg Graphic file (type jpg)
+<use Bilder/Screens/Schichttausch.jpg>
+Package pdftex.def Info: Bilder/Screens/Schichttausch.jpg  used on input line 6
+46.
+(pdftex.def)             Requested size: 360.0pt x 313.25327pt.
+<Bilder/Screens/Schichttausch-1.jpg, id=1072, 1445.4pt x 1258.7025pt>
+File: Bilder/Screens/Schichttausch-1.jpg Graphic file (type jpg)
+<use Bilder/Screens/Schichttausch-1.jpg>
+Package pdftex.def Info: Bilder/Screens/Schichttausch-1.jpg  used on input line
+ 650.
+(pdftex.def)             Requested size: 360.0pt x 313.50327pt.
+ [93 <./Bilder/Screens/Abwesenheitmelden-2.jpg>]
+<Bilder/Screens/Schichttausch-2.jpg, id=1077, 1445.4pt x 1258.7025pt>
+File: Bilder/Screens/Schichttausch-2.jpg Graphic file (type jpg)
+<use Bilder/Screens/Schichttausch-2.jpg>
+Package pdftex.def Info: Bilder/Screens/Schichttausch-2.jpg  used on input line
+ 654.
+(pdftex.def)             Requested size: 360.0pt x 313.50327pt.
+ [94 <./Bilder/Screens/Schichttausch.jpg>]
+[95 <./Bilder/Screens/Schichttausch-1.jpg>]
+<Bilder/Screens/Wunschaeusserung.jpg, id=1086, 1445.4pt x 1257.69875pt>
+File: Bilder/Screens/Wunschaeusserung.jpg Graphic file (type jpg)
+<use Bilder/Screens/Wunschaeusserung.jpg>
+Package pdftex.def Info: Bilder/Screens/Wunschaeusserung.jpg  used on input lin
+e 660.
+(pdftex.def)             Requested size: 360.0pt x 313.25327pt.
+<Bilder/Screens/Wunschaeusserung-1.jpg, id=1087, 1445.4pt x 1258.7025pt>
+File: Bilder/Screens/Wunschaeusserung-1.jpg Graphic file (type jpg)
+<use Bilder/Screens/Wunschaeusserung-1.jpg>
+Package pdftex.def Info: Bilder/Screens/Wunschaeusserung-1.jpg  used on input l
+ine 664.
+(pdftex.def)             Requested size: 360.0pt x 313.50327pt.
+ [96 <./Bilder/Screens/Schichttausch-2.jpg>]
+<Bilder/Screens/Wunschaeusserung-2.jpg, id=1092, 1445.4pt x 1258.7025pt>
+File: Bilder/Screens/Wunschaeusserung-2.jpg Graphic file (type jpg)
+<use Bilder/Screens/Wunschaeusserung-2.jpg>
+Package pdftex.def Info: Bilder/Screens/Wunschaeusserung-2.jpg  used on input l
+ine 668.
+(pdftex.def)             Requested size: 360.0pt x 313.50327pt.
+ [97 <./Bilder/Screens/Wunschaeusserung.jpg>] [98 <./Bilder/Screens/Wunschaeuss
+erung-1.jpg>] [99 <./Bilder/Screens/Wunschaeusserung-2.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 676--677
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 676--677
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 678--683
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 678--683
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 678--683
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 678--683
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 678--683
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 678--683
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--694
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--694
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--694
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--694
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--694
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--694
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--694
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--694
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--694
+
+ []
+
+[100]
+Underfull \hbox (badness 10000) in paragraph at lines 695--697
+
+ []
+
+[101] [102]
+Overfull \hbox (6.02443pt too wide) in paragraph at lines 705--705
+[]\T1/cmr/bx/n/12 Aussagekr�ftige, ein-fach ver-st�nd-li-che Dar-stel-lun-gen d
+er
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 713.
+[103] [104]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 713.
+ (DokumentationSisterShift.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 713.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 713.
+
+
+Package rerunfilecheck Warning: File `DokumentationSisterShift.out' has changed
+.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `DokumentationSisterShift.out':
+(rerunfilecheck)             Before: B5808E863023E541E2D3AE098307DB90;7303
+(rerunfilecheck)             After:  670076137BCDAB6169833DDB5975BC37;8340.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 713.
+ ) 
+Here is how much of TeX's memory you used:
+ 7516 strings out of 492970
+ 115874 string characters out of 3122597
+ 204876 words of memory out of 3000000
+ 10954 multiletter control sequences out of 15000+200000
+ 16013 words of font info for 46 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 28i,8n,30p,1649b,488s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\DavidJovanoski\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\e
+c\dpi600\ecbx1200.pk> <C:\Users\DavidJovanoski\AppData\Local\MiKTeX\2.9\fonts\p
+k\ljfour\jknappen\ec\dpi600\ecbx1095.pk> <C:\Users\DavidJovanoski\AppData\Local
+\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\DavidJova
+noski\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> 
+<C:\Users\DavidJovanoski\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\d
+pi600\ecrm1200.pk> <C:\Users\DavidJovanoski\AppData\Local\MiKTeX\2.9\fonts\pk\l
+jfour\jknappen\ec\dpi600\ecrm1728.pk> <C:\Users\DavidJovanoski\AppData\Local\Mi
+KTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk><E:/Users/DavidJovanosk
+i/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+E:/Users/DavidJovanoski/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmmi8.pfb>
+Output written on DokumentationSisterShift.pdf (104 pages, 12950489 bytes).
+PDF statistics:
+ 1567 PDF objects out of 1728 (max. 8388607)
+ 275 named destinations out of 1000 (max. 500000)
+ 1117 words of extra memory for PDF output out of 10000 (max. 10000000)
+

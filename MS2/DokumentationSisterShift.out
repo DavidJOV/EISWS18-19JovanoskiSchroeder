@@ -1,0 +1,114 @@
+\BOOKMARK [1][-]{section.1}{Iteration Konzept}{}% 1
+\BOOKMARK [1][-]{section.2}{Iteration Dom\344nenmodell}{}% 2
+\BOOKMARK [1][-]{section.3}{The Usability Engineering Lifecycle}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Phase 1: Analyse}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Phase 2: Entwicklung und Testen}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Phase 3: Installation}{section.3}% 6
+\BOOKMARK [1][-]{section.4}{Anforderungen}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{Nutzungskontext}{section.4}% 8
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Stationsleitung}{subsection.4.1}% 9
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Krankenpfleger}{subsection.4.1}% 10
+\BOOKMARK [3][-]{subsubsection.4.1.3}{restliche Steakholder}{subsection.4.1}% 11
+\BOOKMARK [2][-]{subsection.4.2}{Anforderungsanalyse}{section.4}% 12
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Funktionale Anforderungen}{subsection.4.2}% 13
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Qualitative Anforderungen}{subsection.4.2}% 14
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Organisatorische Anforderungen}{subsection.4.2}% 15
+\BOOKMARK [2][-]{subsection.4.3}{Priorisierung der ermittelten Anforderungen}{section.4}% 16
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Fazit}{subsection.4.3}% 17
+\BOOKMARK [1][-]{section.5}{User Profiles}{}% 18
+\BOOKMARK [2][-]{subsection.5.1}{Stationsleitung}{section.5}% 19
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Eigenschaften}{subsection.5.1}% 20
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Anforderungen}{subsection.5.1}% 21
+\BOOKMARK [2][-]{subsection.5.2}{Krankenpfleger}{section.5}% 22
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Eigenschaften}{subsection.5.2}% 23
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Anforderungen}{subsection.5.2}% 24
+\BOOKMARK [2][-]{subsection.5.3}{Medizinische Fachangestellte}{section.5}% 25
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Eigenschaften}{subsection.5.3}% 26
+\BOOKMARK [3][-]{subsubsection.5.3.2}{Anforderungen}{subsection.5.3}% 27
+\BOOKMARK [2][-]{subsection.5.4}{Zusammenfassung}{section.5}% 28
+\BOOKMARK [1][-]{section.6}{Task Analyse}{}% 29
+\BOOKMARK [2][-]{subsection.6.1}{Task Einreichen einer Krank-/Abwesenheitsmeldung}{section.6}% 30
+\BOOKMARK [2][-]{subsection.6.2}{Task Verfassen des Dienstplans}{section.6}% 31
+\BOOKMARK [2][-]{subsection.6.3}{Task Tausch einer Schicht}{section.6}% 32
+\BOOKMARK [2][-]{subsection.6.4}{Fazit}{section.6}% 33
+\BOOKMARK [1][-]{section.7}{Usability Goals}{}% 34
+\BOOKMARK [2][-]{subsection.7.1}{Qualitative Usability Goals}{section.7}% 35
+\BOOKMARK [2][-]{subsection.7.2}{Quantitative Goals}{section.7}% 36
+\BOOKMARK [3][-]{subsubsection.7.2.1}{Dienstplanerstellung / -abfrage}{subsection.7.2}% 37
+\BOOKMARK [3][-]{subsubsection.7.2.2}{Melden von Abwesenheit}{subsection.7.2}% 38
+\BOOKMARK [3][-]{subsubsection.7.2.3}{Schichttausch}{subsection.7.2}% 39
+\BOOKMARK [3][-]{subsubsection.7.2.4}{Eintragen von W\374nschen zur Schichtplanung}{subsection.7.2}% 40
+\BOOKMARK [1][-]{section.8}{Platform Capabilities and Constraints}{}% 41
+\BOOKMARK [2][-]{subsection.8.1}{Anwendung f\374r Gesundheits- und Krankenpfleger Personal und die Stationsleitung}{section.8}% 42
+\BOOKMARK [2][-]{subsection.8.2}{Bildschirmgr\366\337e}{section.8}% 43
+\BOOKMARK [2][-]{subsection.8.3}{Browser}{section.8}% 44
+\BOOKMARK [2][-]{subsection.8.4}{Anbindung}{section.8}% 45
+\BOOKMARK [2][-]{subsection.8.5}{Ein- und Ausgabeger\344te}{section.8}% 46
+\BOOKMARK [1][-]{section.9}{General Design Principles}{}% 47
+\BOOKMARK [2][-]{subsection.9.1}{Abw\344gung des zu verwendenden Frameworks}{section.9}% 48
+\BOOKMARK [2][-]{subsection.9.2}{Andere Quellen}{section.9}% 49
+\BOOKMARK [1][-]{section.10}{Styleguide}{}% 50
+\BOOKMARK [2][-]{subsection.10.1}{Farbpalette}{section.10}% 51
+\BOOKMARK [2][-]{subsection.10.2}{Farbfond}{section.10}% 52
+\BOOKMARK [2][-]{subsection.10.3}{Hintergrundfarben}{section.10}% 53
+\BOOKMARK [2][-]{subsection.10.4}{Textfarbe}{section.10}% 54
+\BOOKMARK [2][-]{subsection.10.5}{Typographie}{section.10}% 55
+\BOOKMARK [2][-]{subsection.10.6}{Logo}{section.10}% 56
+\BOOKMARK [2][-]{subsection.10.7}{Webfont}{section.10}% 57
+\BOOKMARK [2][-]{subsection.10.8}{Schriftgr\366\337e}{section.10}% 58
+\BOOKMARK [2][-]{subsection.10.9}{Symbole und Icons}{section.10}% 59
+\BOOKMARK [1][-]{section.11}{Work Reengineering}{}% 60
+\BOOKMARK [2][-]{subsection.11.1}{Abwesenheitsmeldung}{section.11}% 61
+\BOOKMARK [2][-]{subsection.11.2}{Dienstplanerstellung}{section.11}% 62
+\BOOKMARK [2][-]{subsection.11.3}{Schichttausch}{section.11}% 63
+\BOOKMARK [2][-]{subsection.11.4}{Fazit}{section.11}% 64
+\BOOKMARK [1][-]{section.12}{Conceptual Model Design}{}% 65
+\BOOKMARK [2][-]{subsection.12.1}{Produkt- und Prozessorientierung}{section.12}% 66
+\BOOKMARK [2][-]{subsection.12.2}{Objektabalyse Sister Shift}{section.12}% 67
+\BOOKMARK [3][-]{subsubsection.12.2.1}{Objekte}{subsection.12.2}% 68
+\BOOKMARK [3][-]{subsubsection.12.2.2}{Attribute}{subsection.12.2}% 69
+\BOOKMARK [3][-]{subsubsection.12.2.3}{Operationen}{subsection.12.2}% 70
+\BOOKMARK [2][-]{subsection.12.3}{Identifikation von Ansichten}{section.12}% 71
+\BOOKMARK [2][-]{subsection.12.4}{Designregeln der jeweiligen Hauptfenster}{section.12}% 72
+\BOOKMARK [2][-]{subsection.12.5}{Wireframe}{section.12}% 73
+\BOOKMARK [2][-]{subsection.12.6}{Fazit}{section.12}% 74
+\BOOKMARK [1][-]{section.13}{Mockups}{}% 75
+\BOOKMARK [2][-]{subsection.13.1}{Allgemein}{section.13}% 76
+\BOOKMARK [2][-]{subsection.13.2}{Login}{section.13}% 77
+\BOOKMARK [2][-]{subsection.13.3}{Dienstplaneinstellungen}{section.13}% 78
+\BOOKMARK [2][-]{subsection.13.4}{Mitarbeiter anlegen/l\366schen}{section.13}% 79
+\BOOKMARK [2][-]{subsection.13.5}{Dienstplan-Kalender}{section.13}% 80
+\BOOKMARK [2][-]{subsection.13.6}{Schichtdetails}{section.13}% 81
+\BOOKMARK [2][-]{subsection.13.7}{Wunsch\344u\337erung, Tauschanfrage und Abwesenheitsmeldung}{section.13}% 82
+\BOOKMARK [2][-]{subsection.13.8}{Benachrichtigungen}{section.13}% 83
+\BOOKMARK [2][-]{subsection.13.9}{Dialogbox}{section.13}% 84
+\BOOKMARK [1][-]{section.14}{Screen Design Standards}{}% 85
+\BOOKMARK [2][-]{subsection.14.1}{Kontrollelemente Standards}{section.14}% 86
+\BOOKMARK [2][-]{subsection.14.2}{Layout Standards}{section.14}% 87
+\BOOKMARK [2][-]{subsection.14.3}{Interaktionsstandards}{section.14}% 88
+\BOOKMARK [2][-]{subsection.14.4}{Feedback Standards}{section.14}% 89
+\BOOKMARK [2][-]{subsection.14.5}{Responsive Design}{section.14}% 90
+\BOOKMARK [2][-]{subsection.14.6}{Effizienz und Geschwindigkeit}{section.14}% 91
+\BOOKMARK [2][-]{subsection.14.7}{Dokumentation}{section.14}% 92
+\BOOKMARK [2][-]{subsection.14.8}{Fazit}{section.14}% 93
+\BOOKMARK [1][-]{section.15}{Detailed User Interface}{}% 94
+\BOOKMARK [2][-]{subsection.15.1}{Login}{section.15}% 95
+\BOOKMARK [2][-]{subsection.15.2}{Dienstplan \205 Kalender \(Hauptansicht\)}{section.15}% 96
+\BOOKMARK [2][-]{subsection.15.3}{Dienstplaneinstellungen}{section.15}% 97
+\BOOKMARK [2][-]{subsection.15.4}{Benutzereinstellungen}{section.15}% 98
+\BOOKMARK [2][-]{subsection.15.5}{Mitarbeiter anlegen/l\366schen}{section.15}% 99
+\BOOKMARK [2][-]{subsection.15.6}{Abwesenheit melden}{section.15}% 100
+\BOOKMARK [2][-]{subsection.15.7}{Schichttausch}{section.15}% 101
+\BOOKMARK [2][-]{subsection.15.8}{Wunsch\344u\337erung}{section.15}% 102
+\BOOKMARK [1][-]{section.16}{Evaluation}{}% 103
+\BOOKMARK [2][-]{subsection.16.1}{Benutzer}{section.16}% 104
+\BOOKMARK [2][-]{subsection.16.2}{Szenarien}{section.16}% 105
+\BOOKMARK [2][-]{subsection.16.3}{Handlungen zu den Szenarien}{section.16}% 106
+\BOOKMARK [2][-]{subsection.16.4}{Fazit des Cognitive Walkthrough}{section.16}% 107
+\BOOKMARK [2][-]{subsection.16.5}{Fazit}{section.16}% 108
+\BOOKMARK [1][-]{section.17}{Zielerreichung}{}% 109
+\BOOKMARK [2][-]{subsection.17.1}{Einfaches,intutives,lernf\366rderliches Design}{section.17}% 110
+\BOOKMARK [2][-]{subsection.17.2}{Aussagekr\344ftige, einfach verst\344ndliche Darstellungen der wichtigsten Informationen und Herausstellen von Benachrichtigungen}{section.17}% 111
+\BOOKMARK [2][-]{subsection.17.3}{Datenkosistenz}{section.17}% 112
+\BOOKMARK [2][-]{subsection.17.4}{Automatisierung der Verarbeitung von Tauschanfrage, Wunsch\344u\337erungen und Ersatzfindung}{section.17}% 113
+\BOOKMARK [2][-]{subsection.17.5}{Benutzer zugeschnittene Interfaces}{section.17}% 114
