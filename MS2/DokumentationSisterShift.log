@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.20)  16 DEC 2018 03:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.20)  16 DEC 2018 17:04
 entering extended mode
 **./DokumentationSisterShift.tex
 (DokumentationSisterShift.tex
@@ -338,6 +338,64 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count117
 \LT@p@ftn=\toks24
 )
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdfpages\
+pdfpages.sty"
+Package: pdfpages 2017/10/31 v0.5l Insert pages of external PDF documents (AM)
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ifth
+en.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\cal
+c.sty"
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count118
+\calc@Bcount=\count119
+\calc@Adimen=\dimen120
+\calc@Bdimen=\dimen121
+\calc@Askip=\skip51
+\calc@Bskip=\skip52
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count120
+\calc@Cskip=\skip53
+)
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\eso-pic\e
+so-pic.sty"
+Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\xc
+olor.sty"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-
+cfg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+))
+\AM@pagewidth=\dimen122
+\AM@pageheight=\dimen123
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdfpages\
+pppdftex.def"
+File: pppdftex.def 2017/10/31 v0.5l Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box34
+\AM@global@opts=\toks25
+\AM@toc@title=\toks26
+\c@AM@survey=\count121
+\AM@templatesizebox=\box35
+)
 
 LaTeX Warning: Unused global option(s):
     [paper=a4,bibtotocnumbered,liststotocnumbered,DIV=calc,tablecaptionabove,he
@@ -346,35 +404,35 @@ adinclude].
 (DokumentationSisterShift.aux)
 \openout1 = `DokumentationSisterShift.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
 
 ("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\su
 pp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count118
-\scratchdimen=\dimen120
-\scratchbox=\box34
-\nofMPsegments=\count119
-\nofMParguments=\count120
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count121
-\MPscratchDim=\dimen121
-\MPnumerator=\count122
-\makeMPintoPDFobject=\count123
-\everyMPtoPDFconversion=\toks26
+\scratchcounter=\count122
+\scratchdimen=\dimen124
+\scratchbox=\box36
+\nofMPsegments=\count123
+\nofMParguments=\count124
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count125
+\MPscratchDim=\dimen125
+\MPnumerator=\count126
+\makeMPintoPDFobject=\count127
+\everyMPtoPDFconversion=\toks28
 )
 ("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\
 epstopdf-base.sty"
@@ -391,8 +449,8 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-\AtBeginShipoutBox=\box35
-Package hyperref Info: Link coloring OFF on input line 32.
+\AtBeginShipoutBox=\box37
+Package hyperref Info: Link coloring OFF on input line 33.
 
 ("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\
 nameref.sty"
@@ -402,29 +460,40 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 k\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count124
+\c@section@level=\count128
 )
-LaTeX Info: Redefining \ref on input line 32.
-LaTeX Info: Redefining \pageref on input line 32.
-LaTeX Info: Redefining \nameref on input line 32.
+LaTeX Info: Redefining \ref on input line 33.
+LaTeX Info: Redefining \pageref on input line 33.
+LaTeX Info: Redefining \nameref on input line 33.
  (DokumentationSisterShift.out)
 (DokumentationSisterShift.out)
 \@outlinefile=\write3
 \openout3 = `DokumentationSisterShift.out'.
 
-<Bilder/Logo_TH-Koeln_RGB_17pt.jpg, id=411, 88.8921pt x 47.6982pt>
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\
+pdflscape.sty"
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+
+("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\
+lscape.sty"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+<Bilder/Logo_TH-Koeln_RGB_17pt.jpg, id=651, 88.8921pt x 47.6982pt>
 File: Bilder/Logo_TH-Koeln_RGB_17pt.jpg Graphic file (type jpg)
 <use Bilder/Logo_TH-Koeln_RGB_17pt.jpg>
 Package pdftex.def Info: Bilder/Logo_TH-Koeln_RGB_17pt.jpg  used on input line 
-34.
+35.
 (pdftex.def)             Requested size: 88.89188pt x 47.69806pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 37.
+LaTeX Font Info:    Try loading font information for U+msa on input line 38.
 
 ("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\
 umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 37.
+LaTeX Font Info:    Try loading font information for U+msb on input line 38.
 
 ("E:\Users\DavidJovanoski\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\
 umsb.fd"
@@ -433,7 +502,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.37 \newpage
+l.38 \newpage
              
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -443,30 +512,37 @@ So I'll assume that you meant to type \cr instead.
 
 {C:/Users/DavidJovanoski/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./
 Bilder/Logo_TH-Koeln_RGB_17pt.jpg>] (DokumentationSisterShift.toc [2]
-[3])
+[3] [4]
+Overfull \hbox (0.50812pt too wide) in paragraph at lines 112--112
+ [][] [][]\T1/cmr/m/n/10.95 Aussagekr�ftige, ein-fach ver-st�nd-li-che Dar-stel
+-lun-gen der wich- 
+ []
+
+
+Overfull \hbox (6.92978pt too wide) in paragraph at lines 114--114
+ [][] [][]\T1/cmr/m/n/10.95 Automatisierung der Ver-ar-bei-tung von Tauschan-fr
+a-ge, Wunsch- 
+ []
+
+[5])
 \tf@toc=\write4
 \openout4 = `DokumentationSisterShift.toc'.
 
- (DokumentationSisterShift.lof [4] [5])
+ (DokumentationSisterShift.lof [6] [7])
 \tf@lof=\write5
 \openout5 = `DokumentationSisterShift.lof'.
 
- [6] [7]
-<Bilder/Domaenenmodell.jpg, id=661, 593.21625pt x 362.35374pt>
+ [8] [9]
+<Bilder/Domaenenmodell.jpg, id=1028, 593.21625pt x 362.35374pt>
 File: Bilder/Domaenenmodell.jpg Graphic file (type jpg)
 <use Bilder/Domaenenmodell.jpg>
-Package pdftex.def Info: Bilder/Domaenenmodell.jpg  used on input line 50.
-(pdftex.def)             Requested size: 593.2148pt x 362.35286pt.
-
-Overfull \hbox (233.2148pt too wide) in paragraph at lines 50--51
-[][] 
- []
-
-[8 <./Bilder/Domaenenmodell.jpg>] [9] [10] [11]
+Package pdftex.def Info: Bilder/Domaenenmodell.jpg  used on input line 51.
+(pdftex.def)             Requested size: 360.0pt x 219.90753pt.
+ [10] [11 <./Bilder/Domaenenmodell.jpg>] [12] [13]
 ! Missing number, treated as zero.
 <to be read again> 
                    F
-l.101 [FA02]
+l.102 [FA02]
              Das System muss bei der automatischen Erstellung der Dienstplä...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -475,7 +551,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    F
-l.101 [FA02]
+l.102 [FA02]
              Das System muss bei der automatischen Erstellung der Dienstplä...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -487,7 +563,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Missing number, treated as zero.
 <to be read again> 
                    F
-l.102 [FA03]
+l.103 [FA03]
              Das System sollte den Gesundheits- und Krankenpflegern die Mög...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -496,7 +572,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    F
-l.102 [FA03]
+l.103 [FA03]
              Das System sollte den Gesundheits- und Krankenpflegern die Mög...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -508,7 +584,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Missing number, treated as zero.
 <to be read again> 
                    F
-l.103 [FA04]
+l.104 [FA04]
              Das System muss fähig sein, einen umfassenden Dienstplan für ...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -517,7 +593,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    F
-l.103 [FA04]
+l.104 [FA04]
              Das System muss fähig sein, einen umfassenden Dienstplan für ...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -529,7 +605,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Missing number, treated as zero.
 <to be read again> 
                    F
-l.104 [FA05]
+l.105 [FA05]
              Das System muss den Mitarbeitern die Möglichkeit bieten, eine ...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -538,7 +614,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    F
-l.104 [FA05]
+l.105 [FA05]
              Das System muss den Mitarbeitern die Möglichkeit bieten, eine ...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -550,7 +626,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Missing number, treated as zero.
 <to be read again> 
                    F
-l.105 [FA06]
+l.106 [FA06]
              Sobald eine Abwesenheitsmeldung vorliegt, muss das System fähi...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -559,7 +635,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    F
-l.105 [FA06]
+l.106 [FA06]
              Sobald eine Abwesenheitsmeldung vorliegt, muss das System fähi...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -571,7 +647,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Missing number, treated as zero.
 <to be read again> 
                    F
-l.106 [FA07]
+l.107 [FA07]
              Ist ein Ersatz für einen Personalausfall gefunden und eingetei...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -580,7 +656,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    F
-l.106 [FA07]
+l.107 [FA07]
              Ist ein Ersatz für einen Personalausfall gefunden und eingetei...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -592,7 +668,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Missing number, treated as zero.
 <to be read again> 
                    F
-l.107 [FA08]
+l.108 [FA08]
              Falls kein Mitarbeiter aus dem eigenen Krankenhaus als Ersatz b...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -601,7 +677,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    F
-l.107 [FA08]
+l.108 [FA08]
              Falls kein Mitarbeiter aus dem eigenen Krankenhaus als Ersatz b...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -613,7 +689,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Missing number, treated as zero.
 <to be read again> 
                    F
-l.108 [FA09]
+l.109 [FA09]
              Das System muss den Gesundheits- und Krankenpflegern nachdem ei...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -622,7 +698,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    F
-l.108 [FA09]
+l.109 [FA09]
              Das System muss den Gesundheits- und Krankenpflegern nachdem ei...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -634,7 +710,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Missing number, treated as zero.
 <to be read again> 
                    F
-l.109 [FA10]
+l.110 [FA10]
              Falls ein Schichten-Tausch angestrebt wird, darf das System nur...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -643,7 +719,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    F
-l.109 [FA10]
+l.110 [FA10]
              Falls ein Schichten-Tausch angestrebt wird, darf das System nur...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -655,7 +731,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Missing number, treated as zero.
 <to be read again> 
                    F
-l.110 [FA11]
+l.111 [FA11]
              Das System muss der Stationsleitung die Möglichkeit bieten, As...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -664,7 +740,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    F
-l.110 [FA11]
+l.111 [FA11]
              Das System muss der Stationsleitung die Möglichkeit bieten, As...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -674,26 +750,26 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-Overfull \hbox (2.8365pt too wide) in paragraph at lines 100--111
+Overfull \hbox (2.8365pt too wide) in paragraph at lines 101--112
 \T1/cmr/m/n/10.95 Das Sy-stem muss den Gesundheits- und Kran-ken-pfle-gern nach
 -dem ein Dienst-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--111
+Underfull \hbox (badness 10000) in paragraph at lines 101--112
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--111
+Underfull \hbox (badness 10000) in paragraph at lines 101--112
 
  []
 
-[12]
+[14] [15]
 ! Missing number, treated as zero.
 <to be read again> 
                    Q
-l.113 [QA02]
+l.114 [QA02]
              Das System eine hohe Systemstabilität aufweisen. Es soll also ...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -702,7 +778,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    Q
-l.113 [QA02]
+l.114 [QA02]
              Das System eine hohe Systemstabilität aufweisen. Es soll also ...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -714,7 +790,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Missing number, treated as zero.
 <to be read again> 
                    Q
-l.114 [QA03]
+l.115 [QA03]
              Das System soll zuverlässig sein. Die Dienste sollen immer zur...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -723,7 +799,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    Q
-l.114 [QA03]
+l.115 [QA03]
              Das System soll zuverlässig sein. Die Dienste sollen immer zur...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -733,20 +809,19 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--115
+Underfull \hbox (badness 10000) in paragraph at lines 113--116
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--115
+Underfull \hbox (badness 10000) in paragraph at lines 113--116
 
  []
 
-[13]
 ! Missing number, treated as zero.
 <to be read again> 
                    O
-l.117 [OA02]
+l.118 [OA02]
              Das System muss jeden Mitarbeiter auffordern eine valide Kontak...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -755,7 +830,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    O
-l.117 [OA02]
+l.118 [OA02]
              Das System muss jeden Mitarbeiter auffordern eine valide Kontak...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -767,7 +842,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Missing number, treated as zero.
 <to be read again> 
                    O
-l.118 [OA03]
+l.119 [OA03]
              Die Daten der einzelnen Mitarbeiter und deren Dienstplänen mü...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -776,7 +851,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    O
-l.118 [OA03]
+l.119 [OA03]
              Die Daten der einzelnen Mitarbeiter und deren Dienstplänen mü...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -786,1366 +861,2125 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--120
+Underfull \hbox (badness 10000) in paragraph at lines 117--121
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--120
+Underfull \hbox (badness 10000) in paragraph at lines 117--121
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--120
+Underfull \hbox (badness 10000) in paragraph at lines 117--121
 
  []
 
-<Bilder/Tanforderungen.png, id=688, 375.65344pt x 514.92375pt>
+<Bilder/Tanforderungen.png, id=1055, 375.65344pt x 514.92375pt>
 File: Bilder/Tanforderungen.png Graphic file (type png)
 <use Bilder/Tanforderungen.png>
-Package pdftex.def Info: Bilder/Tanforderungen.png  used on input line 123.
-(pdftex.def)             Requested size: 375.65251pt x 514.92249pt.
-
-Overfull \hbox (15.65251pt too wide) in paragraph at lines 123--124
-[][] 
- []
-
-[14] [15 <./Bilder/Tanforderungen.png>] [16] [17]
-<Bilder/tabelleAuswert.jpg, id=705, 414.79968pt x 109.91063pt>
+Package pdftex.def Info: Bilder/Tanforderungen.png  used on input line 124.
+(pdftex.def)             Requested size: 360.0pt x 493.49619pt.
+[16] [17] [18 <./Bilder/Tanforderungen.png>] [19] [20]
+<Bilder/tabelleAuswert.jpg, id=1077, 414.79968pt x 109.91063pt>
 File: Bilder/tabelleAuswert.jpg Graphic file (type jpg)
 <use Bilder/tabelleAuswert.jpg>
-Package pdftex.def Info: Bilder/tabelleAuswert.jpg  used on input line 164.
-(pdftex.def)             Requested size: 414.79868pt x 109.91034pt.
+Package pdftex.def Info: Bilder/tabelleAuswert.jpg  used on input line 165.
+(pdftex.def)             Requested size: 360.0pt x 95.39337pt.
 
-Overfull \hbox (54.79868pt too wide) in paragraph at lines 164--165
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 154--167
+Underfull \hbox (badness 10000) in paragraph at lines 155--167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--167
+Underfull \hbox (badness 10000) in paragraph at lines 155--167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--167
+Underfull \hbox (badness 10000) in paragraph at lines 155--167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--167
+Underfull \hbox (badness 10000) in paragraph at lines 155--167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--167
+Underfull \hbox (badness 10000) in paragraph at lines 155--167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--167
+Underfull \hbox (badness 10000) in paragraph at lines 155--167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--167
+Underfull \hbox (badness 10000) in paragraph at lines 155--167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--167
+Underfull \hbox (badness 10000) in paragraph at lines 155--167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--167
-
- []
-
-[18] [19 <./Bilder/tabelleAuswert.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 170--190
+Underfull \hbox (badness 10000) in paragraph at lines 155--167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--190
+Underfull \hbox (badness 10000) in paragraph at lines 155--167
+
+ []
+
+[21] [22 <./Bilder/tabelleAuswert.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 171--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--190
+Underfull \hbox (badness 10000) in paragraph at lines 171--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--190
+Underfull \hbox (badness 10000) in paragraph at lines 171--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--190
+Underfull \hbox (badness 10000) in paragraph at lines 171--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--190
+Underfull \hbox (badness 10000) in paragraph at lines 171--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--190
+Underfull \hbox (badness 10000) in paragraph at lines 171--191
 
  []
 
 
-Overfull \hbox (1.76434pt too wide) in paragraph at lines 170--190
+Underfull \hbox (badness 10000) in paragraph at lines 171--191
+
+ []
+
+
+Overfull \hbox (1.76434pt too wide) in paragraph at lines 171--191
 \T1/cmr/m/n/10.95 Zusatz: Ist die Sta-ti-ons-lei-tung oder de-ren Ver-tre-tung 
 aus Gr�n-den wie Krank-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--190
+Underfull \hbox (badness 10000) in paragraph at lines 171--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--190
+Underfull \hbox (badness 10000) in paragraph at lines 171--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--190
+Underfull \hbox (badness 10000) in paragraph at lines 171--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--190
+Underfull \hbox (badness 10000) in paragraph at lines 171--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--190
+Underfull \hbox (badness 10000) in paragraph at lines 171--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--190
+Underfull \hbox (badness 10000) in paragraph at lines 171--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--190
+Underfull \hbox (badness 10000) in paragraph at lines 171--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--190
+Underfull \hbox (badness 10000) in paragraph at lines 171--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--190
+Underfull \hbox (badness 10000) in paragraph at lines 171--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--190
+Underfull \hbox (badness 10000) in paragraph at lines 171--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--190
+Underfull \hbox (badness 10000) in paragraph at lines 171--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--190
+Underfull \hbox (badness 10000) in paragraph at lines 171--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--190
+Underfull \hbox (badness 10000) in paragraph at lines 171--191
 
  []
 
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 191--206
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 191--206
+[23] [24]
+Underfull \hbox (badness 10000) in paragraph at lines 192--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--206
+Underfull \hbox (badness 10000) in paragraph at lines 192--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--206
+Underfull \hbox (badness 10000) in paragraph at lines 192--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--206
+Underfull \hbox (badness 10000) in paragraph at lines 192--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--206
+Underfull \hbox (badness 10000) in paragraph at lines 192--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--206
+Underfull \hbox (badness 10000) in paragraph at lines 192--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--206
+Underfull \hbox (badness 10000) in paragraph at lines 192--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--206
+Underfull \hbox (badness 10000) in paragraph at lines 192--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--206
+Underfull \hbox (badness 10000) in paragraph at lines 192--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--206
+Underfull \hbox (badness 10000) in paragraph at lines 192--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--206
+Underfull \hbox (badness 10000) in paragraph at lines 192--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--206
+Underfull \hbox (badness 10000) in paragraph at lines 192--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--206
+Underfull \hbox (badness 10000) in paragraph at lines 192--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--206
+Underfull \hbox (badness 10000) in paragraph at lines 192--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--206
-
- []
-
-[21] [22]
-Underfull \hbox (badness 10000) in paragraph at lines 207--213
+Underfull \hbox (badness 10000) in paragraph at lines 192--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 207--213
+Underfull \hbox (badness 10000) in paragraph at lines 192--207
+
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 208--214
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 207--213
+Underfull \hbox (badness 10000) in paragraph at lines 208--214
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 207--213
+Underfull \hbox (badness 10000) in paragraph at lines 208--214
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--228
+Underfull \hbox (badness 10000) in paragraph at lines 208--214
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--228
+Underfull \hbox (badness 10000) in paragraph at lines 215--229
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--228
+Underfull \hbox (badness 10000) in paragraph at lines 215--229
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--228
+Underfull \hbox (badness 10000) in paragraph at lines 215--229
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--228
+Underfull \hbox (badness 10000) in paragraph at lines 215--229
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--228
+Underfull \hbox (badness 10000) in paragraph at lines 215--229
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--228
+Underfull \hbox (badness 10000) in paragraph at lines 215--229
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--228
+Underfull \hbox (badness 10000) in paragraph at lines 215--229
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--228
+Underfull \hbox (badness 10000) in paragraph at lines 215--229
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--228
+Underfull \hbox (badness 10000) in paragraph at lines 215--229
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--228
+Underfull \hbox (badness 10000) in paragraph at lines 215--229
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--228
+Underfull \hbox (badness 10000) in paragraph at lines 215--229
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--228
+Underfull \hbox (badness 10000) in paragraph at lines 215--229
 
  []
 
-[23]
-<Bilder/qualiUser.jpg, id=731, 373.395pt x 498.36188pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--229
+
+ []
+
+[26] [27]
+<Bilder/qualiUser.jpg, id=1107, 373.395pt x 498.36188pt>
 File: Bilder/qualiUser.jpg Graphic file (type jpg)
 <use Bilder/qualiUser.jpg>
-Package pdftex.def Info: Bilder/qualiUser.jpg  used on input line 236.
-(pdftex.def)             Requested size: 373.39409pt x 498.36066pt.
-
-Overfull \hbox (13.39409pt too wide) in paragraph at lines 236--237
-[][] 
- []
-
-[24]
-<Bilder/dienstplanAbfrage.jpg, id=736, 372.64218pt x 361.35pt>
+Package pdftex.def Info: Bilder/qualiUser.jpg  used on input line 237.
+(pdftex.def)             Requested size: 360.0pt x 480.50557pt.
+ [28]
+<Bilder/dienstplanAbfrage.jpg, id=1112, 372.64218pt x 361.35pt>
 File: Bilder/dienstplanAbfrage.jpg Graphic file (type jpg)
 <use Bilder/dienstplanAbfrage.jpg>
-Package pdftex.def Info: Bilder/dienstplanAbfrage.jpg  used on input line 243.
-(pdftex.def)             Requested size: 372.64127pt x 361.34912pt.
-
-Overfull \hbox (12.64127pt too wide) in paragraph at lines 243--244
-[][] 
- []
-
-<Bilder/meldenAbwesen.jpg, id=737, 371.88937pt x 357.58594pt>
+Package pdftex.def Info: Bilder/dienstplanAbfrage.jpg  used on input line 244.
+(pdftex.def)             Requested size: 360.0pt x 349.10307pt.
+ [29 <./Bilder/qualiUser.jpg>]
+<Bilder/meldenAbwesen.jpg, id=1117, 371.88937pt x 357.58594pt>
 File: Bilder/meldenAbwesen.jpg Graphic file (type jpg)
 <use Bilder/meldenAbwesen.jpg>
-Package pdftex.def Info: Bilder/meldenAbwesen.jpg  used on input line 248.
-(pdftex.def)             Requested size: 371.88846pt x 357.58505pt.
-
-Overfull \hbox (11.88846pt too wide) in paragraph at lines 248--249
-[][] 
- []
-
-<Bilder/Schichttausch.jpg, id=738, 371.88937pt x 360.59718pt>
+Package pdftex.def Info: Bilder/meldenAbwesen.jpg  used on input line 249.
+(pdftex.def)             Requested size: 360.0pt x 346.16498pt.
+ [30 <./Bilder/dienstplanAbfrage.jpg>]
+<Bilder/Schichttausch.jpg, id=1122, 371.88937pt x 360.59718pt>
 File: Bilder/Schichttausch.jpg Graphic file (type jpg)
 <use Bilder/Schichttausch.jpg>
-Package pdftex.def Info: Bilder/Schichttausch.jpg  used on input line 253.
-(pdftex.def)             Requested size: 371.88846pt x 360.5963pt.
-
-Overfull \hbox (11.88846pt too wide) in paragraph at lines 253--254
-[][] 
- []
-
-<Bilder/wuensche.jpg, id=739, 371.88937pt x 371.13657pt>
+Package pdftex.def Info: Bilder/Schichttausch.jpg  used on input line 254.
+(pdftex.def)             Requested size: 360.0pt x 349.08005pt.
+ [31 <./Bilder/meldenAbwesen.jpg>]
+<Bilder/wuensche.jpg, id=1128, 371.88937pt x 371.13657pt>
 File: Bilder/wuensche.jpg Graphic file (type jpg)
 <use Bilder/wuensche.jpg>
-Package pdftex.def Info: Bilder/wuensche.jpg  used on input line 258.
-(pdftex.def)             Requested size: 371.88846pt x 371.13565pt.
-
-Overfull \hbox (11.88846pt too wide) in paragraph at lines 258--259
-[][] 
- []
-
-[25] [26 <./Bilder/qualiUser.jpg>] [27 <./Bilder/dienstplanAbfrage.jpg>]
-[28 <./Bilder/meldenAbwesen.jpg>] [29 <./Bilder/Schichttausch.jpg>] [30 <./Bild
-er/wuensche.jpg>] [31] [32]
-<Bilder/farbfont.jpg, id=774, 366.61969pt x 222.07968pt>
+Package pdftex.def Info: Bilder/wuensche.jpg  used on input line 259.
+(pdftex.def)             Requested size: 360.0pt x 359.28282pt.
+ [32 <./Bilder/Schichttausch.jpg>]
+[33 <./Bilder/wuensche.jpg>] [34] [35]
+<Bilder/farbfont.jpg, id=1145, 366.61969pt x 222.07968pt>
 File: Bilder/farbfont.jpg Graphic file (type jpg)
 <use Bilder/farbfont.jpg>
-Package pdftex.def Info: Bilder/farbfont.jpg  used on input line 288.
-(pdftex.def)             Requested size: 366.61879pt x 222.07913pt.
-
-Overfull \hbox (6.61879pt too wide) in paragraph at lines 288--289
-[][] 
- []
-
-[33]
-<Bilder/Hintergrundfarben.jpg, id=779, 302.63063pt x 109.1578pt>
+Package pdftex.def Info: Bilder/farbfont.jpg  used on input line 289.
+(pdftex.def)             Requested size: 360.0pt x 218.0839pt.
+<Bilder/Hintergrundfarben.jpg, id=1146, 302.63063pt x 109.1578pt>
 File: Bilder/Hintergrundfarben.jpg Graphic file (type jpg)
 <use Bilder/Hintergrundfarben.jpg>
-Package pdftex.def Info: Bilder/Hintergrundfarben.jpg  used on input line 293.
-(pdftex.def)             Requested size: 302.62988pt x 109.15753pt.
-<Bilder/Textfarben.jpg, id=780, 299.61937pt x 60.97781pt>
+Package pdftex.def Info: Bilder/Hintergrundfarben.jpg  used on input line 294.
+(pdftex.def)             Requested size: 360.0pt x 129.85275pt.
+ [36 <./Bilder/farbfont.jpg>]
+<Bilder/Textfarben.jpg, id=1151, 299.61937pt x 60.97781pt>
 File: Bilder/Textfarben.jpg Graphic file (type jpg)
 <use Bilder/Textfarben.jpg>
-Package pdftex.def Info: Bilder/Textfarben.jpg  used on input line 298.
-(pdftex.def)             Requested size: 299.61864pt x 60.97765pt.
- [34 <./Bilder/farbfont.jpg> <./Bilder/Hintergrundfarben.jpg>]
-<Bilder/Typographie.jpg, id=785, 254.45062pt x 159.59625pt>
+Package pdftex.def Info: Bilder/Textfarben.jpg  used on input line 299.
+(pdftex.def)             Requested size: 360.0pt x 73.2716pt.
+<Bilder/Typographie.jpg, id=1152, 254.45062pt x 159.59625pt>
 File: Bilder/Typographie.jpg Graphic file (type jpg)
 <use Bilder/Typographie.jpg>
-Package pdftex.def Info: Bilder/Typographie.jpg  used on input line 304.
-(pdftex.def)             Requested size: 254.45pt x 159.59584pt.
-<Bilder/Logo.jpg, id=786, 146.79843pt x 125.71968pt>
+Package pdftex.def Info: Bilder/Typographie.jpg  used on input line 305.
+(pdftex.def)             Requested size: 360.0pt x 225.80756pt.
+ [37 <./Bilder/Hintergrundfarben.jpg> <./Bilder/Textfarben.jpg>]
+<Bilder/Logo.jpg, id=1158, 146.79843pt x 125.71968pt>
 File: Bilder/Logo.jpg Graphic file (type jpg)
 <use Bilder/Logo.jpg>
-Package pdftex.def Info: Bilder/Logo.jpg  used on input line 310.
-(pdftex.def)             Requested size: 146.79807pt x 125.71936pt.
- [35 <./Bilder/Textfarben.jpg> <./Bilder/Typographie.jpg>] [36 <./Bilder/Logo.j
-pg>] [37]
-[38]
-Underfull \hbox (badness 10000) in paragraph at lines 342--348
+Package pdftex.def Info: Bilder/Logo.jpg  used on input line 311.
+(pdftex.def)             Requested size: 360.0pt x 308.342pt.
+ [38 <./Bilder/Typographie.jpg>] [39 <./Bilder/Logo.jpg>] [40] [41]
+Underfull \hbox (badness 10000) in paragraph at lines 343--349
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--348
+Underfull \hbox (badness 10000) in paragraph at lines 343--349
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--348
+Underfull \hbox (badness 10000) in paragraph at lines 343--349
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--348
+Underfull \hbox (badness 10000) in paragraph at lines 343--349
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--348
+Underfull \hbox (badness 10000) in paragraph at lines 343--349
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--348
+Underfull \hbox (badness 10000) in paragraph at lines 343--349
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--348
+Underfull \hbox (badness 10000) in paragraph at lines 343--349
 
- []
-
-[39]
-Underfull \hbox (badness 10000) in paragraph at lines 349--355
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 356--365
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 356--365
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 356--365
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 356--365
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 356--365
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 356--365
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 356--365
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 366--375
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 366--375
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 366--375
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 366--375
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 366--375
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 366--375
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 366--375
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 366--375
-
- []
-
-[40] [41]
-Underfull \hbox (badness 10000) in paragraph at lines 376--377
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 376--377
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 378--380
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 378--380
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 378--380
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 381--383
-
- []
-
-<Bilder/Wireframe.jpg, id=816, 431.81325pt x 528.2937pt>
-File: Bilder/Wireframe.jpg Graphic file (type jpg)
-<use Bilder/Wireframe.jpg>
-Package pdftex.def Info: Bilder/Wireframe.jpg  used on input line 386.
-(pdftex.def)             Requested size: 431.81218pt x 528.29242pt.
-
-Overfull \hbox (71.81218pt too wide) in paragraph at lines 386--387
-[][] 
- []
-
-<Bilder/Wireframe2.jpg, id=817, 1452.17531pt x 1325.70282pt>
-File: Bilder/Wireframe2.jpg Graphic file (type jpg)
-<use Bilder/Wireframe2.jpg>
-Package pdftex.def Info: Bilder/Wireframe2.jpg  used on input line 390.
-(pdftex.def)             Requested size: 1452.17178pt x 1325.69958pt.
-
-Overfull \hbox (1092.17178pt too wide) in paragraph at lines 390--391
-[][] 
  []
 
 [42]
-Overfull \vbox (12.62082pt too high) has occurred while \output is active []
-
-
-[43 <./Bilder/Wireframe.jpg>]
-Overfull \vbox (810.02798pt too high) has occurred while \output is active []
-
-
-[44 <./Bilder/Wireframe2.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 396--406
+Underfull \hbox (badness 10000) in paragraph at lines 350--356
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 396--406
+Underfull \hbox (badness 10000) in paragraph at lines 357--366
 
  []
 
-<Bilder/Login.jpg, id=831, 792.71156pt x 624.08156pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--366
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--366
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--366
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--366
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--366
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--366
+
+ []
+
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 367--376
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--376
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--376
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--376
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--376
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--376
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--376
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--376
+
+ []
+
+[44]
+Underfull \hbox (badness 10000) in paragraph at lines 377--378
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 377--378
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 379--381
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 379--381
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 379--381
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--384
+
+ []
+
+<Bilder/Wireframe.jpg, id=1188, 431.81325pt x 528.2937pt>
+File: Bilder/Wireframe.jpg Graphic file (type jpg)
+<use Bilder/Wireframe.jpg>
+Package pdftex.def Info: Bilder/Wireframe.jpg  used on input line 387.
+(pdftex.def)             Requested size: 360.0pt x 440.4667pt.
+[45]
+<Bilder/Wireframe2.jpg, id=1193, 1452.17531pt x 1325.70282pt>
+File: Bilder/Wireframe2.jpg Graphic file (type jpg)
+<use Bilder/Wireframe2.jpg>
+Package pdftex.def Info: Bilder/Wireframe2.jpg  used on input line 391.
+(pdftex.def)             Requested size: 360.0pt x 328.63335pt.
+ [46] [47 <./Bilder/Wireframe.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 397--407
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--407
+
+ []
+
+[48 <./Bilder/Wireframe2.jpg>]
+<Bilder/Login.jpg, id=1206, 792.71156pt x 624.08156pt>
 File: Bilder/Login.jpg Graphic file (type jpg)
 <use Bilder/Login.jpg>
-Package pdftex.def Info: Bilder/Login.jpg  used on input line 411.
-(pdftex.def)             Requested size: 792.70963pt x 624.08003pt.
+Package pdftex.def Info: Bilder/Login.jpg  used on input line 412.
+(pdftex.def)             Requested size: 360.0pt x 283.42429pt.
 
-Overfull \hbox (432.70963pt too wide) in paragraph at lines 411--412
-[][] 
- []
-
-
-Overfull \hbox (15.04747pt too wide) in paragraph at lines 409--413
+Overfull \hbox (15.04747pt too wide) in paragraph at lines 410--414
 \T1/cmr/m/n/10.95 Der Login-Screen er-for-dert nur einen Be-nut-zer-na-men und 
 das pas-sen-de Passwort
  []
 
-<Bilder/Dienstplanerstellung.jpg, id=832, 700.11563pt x 683.55376pt>
+[49]
+<Bilder/Dienstplanerstellung.jpg, id=1212, 700.11563pt x 683.55376pt>
 File: Bilder/Dienstplanerstellung.jpg Graphic file (type jpg)
 <use Bilder/Dienstplanerstellung.jpg>
 Package pdftex.def Info: Bilder/Dienstplanerstellung.jpg  used on input line 41
-6.
-(pdftex.def)             Requested size: 700.11392pt x 683.5521pt.
-
-Underfull \hbox (badness 5359) in paragraph at lines 415--417
-\T1/cmr/m/n/10.95 In die-ser An-sicht m�s-sen vor der au-to-ma-ti-schen Ge-ne-r
-ie-rung ei-
- []
-
-
-Underfull \hbox (badness 7362) in paragraph at lines 415--417
-\T1/cmr/m/n/10.95 nes Dienst-plans die zu se-hen-den Eck-da-ten ge-setzt wer-de
-n. Hat
- []
-
-
-Underfull \hbox (badness 4036) in paragraph at lines 415--417
-\T1/cmr/m/n/10.95 der User al-le Eck-da-ten ge-setzt, kann durch den But-ton D
-ienst-
- []
-
-
-Underfull \hbox (badness 1248) in paragraph at lines 415--417
-\T1/cmr/m/n/10.95 plan ge-ne-rie-ren ein neu-er Dienst-plan vom Sy-stem ge-ne-
-riert wer-den.
- []
-
-
-Overfull \hbox (340.11392pt too wide) in paragraph at lines 415--417
-[] 
- []
-
-[45]
-Overfull \vbox (108.40843pt too high) has occurred while \output is active []
-
-
-[46 <./Bilder/Login.jpg>]
-Overfull \vbox (240.76057pt too high) has occurred while \output is active []
-
-
-[47 <./Bilder/Dienstplanerstellung.jpg>]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.422 ...{Bilder/Mitarbeiter anlegen_loeschen.jpg}
-                                                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-LaTeX Warning: File `Bilder/Mitarbeiter anlegen_loeschen.jpg' not found on inpu
-t line 422.
-
-<Bilder/Mitarbeiter anlegen_loeschen.jpg, id=845, 694.09312pt x 682.04813pt>
-File: Bilder/Mitarbeiter anlegen_loeschen.jpg Graphic file (type jpg)
-<use Bilder/Mitarbeiter anlegen_loeschen.jpg>
-Package pdftex.def Info: Bilder/Mitarbeiter anlegen_loeschen.jpg  used on input
- line 422.
-(pdftex.def)             Requested size: 694.09143pt x 682.04646pt.
-! Missing $ inserted.
-<inserted text> 
-                $
-l.422 ...{Bilder/Mitarbeiter anlegen_loeschen.jpg}
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Overfull \hbox (430.47363pt too wide) in paragraph at lines 422--423
-[][] 
- []
-
-[48]
-Overfull \vbox (166.98312pt too high) has occurred while \output is active []
-
-
-[49 <./Bilder/Mitarbeiter anlegen_loeschen.jpg>]
-<Bilder/Dienstplan-Kalender.jpg, id=857, 661.72218pt x 682.04813pt>
+8.
+(pdftex.def)             Requested size: 360.0pt x 351.48653pt.
+ [50 <./Bilder/Login.jpg>]
+<Bilder/Mitarbeiteranlegen_loeschen.jpg, id=1217, 694.09312pt x 682.04813pt>
+File: Bilder/Mitarbeiteranlegen_loeschen.jpg Graphic file (type jpg)
+<use Bilder/Mitarbeiteranlegen_loeschen.jpg>
+Package pdftex.def Info: Bilder/Mitarbeiteranlegen_loeschen.jpg  used on input 
+line 424.
+(pdftex.def)             Requested size: 360.0pt x 353.76164pt.
+ [51 <./Bilder/Dienstplanerstellung.jpg>]
+<Bilder/Dienstplan-Kalender.jpg, id=1222, 661.72218pt x 682.04813pt>
 File: Bilder/Dienstplan-Kalender.jpg Graphic file (type jpg)
 <use Bilder/Dienstplan-Kalender.jpg>
-Package pdftex.def Info: Bilder/Dienstplan-Kalender.jpg  used on input line 428
+Package pdftex.def Info: Bilder/Dienstplan-Kalender.jpg  used on input line 430
 .
-(pdftex.def)             Requested size: 661.72057pt x 682.04646pt.
+(pdftex.def)             Requested size: 360.0pt x 371.05841pt.
 
-Overfull \hbox (301.72057pt too wide) in paragraph at lines 428--429
-[][] 
- []
-
-[50]
-Overfull \vbox (166.37486pt too high) has occurred while \output is active []
-
-
-[51 <./Bilder/Dienstplan-Kalender.jpg>]
-<Bilder/Schichtdetails.jpg, id=866, 691.83469pt x 679.03688pt>
+[52 <./Bilder/Mitarbeiteranlegen_loeschen.jpg>]
+<Bilder/Schichtdetails.jpg, id=1227, 691.83469pt x 679.03688pt>
 File: Bilder/Schichtdetails.jpg Graphic file (type jpg)
 <use Bilder/Schichtdetails.jpg>
-Package pdftex.def Info: Bilder/Schichtdetails.jpg  used on input line 434.
-(pdftex.def)             Requested size: 691.833pt x 679.03522pt.
+Package pdftex.def Info: Bilder/Schichtdetails.jpg  used on input line 436.
+(pdftex.def)             Requested size: 360.0pt x 353.34988pt.
 
-Overfull \hbox (331.833pt too wide) in paragraph at lines 434--435
-[][] 
- []
-
-
-Overfull \hbox (8.26207pt too wide) in paragraph at lines 432--436
+Overfull \hbox (8.26207pt too wide) in paragraph at lines 434--438
 \T1/cmr/m/n/10.95 Zu die-ser An-sicht ge-langt der Nut-zer, so-bald er ei-ne Sc
 hicht aus der Dienstplan-
  []
 
-[52]
-Overfull \vbox (163.36362pt too high) has occurred while \output is active []
-
-
-[53 <./Bilder/Schichtdetails.jpg>]
-Overfull \hbox (2.74055pt too wide) in paragraph at lines 437--437
+[53 <./Bilder/Dienstplan-Kalender.jpg>]
+Overfull \hbox (2.74055pt too wide) in paragraph at lines 439--439
 []\T1/cmr/bx/n/12 Wunsch�u�erung, Tauschan-fra-ge und Ab-we-sen-heits-mel-
  []
 
-<Bilder/Abwesenheit_Schichttausch_Wunsch.jpg, id=875, 695.59875pt x 682.80093pt
->
+<Bilder/Abwesenheit_Schichttausch_Wunsch.jpg, id=1232, 695.59875pt x 682.80093p
+t>
 File: Bilder/Abwesenheit_Schichttausch_Wunsch.jpg Graphic file (type jpg)
 <use Bilder/Abwesenheit_Schichttausch_Wunsch.jpg>
 Package pdftex.def Info: Bilder/Abwesenheit_Schichttausch_Wunsch.jpg  used on i
-nput line 440.
-(pdftex.def)             Requested size: 695.59706pt x 682.79926pt.
-
-Overfull \hbox (335.59706pt too wide) in paragraph at lines 440--441
-[][] 
- []
-
-[54]
-Overfull \vbox (167.12766pt too high) has occurred while \output is active []
-
-
-[55 <./Bilder/Abwesenheit_Schichttausch_Wunsch.jpg>]
-<Bilder/Benachrichtigungen-Mockup.jpg, id=885, 657.2053pt x 674.52pt>
+nput line 442.
+(pdftex.def)             Requested size: 360.0pt x 353.3707pt.
+[54 <./Bilder/Schichtdetails.jpg>]
+<Bilder/Benachrichtigungen-Mockup.jpg, id=1237, 657.2053pt x 674.52pt>
 File: Bilder/Benachrichtigungen-Mockup.jpg Graphic file (type jpg)
 <use Bilder/Benachrichtigungen-Mockup.jpg>
 Package pdftex.def Info: Bilder/Benachrichtigungen-Mockup.jpg  used on input li
-ne 446.
-(pdftex.def)             Requested size: 657.20369pt x 674.51836pt.
+ne 448.
+(pdftex.def)             Requested size: 360.0pt x 369.48447pt.
+ [55 <./Bilder/Abwesenheit_Schichttausch_Wunsch.jpg>]
 
-Overfull \hbox (297.20369pt too wide) in paragraph at lines 446--447
-[][] 
+! LaTeX Error: File `]' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.454 \includegraphics[width=1\textwidth]]
+                                          {Bilder/Dialogbox-Mockup.jpg}
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[56 <./Bilder/Benachrichtigungen-Mockup.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 460--472
+
  []
 
-[56]
-Overfull \vbox (158.84676pt too high) has occurred while \output is active []
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--472
+
+ []
 
 
-[57 <./Bilder/Benachrichtigungen-Mockup.jpg>]
-<Bilder/Dialogbox-Mockup.jpg, id=894, 608.2725pt x 598.48593pt>
-File: Bilder/Dialogbox-Mockup.jpg Graphic file (type jpg)
-<use Bilder/Dialogbox-Mockup.jpg>
-Package pdftex.def Info: Bilder/Dialogbox-Mockup.jpg  used on input line 452.
-(pdftex.def)             Requested size: 608.27103pt x 598.48447pt.
+Underfull \hbox (badness 10000) in paragraph at lines 460--472
 
-Overfull \hbox (248.27103pt too wide) in paragraph at lines 452--453
-[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--472
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--472
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--472
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--472
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--472
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--472
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--472
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--472
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--472
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--472
+
+ []
+
+[57]
+Underfull \hbox (badness 10000) in paragraph at lines 475--476
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--476
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--485
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--485
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--485
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--485
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--485
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--485
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--485
+
  []
 
 [58]
-Overfull \vbox (82.81287pt too high) has occurred while \output is active []
-
-
-[59 <./Bilder/Dialogbox-Mockup.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
+Underfull \hbox (badness 10000) in paragraph at lines 486--493
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
+Underfull \hbox (badness 10000) in paragraph at lines 486--493
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
+Underfull \hbox (badness 10000) in paragraph at lines 486--493
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
+Underfull \hbox (badness 10000) in paragraph at lines 486--493
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
+Underfull \hbox (badness 10000) in paragraph at lines 486--493
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
+Underfull \hbox (badness 10000) in paragraph at lines 486--493
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
-
- []
-
-[60]
-Underfull \hbox (badness 10000) in paragraph at lines 473--474
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 473--474
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 475--483
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 475--483
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 475--483
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 475--483
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 475--483
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 475--483
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 475--483
-
- []
-
-[61]
-Underfull \hbox (badness 10000) in paragraph at lines 484--491
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 484--491
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 484--491
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 484--491
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 484--491
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 484--491
-
- []
-
-[62]
-<Bilder/Screens/Login-Screen.jpg, id=916, 1445.4pt x 1053.9375pt>
+[59] [60]
+<Bilder/Screens/Login-Screen.jpg, id=1263, 1445.4pt x 1053.9375pt>
 File: Bilder/Screens/Login-Screen.jpg Graphic file (type jpg)
 <use Bilder/Screens/Login-Screen.jpg>
 Package pdftex.def Info: Bilder/Screens/Login-Screen.jpg  used on input line 50
-3.
+5.
 (pdftex.def)             Requested size: 360.0pt x 262.50273pt.
- [63]
-<Bilder/Screens/Hauptfenster-Kalender.jpg, id=921, 1445.4pt x 1257.69875pt>
+<Bilder/Screens/Hauptfenster-Kalender.jpg, id=1264, 1445.4pt x 1257.69875pt>
 File: Bilder/Screens/Hauptfenster-Kalender.jpg Graphic file (type jpg)
 <use Bilder/Screens/Hauptfenster-Kalender.jpg>
 Package pdftex.def Info: Bilder/Screens/Hauptfenster-Kalender.jpg  used on inpu
-t line 509.
+t line 511.
 (pdftex.def)             Requested size: 360.0pt x 313.25327pt.
- [64 <./Bilder/Screens/Login-Screen.jpg>]
-<Bilder/Screens/Schichtdetails.jpg, id=926, 1445.4pt x 1257.69875pt>
+ [61 <./Bilder/Screens/Login-Screen.jpg>]
+<Bilder/Screens/Schichtdetails.jpg, id=1270, 1445.4pt x 1257.69875pt>
 File: Bilder/Screens/Schichtdetails.jpg Graphic file (type jpg)
 <use Bilder/Screens/Schichtdetails.jpg>
 Package pdftex.def Info: Bilder/Screens/Schichtdetails.jpg  used on input line 
-514.
+516.
 (pdftex.def)             Requested size: 360.0pt x 313.25327pt.
- [65 <./Bilder/Screens/Hauptfenster-Kalender.jpg>]
-<Bilder/Screens/Hauptfenster-Kalender-Nutzungsrechte.jpg, id=931, 1445.4pt x 12
-58.7025pt>
+ [62 <./Bilder/Screens/Hauptfenster-Kalender.jpg>]
+<Bilder/Screens/Hauptfenster-Kalender-Nutzungsrechte.jpg, id=1275, 1445.4pt x 1
+258.7025pt>
 File: Bilder/Screens/Hauptfenster-Kalender-Nutzungsrechte.jpg Graphic file (typ
 e jpg)
 <use Bilder/Screens/Hauptfenster-Kalender-Nutzungsrechte.jpg>
 Package pdftex.def Info: Bilder/Screens/Hauptfenster-Kalender-Nutzungsrechte.jp
-g  used on input line 519.
+g  used on input line 521.
 (pdftex.def)             Requested size: 360.0pt x 313.50327pt.
- [66 <./Bilder/Screens/Schichtdetails.jpg>]
-<Bilder/Screens/Hauptfenster-Kalendermit2Nachrichten.jpg, id=936, 1445.4pt x 12
-57.69875pt>
+ [63 <./Bilder/Screens/Schichtdetails.jpg>]
+<Bilder/Screens/Hauptfenster-Kalendermit2Nachrichten.jpg, id=1280, 1445.4pt x 1
+257.69875pt>
 File: Bilder/Screens/Hauptfenster-Kalendermit2Nachrichten.jpg Graphic file (typ
 e jpg)
 <use Bilder/Screens/Hauptfenster-Kalendermit2Nachrichten.jpg>
 Package pdftex.def Info: Bilder/Screens/Hauptfenster-Kalendermit2Nachrichten.jp
-g  used on input line 524.
+g  used on input line 526.
 (pdftex.def)             Requested size: 360.0pt x 313.25327pt.
- [67 <./Bilder/Screens/Hauptfenster-Kalender-Nutzungsrechte.jpg>]
-<Bilder/Screens/Benachrichtigungen-Screen.jpg, id=942, 1445.4pt x 1259.70625pt>
-
+ [64 <./Bilder/Screens/Hauptfenster-Kalender-Nutzungsrechte.jpg>]
+<Bilder/Screens/Benachrichtigungen-Screen.jpg, id=1285, 1445.4pt x 1259.70625pt
+>
 File: Bilder/Screens/Benachrichtigungen-Screen.jpg Graphic file (type jpg)
 <use Bilder/Screens/Benachrichtigungen-Screen.jpg>
 Package pdftex.def Info: Bilder/Screens/Benachrichtigungen-Screen.jpg  used on 
-input line 530.
+input line 532.
 (pdftex.def)             Requested size: 360.0pt x 313.75328pt.
- [68 <./Bilder/Screens/Hauptfenster-Kalendermit2Nachrichten.jpg>]
-<Bilder/Screens/NachrichtKrankenpflegerSchichttausch.jpg, id=947, 1445.4pt x 12
-59.70625pt>
+ [65 <./Bilder/Screens/Hauptfenster-Kalendermit2Nachrichten.jpg>]
+<Bilder/Screens/NachrichtKrankenpflegerSchichttausch.jpg, id=1290, 1445.4pt x 1
+259.70625pt>
 File: Bilder/Screens/NachrichtKrankenpflegerSchichttausch.jpg Graphic file (typ
 e jpg)
 <use Bilder/Screens/NachrichtKrankenpflegerSchichttausch.jpg>
 Package pdftex.def Info: Bilder/Screens/NachrichtKrankenpflegerSchichttausch.jp
-g  used on input line 535.
+g  used on input line 537.
 (pdftex.def)             Requested size: 360.0pt x 313.75328pt.
-<Bilder/Screens/NachrichtKrankenpflegerAbwesenheitsmeldung.jpg, id=948, 1445.4p
-t x 1259.70625pt>
+<Bilder/Screens/NachrichtKrankenpflegerAbwesenheitsmeldung.jpg, id=1291, 1445.4
+pt x 1259.70625pt>
 File: Bilder/Screens/NachrichtKrankenpflegerAbwesenheitsmeldung.jpg Graphic fil
 e (type jpg)
 <use Bilder/Screens/NachrichtKrankenpflegerAbwesenheitsmeldung.jpg>
 Package pdftex.def Info: Bilder/Screens/NachrichtKrankenpflegerAbwesenheitsmeld
-ung.jpg  used on input line 539.
+ung.jpg  used on input line 541.
 (pdftex.def)             Requested size: 360.0pt x 313.75328pt.
- [69 <./Bilder/Screens/Benachrichtigungen-Screen.jpg>]
-<Bilder/Screens/NachrichtKrankenpflegerErsatzanfrage.jpg, id=953, 1445.4pt x 12
-59.70625pt>
+ [66 <./Bilder/Screens/Benachrichtigungen-Screen.jpg>]
+<Bilder/Screens/NachrichtKrankenpflegerErsatzanfrage.jpg, id=1296, 1445.4pt x 1
+259.70625pt>
 File: Bilder/Screens/NachrichtKrankenpflegerErsatzanfrage.jpg Graphic file (typ
 e jpg)
 <use Bilder/Screens/NachrichtKrankenpflegerErsatzanfrage.jpg>
 Package pdftex.def Info: Bilder/Screens/NachrichtKrankenpflegerErsatzanfrage.jp
-g  used on input line 543.
+g  used on input line 545.
 (pdftex.def)             Requested size: 360.0pt x 313.75328pt.
- [70 <./Bilder/Screens/NachrichtKrankenpflegerSchichttausch.jpg>]
-[71 <./Bilder/Screens/NachrichtKrankenpflegerAbwesenheitsmeldung.jpg>]
-<Bilder/Screens/NachrichtErsatzanfrageangenommen.jpg, id=962, 1445.4pt x 1259.7
-0625pt>
+ [67 <./Bilder/Screens/NachrichtKrankenpflegerSchichttausch.jpg>]
+[68 <./Bilder/Screens/NachrichtKrankenpflegerAbwesenheitsmeldung.jpg>]
+<Bilder/Screens/NachrichtErsatzanfrageangenommen.jpg, id=1306, 1445.4pt x 1259.
+70625pt>
 File: Bilder/Screens/NachrichtErsatzanfrageangenommen.jpg Graphic file (type jp
 g)
 <use Bilder/Screens/NachrichtErsatzanfrageangenommen.jpg>
 Package pdftex.def Info: Bilder/Screens/NachrichtErsatzanfrageangenommen.jpg  u
-sed on input line 548.
+sed on input line 550.
 (pdftex.def)             Requested size: 360.0pt x 313.75328pt.
-<Bilder/Screens/NachrichtErsatzanfrageabgelehnt.jpg, id=963, 1445.4pt x 1259.70
-625pt>
+<Bilder/Screens/NachrichtErsatzanfrageabgelehnt.jpg, id=1307, 1445.4pt x 1259.7
+0625pt>
 File: Bilder/Screens/NachrichtErsatzanfrageabgelehnt.jpg Graphic file (type jpg
 )
 <use Bilder/Screens/NachrichtErsatzanfrageabgelehnt.jpg>
 Package pdftex.def Info: Bilder/Screens/NachrichtErsatzanfrageabgelehnt.jpg  us
-ed on input line 552.
+ed on input line 554.
 (pdftex.def)             Requested size: 360.0pt x 313.75328pt.
- [72 <./Bilder/Screens/NachrichtKrankenpflegerErsatzanfrage.jpg>] [73 <./Bilder
+ [69 <./Bilder/Screens/NachrichtKrankenpflegerErsatzanfrage.jpg>] [70 <./Bilder
 /Screens/NachrichtErsatzanfrageangenommen.jpg>]
-<Bilder/Screens/NachrichtStatleitungSchichttausch.jpg, id=973, 1445.4pt x 1259.
-70625pt>
+<Bilder/Screens/NachrichtStatleitungSchichttausch.jpg, id=1316, 1445.4pt x 1259
+.70625pt>
 File: Bilder/Screens/NachrichtStatleitungSchichttausch.jpg Graphic file (type j
 pg)
 <use Bilder/Screens/NachrichtStatleitungSchichttausch.jpg>
 Package pdftex.def Info: Bilder/Screens/NachrichtStatleitungSchichttausch.jpg  
-used on input line 557.
+used on input line 559.
 (pdftex.def)             Requested size: 360.0pt x 313.75328pt.
-<Bilder/Screens/NachrichtStatleitungAbwesenheit.jpg, id=974, 1445.4pt x 1259.70
-625pt>
+<Bilder/Screens/NachrichtStatleitungAbwesenheit.jpg, id=1317, 1445.4pt x 1259.7
+0625pt>
 File: Bilder/Screens/NachrichtStatleitungAbwesenheit.jpg Graphic file (type jpg
 )
 <use Bilder/Screens/NachrichtStatleitungAbwesenheit.jpg>
 Package pdftex.def Info: Bilder/Screens/NachrichtStatleitungAbwesenheit.jpg  us
-ed on input line 561.
+ed on input line 563.
 (pdftex.def)             Requested size: 360.0pt x 313.75328pt.
- [74 <./Bilder/Screens/NachrichtErsatzanfrageabgelehnt.jpg>]
-<Bilder/Screens/NachrichtStatleitungErsatzbestaetigung.jpg, id=979, 1445.4pt x 
-1259.70625pt>
+ [71 <./Bilder/Screens/NachrichtErsatzanfrageabgelehnt.jpg>]
+<Bilder/Screens/NachrichtStatleitungErsatzbestaetigung.jpg, id=1322, 1445.4pt x
+ 1259.70625pt>
 File: Bilder/Screens/NachrichtStatleitungErsatzbestaetigung.jpg Graphic file (t
 ype jpg)
 <use Bilder/Screens/NachrichtStatleitungErsatzbestaetigung.jpg>
 Package pdftex.def Info: Bilder/Screens/NachrichtStatleitungErsatzbestaetigung.
-jpg  used on input line 565.
+jpg  used on input line 567.
 (pdftex.def)             Requested size: 360.0pt x 313.75328pt.
- [75 <./Bilder/Screens/NachrichtStatleitungSchichttausch.jpg>]
-<Bilder/Screens/NachrichtStatleitungFehlenderErsatz.jpg, id=984, 1445.4pt x 125
-9.70625pt>
+ [72 <./Bilder/Screens/NachrichtStatleitungSchichttausch.jpg>]
+<Bilder/Screens/NachrichtStatleitungFehlenderErsatz.jpg, id=1327, 1445.4pt x 12
+59.70625pt>
 File: Bilder/Screens/NachrichtStatleitungFehlenderErsatz.jpg Graphic file (type
  jpg)
 <use Bilder/Screens/NachrichtStatleitungFehlenderErsatz.jpg>
 Package pdftex.def Info: Bilder/Screens/NachrichtStatleitungFehlenderErsatz.jpg
-  used on input line 569.
+  used on input line 571.
 (pdftex.def)             Requested size: 360.0pt x 313.75328pt.
- [76 <./Bilder/Screens/NachrichtStatleitungAbwesenheit.jpg>] [77 <./Bilder/Scre
+ [73 <./Bilder/Screens/NachrichtStatleitungAbwesenheit.jpg>] [74 <./Bilder/Scre
 ens/NachrichtStatleitungErsatzbestaetigung.jpg>]
-<Bilder/Screens/Dienstplaneinstellungen.jpg, id=993, 1445.4pt x 1257.69875pt>
+<Bilder/Screens/Dienstplaneinstellungen.jpg, id=1337, 1445.4pt x 1257.69875pt>
 File: Bilder/Screens/Dienstplaneinstellungen.jpg Graphic file (type jpg)
 <use Bilder/Screens/Dienstplaneinstellungen.jpg>
 Package pdftex.def Info: Bilder/Screens/Dienstplaneinstellungen.jpg  used on in
-put line 575.
+put line 577.
 (pdftex.def)             Requested size: 360.0pt x 313.25327pt.
-<Bilder/Screens/Dienstplaneinstellungen-Dialogbox.jpg, id=994, 1445.4pt x 1258.
-7025pt>
+<Bilder/Screens/Dienstplaneinstellungen-Dialogbox.jpg, id=1338, 1445.4pt x 1258
+.7025pt>
 File: Bilder/Screens/Dienstplaneinstellungen-Dialogbox.jpg Graphic file (type j
 pg)
 <use Bilder/Screens/Dienstplaneinstellungen-Dialogbox.jpg>
 Package pdftex.def Info: Bilder/Screens/Dienstplaneinstellungen-Dialogbox.jpg  
-used on input line 579.
+used on input line 581.
 (pdftex.def)             Requested size: 360.0pt x 313.50327pt.
- [78 <./Bilder/Screens/NachrichtStatleitungFehlenderErsatz.jpg>]
-<Bilder/Screens/Dienstplaneinstellungen-Dialogbox(2).jpg, id=999, 1445.4pt x 12
-58.7025pt>
+ [75 <./Bilder/Screens/NachrichtStatleitungFehlenderErsatz.jpg>]
+<Bilder/Screens/Dienstplaneinstellungen-Dialogbox(2).jpg, id=1343, 1445.4pt x 1
+258.7025pt>
 File: Bilder/Screens/Dienstplaneinstellungen-Dialogbox(2).jpg Graphic file (typ
 e jpg)
 <use Bilder/Screens/Dienstplaneinstellungen-Dialogbox(2).jpg>
 Package pdftex.def Info: Bilder/Screens/Dienstplaneinstellungen-Dialogbox(2).jp
-g  used on input line 583.
+g  used on input line 585.
 (pdftex.def)             Requested size: 360.0pt x 313.50327pt.
- [79 <./Bilder/Screens/Dienstplaneinstellungen.jpg>] [80 <./Bilder/Screens/Dien
+ [76 <./Bilder/Screens/Dienstplaneinstellungen.jpg>] [77 <./Bilder/Screens/Dien
 stplaneinstellungen-Dialogbox.jpg>]
-<Bilder/Screens/DropdownundUsersettings.jpg, id=1009, 1445.4pt x 1257.69875pt>
+<Bilder/Screens/DropdownundUsersettings.jpg, id=1352, 1445.4pt x 1257.69875pt>
 File: Bilder/Screens/DropdownundUsersettings.jpg Graphic file (type jpg)
 <use Bilder/Screens/DropdownundUsersettings.jpg>
 Package pdftex.def Info: Bilder/Screens/DropdownundUsersettings.jpg  used on in
-put line 588.
+put line 590.
 (pdftex.def)             Requested size: 360.0pt x 313.25327pt.
- [81 <./Bilder/Screens/Dienstplaneinstellungen-Dialogbox(2).jpg>]
-<Bilder/Screens/Benutzereinstellungen.jpg, id=1014, 1445.4pt x 1257.69875pt>
+ [78 <./Bilder/Screens/Dienstplaneinstellungen-Dialogbox(2).jpg>]
+<Bilder/Screens/Benutzereinstellungen.jpg, id=1357, 1445.4pt x 1257.69875pt>
 File: Bilder/Screens/Benutzereinstellungen.jpg Graphic file (type jpg)
 <use Bilder/Screens/Benutzereinstellungen.jpg>
 Package pdftex.def Info: Bilder/Screens/Benutzereinstellungen.jpg  used on inpu
-t line 594.
+t line 596.
 (pdftex.def)             Requested size: 360.0pt x 313.25327pt.
-<Bilder/Screens/Benutzereinstellungen(1).jpg, id=1015, 1445.4pt x 1258.7025pt>
+<Bilder/Screens/Benutzereinstellungen(1).jpg, id=1358, 1445.4pt x 1258.7025pt>
 File: Bilder/Screens/Benutzereinstellungen(1).jpg Graphic file (type jpg)
 <use Bilder/Screens/Benutzereinstellungen(1).jpg>
 Package pdftex.def Info: Bilder/Screens/Benutzereinstellungen(1).jpg  used on i
-nput line 598.
+nput line 600.
 (pdftex.def)             Requested size: 360.0pt x 313.50327pt.
- [82 <./Bilder/Screens/DropdownundUsersettings.jpg>]
-<Bilder/Screens/Benutzereinstellungen(2).jpg, id=1020, 1445.4pt x 1258.7025pt>
+ [79 <./Bilder/Screens/DropdownundUsersettings.jpg>]
+<Bilder/Screens/Benutzereinstellungen(2).jpg, id=1364, 1445.4pt x 1258.7025pt>
 File: Bilder/Screens/Benutzereinstellungen(2).jpg Graphic file (type jpg)
 <use Bilder/Screens/Benutzereinstellungen(2).jpg>
 Package pdftex.def Info: Bilder/Screens/Benutzereinstellungen(2).jpg  used on i
-nput line 602.
+nput line 604.
 (pdftex.def)             Requested size: 360.0pt x 313.50327pt.
- [83 <./Bilder/Screens/Benutzereinstellungen.jpg>] [84 <./Bilder/Screens/Benutz
+ [80 <./Bilder/Screens/Benutzereinstellungen.jpg>] [81 <./Bilder/Screens/Benutz
 ereinstellungen(1).jpg>]
-<Bilder/Screens/MAanlegen_Loeschen.jpg, id=1029, 1445.4pt x 1257.69875pt>
+<Bilder/Screens/MAanlegen_Loeschen.jpg, id=1373, 1445.4pt x 1257.69875pt>
 File: Bilder/Screens/MAanlegen_Loeschen.jpg Graphic file (type jpg)
 <use Bilder/Screens/MAanlegen_Loeschen.jpg>
 Package pdftex.def Info: Bilder/Screens/MAanlegen_Loeschen.jpg  used on input l
-ine 608.
+ine 610.
 (pdftex.def)             Requested size: 360.0pt x 313.25327pt.
-<Bilder/Screens/loeschen-Dialogbox(1).jpg, id=1030, 1445.4pt x 1258.7025pt>
+<Bilder/Screens/loeschen-Dialogbox(1).jpg, id=1374, 1445.4pt x 1258.7025pt>
 File: Bilder/Screens/loeschen-Dialogbox(1).jpg Graphic file (type jpg)
 <use Bilder/Screens/loeschen-Dialogbox(1).jpg>
 Package pdftex.def Info: Bilder/Screens/loeschen-Dialogbox(1).jpg  used on inpu
-t line 612.
+t line 614.
 (pdftex.def)             Requested size: 360.0pt x 313.50327pt.
- [85 <./Bilder/Screens/Benutzereinstellungen(2).jpg>]
-<Bilder/Screens/loeschen-Dialogbox(2).jpg, id=1036, 1447.4075pt x 1259.70625pt>
+ [82 <./Bilder/Screens/Benutzereinstellungen(2).jpg>]
+<Bilder/Screens/loeschen-Dialogbox(2).jpg, id=1379, 1447.4075pt x 1259.70625pt>
 
 File: Bilder/Screens/loeschen-Dialogbox(2).jpg Graphic file (type jpg)
 <use Bilder/Screens/loeschen-Dialogbox(2).jpg>
 Package pdftex.def Info: Bilder/Screens/loeschen-Dialogbox(2).jpg  used on inpu
-t line 616.
+t line 618.
 (pdftex.def)             Requested size: 360.0pt x 313.31117pt.
- [86 <./Bilder/Screens/MAanlegen_Loeschen.jpg>]
-<Bilder/Screens/loeschen-Dialogbox(3).jpg, id=1041, 1447.4075pt x 1259.70625pt>
+ [83 <./Bilder/Screens/MAanlegen_Loeschen.jpg>]
+<Bilder/Screens/loeschen-Dialogbox(3).jpg, id=1384, 1447.4075pt x 1259.70625pt>
 
 File: Bilder/Screens/loeschen-Dialogbox(3).jpg Graphic file (type jpg)
 <use Bilder/Screens/loeschen-Dialogbox(3).jpg>
 Package pdftex.def Info: Bilder/Screens/loeschen-Dialogbox(3).jpg  used on inpu
-t line 620.
+t line 622.
 (pdftex.def)             Requested size: 360.0pt x 313.31117pt.
 
-[87 <./Bilder/Screens/loeschen-Dialogbox(1).jpg>]
-<Bilder/Screens/loeschen-Dialogbox(1)-1.jpg, id=1046, 1445.4pt x 1258.7025pt>
+[84 <./Bilder/Screens/loeschen-Dialogbox(1).jpg>]
+<Bilder/Screens/loeschen-Dialogbox(1)-1.jpg, id=1389, 1445.4pt x 1258.7025pt>
 File: Bilder/Screens/loeschen-Dialogbox(1)-1.jpg Graphic file (type jpg)
 <use Bilder/Screens/loeschen-Dialogbox(1)-1.jpg>
 Package pdftex.def Info: Bilder/Screens/loeschen-Dialogbox(1)-1.jpg  used on in
-put line 624.
+put line 626.
 (pdftex.def)             Requested size: 360.0pt x 313.50327pt.
- [88 <./Bilder/Screens/loeschen-Dialogbox(2).jpg>] [89 <./Bilder/Screens/loesch
+ [85 <./Bilder/Screens/loeschen-Dialogbox(2).jpg>] [86 <./Bilder/Screens/loesch
 en-Dialogbox(3).jpg>]
-<Bilder/Screens/Abwesenheitmelden.jpg, id=1055, 1445.4pt x 1257.69875pt>
+<Bilder/Screens/Abwesenheitmelden.jpg, id=1399, 1445.4pt x 1257.69875pt>
 File: Bilder/Screens/Abwesenheitmelden.jpg Graphic file (type jpg)
 <use Bilder/Screens/Abwesenheitmelden.jpg>
 Package pdftex.def Info: Bilder/Screens/Abwesenheitmelden.jpg  used on input li
-ne 631.
+ne 633.
 (pdftex.def)             Requested size: 360.0pt x 313.25327pt.
 
-Overfull \hbox (2.06963pt too wide) in paragraph at lines 628--633
+Overfull \hbox (2.06963pt too wide) in paragraph at lines 630--635
 \T1/cmr/m/n/10.95 Auf die-sem Screen k�n-nen sich die Kran-ken-pfle-ger und Me-
 di-zi-ni-schen Fachan-
  []
 
-[90 <./Bilder/Screens/loeschen-Dialogbox(1)-1.jpg>]
-<Bilder/Screens/Abwesenheitmelden-1.jpg, id=1060, 1445.4pt x 1258.7025pt>
+[87 <./Bilder/Screens/loeschen-Dialogbox(1)-1.jpg>]
+<Bilder/Screens/Abwesenheitmelden-1.jpg, id=1404, 1445.4pt x 1258.7025pt>
 File: Bilder/Screens/Abwesenheitmelden-1.jpg Graphic file (type jpg)
 <use Bilder/Screens/Abwesenheitmelden-1.jpg>
 Package pdftex.def Info: Bilder/Screens/Abwesenheitmelden-1.jpg  used on input 
-line 636.
+line 638.
 (pdftex.def)             Requested size: 360.0pt x 313.50327pt.
-<Bilder/Screens/Abwesenheitmelden-2.jpg, id=1061, 1445.4pt x 1258.7025pt>
+<Bilder/Screens/Abwesenheitmelden-2.jpg, id=1405, 1445.4pt x 1258.7025pt>
 File: Bilder/Screens/Abwesenheitmelden-2.jpg Graphic file (type jpg)
 <use Bilder/Screens/Abwesenheitmelden-2.jpg>
 Package pdftex.def Info: Bilder/Screens/Abwesenheitmelden-2.jpg  used on input 
-line 640.
+line 642.
 (pdftex.def)             Requested size: 360.0pt x 313.50327pt.
- [91 <./Bilder/Screens/Abwesenheitmelden.jpg>] [92 <./Bilder/Screens/Abwesenhei
+ [88 <./Bilder/Screens/Abwesenheitmelden.jpg>] [89 <./Bilder/Screens/Abwesenhei
 tmelden-1.jpg>]
-<Bilder/Screens/Schichttausch.jpg, id=1071, 1445.4pt x 1257.69875pt>
+<Bilder/Screens/Schichttausch.jpg, id=1414, 1445.4pt x 1257.69875pt>
 File: Bilder/Screens/Schichttausch.jpg Graphic file (type jpg)
 <use Bilder/Screens/Schichttausch.jpg>
 Package pdftex.def Info: Bilder/Screens/Schichttausch.jpg  used on input line 6
-46.
+48.
 (pdftex.def)             Requested size: 360.0pt x 313.25327pt.
-<Bilder/Screens/Schichttausch-1.jpg, id=1072, 1445.4pt x 1258.7025pt>
+<Bilder/Screens/Schichttausch-1.jpg, id=1415, 1445.4pt x 1258.7025pt>
 File: Bilder/Screens/Schichttausch-1.jpg Graphic file (type jpg)
 <use Bilder/Screens/Schichttausch-1.jpg>
 Package pdftex.def Info: Bilder/Screens/Schichttausch-1.jpg  used on input line
- 650.
+ 652.
 (pdftex.def)             Requested size: 360.0pt x 313.50327pt.
- [93 <./Bilder/Screens/Abwesenheitmelden-2.jpg>]
-<Bilder/Screens/Schichttausch-2.jpg, id=1077, 1445.4pt x 1258.7025pt>
+ [90 <./Bilder/Screens/Abwesenheitmelden-2.jpg>]
+<Bilder/Screens/Schichttausch-2.jpg, id=1420, 1445.4pt x 1258.7025pt>
 File: Bilder/Screens/Schichttausch-2.jpg Graphic file (type jpg)
 <use Bilder/Screens/Schichttausch-2.jpg>
 Package pdftex.def Info: Bilder/Screens/Schichttausch-2.jpg  used on input line
- 654.
+ 656.
 (pdftex.def)             Requested size: 360.0pt x 313.50327pt.
- [94 <./Bilder/Screens/Schichttausch.jpg>]
-[95 <./Bilder/Screens/Schichttausch-1.jpg>]
-<Bilder/Screens/Wunschaeusserung.jpg, id=1086, 1445.4pt x 1257.69875pt>
+ [91 <./Bilder/Screens/Schichttausch.jpg>]
+[92 <./Bilder/Screens/Schichttausch-1.jpg>]
+<Bilder/Screens/Wunschaeusserung.jpg, id=1430, 1445.4pt x 1257.69875pt>
 File: Bilder/Screens/Wunschaeusserung.jpg Graphic file (type jpg)
 <use Bilder/Screens/Wunschaeusserung.jpg>
 Package pdftex.def Info: Bilder/Screens/Wunschaeusserung.jpg  used on input lin
-e 660.
+e 662.
 (pdftex.def)             Requested size: 360.0pt x 313.25327pt.
-<Bilder/Screens/Wunschaeusserung-1.jpg, id=1087, 1445.4pt x 1258.7025pt>
+<Bilder/Screens/Wunschaeusserung-1.jpg, id=1431, 1445.4pt x 1258.7025pt>
 File: Bilder/Screens/Wunschaeusserung-1.jpg Graphic file (type jpg)
 <use Bilder/Screens/Wunschaeusserung-1.jpg>
 Package pdftex.def Info: Bilder/Screens/Wunschaeusserung-1.jpg  used on input l
-ine 664.
+ine 666.
 (pdftex.def)             Requested size: 360.0pt x 313.50327pt.
- [96 <./Bilder/Screens/Schichttausch-2.jpg>]
-<Bilder/Screens/Wunschaeusserung-2.jpg, id=1092, 1445.4pt x 1258.7025pt>
+ [93 <./Bilder/Screens/Schichttausch-2.jpg>]
+<Bilder/Screens/Wunschaeusserung-2.jpg, id=1436, 1445.4pt x 1258.7025pt>
 File: Bilder/Screens/Wunschaeusserung-2.jpg Graphic file (type jpg)
 <use Bilder/Screens/Wunschaeusserung-2.jpg>
 Package pdftex.def Info: Bilder/Screens/Wunschaeusserung-2.jpg  used on input l
-ine 668.
+ine 670.
 (pdftex.def)             Requested size: 360.0pt x 313.50327pt.
- [97 <./Bilder/Screens/Wunschaeusserung.jpg>] [98 <./Bilder/Screens/Wunschaeuss
-erung-1.jpg>] [99 <./Bilder/Screens/Wunschaeusserung-2.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 676--677
+ [94 <./Bilder/Screens/Wunschaeusserung.jpg>] [95 <./Bilder/Screens/Wunschaeuss
+erung-1.jpg>] [96 <./Bilder/Screens/Wunschaeusserung-2.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 678--679
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 676--677
+Underfull \hbox (badness 10000) in paragraph at lines 678--679
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 678--683
+Underfull \hbox (badness 10000) in paragraph at lines 680--685
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 678--683
+Underfull \hbox (badness 10000) in paragraph at lines 680--685
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 678--683
+Underfull \hbox (badness 10000) in paragraph at lines 680--685
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 678--683
+Underfull \hbox (badness 10000) in paragraph at lines 680--685
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 678--683
+Underfull \hbox (badness 10000) in paragraph at lines 680--685
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 678--683
+Underfull \hbox (badness 10000) in paragraph at lines 680--685
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 684--694
+Underfull \hbox (badness 10000) in paragraph at lines 686--696
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 684--694
+Underfull \hbox (badness 10000) in paragraph at lines 686--696
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 684--694
+Underfull \hbox (badness 10000) in paragraph at lines 686--696
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 684--694
+Underfull \hbox (badness 10000) in paragraph at lines 686--696
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 684--694
+Underfull \hbox (badness 10000) in paragraph at lines 686--696
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 684--694
+Underfull \hbox (badness 10000) in paragraph at lines 686--696
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 684--694
+Underfull \hbox (badness 10000) in paragraph at lines 686--696
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 684--694
+Underfull \hbox (badness 10000) in paragraph at lines 686--696
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 684--694
+Underfull \hbox (badness 10000) in paragraph at lines 686--696
 
  []
 
-[100]
-Underfull \hbox (badness 10000) in paragraph at lines 695--697
+[97]
+Underfull \hbox (badness 10000) in paragraph at lines 697--699
 
  []
 
-[101] [102]
-Overfull \hbox (6.02443pt too wide) in paragraph at lines 705--705
+[98] [99]
+Overfull \hbox (6.02443pt too wide) in paragraph at lines 707--707
 []\T1/cmr/bx/n/12 Aussagekr�ftige, ein-fach ver-st�nd-li-che Dar-stel-lun-gen d
 er
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 713.
-[103] [104]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 713.
- (DokumentationSisterShift.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 713.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 713.
+[100] [101] [102] [103] [104] [105] [106]
+<Bilder/topic.jpg, id=1491, 715.67375pt x 516.93124pt>
+File: Bilder/topic.jpg Graphic file (type jpg)
+<use Bilder/topic.jpg>
+Package pdftex.def Info: Bilder/topic.jpg  used on input line 774.
+(pdftex.def)             Requested size: 360.0pt x 260.02675pt.
+ [107]
+<Bilder/Queue.jpg, id=1496, 624.3325pt x 502.87875pt>
+File: Bilder/Queue.jpg Graphic file (type jpg)
+<use Bilder/Queue.jpg>
+Package pdftex.def Info: Bilder/Queue.jpg  used on input line 782.
+(pdftex.def)             Requested size: 360.0pt x 289.97408pt.
+ [108 <./Bilder/topic.jpg>]
+<Bilder/mq2.jpg, id=1501, 624.3325pt x 502.87875pt>
+File: Bilder/mq2.jpg Graphic file (type jpg)
+<use Bilder/mq2.jpg>
+Package pdftex.def Info: Bilder/mq2.jpg  used on input line 788.
+(pdftex.def)             Requested size: 360.0pt x 289.97408pt.
 
-
-Package rerunfilecheck Warning: File `DokumentationSisterShift.out' has changed
+[109 <./Bilder/Queue.jpg>]
+<Bilder/Dmitarbeiter.jpg, id=1507, 375.65344pt x 300.3722pt>
+File: Bilder/Dmitarbeiter.jpg Graphic file (type jpg)
+<use Bilder/Dmitarbeiter.jpg>
+Package pdftex.def Info: Bilder/Dmitarbeiter.jpg  used on input line 795.
+(pdftex.def)             Requested size: 360.0pt x 287.87277pt.
+<Bilder/Dstation.jpg, id=1508, 381.67593pt x 141.52875pt>
+File: Bilder/Dstation.jpg Graphic file (type jpg)
+<use Bilder/Dstation.jpg>
+Package pdftex.def Info: Bilder/Dstation.jpg  used on input line 799.
+(pdftex.def)             Requested size: 360.0pt x 133.49701pt.
+ [110 <./Bilder/mq2.jpg>]
+<Bilder/Dabwesenheit.jpg, id=1513, 378.66469pt x 135.50626pt>
+File: Bilder/Dabwesenheit.jpg Graphic file (type jpg)
+<use Bilder/Dabwesenheit.jpg>
+Package pdftex.def Info: Bilder/Dabwesenheit.jpg  used on input line 803.
+(pdftex.def)             Requested size: 360.0pt x 128.82944pt.
+<Bilder/Dersatz.jpg, id=1514, 378.66469pt x 143.03438pt>
+File: Bilder/Dersatz.jpg Graphic file (type jpg)
+<use Bilder/Dersatz.jpg>
+Package pdftex.def Info: Bilder/Dersatz.jpg  used on input line 807.
+(pdftex.def)             Requested size: 360.0pt x 135.98663pt.
+ [111 <./Bilder/Dmitarbeiter.jpg> <./Bilder/Dstation.jpg>]
+<Bilder/Dersatz2.jpg, id=1519, 377.91188pt x 128.73094pt>
+File: Bilder/Dersatz2.jpg Graphic file (type jpg)
+<use Bilder/Dersatz2.jpg>
+Package pdftex.def Info: Bilder/Dersatz2.jpg  used on input line 811.
+(pdftex.def)             Requested size: 360.0pt x 122.62956pt.
+<Bilder/Dschichttausch.jpg, id=1520, 386.94562pt x 127.97812pt>
+File: Bilder/Dschichttausch.jpg Graphic file (type jpg)
+<use Bilder/Dschichttausch.jpg>
+Package pdftex.def Info: Bilder/Dschichttausch.jpg  used on input line 815.
+(pdftex.def)             Requested size: 360.0pt x 119.06723pt.
+<Bilder/Dwunsch.jpg, id=1521, 377.91188pt x 194.22563pt>
+File: Bilder/Dwunsch.jpg Graphic file (type jpg)
+<use Bilder/Dwunsch.jpg>
+Package pdftex.def Info: Bilder/Dwunsch.jpg  used on input line 819.
+(pdftex.def)             Requested size: 360.0pt x 185.02007pt.
+ [112 <./Bilder/Dabwesenheit.jpg> <./Bilder/Dersatz.jpg> <./Bilder/Dersatz2.jpg
+>]
+<Bilder/Ddienstplan.jpg, id=1526, 372.64218pt x 93.34875pt>
+File: Bilder/Ddienstplan.jpg Graphic file (type jpg)
+<use Bilder/Ddienstplan.jpg>
+Package pdftex.def Info: Bilder/Ddienstplan.jpg  used on input line 823.
+(pdftex.def)             Requested size: 360.0pt x 90.18494pt.
+<Bilder/Dtag.jpg, id=1527, 376.40625pt x 152.06813pt>
+File: Bilder/Dtag.jpg Graphic file (type jpg)
+<use Bilder/Dtag.jpg>
+Package pdftex.def Info: Bilder/Dtag.jpg  used on input line 827.
+(pdftex.def)             Requested size: 360.0pt x 145.45004pt.
+ [113 <./Bilder/Dschichttausch.jpg> <./Bilder/Dwunsch.jpg> <./Bilder/Ddienstpla
+n.jpg>]
+<Bilder/Er.jpg, id=1532, 563.10374pt x 648.4225pt>
+File: Bilder/Er.jpg Graphic file (type jpg)
+<use Bilder/Er.jpg>
+Package pdftex.def Info: Bilder/Er.jpg  used on input line 833.
+(pdftex.def)             Requested size: 360.0pt x 414.54375pt.
+ [114 <./Bilder/Dtag.jpg>]
+<Bilder/validMitarbeiterPost.jpg, id=1537, 542.025pt x 436.63126pt>
+File: Bilder/validMitarbeiterPost.jpg Graphic file (type jpg)
+<use Bilder/validMitarbeiterPost.jpg>
+Package pdftex.def Info: Bilder/validMitarbeiterPost.jpg  used on input line 84
+0.
+(pdftex.def)             Requested size: 360.0pt x 290.00969pt.
+ [115 <./Bilder/Er.jpg>]
+<Bilder/validMitarbeiterPut.jpg, id=1543, 554.07pt x 395.97937pt>
+File: Bilder/validMitarbeiterPut.jpg Graphic file (type jpg)
+<use Bilder/validMitarbeiterPut.jpg>
+Package pdftex.def Info: Bilder/validMitarbeiterPut.jpg  used on input line 844
 .
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+(pdftex.def)             Requested size: 360.0pt x 257.28082pt.
+<Bilder/validAbwesenheiten.jpg, id=1544, 433.62pt x 350.81062pt>
+File: Bilder/validAbwesenheiten.jpg Graphic file (type jpg)
+<use Bilder/validAbwesenheiten.jpg>
+Package pdftex.def Info: Bilder/validAbwesenheiten.jpg  used on input line 848.
 
-Package rerunfilecheck Info: Checksums for `DokumentationSisterShift.out':
-(rerunfilecheck)             Before: B5808E863023E541E2D3AE098307DB90;7303
-(rerunfilecheck)             After:  670076137BCDAB6169833DDB5975BC37;8340.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 713.
+(pdftex.def)             Requested size: 360.0pt x 291.26373pt.
+ [116 <./Bilder/validMitarbeiterPost.jpg>]
+<Bilder/validSchichttausch.jpg, id=1549, 503.63156pt x 380.92313pt>
+File: Bilder/validSchichttausch.jpg Graphic file (type jpg)
+<use Bilder/validSchichttausch.jpg>
+Package pdftex.def Info: Bilder/validSchichttausch.jpg  used on input line 852.
+
+(pdftex.def)             Requested size: 360.0pt x 272.28821pt.
+ [117 <./Bilder/validMitarbeiterPut.jpg>]
+<Bilder/validWunsch.jpg, id=1554, 640.64343pt x 498.36188pt>
+File: Bilder/validWunsch.jpg Graphic file (type jpg)
+<use Bilder/validWunsch.jpg>
+Package pdftex.def Info: Bilder/validWunsch.jpg  used on input line 856.
+(pdftex.def)             Requested size: 360.0pt x 280.05411pt.
+ [118 <./Bilder/validAbwesenheiten.jpg>] [119 <./Bilder/validSchichttausch.jpg>
+]
+<Bilder/Rest1.jpg, id=1563, 489.32813pt x 548.0475pt>
+File: Bilder/Rest1.jpg Graphic file (type jpg)
+<use Bilder/Rest1.jpg>
+Package pdftex.def Info: Bilder/Rest1.jpg  used on input line 862.
+(pdftex.def)             Requested size: 360.0pt x 403.20729pt.
+<Bilder/Rest2.jpg, id=1564, 488.57532pt x 408.77719pt>
+File: Bilder/Rest2.jpg Graphic file (type jpg)
+<use Bilder/Rest2.jpg>
+Package pdftex.def Info: Bilder/Rest2.jpg  used on input line 865.
+(pdftex.def)             Requested size: 360.0pt x 301.20546pt.
+ [120 <./Bilder/validWunsch.jpg>]
+<Bilder/Rest3.jpg, id=1569, 495.35063pt x 219.06844pt>
+File: Bilder/Rest3.jpg Graphic file (type jpg)
+<use Bilder/Rest3.jpg>
+Package pdftex.def Info: Bilder/Rest3.jpg  used on input line 868.
+(pdftex.def)             Requested size: 360.0pt x 159.20996pt.
+ [121 <./Bilder/Rest1.jpg>]
+<Bilder/status.jpg, id=1575, 419.31656pt x 134.00063pt>
+File: Bilder/status.jpg Graphic file (type jpg)
+<use Bilder/status.jpg>
+Package pdftex.def Info: Bilder/status.jpg  used on input line 874.
+(pdftex.def)             Requested size: 360.0pt x 115.04402pt.
+
+[122 <./Bilder/Rest2.jpg> <./Bilder/Rest3.jpg>]
+<Bilder/pseudoD.jpg, id=1580, 940.26282pt x 330.48468pt>
+File: Bilder/pseudoD.jpg Graphic file (type jpg)
+<use Bilder/pseudoD.jpg>
+Package pdftex.def Info: Bilder/pseudoD.jpg  used on input line 881.
+(pdftex.def)             Requested size: 360.0pt x 126.53352pt.
+<Bilder/DienstplanPseudo.png, id=1581, 1720.4275pt x 1999.47pt>
+File: Bilder/DienstplanPseudo.png Graphic file (type png)
+<use Bilder/DienstplanPseudo.png>
+Package pdftex.def Info: Bilder/DienstplanPseudo.png  used on input line 885.
+(pdftex.def)             Requested size: 360.0pt x 418.37563pt.
+<Bilder/pseudoW.jpg, id=1583, 746.03719pt x 514.92375pt>
+File: Bilder/pseudoW.jpg Graphic file (type jpg)
+<use Bilder/pseudoW.jpg>
+Package pdftex.def Info: Bilder/pseudoW.jpg  used on input line 889.
+(pdftex.def)             Requested size: 360.0pt x 248.47272pt.
+ [123 <./Bilder/status.jpg> <./Bilder/pseudoD.jpg>]
+<Bilder/WuenschePseudo.png, id=1588, 1720.4275pt x 1762.585pt>
+File: Bilder/WuenschePseudo.png Graphic file (type png)
+<use Bilder/WuenschePseudo.png>
+Package pdftex.def Info: Bilder/WuenschePseudo.png  used on input line 893.
+(pdftex.def)             Requested size: 360.0pt x 368.80904pt.
+ [124 <./Bilder/DienstplanPseudo.png>]
+<Bilder/pseudoT.jpg, id=1594, 679.03688pt x 228.855pt>
+File: Bilder/pseudoT.jpg Graphic file (type jpg)
+<use Bilder/pseudoT.jpg>
+Package pdftex.def Info: Bilder/pseudoT.jpg  used on input line 897.
+(pdftex.def)             Requested size: 360.0pt x 121.33098pt.
+ [125 <./Bilder/pseudoW.jpg>]
+<Bilder/TauschanfragenPseudo.png, id=1599, 1720.4275pt x 758.835pt>
+File: Bilder/TauschanfragenPseudo.png Graphic file (type png)
+<use Bilder/TauschanfragenPseudo.png>
+Package pdftex.def Info: Bilder/TauschanfragenPseudo.png  used on input line 90
+1.
+(pdftex.def)             Requested size: 360.0pt x 158.78111pt.
+ [126 <./Bilder/WuenschePseudo.png>]
+<Bilder/pseudoE.jpg, id=1605, 678.28406pt x 215.30438pt>
+File: Bilder/pseudoE.jpg Graphic file (type jpg)
+<use Bilder/pseudoE.jpg>
+Package pdftex.def Info: Bilder/pseudoE.jpg  used on input line 905.
+(pdftex.def)             Requested size: 360.0pt x 114.27174pt.
+<Bilder/ersatzPseudo.png, id=1606, 1720.4275pt x 627.34375pt>
+File: Bilder/ersatzPseudo.png Graphic file (type png)
+<use Bilder/ersatzPseudo.png>
+Package pdftex.def Info: Bilder/ersatzPseudo.png  used on input line 909.
+(pdftex.def)             Requested size: 360.0pt x 131.26744pt.
+ [127 <./Bilder/pseudoT.jpg> <./Bilder/TauschanfragenPseudo.png> <./Bilder/pseu
+doE.jpg>] [128 <./Bilder/ersatzPseudo.png>]
+! Misplaced alignment tab character &.
+l.936 ...nstplan erstellen: Gesetzliche Regelung &
+                                                   Rechte des Arbeitnehmers,...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Overfull \hbox (0.67862pt too wide) in paragraph at lines 936--938
+[]\T1/cmr/m/n/10.95 JuraForum.de-Redaktion (02.10.2017): Dienst-plan er-stel-le
+n: Ge-setz-li-che Re-
+ []
+
+! Misplaced alignment tab character &.
+l.938 ... der Softwareführer: NEXUS/ Dienstplan &
+                                                   NEXUS/ PERSONALMANAGEMENT...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Overfull \hbox (20.56842pt too wide) in paragraph at lines 940--942
+[]\T1/cmr/m/n/10.95 Papershift GmbH: Dienst-plan (HR-Lexikon), [on-li-ne] []Lin
+k zur Sei-te[] (23.10.2018) 
+ []
+
+
+! Package inputenc Error: Unicode character ´ (U+B4)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.949 ...ty Engineering Lifecycle a practitioner´
+                                                  s handbook for user interf...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+<Bilder/ausw1.jpg, id=1634, 376.40625pt x 572.1375pt>
+File: Bilder/ausw1.jpg Graphic file (type jpg)
+<use Bilder/ausw1.jpg>
+Package pdftex.def Info: Bilder/ausw1.jpg  used on input line 965.
+(pdftex.def)             Requested size: 360.0pt x 547.23782pt.
+<Bilder/ausw2.jpg, id=1635, 376.40625pt x 176.91093pt>
+File: Bilder/ausw2.jpg Graphic file (type jpg)
+<use Bilder/ausw2.jpg>
+Package pdftex.def Info: Bilder/ausw2.jpg  used on input line 968.
+(pdftex.def)             Requested size: 360.0pt x 169.21169pt.
+[129] [130]
+Overfull \vbox (62.08131pt too high) has occurred while \output is active []
+
+
+[131 <./Bilder/ausw1.jpg>]
+<Bilder/ausw3.jpg, id=1648, 377.15906pt x 542.025pt>
+File: Bilder/ausw3.jpg Graphic file (type jpg)
+<use Bilder/ausw3.jpg>
+Package pdftex.def Info: Bilder/ausw3.jpg  used on input line 971.
+(pdftex.def)             Requested size: 360.0pt x 517.36066pt.
+<Bilder/ausw4.jpg, id=1649, 377.15906pt x 229.60782pt>
+File: Bilder/ausw4.jpg Graphic file (type jpg)
+<use Bilder/ausw4.jpg>
+Package pdftex.def Info: Bilder/ausw4.jpg  used on input line 974.
+(pdftex.def)             Requested size: 360.0pt x 219.15973pt.
+ [132 <./Bilder/ausw2.jpg>] [133 <./Bilder/ausw3.jpg>]
+
+pdfTeX warning: pdflatex (file ./Umfragebogen.pdf): PDF inclusion: found PDF ve
+rsion <1.7>, but at most version <1.5> allowed
+<Umfragebogen.pdf, id=1659, 597.55246pt x 845.07718pt>
+File: Umfragebogen.pdf Graphic file (type pdf)
+<use Umfragebogen.pdf>
+Package pdftex.def Info: Umfragebogen.pdf  used on input line 977.
+(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
+
+
+pdfTeX warning: pdflatex (file ./Umfragebogen.pdf): PDF inclusion: found PDF ve
+rsion <1.7>, but at most version <1.5> allowed
+File: Umfragebogen.pdf Graphic file (type pdf)
+<use Umfragebogen.pdf>
+Package pdftex.def Info: Umfragebogen.pdf  used on input line 977.
+(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
+
+
+pdfTeX warning: pdflatex (file ./Umfragebogen.pdf): PDF inclusion: found PDF ve
+rsion <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./Umfragebogen.pdf): PDF inclusion: found PDF ve
+rsion <1.7>, but at most version <1.5> allowed
+<Umfragebogen.pdf, id=1662, page=1, 597.55246pt x 845.07718pt>
+File: Umfragebogen.pdf Graphic file (type pdf)
+<use Umfragebogen.pdf, page 1>
+Package pdftex.def Info: Umfragebogen.pdf , page1 used on input line 977.
+(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
+File: Umfragebogen.pdf Graphic file (type pdf)
+<use Umfragebogen.pdf, page 1>
+Package pdftex.def Info: Umfragebogen.pdf , page1 used on input line 977.
+(pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
+[134 <./Bilder/ausw4.jpg>]
+File: Umfragebogen.pdf Graphic file (type pdf)
+<use Umfragebogen.pdf, page 1>
+Package pdftex.def Info: Umfragebogen.pdf , page1 used on input line 977.
+(pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
+File: Umfragebogen.pdf Graphic file (type pdf)
+<use Umfragebogen.pdf, page 1>
+Package pdftex.def Info: Umfragebogen.pdf , page1 used on input line 977.
+(pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
+File: Umfragebogen.pdf Graphic file (type pdf)
+<use Umfragebogen.pdf, page 1>
+Package pdftex.def Info: Umfragebogen.pdf , page1 used on input line 977.
+(pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
+ [135 <./Umfragebogen.pdf>]
+
+pdfTeX warning: pdflatex (file ./Umfragebogen.pdf): PDF inclusion: found PDF ve
+rsion <1.7>, but at most version <1.5> allowed
+<Umfragebogen.pdf, id=1687, page=2, 597.55246pt x 845.07718pt>
+File: Umfragebogen.pdf Graphic file (type pdf)
+<use Umfragebogen.pdf, page 2>
+Package pdftex.def Info: Umfragebogen.pdf , page2 used on input line 977.
+(pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
+File: Umfragebogen.pdf Graphic file (type pdf)
+<use Umfragebogen.pdf, page 2>
+Package pdftex.def Info: Umfragebogen.pdf , page2 used on input line 977.
+(pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
+File: Umfragebogen.pdf Graphic file (type pdf)
+<use Umfragebogen.pdf, page 2>
+Package pdftex.def Info: Umfragebogen.pdf , page2 used on input line 977.
+(pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
+[136 <./Umfragebogen.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=1693, 597.50829pt x 845.0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf  used on inpu
+t line 980.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf  used on inpu
+t line 980.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=1696, page=1, 597.50829pt x 845.0
+471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 1>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page1 used 
+on input line 980.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 1>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page1 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [137]
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 1>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page1 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 1>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page1 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 1>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page1 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [138 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=1871, page=2, 597.50829pt x 845.0
+471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 2>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page2 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 2>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page2 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 2>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page2 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [139 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=1995, page=3, 597.50829pt x 845.0
+471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 3>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page3 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 3>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page3 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 3>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page3 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [140 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2000, page=4, 597.50829pt x 845.0
+471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 4>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page4 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 4>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page4 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 4>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page4 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [141 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2068, page=5, 597.50829pt x 845.0
+471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 5>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page5 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 5>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page5 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 5>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page5 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+
+[142 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2073, page=6, 597.50829pt x 845.0
+471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 6>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page6 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 6>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page6 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 6>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page6 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [143 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2079, page=7, 597.50829pt x 845.0
+471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 7>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page7 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 7>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page7 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 7>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page7 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [144 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2084, page=8, 597.50829pt x 845.0
+471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 8>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page8 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 8>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page8 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 8>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page8 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+
+[145 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2090, page=9, 597.50829pt x 845.0
+471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 9>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page9 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 9>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page9 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 9>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page9 used 
+on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [146 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2095, page=10, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 10>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page10 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 10>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page10 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 10>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page10 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [147 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2100, page=11, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 11>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page11 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 11>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page11 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 11>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page11 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+
+[148 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2105, page=12, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 12>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page12 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 12>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page12 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 12>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page12 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [149 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2110, page=13, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 13>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page13 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 13>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page13 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 13>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page13 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [150 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2115, page=14, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 14>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page14 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 14>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page14 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 14>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page14 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+
+[151 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2121, page=15, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 15>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page15 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 15>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page15 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 15>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page15 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [152 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2126, page=16, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 16>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page16 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 16>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page16 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 16>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page16 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [153 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2132, page=17, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 17>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page17 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 17>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page17 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 17>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page17 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+
+[154 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2138, page=18, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 18>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page18 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 18>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page18 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 18>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page18 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [155 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2144, page=19, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 19>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page19 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 19>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page19 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 19>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page19 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [156 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2150, page=20, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 20>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page20 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 20>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page20 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 20>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page20 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+
+[157 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2157, page=21, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 21>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page21 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 21>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page21 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 21>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page21 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [158 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2164, page=22, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 22>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page22 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 22>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page22 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 22>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page22 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [159 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2170, page=23, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 23>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page23 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 23>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page23 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 23>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page23 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+
+[160 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2175, page=24, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 24>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page24 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 24>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page24 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 24>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page24 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [161 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2182, page=25, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 25>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page25 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 25>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page25 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 25>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page25 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [162 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2188, page=26, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 26>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page26 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 26>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page26 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 26>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page26 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+
+[163 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2194, page=27, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 27>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page27 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 27>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page27 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 27>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page27 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [164 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2200, page=28, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 28>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page28 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 28>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page28 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 28>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page28 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [165 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2205, page=29, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 29>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page29 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 29>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page29 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 29>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page29 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+
+[166 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2210, page=30, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 30>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page30 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 30>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page30 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 30>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page30 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [167 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2215, page=31, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 31>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page31 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 31>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page31 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 31>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page31 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [168 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+<JovanoskiSchroederKonzeptSisterShift.pdf, id=2220, page=32, 597.50829pt x 845.
+0471pt>
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 32>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page32 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 32>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page32 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: JovanoskiSchroederKonzeptSisterShift.pdf Graphic file (type pdf)
+<use JovanoskiSchroederKonzeptSisterShift.pdf, page 32>
+Package pdftex.def Info: JovanoskiSchroederKonzeptSisterShift.pdf , page32 used
+ on input line 980.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+
+[169 <./JovanoskiSchroederKonzeptSisterShift.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 986.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 986.
+
+(DokumentationSisterShift.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 986.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 986.
+Package rerunfilecheck Info: File `DokumentationSisterShift.out' has not change
+d.
+(rerunfilecheck)             Checksum: D6BE7650DB7B544FC72457AEC6899CFB;11555.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 986.
  ) 
 Here is how much of TeX's memory you used:
- 7516 strings out of 492970
- 115874 string characters out of 3122597
- 204876 words of memory out of 3000000
- 10954 multiletter control sequences out of 15000+200000
+ 9182 strings out of 492970
+ 145496 string characters out of 3122597
+ 233634 words of memory out of 3000000
+ 12400 multiletter control sequences out of 15000+200000
  16013 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,8n,30p,1649b,488s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 40i,18n,46p,2064b,491s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\DavidJovanoski\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\e
 c\dpi600\ecbx1200.pk> <C:\Users\DavidJovanoski\AppData\Local\MiKTeX\2.9\fonts\p
 k\ljfour\jknappen\ec\dpi600\ecbx1095.pk> <C:\Users\DavidJovanoski\AppData\Local
@@ -2154,13 +2988,10 @@ noski\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk>
 <C:\Users\DavidJovanoski\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\d
 pi600\ecrm1200.pk> <C:\Users\DavidJovanoski\AppData\Local\MiKTeX\2.9\fonts\pk\l
 jfour\jknappen\ec\dpi600\ecrm1728.pk> <C:\Users\DavidJovanoski\AppData\Local\Mi
-KTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk><E:/Users/DavidJovanosk
-i/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-E:/Users/DavidJovanoski/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmmi8.pfb>
-Output written on DokumentationSisterShift.pdf (104 pages, 12950489 bytes).
+KTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk>
+Output written on DokumentationSisterShift.pdf (169 pages, 16470767 bytes).
 PDF statistics:
- 1567 PDF objects out of 1728 (max. 8388607)
- 275 named destinations out of 1000 (max. 500000)
- 1117 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2693 PDF objects out of 2984 (max. 8388607)
+ 416 named destinations out of 1000 (max. 500000)
+ 1962 words of extra memory for PDF output out of 10000 (max. 10000000)
 

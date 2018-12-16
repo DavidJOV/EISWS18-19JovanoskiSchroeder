@@ -112,3 +112,51 @@
 \BOOKMARK [2][-]{subsection.17.3}{Datenkosistenz}{section.17}% 112
 \BOOKMARK [2][-]{subsection.17.4}{Automatisierung der Verarbeitung von Tauschanfrage, Wunsch\344u\337erungen und Ersatzfindung}{section.17}% 113
 \BOOKMARK [2][-]{subsection.17.5}{Benutzer zugeschnittene Interfaces}{section.17}% 114
+\BOOKMARK [1][-]{section.18}{Spezifikation der Dienstschnittstellen}{}% 115
+\BOOKMARK [2][-]{subsection.18.1}{Dienstgeber}{section.18}% 116
+\BOOKMARK [2][-]{subsection.18.2}{Dienstnutzer}{section.18}% 117
+\BOOKMARK [2][-]{subsection.18.3}{Message Broker}{section.18}% 118
+\BOOKMARK [2][-]{subsection.18.4}{Kommunikation}{section.18}% 119
+\BOOKMARK [1][-]{section.19}{Verteilung der Anwendungslogik}{}% 120
+\BOOKMARK [2][-]{subsection.19.1}{Server}{section.19}% 121
+\BOOKMARK [2][-]{subsection.19.2}{Client}{section.19}% 122
+\BOOKMARK [2][-]{subsection.19.3}{Nutzen}{section.19}% 123
+\BOOKMARK [2][-]{subsection.19.4}{Externer Webservice}{section.19}% 124
+\BOOKMARK [2][-]{subsection.19.5}{Zuverl\344ssigkeit}{section.19}% 125
+\BOOKMARK [2][-]{subsection.19.6}{Datenschutz}{section.19}% 126
+\BOOKMARK [1][-]{section.20}{Verwendung von Programmiersprachen}{}% 127
+\BOOKMARK [2][-]{subsection.20.1}{JavaScript}{section.20}% 128
+\BOOKMARK [2][-]{subsection.20.2}{MySQL}{section.20}% 129
+\BOOKMARK [2][-]{subsection.20.3}{JSON}{section.20}% 130
+\BOOKMARK [2][-]{subsection.20.4}{Pakete}{section.20}% 131
+\BOOKMARK [3][-]{subsubsection.20.4.1}{Express}{subsection.20.4}% 132
+\BOOKMARK [3][-]{subsubsection.20.4.2}{MySQL}{subsection.20.4}% 133
+\BOOKMARK [3][-]{subsubsection.20.4.3}{Semaphore}{subsection.20.4}% 134
+\BOOKMARK [3][-]{subsubsection.20.4.4}{Faye}{subsection.20.4}% 135
+\BOOKMARK [3][-]{subsubsection.20.4.5}{Events}{subsection.20.4}% 136
+\BOOKMARK [3][-]{subsubsection.20.4.6}{Got}{subsection.20.4}% 137
+\BOOKMARK [3][-]{subsubsection.20.4.7}{Js-base64}{subsection.20.4}% 138
+\BOOKMARK [3][-]{subsubsection.20.4.8}{German-holiday}{subsection.20.4}% 139
+\BOOKMARK [3][-]{subsubsection.20.4.9}{Calendar}{subsection.20.4}% 140
+\BOOKMARK [3][-]{subsubsection.20.4.10}{jsonschema}{subsection.20.4}% 141
+\BOOKMARK [1][-]{section.21}{Public Subscribe}{}% 142
+\BOOKMARK [1][-]{section.22}{Message Queue}{}% 143
+\BOOKMARK [2][-]{subsection.22.1}{Ersatzfindung}{section.22}% 144
+\BOOKMARK [2][-]{subsection.22.2}{Tauschanfragen}{section.22}% 145
+\BOOKMARK [1][-]{section.23}{Datenstrukturen}{}% 146
+\BOOKMARK [2][-]{subsection.23.1}{Bezihungen zwischen den Objekten}{section.23}% 147
+\BOOKMARK [2][-]{subsection.23.2}{Validierung}{section.23}% 148
+\BOOKMARK [1][-]{section.24}{REST Modellierung}{}% 149
+\BOOKMARK [2][-]{subsection.24.1}{HTTP Statuscodes}{section.24}% 150
+\BOOKMARK [1][-]{section.25}{Pseudocode}{}% 151
+\BOOKMARK [2][-]{subsection.25.1}{Dienstplan}{section.25}% 152
+\BOOKMARK [1][-]{section.26}{Reflexion der Bestehenden Risiken}{}% 153
+\BOOKMARK [2][-]{subsection.26.1}{Simultane R\374ckmeldung auf Ersatzanfragen}{section.26}% 154
+\BOOKMARK [2][-]{subsection.26.2}{Fehlerhafte Informationen}{section.26}% 155
+\BOOKMARK [2][-]{subsection.26.3}{Dienstplanerstellung Feiertage}{section.26}% 156
+\BOOKMARK [1][-]{section.27}{Quellen}{}% 157
+\BOOKMARK [1][-]{section.28}{Anhang}{}% 158
+\BOOKMARK [2][-]{subsection.28.1}{Fragebogen Auswertung}{section.28}% 159
+\BOOKMARK [2][-]{subsection.28.2}{Fragebogen Muster}{section.28}% 160
+\BOOKMARK [2][-]{subsection.28.3}{Frageb\366gen}{section.28}% 161
+\BOOKMARK [2][-]{subsection.28.4}{Konzept}{section.28}% 162

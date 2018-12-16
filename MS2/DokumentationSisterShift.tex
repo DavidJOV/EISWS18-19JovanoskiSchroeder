@@ -19,6 +19,7 @@ headinclude,
 \usepackage{float}
 \usepackage{hyperref}
 \usepackage{longtable}
+\usepackage{pdfpages}
 
 \title{\textbf{Sister Shift} \\ Projekt Dokumentation \\ erstellt von}
 
@@ -44,10 +45,10 @@ Das Wasserfallmodell fällt wegen fehlender Iteration, zu grober Arbeitsschritte
 Das Vorgehensmodell, nach dem die Entwicklung von Sister-Shift erfolgt, ist der Usability Engineering Lifecycle nach Deborah Mayhew. Nach diesem werden zunächst alle Anforderungen an das System analysiert, danach die Benutzeroberfläche und die Funktionalität designt, entwickelt, getestet und erst danach installiert. Dieses Vorgehensmodell eignet sich besonders für die Entwicklung des Systems Sister-Shift, da der Fokus aus den der Gebrauchstauglichkeit für die verschiedenen Benutzer des Systems liegt, welche das Design maßgeblich mitbeeinflussen. Da in einem Krankenhaus viele verschiedene Menschen mit aus allen Altersgruppen arbeiten, welche teilweise keinen eigenen Computer oder geschweige denn ein Smartphone besitzen, ist es extrem wichtig, die Gebrauchstauglichkeit der Funktionen und des Userinterface mit einem einfachen und intuitiven Design in den Mittelpunkt zu stellen. Jeder Krankenpfleger und auch die Stationsleitung sollen das System auf Anhieb verstehen und benutzen können. Im stressigen Alltag dieser Menschen ist keine Zeit, sich lange mit einem neuen System auseinanderzusetzen und die Benutzung dieses zu lernen. Zusätzlicher Vorteil dieses Vorgehensmodell ist das Einbeziehen der Benutzer in den Entwicklungsprozess, sodass die genannten Anforderungen auch umgesetzt werden. Im gesamten Entstehungsverlauf sind etwaige Evaluationen zu tätigen und nach der Installation erfolgt ein User Feedback. Je nachdem wie dieses ausfällt, werden Aspekte nochmals iteriert.
 
 \section{Iteration Domänenmodell}
-Die Folgenden Grafiken zeigen die Iteration des Domänenmodells. Das Modell spiegelt nun die exakten Punkte wieder, welcher von dem System Sister Shift betroffen sind. Punkte wie Patienten, Ärzte, Rettungskräfte, und Krankenhaus sind weggefallen, da das System sich nicht an der Versorgung der Patienten beteiligt, sondern nur die Personalplanung des Pflegepersonals unterstützt. Hingegen sind durch die intensivere Befassung mit dieser spezifischen Domäne, die Punkte Med. Fachangestellte und Tauschanfragen hinzugekommen, welche nun die grenzen von Sister Shift in diesem Bereich ausdehnen. 
+Die Folgenden Grafiken zeigen die Iteration des Domänenmodells. Das Modell spiegelt nun die exakten Punkte wieder, welche von dem System Sister Shift betroffen sind. Punkte wie Patienten, Ärzte, Rettungskräfte, und Krankenhaus sind weggefallen, da das System sich nicht an der Versorgung der Patienten beteiligt, sondern nur die Personalplanung des Pflegepersonals unterstützt. Hingegen sind durch die intensivere Befassung mit dieser spezifischen Domäne, die Punkte Med. Fachangestellte und Tauschanfragen hinzugekommen, welche nun die grenzen von Sister Shift in diesem Bereich ausdehnen. 
 
-\begin{figure}
-\includegraphics[scale=1]{Bilder/Domaenenmodell.jpg}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/Domaenenmodell.jpg}
 \end{figure}
 \section{The Usability Engineering Lifecycle}
 In diesem Kapitel wird das zu verwendende Vorgehensmodell bei der Entwicklung von Sister-Shift erläutert und die jeweiligen Schritte für das Projekt geplant. 
@@ -119,8 +120,8 @@ Folgend werden die Anforderungen an das System beschrieben und in die jeweiligen
 [OA04] Die Einführung des Systems sollte so kostengünstig wie möglich sein\\\\
 \subsection{Priorisierung der ermittelten Anforderungen}
 Die ermittelten Anforderungen sind in Bezug auf die Zielerreichung unterschiedlich zu gewichten. Folgend ist eine Tabelle mit einer Priorisierung der Anforderungen zu sehen. Die Priorisierung umfasst die Zahlen 1-5, wobei 5 die höchste Priorität darstellt.
-\begin{figure}
-\includegraphics[scale=1]{Bilder/Tanforderungen.png}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/Tanforderungen.png}
 \caption{Anforderungspriorisierung}
 \end{figure}
 \subsubsection{Fazit}
@@ -160,8 +161,8 @@ Visuals/ICONS – Sollten Informationen mithilfe von Icons oder Grafiken visuali
 Minimize typing – Wie stark sind die Tipp Fähigkeiten an der Tastatur? Ist ein Point and select einem remember and Type bevor Zuzügen?\\\\
 Color vision deficit- Wie verbreitet ist Farbenblindheit unter den Benutzern?\\\\
 Other vision deficit – Wie verbreitet sind andere Sehschwächen unter den Benutzern?\\\\
-\begin{figure}
-\includegraphics[scale=1]{Bilder/tabelleAuswert.jpg}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/tabelleAuswert.jpg}
 \caption{Auswertung}
 \end{figure}
 \section{Task Analyse}
@@ -232,30 +233,30 @@ Folgend werden die Ergebnisse aus der Benutzermodellierung und der Task-Analyse 
 \subsection{Qualitative Usability Goals}
 Die qualitativen Ziele an das User-Interface stellen allgemeine Ziele an das Interface dar, auch wenn diese nicht messbar sind. [Deborah J. Mayhew: The Usability Engineering Lifecycle, S.126] 
 Als Grundlage zur Ermittlung der genannten Ziele, dient die Benutzermodellierung und die daraus entstandenen User-Profiles. Die Task-Analyse dient als Zusatz.
-\begin{figure}
-\includegraphics[scale=1]{Bilder/qualiUser.jpg}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/qualiUser.jpg}
 \caption{Qualitative Usability Goals }
 \end{figure}
 \subsection{Quantitative Goals}
 \subsubsection{Dienstplanerstellung / -abfrage}
 Die Erstellung und vor allem das Abrufen des Dienstplanes ist eine der Hauptfunktionen. Die Stationsleitung erstellt mit Hilfe des Systems Dienstpläne, welche alle domänenspezifischen und gesetzlichen Bedingungen einhalten. Das System soll außerdem Mitarbeiterwünsche mit einpflegen. Anschließend werden diese Dienstpläne von allen Benutzern des Systems abgerufen. Die Priorität dieses Ziels ist somit sehr hoch.
-\begin{figure}
-\includegraphics[scale=1]{Bilder/dienstplanAbfrage.jpg}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/dienstplanAbfrage.jpg}
 \end{figure}
 \subsubsection{Melden von Abwesenheit}
 Das Melden einer Abwesenheit ist für die Gesundheits- und Krankenpfleger eine wichtige Funktion, da hier eine Menge Arbeit auf das System umgeleitet werden kann. Das Finden eines Ersatzes soll vom System übernommen werden. Demnach ist das Ease-of-Use hier besonders hoch priorisiert, weil die Gesundheits- und Krankenpfleger als hoch motivierte User gelten um diese Funktion zu nutzen.
-\begin{figure}
-\includegraphics[scale=1]{Bilder/meldenAbwesen.jpg}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/meldenAbwesen.jpg}
 \end{figure}
 \subsubsection{Schichttausch}
 Diese Funktion wird ebenfalls mit einem hohen Ease-of-Use priorisiert, da die Gesundheits- und Krankenpfleger mit dieser unabhängig von der Stationsleitung Ihren Dienstplan, sofern möglich, individualisieren können. Mit dieser Funktion können Kollegen Schichten untereinander tauschen, sofern die automatische Prüfung des Systems auf Einhaltung der domänenspezifischen und gesetzlichen Bedingungen dies zulässt. Somit sind diese auch hier wieder motivierte User der Funktion.
-\begin{figure}
-\includegraphics[scale=1]{Bilder/Schichttausch.jpg}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/Schichttausch.jpg}
 \end{figure}
 \subsubsection{Eintragen von Wünschen zur Schichtplanung}
 Die Mitarbeiter sollen die Möglichkeit haben Wünsche zur Dienstplanung an das System mitzuteilen, welche dann von diesem bei der Dienstplanerstellung berücksichtigt werden sollen. Auch hier ist eine hoher Ease-of-Use zu verzeichnen und dementsprechend zu priorisieren. Da der Dienstplan aber auch so erstellt wird, ist die Priorität etwas geringer.
-\begin{figure}
-\includegraphics[scale=1]{Bilder/wuensche.jpg}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/wuensche.jpg}
 \end{figure}
 \section{Platform Capabilities and Constraints}
 \subsection{Anwendung für Gesundheits- und Krankenpfleger Personal und die Stationsleitung}
@@ -285,29 +286,29 @@ Eine der wichtigsten Faktoren im Design sind die verwendeten Primär- und Sekund
 \subsection{Farbfond}
 Für Farbflächen gibt es einen Farbfond. Dieser wird bei großen Flächen und neben den Akzentfarben eingesetzt. Der definierte Blauverlauf ist auch auf größeren Flächen angenehm für den Betrachter. Er vermittelt eine edle Optik und eine gewisse Leichtigkeit. Zusätzlich vermittelt der gewählte Fond eine abwechslungsreiche Dynamik. Er ist wie folgt definiert: 
 \begin{figure}[H]
-\includegraphics[scale=1]{Bilder/farbfont.jpg}
+\includegraphics[width=1\textwidth]{Bilder/farbfont.jpg}
 \caption{Farbfond}
 \end{figure}
 \subsection{Hintergrundfarben}
 \begin{figure}[H]
-\includegraphics[scale=1]{Bilder/Hintergrundfarben.jpg}
+\includegraphics[width=1\textwidth]{Bilder/Hintergrundfarben.jpg}
 \caption{Hintergrundfarben}
 \end{figure}
 \subsection{Textfarbe}
 \begin{figure}[H]
-\includegraphics[scale=1]{Bilder/Textfarben.jpg}
+\includegraphics[width=1\textwidth]{Bilder/Textfarben.jpg}
 \caption{Textfarbe}
 \end{figure}
 \subsection{Typographie}
 Der im System verwendetet Schriftart ist Montserrat. Diese bietet verschiedene Schnitte, welche von Extra Light bis Bold reichen, und ist damit umfangreich ausgestattet.
 \begin{figure}[H]
-\includegraphics[scale=1]{Bilder/Typographie.jpg}
+\includegraphics[width=1\textwidth]{Bilder/Typographie.jpg}
 \caption{Typographie}
 \end{figure}
 \subsection{Logo}
 Das Logo der Anwendung Sister-Shift wurde extra für diese entworfen. 
 \begin{figure}[H]
-\includegraphics[scale=1]{Bilder/Logo.jpg}
+\includegraphics[width=1\textwidth]{Bilder/Logo.jpg}
 \caption{Logo}
 \end{figure}
 \subsection{Webfont}
@@ -383,11 +384,11 @@ Dialogboxen\\\\
 \subsection{Wireframe}
 Die gezeigten Wireframes zeigen den schematischen Aufbau des Hauptfensters der Dienstplan-Kalendersicht und die Anordnung der Elemente bei Ansichten, die eine Benutzereingabe ermöglichen. Das Hauptfenster wird dem Benutzer nach dem erfolgreichen einloggen in das Mitarbeiter-Konto angezeigt. Es besteht aus einem Kalender, welcher immer eine Woche mit den einzelnen Tagen anzeigt. Zu sehen sind außerdem die Buttons, mit denen zwischen den angezeigten Wochen gewechselt werden kann. Zusätzlich ist schon die Menüzeile, die der Navigation zu den verschiedenen Funktionen im System dient, zu sehen. Hier ist besonders der Reiter “Benachrichtigungen” wichtig, welcher mit einem Brief-Icon dargestellt wird.
 \begin{figure}[H]
-\includegraphics[scale=1]{Bilder/Wireframe.jpg}
+\includegraphics[width=1\textwidth]{Bilder/Wireframe.jpg}
 \caption{Wireframe Dienstplan}
 \end{figure}
 \begin{figure}[H]
-\includegraphics[scale=1]{Bilder/Wireframe2.jpg}
+\includegraphics[width=1\textwidth]{Bilder/Wireframe2.jpg}
 \caption{Wireframe Sonstige Screens}
 \end{figure}
 \subsection{Fazit}
@@ -408,48 +409,49 @@ Die Navigation zwischen den einzelnen Funktionen des Systems erfolgt über eine 
 \subsection{Login}
 Der Login-Screen erfordert nur einen Benutzernamen und das passende Passwort für das genannte Konto. Über einen Login-Button kann sich eingeloggt werden.
 \begin{figure}[H]
-\includegraphics[scale=1]{Bilder/Login.jpg}
+\includegraphics[width=1\textwidth]{Bilder/Login.jpg}
 \caption{Login}
-\end{figure}\begin{figure}[H]
+\end{figure}
 \subsection{Dienstplaneinstellungen}
 In dieser Ansicht müssen vor der automatischen Generierung eines Dienstplans die zu sehenden Eckdaten gesetzt werden. Hat der User alle Eckdaten gesetzt, kann durch den Button “Dienstplan generieren” ein neuer Dienstplan vom System generiert werden.
-\includegraphics[scale=1]{Bilder/Dienstplanerstellung.jpg}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/Dienstplanerstellung.jpg}
 \caption{Dienstplanerstellung}
 \end{figure}
 \subsection{Mitarbeiter anlegen/löschen}
 Auf dieser Ansicht kann die Stationsleitung einen neuen Mitarbeiter in das System einpflegen. Dafür müssen die zu sehenden Datenfelder ausgefüllt werden. Zusätzlich kann auch ein Mitarbeiter aus dem System entfernt werden. Die Buttons “Mitarbeiter anlegen” und “Mitarbeiter löschen” bestätigen den jeweiligen Vorgang.
 \begin{figure}[H]
-\includegraphics[scale=1]{Bilder/Mitarbeiter anlegen_loeschen.jpg}
+\includegraphics[width=1\textwidth]{Bilder/Mitarbeiteranlegen_loeschen.jpg}
 \caption{Mitarbeiter anlegen/löschen}
 \end{figure}
 \subsection{Dienstplan-Kalender}
 In dieser Ansicht kann ein Benutzer den für sich relevanten Dienstplan einsehen. Gezeigt wird immer eine Woche. Über die Buttons “Nächste Woche” und “Vorherige Woche” kann der weitere Dienstplan der anderen Wochen eingesehen werden.
 \begin{figure}[H]
-\includegraphics[scale=1]{Bilder/Dienstplan-Kalender.jpg}
+\includegraphics[width=1\textwidth]{Bilder/Dienstplan-Kalender.jpg}
 \caption{Dienstplan Kalender}
 \end{figure}
 \subsection{Schichtdetails}
 Zu dieser Ansicht gelangt der Nutzer, sobald er eine Schicht aus der Dienstplan-Kalender Ansicht anklickt. Hier werden Details der betreffenden Schicht angezeigt. Über den Button “Zurück zur Übersicht” gelangt der Nutzer wieder auf die Ansicht des Dienstplan-Kalenders. 
 \begin{figure}[H]
-\includegraphics[scale=1]{Bilder/Schichtdetails.jpg}
+\includegraphics[width=1\textwidth]{Bilder/Schichtdetails.jpg}
 \caption{Schichtdetails}
 \end{figure}
 \subsection{Wunschäußerung, Tauschanfrage und Abwesenheitsmeldung}
 Das Mockup dieser drei Ansichten wurde auf Grund der Ähnlichkeiten zusammengefasst. Auf den verschiedenen Ansichten können Wünsche zur weiteren Dienstplanung, Tauschanfragen zu Schichten und Abwesenheitsmeldungen an das System übermittelt werden. Bei jeder dieser Funktionen muss ein Datum und eine Schicht spezifiziert werden. Ausnahmen, bzw. detaillierte Beschreibungen zum Thema Datums- und Schichtangabe bezüglich der jeweiligen Funktion folgt im Kapitel Detailed User Interface. Bei jeder der Funktionen ist die Möglichkeit gegeben einen Kommentar mit an das System zu übermitteln. Über einen entsprechenden Button kann die jeweilige Funktion ausgeführt werden. Bei der Funktion Abwesenheit melden gibt es zusätzlich den Button, der es erlaubt Dokumente, wie z.B. eine Krankmeldung direkt mit anzuhängen. 
 \begin{figure}[H]
-\includegraphics[scale=1]{Bilder/Abwesenheit_Schichttausch_Wunsch.jpg}
+\includegraphics[width=1\textwidth]{Bilder/Abwesenheit_Schichttausch_Wunsch.jpg}
 \caption{Diverse Funktionen}
 \end{figure}
 \subsection{Benachrichtigungen}
 Auf dieser Ansicht können die Benachrichtigungen des jeweiligen Nutzers eingesehen werden. Durch Klicken auf das Navigationselement, öffnet sich eine Dialogbox, in der die Nachrichten erscheinen. Klickt man in dieser eine Nachricht an, öffnet sich die gesamte Nachricht nach unten hin in diesem Dialogfenster. Durch den “Schließen”-Button kann man die Dialogbox schließen.
 \begin{figure}[H]
-\includegraphics[scale=1]{Bilder/Benachrichtigungen-Mockup.jpg}
+\includegraphics[width=1\textwidth]{Bilder/Benachrichtigungen-Mockup.jpg}
 \caption{Benachrichtigungen}
 \end{figure}
 \subsection{Dialogbox}
 Auf dieser Ansicht ist die Anordnung und Gestaltung einer Dialogbox zu sehen. Diese Art des User Feedbacks erfolgt nach dem Ausführen einer vom System bereitgestellten Funktion. Durch Bestätigen mit einem Button, schließt sich die Dialogbox, und der User kann wieder navigieren.
 \begin{figure}[H]
-\includegraphics[scale=1]{Bilder/Dialogbox-Mockup.jpg}
+\includegraphics[width=1\textwidth]]{Bilder/Dialogbox-Mockup.jpg}
 \caption{Dialogbox}
 \end{figure}
 \section{Screen Design Standards}
@@ -710,4 +712,275 @@ Da alle Nutzer des Systems auf denselben Dienstplan zugreifen und angezeigt beko
 Die jeweiligen Funktionen sind gut über die Navigationsleiste zu erreichen. Der Input zu diesen beschränkt sich auf 1-2 Usereingaben. Somit ist der Input, der vom Benutzer zu tätigen ist sehr gering. Die Eingabefelder sind verständlich benannt und bei Bedarf erhält der User einen Informationstext zu der jeweiligen Eingabe. Durch das einfache Design und dem Vorhandensein von nur einem Button wird dem User die Nutzung der jeweiligen Funktionen schnell klar. Der User erhält nach jedem Ausführen einer Aktion Feedback und das System übernimmt den Rest der jeweiligen Funktion.
 \subsection{Benutzer zugeschnittene Interfaces}
 Verschiedene Nutzer haben verschiedene Zugriffsrechte auf Funktionen. So beinhaltet das Interface für die Krankenpfleger und medizinischen Fachangestellten nicht die Ansichten für die Funktionen Dienstplaneinstellungen und Mitarbeiter anlegen/löschen. Diese Funktionen sind der Stationsleitung vorbehalten.
+\section{Spezifikation der Dienstschnittstellen}
+\subsection{Dienstgeber}
+Der Dienstgeber stellt eine Schnittstelle nach dem defacto Standard REST dar.
+Über diese Schnittstelle kann der Dienstnutzer den Dienstgeber ansprechen. Somit kann dieser den Service des Dienstgebers nutzen. Der Service umfasst das Erstellen von automatisierten Dienstplänen und das Finden von Ersatz bei Abwesenheiten. Beim Erstellen des Dienstplans müssen folgende Faktoren beachtet werden: Gesetzliche Rahmenbedingungen, Krankenhaus spezifische Rahmenbedingungen [vgl. Konzept Domänenrecherche], die Wünsche der Mitarbeiter, die faire Verteilung der Schichten (Aufteilung Feiertage, Wocheneden sowie Schichtenwechsel). Dies soll vom Dienstgeber allein beachtet werden. Bei der Ersatzfindung muss der Dienstgeber geeigneten Ersatz finden. Dies bedeutet, dass nach Eingang einer Abwesenheitsmeldung, nur Personal angefragt werden darf, das auf derselben Station arbeitet, das am Tag der Abwesenheit nicht arbeitet, dass trotz Einspringens 10 oder mehr Stunden Ruhepause hat und im Idealfall keine oder am wenigsten Überstunden hat. Wurde geeignetes Personal gefunden muss die Stationsleitung über den gesamten Vorgang informiert werden und der Dienstplan angepasst werden.
+\subsection{Dienstnutzer}
+Der Dienstnutzer stellt dem Endnutzer ein Interface bereit, um die Dienste des Dienstgebers zu nutzen.
+Außer der Nutzung des Dienstgebers, ermittelt der Dienstnutzer die Möglichkeit eines Schichten Tauschs zwischen den Mitarbeitern. Hierbei wird es den Nutzern ermöglicht zwei Datumstage einzutragen. Daraufhin wird vom Dienstnutzer überprüft ob die Schicht getauscht werden darf. Hierbei sind wieder die gesetzlichen Rahmenbedingungen [siehe Konzept Domänenrecherche] relevant. Wird ein Tausch vollzogen, muss die Stationsleitung über diesen Vorgang informiert werden und der Dienstplan angepasst werden.
+\subsection{Message Broker}
+Der Message Broker dient dem temporären sichern von Mitteilungen bzw. Informationen die an den Dienstnutzer übermittelt werden sollen. Die ist sinnvoll, falls dieser zurzeit der Absendung nicht erreichbar ist. In verschiedenen Informationswarteschlangen, wie den Ersatzanfragen oder den Tauschbestätigungen werden diese Mitteilungen temporär bis zur Absendung an den Dienstnutzer eingereiht.
+\subsection{Kommunikation}
+Informationen werden verschlüsselt übertragen. Besonders kritische Informationen wie z.B. das Passwort beim Login sollen mit dem base64 Verfahren, vor der Übertragung zusätzlich verschlüsselt werden.
+\section{Verteilung der Anwendungslogik}
+\subsection{Server}
+Auf dem Server wird die automatisierte Dienstplanerstellung erfolgen. Bei dieser müssen viele verschiedene Aspekte berücksichtigt werden. Das System erstellt einen Dienstplan, welcher für einen Monat gültig ist. Vor der Erstellung können von einem Benutzer Eckdaten, wie die Schichtdauer festgelegt werden. Bei der Erstellung wird auf eine faire Einteilung aller Mitarbeiter geachtet. Die Fairness ist durch Daten aus vorhergegangenen Dienstplänen (Einsätze an Wochenenden, Einsätze an Feiertagen, Anzahl Einsatztage am Stück), gesetzlichen und domänenspezifischen Vorgaben, und Wünschen zu Einsatzzeiten der jeweiligen Krankenpfleger definiert. Die Mitarbeiterwünsche werden über ein Ranking gewichtet. Das Ranking der Wünsche ist dynamisch, basierend auf den Einbezug in die aktuelle Dienstplanung. Gesetzliche Vorgaben zu Arbeitnehmerschutz und Jugendschutz werden im Algorithmus eingebettet. Domänenspezifische Bedingungen können über das Setzen von Eckdaten ergänzt werden. Zusätzlich erfolgen Änderungen an Dienstplänen ebenfalls auf dem Server. Bei einem Schichttausch erhält der Server die nötigen Informationen vom Client, und passt die Dienstpläne der betroffenen Krankenpfleger an. Bei Vorkommen einer Abwesenheitsmeldung, ermittelt der Server geeignetes Ersatzpersonal und fragt dieses auf einen Ersatzdienst für den kommenden Personalausfall an. Das Ermitteln erfolgt über einen Abgleich des Dienstplans. Krankenpfleger, welche zu der Zeit der Ersatzbedürftigen Schicht frei haben, werden über den Client angefragt, ob diese für den abwesenden Kollegen einspringen können. Sofern ein Krankenpfleger einspringen kann, wird der Dienstplan dieses angepasst und ihm werden Überstunden angerechnet. Sofern kein Krankenpfleger bis zu 18 Stunden vor der betreffenden Schicht zugesagt hat, wird eine Zeitarbeitsfirma engagiert. Nach erfolgreichem Tauschen einer Schicht, oder Ersatzfindung für eine Schicht, informiert der Server stets alle betroffenen Benutzer und die Stationsleitung.
+\subsection{Client}
+Auf dem Client erfolgt die Ermittlung und Abwicklung von Schichttauschanfragen. Erfolgt eine Tauschanfrage für eine Schicht unter Kollegen, so muss geprüft werden, ob die Dienstpläne der betroffenen Krankenpfleger nach dem vollzogenen Tausch immer noch den gesetzlichen- und domänenspezifischen Anforderungen entsprechen. Diese Kontrolle erfolgt auf dem Client. Es wird geprüft, ob die vor dem Erstellen angegebenen Eckedaten noch erfüllt sind und ob die veränderten Dienstpläne den gesetzlichen Rahmen zum Arbeitsschutz, wie z.B. einhalten der min. Ruhezeit zwischen den Schichten erfüllen. Ist ein Tausch valide, teilt der Client dem Server die Änderungen an den entsprechenden Dienstplänen mit. Der Client bietet zudem die Schnittstelle zum System, über den die Benutzer den generierten Dienstplan abrufen, eine Abwesenheit einreichen, und Wünsche zum Dienstplan an das System weitergeben können. 
+\subsection{Nutzen}
+Durch das Verteilen der Anwendungslogik auf Client und Server, wird die Verarbeitungsgeschwindigkeit des Systems optimiert. Der Server kann so, Dienstpläne erstellen/ändern und sich um die Findung von Ersatzpersonal kümmern, während der Client simultan die Prüfung von Tauschanfragen abarbeiten und den Benutzern Zugang zum System gewähren kann.
+\subsection{Externer Webservice}
+Diskutiert wurde eine Verwendung der Google Calendar API, um den Dienstplan mit dem Privatkalender der Mitarbeiter abzugleichen. Wodurch ein vollfunktionsfähiger Kalender bereitstehen würde. Dies wurde jedoch ausfolgenden Gründen verworfen. Die Calendar API setzt für jeden Mitarbeiter ein Google Konto Voraus, doch nicht alle Mitarbeiter, in der Regel die älteren, besitzen so ein Konto oder wären bereit sich eines zu Erstellen. Hinzu kommen die Datenschutztechnischen Risiken bezüglich der Firma Google und der mögliche Kostenfaktor nach Expansion der Software Sister Shift. Als alternative bieten sich genügend Pakete an, die die Funktionalität besitzen, die für die Umsetzung des Projekts notwendig sind. Die Pakete werden unter dem Punkt Pakete gennant.
+\subsection{Zuverlässigkeit}
+Falls der Dienstgeber oder Dienstnutzer ausfällt, ist das System nicht völlig ausgefallen. Im Fall des Dienstgeber Ausfalls könnten sich die Mitarbeiter immer noch abwesend melden oder Tauschanfragen senden. Diese werden dann in den vorgesehenen Warteschlangen platziert, und sobald möglich an den Dienstgeber übermittelt. Anders, wenn der Dienstnutzer ausfällt, ist der Dienstgeber noch in der Lage, den Dienstplan zu generieren und diesen sobald möglich für die Mitarbeiter bereitzustellen. 
+\subsection{Datenschutz}
+Da es keine externe Partei gibt, die an diesem Projekt mitwirkt, besteht keine Gefahr bezüglich der Nutzung der persönlichen Daten durch dritte. Allein durch Hacker Angriffe könnten Informationen abhandenkommen. Vorbeugend werden alle Informationen über das HTTPS Protokoll übertragen. Kritische Informationen wie Zugangsdaten werden zu dem vor der Übertragung noch einmal mit dem Base64 verfahren verschlüsselt. Alternativ kann eine Übertragung über HMAC (Keyed-Hashing for Messages) in Betracht gezogen werden. Hierbei haben Server und Client, pro Client ein Shared Secret. Dadurch kann vom Server und Client sichergestellt werden, dass die erhaltenen Nachrichten, von einer vertrauenswürdigen Stelle kommen. Zwar wird einer Man in the Middle Attacke dadurch vorgebeugt, jedoch können ausgetauschte Informationen mitgelesen werden. Da unser System keine kritischen Informationen wie Zahlungsvorgänge umfasst, stellen Man in the Middle Attacken ein geringes Risiko dar, weshalb zur Übertragung von Informationen die HTTPS + Basic-Auth Methode sinnvoller erscheint. Vor der Eintragung eines jeden Mitarbeiters in das System, ist eine Einwilligung der Datenschutzerklärung bei diesen einzuholen. Außerdem ist ein Datenschutzbeauftragter vor der Bereitstellung des Systems zu engagieren. Die verwaltende Stationsleitung muss über das Datengeheimnis nach § 5 BDSG vor der Administration der Personaldaten belehrt werden. 
+\section{Verwendung von Programmiersprachen}
+\subsection{JavaScript}
+Die Wahl der ausgewählten Programmiersprachen hängt an verschiedenen Faktoren. Zu nächst wurde überlegt ob eine mobile Applikation mit Hilfe von Java implementiert werden soll. Da in der Notaufnahme nur Computer für die Mitarbeiter zur Verfügung stehen und nicht bestätigt werden kann, dass alle Mitarbeiter ein mobiles Endgerät nutzen, wurde als Nutzerschnittstelle eine Website zur Verwaltung der Personalplanung gewählt. Woraufhin NodeJS als Laufzeitumgebung für den Dienstnutzer und Dienstgeber gewählt wurde. NodeJS basiert auf der Chromes V8 JavaScript-Engine. JavaScript wird in diesem Projekt jedoch nicht nur im Backend, sondern auch im Frontend genutzt. Dazu mehr unter dem folgenden Punkt Frameworks.
+\subsection{MySQL}
+MySQL ist eine gängige Datenbanksprache. MySQL ist Open Source, weshalb unterandere Lizenzgebühren für die Datenbank wegfallen. Selbst große Unternehmen wie Facebook, Google oder Adobe setzen auf MySQL. Die Dokumentation zu MySQL ist im Web ausgiebig Vertreten. MySQL wurde aufgrund der langen Bewährtheit, der Skalierbarkeit und der freien Nutzbarkeit als Datenbanksprache gewählt.
+\subsection{JSON}
+Als Sprache zum Austausch von Daten zwischen Softwarekomponenten, wurde die JavaScript Object Notation gewählt. Die Beweggründe für die Auswahl von JSON werden im Folgenden erläutert.
+JSON ist ein standardisiertes Format, welches dazu dient Informationen auf Basis eines JavaScript Objekts darzustellen. Das Format ist besonders bei Webanwendungen verbreitet. Die Verbreitung liegt unteranderem daran, dass JSON als eine Zeichenkette existiert. Dies ist besonders für die Übertragung über ein Netzwerk nützlich. In JSON können alle Arten von Datentypen und Objekten übertragen werden. JSON ist ein weit verbreitetes Format, weshalb es sehr interoperable ist. Als Alternative wurde XML gewählt, das vor allem sehr vielseitig, aber dadurch auch komplexer ist. JSON ist für das Projekt die bessere Wahl, da es schlanker ist als XML und trotzdem für den Projektkontext völlig ausreicht.
+Da der Client einer Website entspricht und das System im JavaScript Umfeld umgesetzt wird, bietet sich die Nutzung von JSON aufgrund der Objektstrukturen an. Außerdem ermöglicht es JSON den Systemkomponenten, alle notwendigen Informationen über das Netz auszutauschen.
+\subsection{Pakete}
+Npm ist ein Paketmanager für die JavaScript-Laufzeitumgebung Node.js. 
+Folgende Pakete werden im Projekt genutzt.
+\subsubsection{Express}
+Express wird zur Implementierung der Server auf dem Dienstgeber und Dienstnutzer genutzt.
+\subsubsection{MySQL}
+Das Paket Mysql bietet eine Reihe an Funktionen, die zur Interaktion mit der Datenbank benötigt werden.
+\subsubsection{Semaphore}
+Dieses Paket ermöglicht uns die Nutzung von Semaphoren bei Datenbank kritischen zugriffen. 
+\subsubsection{Faye}
+Dient der Umsetzung der topicbasierten asynchronen Kommunikation im System.
+\subsubsection{Events}
+Events bietet eine Reihe von Funktionen, um Ereignisse auszulösen und auf diese zu reagieren.
+\subsubsection{Got}
+Got wird verwendet, um eine sichere Übertragung von kritischen Informationen über das HTTPS Protokoll zu ermöglichen.
+\subsubsection{Js-base64}
+Dieses Paket wird verwendet, um kritische Informationen vor der Übertragung zu kodieren und bei Erhalt diese wieder zu dekodieren.
+\subsubsection{German-holiday}
+Dieses Paket spielt eine Rolle dabei, um zu Prüfen ob ein Tag ein deutscher Feiertag ist. Dies ist für unser System sehr wichtig. Da dies eine Rolle bei der Dienstplanerstellung spielt.
+\subsubsection{Calendar}
+Dieses Paket wird für Kalenderinformationen bezüglich des Dienstplans benötigt. 
+\subsubsection{jsonschema}
+Jsonschema wird für die Validierung der Übertragenen JSON's verwendet.
+\section{Public Subscribe}
+Es wurden die Topics Abwesenheiten und Tauschanfragen gewählt. Falls sich eine Person abwesend meldet, also eine Abwesenheit publiziert, müssen die anderen Mitarbeiter und die Stationsleitung dieser Station diese Nachricht erhalten, darum subscriben sie auf die Abwesenheiten der eigenen Station in diesem Fall also /abwesenheiten{StationsID}. Für die Tauschanfragen gilt genau dasselbe. Hat ein Mitarbeiter noch niemanden zum Tauschen privat gefunden, kann er seine Bitte auf dem Topic /tauschanfragen{StationsID} publizieren. Somit erhalten alle anderen Mitarbeiter der Station die Nachricht, dass es eine neue Tauschanfrage auf dem dafür vorgesehene Markt gibt.
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/topic.jpg}
+\caption{Topics}
+\end{figure}
+\section{Message Queue}
+\subsection{Ersatzfindung}
+Da es sich bei der Ersatzfindung, um eine besonders Asynchrone Kommunikation die unteranderem langwierig sein kann handelt, empfiehlt sich hier der Einsatz einer Message Queue.
+Die Message Queue /Ersatzanfragen, speichert temporär die Anfragen an potentielle Ersatzmitarbeiter. Sobald diese erreichbar sind, werden sie über die Ersatzanfragen benachrichtigt und können diese ggf. bestätigen. Falls in der Zwischenzeit bereits Ersatz gefunden wurde, aber noch Ersatzanfragen in der Queue vorhanden sind können diese Verworfen werden. Eine Ersatzanfrage bezüglich der Softwarekomponenten funktioniert folgendermaßen. Nachdem ein Nutzer sich mithilfe des Dienstnutzers beim Dienstgeber abwesend gemeldet hat, sucht der Dienstgeber nun nach Mitarbeitern die als Ersatz infrage kommen. Für diese produziert er jeweils eine Ersatzanfrage und sendet sie an die Message Queue /Ersatzanfragen. Wird eine Bestätigung übermittelt, werden die in der Queue noch zu konsumierenden Nachrichten verworfen. Der Dienstgeber informiert die Stationsleitung über den Prozess und trägt die Änderungen im Dienstplan ein. Ein genauerer Ablauf ist in Schritt 1-12 in Folgender Grafik zu sehen.
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/Queue.jpg}
+\caption{MQ Ersatzanfragen}
+\end{figure}
+\subsection{Tauschanfragen}
+Nicht nur bei der Ersatzfindung, sondern auch bei den Tauschanfragen handelt es sich um eine asynchrone Kommunikation, weshalb sich auch hier die Nachrichtenwarteschlange /tauschanfragen anbietet. Deren Verwendung ist in Folgender Grafik beschrieben.
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/mq2.jpg}
+\caption{MQ Tauschanfragen}
+\end{figure}
+\section{Datenstrukturen}
+Im Folgenden werden die Objekte des Systems und deren Datenstrukturen aufgezählt.
+Die Objekte Mitarbeiter, Station, Abwesenheitsmeldung, Ersatzeintragung, Schichttausch, Wunsch, Dienstplan und Tag werden nach Erstellung oder Veränderung persistent auf einer relationalen Datenbank gesichert. 
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/Dmitarbeiter.jpg}
+\caption{Datenstruktur Mitarbeiter}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/Dstation.jpg}
+\caption{Datenstruktur Station}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/Dabwesenheit.jpg}
+\caption{Datenstruktur Abwesenheitsmeldung}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/Dersatz.jpg}
+\caption{Datenstruktur Ersatzanfrage}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/Dersatz2.jpg}
+\caption{Datenstruktur Ersatzeintragung}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/Dschichttausch.jpg}
+\caption{Datenstruktur Schichttausch}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/Dwunsch.jpg}
+\caption{Datenstruktur Wunsch}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/Ddienstplan.jpg}
+\caption{Datenstruktur Dienstplan}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/Dtag.jpg}
+\caption{Datenstruktur Tag}
+\end{figure}
+\subsection{Bezihungen zwischen den Objekten}
+Im Folgenden ER-Diagramm werden die Beziehungen zwischen den Objekten visualisiert.
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/Er.jpg}
+\caption{ER-Diagramm}
+\end{figure}
+\subsection{Validierung}
+Da viele der Eigenschaften vom Nutzer auf Formularseiten ausgefüllt werden, wie z.B. das Datum der Abwesenheit, wurde eine Validierung über folgende JSON Schemas gewählt. Dies dient dazu fehlerhaften eingaben vorzubeugen und den Nutzer darüber zu Informieren.
+Die JSON Validierung wird mit Hilfe des Pakets jsonschema auf dem Dienstgeber ausgeführt.
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/validMitarbeiterPost.jpg}
+\caption{Mitarbeiter POST JSON}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/validMitarbeiterPut.jpg}
+\caption{Mitarbeiter PUT JSON}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/validAbwesenheiten.jpg}
+\caption{Abwesenheitsmeldung JSON}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/validSchichttausch.jpg}
+\caption{Schichttausch JSON}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/validWunsch.jpg}
+\caption{Wunsch JSON}
+\end{figure}
+\section{REST Modellierung}
+Die Folgende Tabelle spiegelt die REST Modellierung wieder. Die Tabelle wurde nach dem Richardson Maturity Model entworfen. Da wir über HTTP bzw. HTTPS kommunizieren, über mehrere Ressourcen verfügen und die Semantik der HTTP Verben einhalten, erreichen wir vorab schon das Level 2 dieses Models. Bezüglich HATEOAS (Hypertext As The Engine Of Application State) wird jeder Dienstplan auf seine einzelnen Tage referenzieren. Damit wird dem Nutzer ermöglicht einzusehen an welchem Tag er mit welchen Kollegen zusammenarbeitet. Außerdem referenziert der aktuelle Dienstplan auf den Dienstplan des nächsten Monats. Somit wird das Level 3 und damit das Glory of REST erreicht.
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/Rest1.jpg}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/Rest2.jpg}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/Rest3.jpg}
+\caption{REST Modellierung}
+\end{figure}
+\subsection{HTTP Statuscodes}
+Folgende Status Codes werden bei der Implementierung verwendet. Die Zuordnung ist in der REST Tabelle zu finden.
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/status.jpg}
+\caption{HTTP Statuscodes}
+\end{figure}
+\section{Pseudocode}
+Die Kernfunktionen wurden bereits in Pseudocode entworfen.
+\subsection{Dienstplan}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/pseudoD.jpg}
+\caption{Pseudocode Dienstplan}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/DienstplanPseudo.png}
+\caption{Pseudocode Dienstplan Visualisiert}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/pseudoW.jpg}
+\caption{Pseudocode Wunsch}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/WuenschePseudo.png}
+\caption{Pseudocode Wunsch Visualisiert}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/pseudoT.jpg}
+\caption{Pseudocode Schichttausch}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/TauschanfragenPseudo.png}
+\caption{Pseudocode Schichttausch Visualisiert}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/pseudoE.jpg}
+\caption{Pseudocode Ersatzfindung}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/ersatzPseudo.png}
+\caption{Pseudocode Ersatzfindung Visualisiert}
+\end{figure}
+\section{Reflexion der Bestehenden Risiken}
+\subsection{Simultane Rückmeldung auf Ersatzanfragen}
+Durch die Verwendung des Pakets Semaphore, wird das Risiko „Simultane Rückmeldung auf Ersatzanfragen“ das im Konzept beschrieben wurde eliminiert. Die Semaphore ermöglicht es einen Exklusiven Zugriff auf dieses Objekt zu implementieren. 
+\subsection{Fehlerhafte Informationen}
+Mit Hilfe des Validierung Pakets jsonschema kann die Fehlerrate bei der Informationsspeicherung minimiert werden.
+\subsection{Dienstplanerstellung Feiertage}
+Das Paket German-Holidays unterstützt uns bei der richtigen Erstellung des Dienstplans. Hiermit können Feiertage identifiziert werden und bei der Diensplanerstellung berücksichtigt werden.
+\section{Quellen}
+\begin{description}
+\item
+Interviews mit Gesundheits- und Krankenpflegerinnen aus dem Klinikum Leverkusen und der LVR Klinik Langenfeld
+\item
+Fragebögen, ausgefüllt von Mitarbeitern der Notaufnahme des Klinikum Leverkusen
+\item
+Ralph Grossmann und Hubert Lobnig (03.06.2013): Organisationsentwicklung im Krankenhaus – Grundlagen und Interventionskonzepte, [online] \href{http://www.mwv-berlin.de/buecher-bestellen-2016/images/product_images/leseproben_images/9783954660025_Leseprobe.pdf}{Link zur Seite} (28.10.2018)
+\item
+Arbeitszeitgesetz [online] \href{https://www.gesetze-im-internet.de/arbzg/BJNR117100994.html}{Link zur Seite} (23.10.2018)
+\item
+Jugendarbeitsschutzgesetz, [online]\href{https://www.gesetze-im-internet.de/jarbschg/}{Link zur Seite} (23.10.2018)
+\item
+Bundesurlaubsgesetz, [online] \href{https://www.gesetze-im-internet.de/burlg/}{Link zur Seite} (23.10.2018)
+\item
+Dr. Jürgen Fleig (08.07.2016): Vorgehensweise bei einer Marktanalyse, [online] \href{https://www.business-wissen.de/hb/vorgehensweise-bei-einer-marktanalyse/}{Link zur Seite} (23.10.2018)
+\item
+JuraForum.de-Redaktion (02.10.2017): Dienstplan erstellen: Gesetzliche Regelung & Rechte des Arbeitnehmers, [online] \href{https://www.juraforum.de/ratgeber/arbeitsrecht/dienstplan-erstellen-gesetzliche-regelung-und-rechte-des-arbeitnehmers}{Link zur Seite} (26.10.2018)
+\item
+Softguide der Softwareführer: NEXUS/ Dienstplan & NEXUS/ PERSONALMANAGEMENT, [online] \href{https://www.softguide.de/programm/nexus-dienstplan}{Link zur Seite} (30.10.2018)
+\item
+Papershift GmbH: Dienstplan (HR-Lexikon), [online] \href{https://www.papershift.com/lexikon/dienstplan}{Link zur Seite} (23.10.2018)
+\item
+„REST und HTTP" Stefan Tilkov Dpunkt Verlag ISBN:978-3-86490-120-1
+\item
+Waterfall-Model: [online]
+\href{https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Waterfall_model.svg/1200px-Waterfall_model.svg.png}{Link zur Seite}
+\item
+ISO-EN-DIN 9241, Teil 210
+\item
+Deborah J. Mayhew: The Usability Engineering Lifecycle a practitioner´s handbook for user interface design, Morgan Kaufmann Publishers, 1999
+\item
+Semantic UI: Semantic UI, [online] \href{https://semantic-ui.com} {Link zur Seite} (03.12.2018)
+\item
+Datenschutz [online]\href{https://www.datenschutz.org/unternehmen/}{Link zur Seite} (03.12.2018)
+\item
+MySQL [online] \href{https://www.mysql.com/de/why-mysql/}{Link zur Seite} (06.12.2018)
+\item
+ RESTful Web Service Stefan Marr [online]\href{http://stefan-marr.de/pages/restful-web-services/}{Link zu Seite}(04.12.18)
+\item JSON / XML / YAML [online]\href{ https://www.predic8.de/xml-json-yaml.htm}{Link zur Seite} (11.12.18)
+\item HTTP Statuscodes [online]\href{https://developer.mozilla.org/de/docs/Web/HTTP/Status} {Link zur Seite} (29.11.18)
+\item Glory of REST [online]\href{https://martinfowler.com/articles/richardsonMaturityModel.html} {Link zur Seite} (04.12.2018)
+\end{description}
+\section{Anhang}
+\subsection{Fragebogen Auswertung}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/ausw1.jpg}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/ausw2.jpg}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/ausw3.jpg}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{Bilder/ausw4.jpg}
+\end{figure}
+\subsection{Fragebogen Muster}
+\includepdf[pages=-]{Umfragebogen.pdf}
+\subsection{Fragebögen}
+\subsection{Konzept}
+\includepdf[pages=-]{JovanoskiSchroederKonzeptSisterShift.pdf}
+
+
+
+
+
 \end{document}

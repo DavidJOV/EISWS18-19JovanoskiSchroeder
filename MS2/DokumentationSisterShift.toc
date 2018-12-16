@@ -1,115 +1,163 @@
 \babel@toc {german}{}
-\contentsline {section}{\numberline {1}Iteration Konzept}{6}{section.1}
-\contentsline {section}{\numberline {2}Iteration Dom\IeC {\"a}nenmodell}{7}{section.2}
-\contentsline {section}{\numberline {3}The Usability Engineering Lifecycle}{8}{section.3}
-\contentsline {subsection}{\numberline {3.1}Phase 1: Analyse}{9}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Phase 2: Entwicklung und Testen}{10}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Phase 3: Installation}{11}{subsection.3.3}
-\contentsline {section}{\numberline {4}Anforderungen}{11}{section.4}
-\contentsline {subsection}{\numberline {4.1}Nutzungskontext}{11}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}Stationsleitung}{11}{subsubsection.4.1.1}
-\contentsline {subsubsection}{\numberline {4.1.2}Krankenpfleger}{11}{subsubsection.4.1.2}
-\contentsline {subsubsection}{\numberline {4.1.3}restliche Steakholder}{12}{subsubsection.4.1.3}
-\contentsline {subsection}{\numberline {4.2}Anforderungsanalyse}{12}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}Funktionale Anforderungen}{12}{subsubsection.4.2.1}
-\contentsline {subsubsection}{\numberline {4.2.2}Qualitative Anforderungen}{13}{subsubsection.4.2.2}
-\contentsline {subsubsection}{\numberline {4.2.3}Organisatorische Anforderungen}{14}{subsubsection.4.2.3}
-\contentsline {subsection}{\numberline {4.3}Priorisierung der ermittelten Anforderungen}{14}{subsection.4.3}
-\contentsline {subsubsection}{\numberline {4.3.1}Fazit}{14}{subsubsection.4.3.1}
-\contentsline {section}{\numberline {5}User Profiles}{16}{section.5}
-\contentsline {subsection}{\numberline {5.1}Stationsleitung}{16}{subsection.5.1}
-\contentsline {subsubsection}{\numberline {5.1.1}Eigenschaften}{16}{subsubsection.5.1.1}
-\contentsline {subsubsection}{\numberline {5.1.2}Anforderungen}{16}{subsubsection.5.1.2}
-\contentsline {subsection}{\numberline {5.2}Krankenpfleger}{17}{subsection.5.2}
-\contentsline {subsubsection}{\numberline {5.2.1}Eigenschaften}{17}{subsubsection.5.2.1}
-\contentsline {subsubsection}{\numberline {5.2.2}Anforderungen}{17}{subsubsection.5.2.2}
-\contentsline {subsection}{\numberline {5.3}Medizinische Fachangestellte}{18}{subsection.5.3}
-\contentsline {subsubsection}{\numberline {5.3.1}Eigenschaften}{18}{subsubsection.5.3.1}
-\contentsline {subsubsection}{\numberline {5.3.2}Anforderungen}{18}{subsubsection.5.3.2}
-\contentsline {subsection}{\numberline {5.4}Zusammenfassung}{18}{subsection.5.4}
-\contentsline {section}{\numberline {6}Task Analyse}{19}{section.6}
-\contentsline {subsection}{\numberline {6.1}Task Einreichen einer Krank-/Abwesenheitsmeldung}{20}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Task Verfassen des Dienstplans}{22}{subsection.6.2}
-\contentsline {subsection}{\numberline {6.3}Task Tausch einer Schicht}{23}{subsection.6.3}
-\contentsline {subsection}{\numberline {6.4}Fazit}{24}{subsection.6.4}
-\contentsline {section}{\numberline {7}Usability Goals}{24}{section.7}
-\contentsline {subsection}{\numberline {7.1}Qualitative Usability Goals}{24}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Quantitative Goals}{25}{subsection.7.2}
-\contentsline {subsubsection}{\numberline {7.2.1}Dienstplanerstellung / -abfrage}{25}{subsubsection.7.2.1}
-\contentsline {subsubsection}{\numberline {7.2.2}Melden von Abwesenheit}{25}{subsubsection.7.2.2}
-\contentsline {subsubsection}{\numberline {7.2.3}Schichttausch}{25}{subsubsection.7.2.3}
-\contentsline {subsubsection}{\numberline {7.2.4}Eintragen von W\IeC {\"u}nschen zur Schichtplanung}{25}{subsubsection.7.2.4}
-\contentsline {section}{\numberline {8}Platform Capabilities and Constraints}{31}{section.8}
-\contentsline {subsection}{\numberline {8.1}Anwendung f\IeC {\"u}r Gesundheits- und Krankenpfleger Personal und die Stationsleitung}{31}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Bildschirmgr\IeC {\"o}\IeC {\ss }e}{31}{subsection.8.2}
-\contentsline {subsection}{\numberline {8.3}Browser}{31}{subsection.8.3}
-\contentsline {subsection}{\numberline {8.4}Anbindung}{31}{subsection.8.4}
-\contentsline {subsection}{\numberline {8.5}Ein- und Ausgabeger\IeC {\"a}te}{31}{subsection.8.5}
-\contentsline {section}{\numberline {9}General Design Principles}{32}{section.9}
-\contentsline {subsection}{\numberline {9.1}Abw\IeC {\"a}gung des zu verwendenden Frameworks}{32}{subsection.9.1}
-\contentsline {subsection}{\numberline {9.2}Andere Quellen}{32}{subsection.9.2}
-\contentsline {section}{\numberline {10}Styleguide}{33}{section.10}
-\contentsline {subsection}{\numberline {10.1}Farbpalette}{33}{subsection.10.1}
-\contentsline {subsection}{\numberline {10.2}Farbfond}{33}{subsection.10.2}
-\contentsline {subsection}{\numberline {10.3}Hintergrundfarben}{34}{subsection.10.3}
-\contentsline {subsection}{\numberline {10.4}Textfarbe}{35}{subsection.10.4}
-\contentsline {subsection}{\numberline {10.5}Typographie}{35}{subsection.10.5}
-\contentsline {subsection}{\numberline {10.6}Logo}{35}{subsection.10.6}
-\contentsline {subsection}{\numberline {10.7}Webfont}{36}{subsection.10.7}
-\contentsline {subsection}{\numberline {10.8}Schriftgr\IeC {\"o}\IeC {\ss }e}{36}{subsection.10.8}
-\contentsline {subsection}{\numberline {10.9}Symbole und Icons}{36}{subsection.10.9}
-\contentsline {section}{\numberline {11}Work Reengineering}{37}{section.11}
-\contentsline {subsection}{\numberline {11.1}Abwesenheitsmeldung}{37}{subsection.11.1}
-\contentsline {subsection}{\numberline {11.2}Dienstplanerstellung}{37}{subsection.11.2}
-\contentsline {subsection}{\numberline {11.3}Schichttausch}{37}{subsection.11.3}
-\contentsline {subsection}{\numberline {11.4}Fazit}{37}{subsection.11.4}
-\contentsline {section}{\numberline {12}Conceptual Model Design}{38}{section.12}
-\contentsline {subsection}{\numberline {12.1}Produkt- und Prozessorientierung}{38}{subsection.12.1}
-\contentsline {subsection}{\numberline {12.2}Objektabalyse Sister Shift}{38}{subsection.12.2}
-\contentsline {subsubsection}{\numberline {12.2.1}Objekte}{38}{subsubsection.12.2.1}
-\contentsline {subsubsection}{\numberline {12.2.2}Attribute}{39}{subsubsection.12.2.2}
-\contentsline {subsubsection}{\numberline {12.2.3}Operationen}{39}{subsubsection.12.2.3}
-\contentsline {subsection}{\numberline {12.3}Identifikation von Ansichten}{39}{subsection.12.3}
-\contentsline {subsection}{\numberline {12.4}Designregeln der jeweiligen Hauptfenster}{42}{subsection.12.4}
-\contentsline {subsection}{\numberline {12.5}Wireframe}{42}{subsection.12.5}
-\contentsline {subsection}{\numberline {12.6}Fazit}{45}{subsection.12.6}
-\contentsline {section}{\numberline {13}Mockups}{45}{section.13}
-\contentsline {subsection}{\numberline {13.1}Allgemein}{45}{subsection.13.1}
-\contentsline {subsection}{\numberline {13.2}Login}{45}{subsection.13.2}
-\contentsline {subsection}{\numberline {13.3}Dienstplaneinstellungen}{47}{subsection.13.3}
-\contentsline {subsection}{\numberline {13.4}Mitarbeiter anlegen/l\IeC {\"o}schen}{48}{subsection.13.4}
-\contentsline {subsection}{\numberline {13.5}Dienstplan-Kalender}{50}{subsection.13.5}
-\contentsline {subsection}{\numberline {13.6}Schichtdetails}{52}{subsection.13.6}
+\contentsline {section}{\numberline {1}Iteration Konzept}{9}{section.1}
+\contentsline {section}{\numberline {2}Iteration Dom\IeC {\"a}nenmodell}{10}{section.2}
+\contentsline {section}{\numberline {3}The Usability Engineering Lifecycle}{11}{section.3}
+\contentsline {subsection}{\numberline {3.1}Phase 1: Analyse}{11}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Phase 2: Entwicklung und Testen}{13}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Phase 3: Installation}{13}{subsection.3.3}
+\contentsline {section}{\numberline {4}Anforderungen}{13}{section.4}
+\contentsline {subsection}{\numberline {4.1}Nutzungskontext}{14}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Stationsleitung}{14}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Krankenpfleger}{14}{subsubsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.3}restliche Steakholder}{14}{subsubsection.4.1.3}
+\contentsline {subsection}{\numberline {4.2}Anforderungsanalyse}{14}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Funktionale Anforderungen}{14}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Qualitative Anforderungen}{16}{subsubsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.3}Organisatorische Anforderungen}{16}{subsubsection.4.2.3}
+\contentsline {subsection}{\numberline {4.3}Priorisierung der ermittelten Anforderungen}{17}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Fazit}{19}{subsubsection.4.3.1}
+\contentsline {section}{\numberline {5}User Profiles}{19}{section.5}
+\contentsline {subsection}{\numberline {5.1}Stationsleitung}{19}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}Eigenschaften}{19}{subsubsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.2}Anforderungen}{20}{subsubsection.5.1.2}
+\contentsline {subsection}{\numberline {5.2}Krankenpfleger}{20}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Eigenschaften}{20}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Anforderungen}{21}{subsubsection.5.2.2}
+\contentsline {subsection}{\numberline {5.3}Medizinische Fachangestellte}{21}{subsection.5.3}
+\contentsline {subsubsection}{\numberline {5.3.1}Eigenschaften}{21}{subsubsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.2}Anforderungen}{21}{subsubsection.5.3.2}
+\contentsline {subsection}{\numberline {5.4}Zusammenfassung}{22}{subsection.5.4}
+\contentsline {section}{\numberline {6}Task Analyse}{23}{section.6}
+\contentsline {subsection}{\numberline {6.1}Task Einreichen einer Krank-/Abwesenheitsmeldung}{23}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Task Verfassen des Dienstplans}{25}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Task Tausch einer Schicht}{26}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Fazit}{27}{subsection.6.4}
+\contentsline {section}{\numberline {7}Usability Goals}{27}{section.7}
+\contentsline {subsection}{\numberline {7.1}Qualitative Usability Goals}{28}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Quantitative Goals}{30}{subsection.7.2}
+\contentsline {subsubsection}{\numberline {7.2.1}Dienstplanerstellung / -abfrage}{30}{subsubsection.7.2.1}
+\contentsline {subsubsection}{\numberline {7.2.2}Melden von Abwesenheit}{31}{subsubsection.7.2.2}
+\contentsline {subsubsection}{\numberline {7.2.3}Schichttausch}{31}{subsubsection.7.2.3}
+\contentsline {subsubsection}{\numberline {7.2.4}Eintragen von W\IeC {\"u}nschen zur Schichtplanung}{32}{subsubsection.7.2.4}
+\contentsline {section}{\numberline {8}Platform Capabilities and Constraints}{33}{section.8}
+\contentsline {subsection}{\numberline {8.1}Anwendung f\IeC {\"u}r Gesundheits- und Krankenpfleger Personal und die Stationsleitung}{33}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Bildschirmgr\IeC {\"o}\IeC {\ss }e}{34}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Browser}{34}{subsection.8.3}
+\contentsline {subsection}{\numberline {8.4}Anbindung}{34}{subsection.8.4}
+\contentsline {subsection}{\numberline {8.5}Ein- und Ausgabeger\IeC {\"a}te}{34}{subsection.8.5}
+\contentsline {section}{\numberline {9}General Design Principles}{34}{section.9}
+\contentsline {subsection}{\numberline {9.1}Abw\IeC {\"a}gung des zu verwendenden Frameworks}{35}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}Andere Quellen}{35}{subsection.9.2}
+\contentsline {section}{\numberline {10}Styleguide}{35}{section.10}
+\contentsline {subsection}{\numberline {10.1}Farbpalette}{35}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.2}Farbfond}{36}{subsection.10.2}
+\contentsline {subsection}{\numberline {10.3}Hintergrundfarben}{37}{subsection.10.3}
+\contentsline {subsection}{\numberline {10.4}Textfarbe}{37}{subsection.10.4}
+\contentsline {subsection}{\numberline {10.5}Typographie}{37}{subsection.10.5}
+\contentsline {subsection}{\numberline {10.6}Logo}{38}{subsection.10.6}
+\contentsline {subsection}{\numberline {10.7}Webfont}{39}{subsection.10.7}
+\contentsline {subsection}{\numberline {10.8}Schriftgr\IeC {\"o}\IeC {\ss }e}{39}{subsection.10.8}
+\contentsline {subsection}{\numberline {10.9}Symbole und Icons}{40}{subsection.10.9}
+\contentsline {section}{\numberline {11}Work Reengineering}{40}{section.11}
+\contentsline {subsection}{\numberline {11.1}Abwesenheitsmeldung}{40}{subsection.11.1}
+\contentsline {subsection}{\numberline {11.2}Dienstplanerstellung}{40}{subsection.11.2}
+\contentsline {subsection}{\numberline {11.3}Schichttausch}{40}{subsection.11.3}
+\contentsline {subsection}{\numberline {11.4}Fazit}{41}{subsection.11.4}
+\contentsline {section}{\numberline {12}Conceptual Model Design}{41}{section.12}
+\contentsline {subsection}{\numberline {12.1}Produkt- und Prozessorientierung}{41}{subsection.12.1}
+\contentsline {subsection}{\numberline {12.2}Objektabalyse Sister Shift}{41}{subsection.12.2}
+\contentsline {subsubsection}{\numberline {12.2.1}Objekte}{42}{subsubsection.12.2.1}
+\contentsline {subsubsection}{\numberline {12.2.2}Attribute}{42}{subsubsection.12.2.2}
+\contentsline {subsubsection}{\numberline {12.2.3}Operationen}{42}{subsubsection.12.2.3}
+\contentsline {subsection}{\numberline {12.3}Identifikation von Ansichten}{42}{subsection.12.3}
+\contentsline {subsection}{\numberline {12.4}Designregeln der jeweiligen Hauptfenster}{45}{subsection.12.4}
+\contentsline {subsection}{\numberline {12.5}Wireframe}{45}{subsection.12.5}
+\contentsline {subsection}{\numberline {12.6}Fazit}{48}{subsection.12.6}
+\contentsline {section}{\numberline {13}Mockups}{48}{section.13}
+\contentsline {subsection}{\numberline {13.1}Allgemein}{49}{subsection.13.1}
+\contentsline {subsection}{\numberline {13.2}Login}{49}{subsection.13.2}
+\contentsline {subsection}{\numberline {13.3}Dienstplaneinstellungen}{50}{subsection.13.3}
+\contentsline {subsection}{\numberline {13.4}Mitarbeiter anlegen/l\IeC {\"o}schen}{51}{subsection.13.4}
+\contentsline {subsection}{\numberline {13.5}Dienstplan-Kalender}{52}{subsection.13.5}
+\contentsline {subsection}{\numberline {13.6}Schichtdetails}{53}{subsection.13.6}
 \contentsline {subsection}{\numberline {13.7}Wunsch\IeC {\"a}u\IeC {\ss }erung, Tauschanfrage und Abwesenheitsmeldung}{54}{subsection.13.7}
-\contentsline {subsection}{\numberline {13.8}Benachrichtigungen}{56}{subsection.13.8}
-\contentsline {subsection}{\numberline {13.9}Dialogbox}{58}{subsection.13.9}
-\contentsline {section}{\numberline {14}Screen Design Standards}{60}{section.14}
-\contentsline {subsection}{\numberline {14.1}Kontrollelemente Standards}{60}{subsection.14.1}
-\contentsline {subsection}{\numberline {14.2}Layout Standards}{61}{subsection.14.2}
-\contentsline {subsection}{\numberline {14.3}Interaktionsstandards}{61}{subsection.14.3}
-\contentsline {subsection}{\numberline {14.4}Feedback Standards}{62}{subsection.14.4}
-\contentsline {subsection}{\numberline {14.5}Responsive Design}{63}{subsection.14.5}
-\contentsline {subsection}{\numberline {14.6}Effizienz und Geschwindigkeit}{63}{subsection.14.6}
-\contentsline {subsection}{\numberline {14.7}Dokumentation}{63}{subsection.14.7}
-\contentsline {subsection}{\numberline {14.8}Fazit}{63}{subsection.14.8}
-\contentsline {section}{\numberline {15}Detailed User Interface}{63}{section.15}
-\contentsline {subsection}{\numberline {15.1}Login}{64}{subsection.15.1}
-\contentsline {subsection}{\numberline {15.2}Dienstplan \IeC {\textendash } Kalender (Hauptansicht)}{65}{subsection.15.2}
-\contentsline {subsection}{\numberline {15.3}Dienstplaneinstellungen}{78}{subsection.15.3}
-\contentsline {subsection}{\numberline {15.4}Benutzereinstellungen}{82}{subsection.15.4}
-\contentsline {subsection}{\numberline {15.5}Mitarbeiter anlegen/l\IeC {\"o}schen}{85}{subsection.15.5}
-\contentsline {subsection}{\numberline {15.6}Abwesenheit melden}{90}{subsection.15.6}
-\contentsline {subsection}{\numberline {15.7}Schichttausch}{93}{subsection.15.7}
-\contentsline {subsection}{\numberline {15.8}Wunsch\IeC {\"a}u\IeC {\ss }erung}{96}{subsection.15.8}
-\contentsline {section}{\numberline {16}Evaluation}{99}{section.16}
-\contentsline {subsection}{\numberline {16.1}Benutzer}{100}{subsection.16.1}
-\contentsline {subsection}{\numberline {16.2}Szenarien}{100}{subsection.16.2}
-\contentsline {subsection}{\numberline {16.3}Handlungen zu den Szenarien}{100}{subsection.16.3}
-\contentsline {subsection}{\numberline {16.4}Fazit des Cognitive Walkthrough}{102}{subsection.16.4}
-\contentsline {subsection}{\numberline {16.5}Fazit}{102}{subsection.16.5}
-\contentsline {section}{\numberline {17}Zielerreichung}{102}{section.17}
-\contentsline {subsection}{\numberline {17.1}Einfaches,intutives,lernf\IeC {\"o}rderliches Design}{102}{subsection.17.1}
-\contentsline {subsection}{\numberline {17.2}Aussagekr\IeC {\"a}ftige, einfach verst\IeC {\"a}ndliche Darstellungen der wichtigsten Informationen und Herausstellen von Benachrichtigungen}{103}{subsection.17.2}
-\contentsline {subsection}{\numberline {17.3}Datenkosistenz}{103}{subsection.17.3}
-\contentsline {subsection}{\numberline {17.4}Automatisierung der Verarbeitung von Tauschanfrage, Wunsch\IeC {\"a}u\IeC {\ss }erungen und Ersatzfindung}{103}{subsection.17.4}
-\contentsline {subsection}{\numberline {17.5}Benutzer zugeschnittene Interfaces}{103}{subsection.17.5}
+\contentsline {subsection}{\numberline {13.8}Benachrichtigungen}{55}{subsection.13.8}
+\contentsline {subsection}{\numberline {13.9}Dialogbox}{56}{subsection.13.9}
+\contentsline {section}{\numberline {14}Screen Design Standards}{57}{section.14}
+\contentsline {subsection}{\numberline {14.1}Kontrollelemente Standards}{57}{subsection.14.1}
+\contentsline {subsection}{\numberline {14.2}Layout Standards}{58}{subsection.14.2}
+\contentsline {subsection}{\numberline {14.3}Interaktionsstandards}{58}{subsection.14.3}
+\contentsline {subsection}{\numberline {14.4}Feedback Standards}{59}{subsection.14.4}
+\contentsline {subsection}{\numberline {14.5}Responsive Design}{60}{subsection.14.5}
+\contentsline {subsection}{\numberline {14.6}Effizienz und Geschwindigkeit}{60}{subsection.14.6}
+\contentsline {subsection}{\numberline {14.7}Dokumentation}{60}{subsection.14.7}
+\contentsline {subsection}{\numberline {14.8}Fazit}{60}{subsection.14.8}
+\contentsline {section}{\numberline {15}Detailed User Interface}{60}{section.15}
+\contentsline {subsection}{\numberline {15.1}Login}{61}{subsection.15.1}
+\contentsline {subsection}{\numberline {15.2}Dienstplan \IeC {\textendash } Kalender (Hauptansicht)}{62}{subsection.15.2}
+\contentsline {subsection}{\numberline {15.3}Dienstplaneinstellungen}{75}{subsection.15.3}
+\contentsline {subsection}{\numberline {15.4}Benutzereinstellungen}{79}{subsection.15.4}
+\contentsline {subsection}{\numberline {15.5}Mitarbeiter anlegen/l\IeC {\"o}schen}{82}{subsection.15.5}
+\contentsline {subsection}{\numberline {15.6}Abwesenheit melden}{87}{subsection.15.6}
+\contentsline {subsection}{\numberline {15.7}Schichttausch}{90}{subsection.15.7}
+\contentsline {subsection}{\numberline {15.8}Wunsch\IeC {\"a}u\IeC {\ss }erung}{93}{subsection.15.8}
+\contentsline {section}{\numberline {16}Evaluation}{96}{section.16}
+\contentsline {subsection}{\numberline {16.1}Benutzer}{97}{subsection.16.1}
+\contentsline {subsection}{\numberline {16.2}Szenarien}{97}{subsection.16.2}
+\contentsline {subsection}{\numberline {16.3}Handlungen zu den Szenarien}{97}{subsection.16.3}
+\contentsline {subsection}{\numberline {16.4}Fazit des Cognitive Walkthrough}{99}{subsection.16.4}
+\contentsline {subsection}{\numberline {16.5}Fazit}{99}{subsection.16.5}
+\contentsline {section}{\numberline {17}Zielerreichung}{99}{section.17}
+\contentsline {subsection}{\numberline {17.1}Einfaches,intutives,lernf\IeC {\"o}rderliches Design}{99}{subsection.17.1}
+\contentsline {subsection}{\numberline {17.2}Aussagekr\IeC {\"a}ftige, einfach verst\IeC {\"a}ndliche Darstellungen der wichtigsten Informationen und Herausstellen von Benachrichtigungen}{100}{subsection.17.2}
+\contentsline {subsection}{\numberline {17.3}Datenkosistenz}{100}{subsection.17.3}
+\contentsline {subsection}{\numberline {17.4}Automatisierung der Verarbeitung von Tauschanfrage, Wunsch\IeC {\"a}u\IeC {\ss }erungen und Ersatzfindung}{100}{subsection.17.4}
+\contentsline {subsection}{\numberline {17.5}Benutzer zugeschnittene Interfaces}{100}{subsection.17.5}
+\contentsline {section}{\numberline {18}Spezifikation der Dienstschnittstellen}{101}{section.18}
+\contentsline {subsection}{\numberline {18.1}Dienstgeber}{101}{subsection.18.1}
+\contentsline {subsection}{\numberline {18.2}Dienstnutzer}{101}{subsection.18.2}
+\contentsline {subsection}{\numberline {18.3}Message Broker}{102}{subsection.18.3}
+\contentsline {subsection}{\numberline {18.4}Kommunikation}{102}{subsection.18.4}
+\contentsline {section}{\numberline {19}Verteilung der Anwendungslogik}{102}{section.19}
+\contentsline {subsection}{\numberline {19.1}Server}{102}{subsection.19.1}
+\contentsline {subsection}{\numberline {19.2}Client}{103}{subsection.19.2}
+\contentsline {subsection}{\numberline {19.3}Nutzen}{103}{subsection.19.3}
+\contentsline {subsection}{\numberline {19.4}Externer Webservice}{103}{subsection.19.4}
+\contentsline {subsection}{\numberline {19.5}Zuverl\IeC {\"a}ssigkeit}{104}{subsection.19.5}
+\contentsline {subsection}{\numberline {19.6}Datenschutz}{104}{subsection.19.6}
+\contentsline {section}{\numberline {20}Verwendung von Programmiersprachen}{105}{section.20}
+\contentsline {subsection}{\numberline {20.1}JavaScript}{105}{subsection.20.1}
+\contentsline {subsection}{\numberline {20.2}MySQL}{105}{subsection.20.2}
+\contentsline {subsection}{\numberline {20.3}JSON}{105}{subsection.20.3}
+\contentsline {subsection}{\numberline {20.4}Pakete}{106}{subsection.20.4}
+\contentsline {subsubsection}{\numberline {20.4.1}Express}{106}{subsubsection.20.4.1}
+\contentsline {subsubsection}{\numberline {20.4.2}MySQL}{106}{subsubsection.20.4.2}
+\contentsline {subsubsection}{\numberline {20.4.3}Semaphore}{106}{subsubsection.20.4.3}
+\contentsline {subsubsection}{\numberline {20.4.4}Faye}{106}{subsubsection.20.4.4}
+\contentsline {subsubsection}{\numberline {20.4.5}Events}{106}{subsubsection.20.4.5}
+\contentsline {subsubsection}{\numberline {20.4.6}Got}{106}{subsubsection.20.4.6}
+\contentsline {subsubsection}{\numberline {20.4.7}Js-base64}{106}{subsubsection.20.4.7}
+\contentsline {subsubsection}{\numberline {20.4.8}German-holiday}{107}{subsubsection.20.4.8}
+\contentsline {subsubsection}{\numberline {20.4.9}Calendar}{107}{subsubsection.20.4.9}
+\contentsline {subsubsection}{\numberline {20.4.10}jsonschema}{107}{subsubsection.20.4.10}
+\contentsline {section}{\numberline {21}Public Subscribe}{107}{section.21}
+\contentsline {section}{\numberline {22}Message Queue}{108}{section.22}
+\contentsline {subsection}{\numberline {22.1}Ersatzfindung}{108}{subsection.22.1}
+\contentsline {subsection}{\numberline {22.2}Tauschanfragen}{109}{subsection.22.2}
+\contentsline {section}{\numberline {23}Datenstrukturen}{110}{section.23}
+\contentsline {subsection}{\numberline {23.1}Bezihungen zwischen den Objekten}{114}{subsection.23.1}
+\contentsline {subsection}{\numberline {23.2}Validierung}{115}{subsection.23.2}
+\contentsline {section}{\numberline {24}REST Modellierung}{120}{section.24}
+\contentsline {subsection}{\numberline {24.1}HTTP Statuscodes}{123}{subsection.24.1}
+\contentsline {section}{\numberline {25}Pseudocode}{123}{section.25}
+\contentsline {subsection}{\numberline {25.1}Dienstplan}{123}{subsection.25.1}
+\contentsline {section}{\numberline {26}Reflexion der Bestehenden Risiken}{128}{section.26}
+\contentsline {subsection}{\numberline {26.1}Simultane R\IeC {\"u}ckmeldung auf Ersatzanfragen}{128}{subsection.26.1}
+\contentsline {subsection}{\numberline {26.2}Fehlerhafte Informationen}{128}{subsection.26.2}
+\contentsline {subsection}{\numberline {26.3}Dienstplanerstellung Feiertage}{128}{subsection.26.3}
+\contentsline {section}{\numberline {27}Quellen}{128}{section.27}
+\contentsline {section}{\numberline {28}Anhang}{131}{section.28}
+\contentsline {subsection}{\numberline {28.1}Fragebogen Auswertung}{131}{subsection.28.1}
+\contentsline {subsection}{\numberline {28.2}Fragebogen Muster}{134}{subsection.28.2}
+\contentsline {subsection}{\numberline {28.3}Frageb\IeC {\"o}gen}{137}{subsection.28.3}
+\contentsline {subsection}{\numberline {28.4}Konzept}{137}{subsection.28.4}
