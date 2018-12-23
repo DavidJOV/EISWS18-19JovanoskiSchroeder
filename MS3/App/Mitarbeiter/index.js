@@ -68,7 +68,7 @@ router.post('/', bodyParser.json(), (req, res) => {
         dienstplanRating: 0,
         wunschRating: 0
     };
-    res.status(200).send(mitarbeiter);
+    res.status(201).send(mitarbeiter);
     /*
         sqlHandler.neuerPfleger(krankenpfleger)
             .then(function (pfleger) {
@@ -83,7 +83,7 @@ router.delete('/:id', (req, res) => {
     else { // Kann auch direkt aus der DB gelöscht werden.
         const mitarbeiterLoeschen = mitarbeiterListe.find(c => c.id === parseInt(req.params.id));
 
-        if (!mitarbeiterLoeschen) res.status(404).send("This ID does not belong to any User!");
+        if (!mitarbeiterLoeschen) res.status(404).send("Die ID gehoert zu keinem Mitarbeiter!");
 
         else {
             // DELETE from DB
