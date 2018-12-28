@@ -1,58 +1,84 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
-//var dbConnection = require("../../DB/dbConnector"); // importieren der DB Verbindung
-//var sqlHandler = require("../../helper/sqlHandler");
+var dbConnection = require("../../DB/dbConnector"); // importieren der DB Verbindung
+var sqlHandler = require("../../helper/sqlHandler");
 
-var hello = "hello world";
 
 //var connection = dbConnection.connection; // DB Verbindung
 // GET auf die Liste aller Mitarbeiter
 router.get('/', (req, res) => {
-    if (mitarbeiterListe === undefined) res.status(500).send("Could not read DATA");
-    else {
-        res.status(200).send(mitarbeiterListe);
-    }
+    let mitarbeiterListe = sqlHandler.getMitarbeiter()
+        .then(function () {
+            if (mitarbeiterListe === undefined) res.status(500).send("Could not read DATA");
+            else {
+                res.status(200).send(mitarbeiterListe);
+            }
+        })
+        .catch(function (error) {
+            res.status(400).send(error);
+        });
+
 });
 
-// GET auf einen einzelnen Mitarbeiter // DB anbindung fehlt noch
+// GET auf einen einzelnen Mitarbeiter 
 router.get('/:id', (req, res) => {
-    if (mitarbeiterListe === undefined) res.status(500).send("Could not read DATA");
-    else {// Kann auch mit der ID direkt in der DB gesucht werden.
-        const mitarbeiter = mitarbeiterListe.find(c => c.id === parseInt(req.params.id)); // Datenbank anbindung fehlt noch. MitarbeiterListe muss aus DB gelesen werden.
-        if (!mitarbeiter) { res.status(404).send("Diese ID gehört keinem Mitarbeiter!"); }
+    let mitarbeiterListe = sqlHandler.getMitarbeiter()
+        .then(function () {
+            if (mitarbeiterListe === undefined) res.status(500).send("Could not read DATA");
+            else {// Kann auch mit der ID direkt in der DB gesucht werden.
+                const mitarbeiter = mitarbeiterListe.find(c => c.id === parseInt(req.params.id)); // Datenbank anbindung fehlt noch. MitarbeiterListe muss aus DB gelesen werden.
+                if (!mitarbeiter) { res.status(404).send("Diese ID gehört keinem Mitarbeiter!"); }
 
-        else {
-            res.status(200).send(mitarbeiter);
-        }
-    }
+                else {
+                    res.status(200).send(mitarbeiter);
+                }
+            }
+        })
+        .catch(function (error) {
+            res.status(400).send(error);
+        });
+
 });
 // Update eines einzelnen Mitarbeiters
 router.put('/:id', (req, res) => {
-    if (mitarbeiterListe === undefined) res.status(500).send("Could not read DATA");
-    else { // Kann auch mit der ID direkt in der DB gesucht werden.
-        const mitarbeiter = mitarbeiterListe.find(c => c.id === parseInt(req.params.id)); // Datenbank anbindung fehlt noch. MitarbeiterListe muss aus DB gelesen werden.
-        if (!mitarbeiter) { res.status(404).send("Diese ID gehört keinem Mitarbeiter!"); }
+    let mitarbeiterListe = sqlHandler.getMitarbeiter()
+        .then(function () {
 
-        else {
-            const mitarbeiterUpdate = {
-                stationID: req.body.stationID, // noch in Datenbank hinzufügen
-                anrede: req.body.anrede,
-                vorname: req.body.vorname,
-                name: req.body.name,
-                rolle: req.body.rolle,
-                beschaeftigungsArt: req.body.beschaeftigungsArt,
-                beschaeftigungsBeginn: req.body.beschaeftigungsBeginn,
-                dienstplanRating: req.body.dienstplanRating,
-                wunschRating: req.body.wunschRating
-            };
+            if (mitarbeiterListe === undefined) res.status(500).send("Could not read DATA");
+            else {
+                const mitarbeiter = mitarbeiterListe.find(c => c.id === parseInt(req.params.id));
+                if (!mitarbeiter) { res.status(404).send("Diese ID gehört keinem Mitarbeiter!"); }
 
-            // Insert into DB (mitarbeiterUpdate)
+                else {
+                    const mitarbeiterUpdate = {
+                        id: mitarbeiter.id,
+                        anrede: req.body.anrede,
+                        vorname: req.body.vorname,
+                        name: req.body.name,
+                        rolle: req.body.rolle,
+                        beschaeftigungsArt: req.body.beschaeftigungsArt
+                    };
 
-            res.status(200).send(mitarbeiterUpdate);
-        }
-    }
-});
+                    // Update into DB (mitarbeiterUpdate)
+                    sqlHandler.updateMitarbeiter(mitarbeiterUpdate)
+                        .then(function () {
+                            res.status(200).send(mitarbeiterUpdate);
+
+                        })
+                        .catch(function (error) {
+                            res.status(400).send(error);
+                        })
+                }
+            }
+
+        })
+        .catch(function (error) {
+            res.status(400).send(error);
+        });
+
+})
+
 
 // Erstellen eines neuen Mitarbeiters
 router.post('/', bodyParser.json(), (req, res) => {
@@ -111,7 +137,7 @@ router.post('/:id/ueberstunden', (req, res) => {
 
         else {
             if (mitarbeiter.ueberstunden === undefined) {
-            mitarbeiter.ueberstunden = req.body.ueberstunden;
+                mitarbeiter.ueberstunden = req.body.ueberstunden;
                 res.status(200).send(mitarbeiter.ueberstunden);
             }
             else {
@@ -131,7 +157,7 @@ router.put('/:id/ueberstunden', (req, res) => {
 
         else {
             if (mitarbeiter.ueberstunden != undefined) {
-            mitarbeiter.ueberstunden += req.body.ueberstunden;
+                mitarbeiter.ueberstunden += req.body.ueberstunden;
                 res.status(200).send(mitarbeiter.ueberstunden);
             }
             else {
