@@ -5,12 +5,12 @@ var connection = dbConnection.connection;
 
 
 var getMitarbeiter = function getMitarbeiter() {
-    var mitarbeiter;
+    
     return new Promise(function (resolve, reject) {
 
         // Alle Mitarbeiter die auf der Station arbeiten
 
-        let sql = "SELECT * FROM Mitarbeiter" 
+        let sql = "SELECT * FROM Mitarbeiter"
         connection.query(sql, function (err, result) {
             if (err) reject(err);
             else {
@@ -18,7 +18,7 @@ var getMitarbeiter = function getMitarbeiter() {
                 // Datenbank Daten aufbereiten.
 
                 let mitarbeiterString = JSON.stringify(result);
-                mitarbeiter = JSON.parse(mitarbeiterString);
+                 var mitarbeiter = JSON.parse(mitarbeiterString);
                 resolve(mitarbeiter);
 
             }
@@ -30,23 +30,23 @@ var neuerMitarbeiter = function neuerMitarbeiter(mitarbeiter) {
     return new Promise(function (resolve, reject) {
 
         // Neuen Mitarbeiter der Datenbank hinzufügen
-        
-            var sql = "INSERT INTO Mitarbeiter (stationID, anrede, vorname, name, beschaeftigungsBeginn, beschaeftigungsArt, rolle, wunschRating, dienstplanRating) VALUES ( \"" + mitarbeiter.stationID + "\",\"" + mitarbeiter.anrede + "\",\"" + mitarbeiter.vorname + "\",\"" + mitarbeiter.name + "\",\"" + mitarbeiter.beschaeftigungsBeginn + "\",\"" + mitarbeiter.beschaeftigungsArt + "\",\"" + mitarbeiter.rolle + "\",\"" + mitarbeiter.wunschRating + "\",\"" + mitarbeiter.dienstplanRating + "\")";
+
+        var sql = "INSERT INTO Mitarbeiter (stationID, anrede, vorname, name, beschaeftigungsBeginn, beschaeftigungsArt, rolle, wunschRating, dienstplanRating, ueberstunden) VALUES ( \"" + mitarbeiter.stationID + "\",\"" + mitarbeiter.anrede + "\",\"" + mitarbeiter.vorname + "\",\"" + mitarbeiter.name + "\",\"" + mitarbeiter.beschaeftigungsBeginn + "\",\"" + mitarbeiter.beschaeftigungsArt + "\",\"" + mitarbeiter.rolle + "\",\"" + mitarbeiter.wunschRating + "\",\"" + mitarbeiter.dienstplanRating +"\",\"" + mitarbeiter.ueberstunden + "\")";
 
 
-            connection.query(sql, function (err, result) {
-                if (err) {
-                    console.log(err)
-                    reject(err);
+        connection.query(sql, function (err, result) {
+            if (err) {
+                console.log(err)
+                reject(err);
 
-                }
-                else {
-                    resolve(pfleger);
-                    console.log("1 neuer Mitarbeiter");
-                }
-            });
+            }
+            else {
+                resolve(mitarbeiter);
+                console.log("1 neuer Mitarbeiter");
+            }
+        });
 
-        
+
     });
 }
 
@@ -54,23 +54,71 @@ var updateMitarbeiter = function updateMitarbeiter(mitarbeiter) {
     return new Promise(function (resolve, reject) {
 
         // Informationen eines Mitarbeiters aktuallisieren
-        
-            var sql = "UPDATE Mitarbeiter SET anrede = "+mitarbeiter.anrede+" , vorname = "+mitarbeiter.vorname+", name = "+mitarbeiter.name+", beschaeftigungsArt = "+mitarbeiter.beschaeftigungsArt+", rolle =" +mitarbeiter.rolle+" WHERE id ="+mitarbeiter.id;
+
+        var sql = "UPDATE Mitarbeiter SET anrede = " + mitarbeiter.anrede + " , vorname = " + mitarbeiter.vorname + ", name = " + mitarbeiter.name + ", beschaeftigungsArt = " + mitarbeiter.beschaeftigungsArt + ", rolle =" + mitarbeiter.rolle + " WHERE id =" + mitarbeiter.id;
 
 
-            connection.query(sql, function (err, result) {
-                if (err) {
-                    console.log(err)
-                    reject(err);
+        connection.query(sql, function (err, result) {
+            if (err) {
+                console.log(err)
+                reject(err);
 
-                }
-                else {
-                    resolve(pfleger);
-                    console.log("Mitarbeiter wurde aktuallisiert");
-                }
-            });
+            }
+            else {
+                resolve(mitarbeiter);
+                console.log("Mitarbeiter wurde aktuallisiert");
+            }
+        });
 
-        
+
+    });
+}
+
+var loeschenMitarbeiter = function loeschenMitarbeiter(id) {
+    return new Promise(function (resolve, reject) {
+
+        //Loeschen eines Mitarbeiters
+
+        var sql = "DELETE FROM Mitarbeiter WHERE id = " +id;
+
+
+        connection.query(sql, function (err, result) {
+            if (err) {
+                console.log(err)
+                reject(err);
+
+            }
+            else {
+                resolve(result);
+                console.log("Mitarbeiter wurde aktuallisiert");
+            }
+        });
+
+
+    });
+}
+
+var updateUeberstunden = function updateUeberstunden(id, ueberstunden) {
+    return new Promise(function (resolve, reject) {
+
+        // Überstunden eines Mitarbeiters aktuallisieren
+
+        var sql = "UPDATE Mitarbeiter SET uberstunden = ueberstunden + " + ueberstunden+" WHERE id ="+id;
+
+
+        connection.query(sql, function (err, result) {
+            if (err) {
+                console.log(err)
+                reject(err);
+
+            }
+            else {
+                resolve(result);
+                console.log("Überstunden wurden aktuallisiert");
+            }
+        });
+
+
     });
 }
 
@@ -289,12 +337,14 @@ var getAbwesenheitenOhneErsatz = function getAbwesenheitenOhneErsatz() {
 }
 //NEU
 
-exports.getMitarbeiter=getMitarbeiter;
-exports.neuerMitarbeiter=neuerMitarbeiter;
-exports.updateMitarbeiter=updateMitarbeiter;
+exports.getMitarbeiter = getMitarbeiter;
+exports.neuerMitarbeiter = neuerMitarbeiter;
+exports.updateMitarbeiter = updateMitarbeiter;
+exports.updateUeberstunden = updateUeberstunden;
+exports.loeschenMitarbeiter = loeschenMitarbeiter;
 //ALT
 
-exports.benachrichtigungVermerken =benachrichtigungVermerken;
+exports.benachrichtigungVermerken = benachrichtigungVermerken;
 exports.getAbwesenheitenOhneErsatz = getAbwesenheitenOhneErsatz;
 exports.ersatzEintragen = ersatzEintragen;
 exports.getAbwesenheitsErsatzInfo = getAbwesenheitsErsatzInfo;

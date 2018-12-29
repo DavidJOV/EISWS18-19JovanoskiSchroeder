@@ -19,6 +19,7 @@
   "homepage": "https://github.com/DavidJOV/EISWS18-19JovanoskiSchroeder#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
   }
 }
