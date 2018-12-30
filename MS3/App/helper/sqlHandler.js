@@ -2,10 +2,12 @@ var dbConnection = require("../DB/dbConnector");// importieren der DB Verbindung
 //var semaphore = require("../helper/semaphoreHelper").semaphore;
 var connection = dbConnection.connection;
 
+//Mitarbeiter Funktionen
 
+//******************************************************************************************************************** 
 
 var getMitarbeiter = function getMitarbeiter() {
-    
+
     return new Promise(function (resolve, reject) {
 
         // Alle Mitarbeiter die auf der Station arbeiten
@@ -18,7 +20,7 @@ var getMitarbeiter = function getMitarbeiter() {
                 // Datenbank Daten aufbereiten.
 
                 let mitarbeiterString = JSON.stringify(result);
-                 var mitarbeiter = JSON.parse(mitarbeiterString);
+                var mitarbeiter = JSON.parse(mitarbeiterString);
                 resolve(mitarbeiter);
 
             }
@@ -31,7 +33,7 @@ var neuerMitarbeiter = function neuerMitarbeiter(mitarbeiter) {
 
         // Neuen Mitarbeiter der Datenbank hinzufügen
 
-        var sql = "INSERT INTO Mitarbeiter (stationID, anrede, vorname, name, beschaeftigungsBeginn, beschaeftigungsArt, rolle, wunschRating, dienstplanRating, ueberstunden) VALUES ( \"" + mitarbeiter.stationID + "\",\"" + mitarbeiter.anrede + "\",\"" + mitarbeiter.vorname + "\",\"" + mitarbeiter.name + "\",\"" + mitarbeiter.beschaeftigungsBeginn + "\",\"" + mitarbeiter.beschaeftigungsArt + "\",\"" + mitarbeiter.rolle + "\",\"" + mitarbeiter.wunschRating + "\",\"" + mitarbeiter.dienstplanRating +"\",\"" + mitarbeiter.ueberstunden + "\")";
+        var sql = "INSERT INTO Mitarbeiter (stationID, anrede, vorname, name, beschaeftigungsBeginn, beschaeftigungsArt, rolle, wunschRating, dienstplanRating, ueberstunden) VALUES ( \"" + mitarbeiter.stationID + "\",\"" + mitarbeiter.anrede + "\",\"" + mitarbeiter.vorname + "\",\"" + mitarbeiter.name + "\",\"" + mitarbeiter.beschaeftigungsBeginn + "\",\"" + mitarbeiter.beschaeftigungsArt + "\",\"" + mitarbeiter.rolle + "\",\"" + mitarbeiter.wunschRating + "\",\"" + mitarbeiter.dienstplanRating + "\",\"" + mitarbeiter.ueberstunden + "\")";
 
 
         connection.query(sql, function (err, result) {
@@ -74,12 +76,12 @@ var updateMitarbeiter = function updateMitarbeiter(mitarbeiter) {
     });
 }
 
-var loeschenMitarbeiter = function loeschenMitarbeiter(id) {
+var loescheMitarbeiter = function loescheMitarbeiter(id) {
     return new Promise(function (resolve, reject) {
 
         //Loeschen eines Mitarbeiters
 
-        var sql = "DELETE FROM Mitarbeiter WHERE id = " +id;
+        var sql = "DELETE FROM Mitarbeiter WHERE id = " + id;
 
 
         connection.query(sql, function (err, result) {
@@ -103,7 +105,7 @@ var updateUeberstunden = function updateUeberstunden(id, ueberstunden) {
 
         // Überstunden eines Mitarbeiters aktuallisieren
 
-        var sql = "UPDATE Mitarbeiter SET ueberstunden = ueberstunden + " + ueberstunden+" WHERE id ="+id;
+        var sql = "UPDATE Mitarbeiter SET ueberstunden = ueberstunden + " + ueberstunden + " WHERE id =" + id;
 
 
         connection.query(sql, function (err, result) {
@@ -127,7 +129,7 @@ var updateWunschRating = function updateWunschRating(id, rating) {
 
         // WunschRating eines Mitarbeiters aktuallisieren
 
-        var sql = "UPDATE Mitarbeiter SET wunschRating = wunschRating + " + rating+" WHERE id ="+id;
+        var sql = "UPDATE Mitarbeiter SET wunschRating = wunschRating + " + rating + " WHERE id =" + id;
 
 
         connection.query(sql, function (err, result) {
@@ -152,7 +154,7 @@ var updateDienstplanRating = function updateDienstplanRating(id, rating) {
 
         // dienstplanRating eines Mitarbeiters aktuallisieren
 
-        var sql = "UPDATE Mitarbeiter SET dienstplanRating = dienstplanRating + " + rating+" WHERE id ="+id;
+        var sql = "UPDATE Mitarbeiter SET dienstplanRating = dienstplanRating + " + rating + " WHERE id =" + id;
 
 
         connection.query(sql, function (err, result) {
@@ -171,6 +173,109 @@ var updateDienstplanRating = function updateDienstplanRating(id, rating) {
     });
 }
 
+//********************************************************************************************************************
+
+
+// Abwesenheiten Funktionen
+//********************************************************************************************************************
+
+// Lesen aller Abwesenheiten der DB
+var getAbwesenheiten = function getAbwesenheiten() {
+
+    return new Promise(function (resolve, reject) {
+
+        // Alle Abwesenheiten derd Station 
+
+        let sql = "SELECT id, stationID, mitarbeiterID, DATE_FORMAT(datumBeginn, \"%W %M %e %Y\"),DATE_FORMAT(datumEnde, \"%W %M %e %Y\") FROM  abwesenheitsmeldung";
+        connection.query(sql, function (err, result) {
+            if (err) reject(err);
+            else {
+
+                // Datenbank Daten aufbereiten.
+
+                //let mitarbeiterString = JSON.stringify(result);
+                // var mitarbeiter = JSON.parse(mitarbeiterString);
+                resolve(result);
+
+            }
+        });
+    });
+}
+
+
+var neueAbwesenheit = function neueAbwesenheit(abwesenheitsmeldung) {
+    return new Promise(function (resolve, reject) {
+
+        // Neuen Mitarbeiter der Datenbank hinzufügen
+
+        var sql = "INSERT INTO abwesenheitsmeldung (stationID, MitarbeiterID, datumBeginn, datumEnde) VALUES ( \"" + abwesenheitsmeldung.stationID + "\",\"" + abwesenheitsmeldung.MitarbeiterID + "\",\"" + abwesenheitsmeldung.datumBeginn + "\",\"" + abwesenheitsmeldung.datumEnde + "\")";
+
+
+        connection.query(sql, function (err, result) {
+            if (err) {
+                console.log(err)
+                reject(err);
+
+            }
+            else {
+                resolve(abwesenheitsmeldung);
+                console.log("1 neue Abwesenheitsmeldung");
+            }
+        });
+
+
+    });
+}
+
+var updateAbwesenheit = function updateAbwesenheit(id, abwesenheitUpdate) {
+    return new Promise(function (resolve, reject) {
+
+        // Abwesenheitsmeldung aktuallisieren
+
+        var sql = "UPDATE abwesenheitsmeldung SET datumBeginn = \"" + abwesenheitUpdate.datumBeginn + "\", datumEnde= \"" + abwesenheitUpdate.datumEnde + "\" WHERE id =" + id;
+
+      
+        connection.query(sql, function (err, result) {
+            if (err) {
+                console.log(err)
+                reject(err);
+
+            }
+            else {
+                resolve(result);
+                console.log("Abwesenheit wurde aktuallisiert");
+            }
+        });
+
+
+    });
+}
+
+var loescheAbwesenheit = function loescheAbwesenheit(id) {
+    return new Promise(function (resolve, reject) {
+
+        //Loeschen eines Mitarbeiters
+
+        var sql = "DELETE FROM abwesenheitsmeldung WHERE id = " + id;
+
+
+        connection.query(sql, function (err, result) {
+            if (err) {
+                console.log(err)
+                reject(err);
+
+            }
+            else {
+                resolve(result);
+                console.log("Abwesenheitsmeldung wurde gelöscht");
+            }
+        });
+
+
+    });
+}
+
+//********************************************************************************************************************
 
 
 //ALT SQL HANDLER RP CODE 
@@ -385,14 +490,19 @@ var getAbwesenheitenOhneErsatz = function getAbwesenheitenOhneErsatz() {
     });
 }
 //NEU
-
+//Mitarbeiter
 exports.getMitarbeiter = getMitarbeiter;
 exports.neuerMitarbeiter = neuerMitarbeiter;
 exports.updateMitarbeiter = updateMitarbeiter;
 exports.updateUeberstunden = updateUeberstunden;
-exports.loeschenMitarbeiter = loeschenMitarbeiter;
+exports.loescheMitarbeiter = loescheMitarbeiter;
 exports.updateWunschRating = updateWunschRating;
 exports.updateDienstplanRating = updateDienstplanRating;
+//Abwesenheitsmeldung
+exports.getAbwesenheiten = getAbwesenheiten;
+exports.neueAbwesenheit = neueAbwesenheit;
+exports.updateAbwesenheit = updateAbwesenheit;
+exports.loescheAbwesenheit = loescheAbwesenheit;
 
 //ALT
 

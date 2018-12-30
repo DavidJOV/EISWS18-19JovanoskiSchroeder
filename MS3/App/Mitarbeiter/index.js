@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
-var dbConnection = require("../DB/dbConnector"); // importieren der DB Verbindung
 var sqlHandler = require("../helper/sqlHandler");
 
 
@@ -12,7 +11,7 @@ router.get('/', (req, res) => {
         .then(function (mitarbeiterListe) { // <- So ist es richtig! Noch bei den anderen Funktionen ändern!!!!
             if (mitarbeiterListe === undefined) res.status(500).send("Could not read DATA");
             else {
-                
+
                 res.status(200).send(mitarbeiterListe);
             }
         })
@@ -24,7 +23,7 @@ router.get('/', (req, res) => {
 
 // GET auf einen einzelnen Mitarbeiter 
 router.get('/:id', (req, res) => {
-   sqlHandler.getMitarbeiter()
+    sqlHandler.getMitarbeiter()
         .then(function (mitarbeiterListe) {
             if (mitarbeiterListe === undefined) res.status(500).send("Could not read DATA");
             else {// Kann auch mit der ID direkt in der DB gesucht werden.
@@ -112,7 +111,7 @@ router.post('/', bodyParser.json(), (req, res) => {
 });
 // Löschen eines Mitarbeiters
 router.delete('/:id', (req, res) => {
-   sqlHandler.loeschenMitarbeiter(req.params.id)
+    sqlHandler.loescheMitarbeiter(req.params.id)
         .then(function (result) {
             // Prüfen ob in der DB etwas verändert wurde
             if (result.affectedRows < 1) res.status(404).send("Die ID gehoert zu keinem Mitarbeiter! Oder es Bestehen noch Verbindungen die das Löschen verhindern!");
@@ -135,7 +134,7 @@ router.get('/:id/wunschRating', (req, res) => {
                 if (!mitarbeiter) { res.status(404).send("Diese ID gehört keinem Mitarbeiter!"); }
 
                 else { // Übertragen des Wunschratings -> toString() da sonst die Übertragung nicht funktioniert, aber warum ist die Frage?
-                   res.status(200).send( mitarbeiter.wunschRating.toString());
+                    res.status(200).send(mitarbeiter.wunschRating.toString());
                 }
             }
         })
@@ -154,7 +153,7 @@ router.get('/:id/dienstplanRating', (req, res) => {
                 if (!mitarbeiter) { res.status(404).send("Diese ID gehört keinem Mitarbeiter!"); }
 
                 else { // Übertragen des DienstplanRatings -> toString() da sonst die Übertragung nicht funktioniert, aber warum ist die Frage?
-                   res.status(200).send( mitarbeiter.dienstplanRating.toString());
+                    res.status(200).send(mitarbeiter.dienstplanRating.toString());
                 }
             }
         })
@@ -174,7 +173,7 @@ router.get('/:id/ueberstunden', (req, res) => {
                 if (!mitarbeiter) { res.status(404).send("Diese ID gehört keinem Mitarbeiter!"); }
 
                 else { // Übertragen der Überstunden -> toString() da sonst die Übertragung nicht funktioniert, aber warum ist die Frage?
-                   res.status(200).send( mitarbeiter.ueberstunden.toString());
+                    res.status(200).send(mitarbeiter.ueberstunden.toString());
                 }
             }
         })
