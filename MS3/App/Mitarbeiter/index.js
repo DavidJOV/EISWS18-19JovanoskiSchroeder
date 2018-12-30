@@ -24,8 +24,8 @@ router.get('/', (req, res) => {
 
 // GET auf einen einzelnen Mitarbeiter 
 router.get('/:id', (req, res) => {
-    let mitarbeiterListe = sqlHandler.getMitarbeiter()
-        .then(function () {
+   sqlHandler.getMitarbeiter()
+        .then(function (mitarbeiterListe) {
             if (mitarbeiterListe === undefined) res.status(500).send("Could not read DATA");
             else {// Kann auch mit der ID direkt in der DB gesucht werden.
                 const mitarbeiter = mitarbeiterListe.find(c => c.id === parseInt(req.params.id)); // Datenbank anbindung fehlt noch. MitarbeiterListe muss aus DB gelesen werden.
@@ -43,8 +43,8 @@ router.get('/:id', (req, res) => {
 });
 // Update eines einzelnen Mitarbeiters
 router.put('/:id', (req, res) => {
-    let mitarbeiterListe = sqlHandler.getMitarbeiter()
-        .then(function () {
+    sqlHandler.getMitarbeiter()
+        .then(function (mitarbeiterListe) {
 
             if (mitarbeiterListe === undefined) res.status(500).send("Could not read DATA");
             else {
@@ -63,12 +63,12 @@ router.put('/:id', (req, res) => {
 
                     // Update into DB (mitarbeiterUpdate)
                     sqlHandler.updateMitarbeiter(mitarbeiterUpdate)
-                        .then(function () {
+                        .then(function (mitarbeiterUpdate) {
                             res.status(200).send(mitarbeiterUpdate);
 
                         })
-                        .catch(function (error) {
-                            res.status(400).send(error);
+                        .catch(function (err) {
+                            res.status(400).send(err);
                         })
                 }
             }
@@ -97,69 +97,105 @@ router.post('/', bodyParser.json(), (req, res) => {
         ueberstunden: 0
     };
 
-    let neuerMitarbeiter = sqlHandler.neuerMitarbeiter(mitarbeiter)
-        .then(function () {
-            if (neuerMitarbeiter === err) res.status(400).send("Mitarbeiter konnte nicht erstellt werden");
+    sqlHandler.neuerMitarbeiter(mitarbeiter)
+        .then(function (mitarbeiter) {
+            if (mitarbeiter === undefined) res.status(400).send("Mitarbeiter konnte nicht erstellt werden");
             else {
                 res.status(201).send(mitarbeiter);
             }
 
         })
-        .catch(function (error) {
-            res.status(400).send(error);
+        .catch(function (err) {
+            res.status(400).send(err);
         });
 
 });
 // Löschen eines Mitarbeiters
 router.delete('/:id', (req, res) => {
-    let loeschung = sqlHandler.loeschenMitarbeiter(req.params.id)
-        .then(function () {
-            if (loeschung === err) res.status(404).send("Die ID gehoert zu keinem Mitarbeiter! Oder es Bestehen noch Verbindungen die das Löschen verhindern!");
+   sqlHandler.loeschenMitarbeiter(req.params.id)
+        .then(function (result) {
+            // Prüfen ob in der DB etwas verändert wurde
+            if (result.affectedRows < 1) res.status(404).send("Die ID gehoert zu keinem Mitarbeiter! Oder es Bestehen noch Verbindungen die das Löschen verhindern!");
 
             else {
-                // DELETE from DB
                 res.status(200).send("Mitarbeiter geloescht");
             }
         })
-        .catch(function (error) {
-            res.status(400).send(error);
+        .catch(function (err) {
+            res.status(400).send(err);
         });
 });
+
+
 // Übertragen der Überstunden eines einzelenen Mitarbeiters
 router.get('/:id/ueberstunden', (req, res) => {
-    let mitarbeiterListe = sqlHandler.getMitarbeiter()
-        .then(function () {
+    sqlHandler.getMitarbeiter()
+        .then(function (mitarbeiterListe) {
             if (mitarbeiterListe === undefined) res.status(500).send("Could not read DATA");
             else {// Kann auch mit der ID direkt in der DB gesucht werden.
                 const mitarbeiter = mitarbeiterListe.find(c => c.id === parseInt(req.params.id));
                 if (!mitarbeiter) { res.status(404).send("Diese ID gehört keinem Mitarbeiter!"); }
 
-                else { // Übertragen der Überstunden
-                    res.status(200).send(mitarbeiter.ueberstunden);
+                else { // Übertragen der Überstunden -> toString() da sonst die Übertragung nicht funktioniert, aber warum ist die Frage?
+                   res.status(200).send( mitarbeiter.ueberstunden.toString());
                 }
             }
         })
-        .catch(function (error) {
-            res.status(400).send(error);
+        .catch(function (err) {
+            res.status(400).send(err);
+        });
+
+});
+
+// Aktuallisieren des Wunsch Ratings
+router.put('/:id/wunschRating', (req, res) => {
+    sqlHandler.updateWunschRating(req.params.id, req.body.wunschRating)
+        .then(function (wunschRatingUpdate) {
+            if (wunschRatingUpdate.affectedRows < 1) res.status(500).send("Could not change DATA");
+            else {
+                res.status(200).send(wunschRatingUpdate);
+            }
+        }
+        )
+        .catch(function (err) {
+            res.status(400).send(err);
+        });
+
+});
+
+// Aktuallisieren des Dienstplan Ratings
+router.put('/:id/dienstplanRating', (req, res) => {
+    sqlHandler.updateDienstplanRating(req.params.id, req.body.dienstplanRating)
+        .then(function (dienstplanRatingUpdate) {
+            if (dienstplanRatingUpdate.affectedRows < 1) res.status(500).send("Could not change DATA");
+            else {
+                res.status(200).send(dienstplanRatingUpdate);
+            }
+        }
+        )
+        .catch(function (err) {
+            res.status(400).send(err);
         });
 
 });
 
 // Aktuallisieren der Überstunden eines einzelenen Mitarbeiters
 router.put('/:id/ueberstunden', (req, res) => {
-    let ueberstundenUpdate = sqlHandler.updateUeberstunden(req.params.id, req.body.ueberstunden)
-        .then(function () {
-            if (ueberstundenUpdate === err) res.status(500).send("Could not change DATA");
+    sqlHandler.updateUeberstunden(req.params.id, req.body.ueberstunden)
+        .then(function (ueberstundenUpdate) {
+            if (ueberstundenUpdate.affectedRows < 1) res.status(500).send("Could not change DATA");
             else {
                 res.status(200).send(ueberstundenUpdate);
             }
         }
         )
-        .catch(function (error) {
-            res.status(400).send(error);
+        .catch(function (err) {
+            res.status(400).send(err);
         });
 
 });
+
+
 
 
 

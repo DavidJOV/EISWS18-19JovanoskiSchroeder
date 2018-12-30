@@ -55,7 +55,7 @@ var updateMitarbeiter = function updateMitarbeiter(mitarbeiter) {
 
         // Informationen eines Mitarbeiters aktuallisieren
 
-        var sql = "UPDATE Mitarbeiter SET anrede = " + mitarbeiter.anrede + " , vorname = " + mitarbeiter.vorname + ", name = " + mitarbeiter.name + ", beschaeftigungsArt = " + mitarbeiter.beschaeftigungsArt + ", rolle =" + mitarbeiter.rolle + " WHERE id =" + mitarbeiter.id;
+        var sql = "UPDATE Mitarbeiter SET anrede = \"" + mitarbeiter.anrede + "\" , vorname = \"" + mitarbeiter.vorname + "\", name = \"" + mitarbeiter.name + "\", beschaeftigungsArt = \"" + mitarbeiter.beschaeftigungsArt + "\", rolle =\"" + mitarbeiter.rolle + "\" WHERE id =" + mitarbeiter.id;
 
 
         connection.query(sql, function (err, result) {
@@ -90,7 +90,7 @@ var loeschenMitarbeiter = function loeschenMitarbeiter(id) {
             }
             else {
                 resolve(result);
-                console.log("Mitarbeiter wurde aktuallisiert");
+                console.log("Mitarbeiter wurde gelöscht");
             }
         });
 
@@ -103,7 +103,7 @@ var updateUeberstunden = function updateUeberstunden(id, ueberstunden) {
 
         // Überstunden eines Mitarbeiters aktuallisieren
 
-        var sql = "UPDATE Mitarbeiter SET uberstunden = ueberstunden + " + ueberstunden+" WHERE id ="+id;
+        var sql = "UPDATE Mitarbeiter SET ueberstunden = ueberstunden + " + ueberstunden+" WHERE id ="+id;
 
 
         connection.query(sql, function (err, result) {
@@ -115,6 +115,55 @@ var updateUeberstunden = function updateUeberstunden(id, ueberstunden) {
             else {
                 resolve(result);
                 console.log("Überstunden wurden aktuallisiert");
+            }
+        });
+
+
+    });
+}
+
+var updateWunschRating = function updateWunschRating(id, rating) {
+    return new Promise(function (resolve, reject) {
+
+        // WunschRating eines Mitarbeiters aktuallisieren
+
+        var sql = "UPDATE Mitarbeiter SET wunschRating = wunschRating + " + rating+" WHERE id ="+id;
+
+
+        connection.query(sql, function (err, result) {
+            if (err) {
+                console.log(err)
+                reject(err);
+
+            }
+            else {
+                resolve(result);
+                console.log("Wunsch Rating wurde aktuallisiert");
+            }
+        });
+
+
+    });
+}
+
+
+var updateDienstplanRating = function updateDienstplanRating(id, rating) {
+    return new Promise(function (resolve, reject) {
+
+        // dienstplanRating eines Mitarbeiters aktuallisieren
+
+        var sql = "UPDATE Mitarbeiter SET dienstplanRating = dienstplanRating + " + rating+" WHERE id ="+id;
+
+
+        connection.query(sql, function (err, result) {
+            if (err) {
+                console.log(err)
+                reject(err);
+
+            }
+            else {
+                resolve(result);
+                console.log("Dienstplan Rating wurde aktuallisiert");
             }
         });
 
@@ -342,6 +391,8 @@ exports.neuerMitarbeiter = neuerMitarbeiter;
 exports.updateMitarbeiter = updateMitarbeiter;
 exports.updateUeberstunden = updateUeberstunden;
 exports.loeschenMitarbeiter = loeschenMitarbeiter;
+exports.updateWunschRating = updateWunschRating;
+exports.updateDienstplanRating = updateDienstplanRating;
 //ALT
 
 exports.benachrichtigungVermerken = benachrichtigungVermerken;
