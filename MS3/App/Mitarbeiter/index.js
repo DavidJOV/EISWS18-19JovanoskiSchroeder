@@ -125,7 +125,44 @@ router.delete('/:id', (req, res) => {
             res.status(400).send(err);
         });
 });
+// Übertragen des WunschRatings eines einzelenen Mitarbeiters
+router.get('/:id/wunschRating', (req, res) => {
+    sqlHandler.getMitarbeiter()
+        .then(function (mitarbeiterListe) {
+            if (mitarbeiterListe === undefined) res.status(500).send("Could not read DATA");
+            else {
+                const mitarbeiter = mitarbeiterListe.find(c => c.id === parseInt(req.params.id));
+                if (!mitarbeiter) { res.status(404).send("Diese ID gehört keinem Mitarbeiter!"); }
 
+                else { // Übertragen des Wunschratings -> toString() da sonst die Übertragung nicht funktioniert, aber warum ist die Frage?
+                   res.status(200).send( mitarbeiter.wunschRating.toString());
+                }
+            }
+        })
+        .catch(function (err) {
+            res.status(400).send(err);
+        });
+
+});
+// Übertragen des DienstplanRatings eines einzelenen Mitarbeiters
+router.get('/:id/dienstplanRating', (req, res) => {
+    sqlHandler.getMitarbeiter()
+        .then(function (mitarbeiterListe) {
+            if (mitarbeiterListe === undefined) res.status(500).send("Could not read DATA");
+            else {
+                const mitarbeiter = mitarbeiterListe.find(c => c.id === parseInt(req.params.id));
+                if (!mitarbeiter) { res.status(404).send("Diese ID gehört keinem Mitarbeiter!"); }
+
+                else { // Übertragen des DienstplanRatings -> toString() da sonst die Übertragung nicht funktioniert, aber warum ist die Frage?
+                   res.status(200).send( mitarbeiter.dienstplanRating.toString());
+                }
+            }
+        })
+        .catch(function (err) {
+            res.status(400).send(err);
+        });
+
+});
 
 // Übertragen der Überstunden eines einzelenen Mitarbeiters
 router.get('/:id/ueberstunden', (req, res) => {
