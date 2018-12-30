@@ -1,14 +1,22 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Erstellungszeit: 20. Dez 2018 um 15:18
--- Server-Version: 5.7.23
--- PHP-Version: 7.2.8
+-- Host: localhost:3306
+-- Erstellungszeit: 30. Dez 2018 um 14:58
+-- Server-Version: 5.6.34-log
+-- PHP-Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Datenbank: `sistershift`
@@ -17,10 +25,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `Abwesenheitsmeldung`
+-- Tabellenstruktur für Tabelle `abwesenheitsmeldung`
 --
 
-CREATE TABLE `Abwesenheitsmeldung` (
+CREATE TABLE `abwesenheitsmeldung` (
   `stationID` int(11) NOT NULL,
   `MitarbeiterID` int(11) NOT NULL,
   `id` int(11) NOT NULL,
@@ -31,10 +39,10 @@ CREATE TABLE `Abwesenheitsmeldung` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `Dienstplan`
+-- Tabellenstruktur für Tabelle `dienstplan`
 --
 
-CREATE TABLE `Dienstplan` (
+CREATE TABLE `dienstplan` (
   `stationID` int(9) NOT NULL,
   `id` int(9) NOT NULL,
   `datumBeginn` date NOT NULL,
@@ -75,10 +83,10 @@ CREATE TABLE `Dienstplan` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `Ersatzanfrage`
+-- Tabellenstruktur für Tabelle `ersatzanfrage`
 --
 
-CREATE TABLE `Ersatzanfrage` (
+CREATE TABLE `ersatzanfrage` (
   `stationID` int(10) NOT NULL,
   `mitarbeiterID` int(10) NOT NULL,
   `abwesenheitsmeldungID` int(10) NOT NULL,
@@ -89,10 +97,10 @@ CREATE TABLE `Ersatzanfrage` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `Ersatzeintragung`
+-- Tabellenstruktur für Tabelle `ersatzeintragung`
 --
 
-CREATE TABLE `Ersatzeintragung` (
+CREATE TABLE `ersatzeintragung` (
   `stationID` int(10) NOT NULL,
   `mitarbeiterID` int(10) NOT NULL,
   `abwesenheitsmeldungID` int(10) NOT NULL,
@@ -103,10 +111,10 @@ CREATE TABLE `Ersatzeintragung` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `Mitarbeiter`
+-- Tabellenstruktur für Tabelle `mitarbeiter`
 --
 
-CREATE TABLE `Mitarbeiter` (
+CREATE TABLE `mitarbeiter` (
   `id` int(10) NOT NULL,
   `stationID` int(10) NOT NULL,
   `anrede` varchar(10) NOT NULL,
@@ -116,16 +124,25 @@ CREATE TABLE `Mitarbeiter` (
   `beschaeftigungsBeginn` date NOT NULL,
   `rolle` varchar(30) NOT NULL,
   `wunschRating` int(10) NOT NULL,
-  `dienstplanRating` int(10) NOT NULL
+  `dienstplanRating` int(10) NOT NULL,
+  `ueberstunden` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `mitarbeiter`
+--
+
+INSERT INTO `mitarbeiter` (`id`, `stationID`, `anrede`, `vorname`, `name`, `beschaeftigungsArt`, `beschaeftigungsBeginn`, `rolle`, `wunschRating`, `dienstplanRating`, `ueberstunden`) VALUES
+(16, 1, 'Herr', 'Max', 'Mustermann', 'Teilzeit', '2018-12-13', 'Arzt', 2, 2, 24),
+(17, 1, 'Herr', 'Manfred', 'Mustermann', 'Teilzeit', '2018-12-13', 'Arzt', 0, 3, 0);
 
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `Schichttausch`
+-- Tabellenstruktur für Tabelle `schichttausch`
 --
 
-CREATE TABLE `Schichttausch` (
+CREATE TABLE `schichttausch` (
   `stationID` int(11) NOT NULL,
   `mitarbeiterID` int(11) NOT NULL,
   `id` int(11) NOT NULL,
@@ -136,10 +153,10 @@ CREATE TABLE `Schichttausch` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `Schichtzuweisung`
+-- Tabellenstruktur für Tabelle `schichtzuweisung`
 --
 
-CREATE TABLE `Schichtzuweisung` (
+CREATE TABLE `schichtzuweisung` (
   `id` int(20) NOT NULL,
   `datum` date NOT NULL,
   `schichtArt` varchar(30) NOT NULL,
@@ -158,10 +175,10 @@ CREATE TABLE `Schichtzuweisung` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `Station`
+-- Tabellenstruktur für Tabelle `station`
 --
 
-CREATE TABLE `Station` (
+CREATE TABLE `station` (
   `id` int(10) NOT NULL,
   `stationsArt` varchar(20) NOT NULL,
   `ort` varchar(30) NOT NULL,
@@ -174,10 +191,10 @@ CREATE TABLE `Station` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `Tag`
+-- Tabellenstruktur für Tabelle `tag`
 --
 
-CREATE TABLE `Tag` (
+CREATE TABLE `tag` (
   `id` int(10) NOT NULL,
   `schichtzuweisungID1` int(10) NOT NULL,
   `schichtzuweisungID2` int(10) NOT NULL,
@@ -189,10 +206,10 @@ CREATE TABLE `Tag` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `Wunsch`
+-- Tabellenstruktur für Tabelle `wunsch`
 --
 
-CREATE TABLE `Wunsch` (
+CREATE TABLE `wunsch` (
   `stationID` int(10) NOT NULL,
   `mitarbeiterID` int(10) NOT NULL,
   `id` int(10) NOT NULL,
@@ -207,63 +224,63 @@ CREATE TABLE `Wunsch` (
 --
 
 --
--- Indizes für die Tabelle `Abwesenheitsmeldung`
+-- Indizes für die Tabelle `abwesenheitsmeldung`
 --
-ALTER TABLE `Abwesenheitsmeldung`
+ALTER TABLE `abwesenheitsmeldung`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indizes für die Tabelle `Dienstplan`
+-- Indizes für die Tabelle `dienstplan`
 --
-ALTER TABLE `Dienstplan`
+ALTER TABLE `dienstplan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indizes für die Tabelle `Ersatzanfrage`
+-- Indizes für die Tabelle `ersatzanfrage`
 --
-ALTER TABLE `Ersatzanfrage`
+ALTER TABLE `ersatzanfrage`
   ADD PRIMARY KEY (`stationID`,`mitarbeiterID`,`abwesenheitsmeldungID`) KEY_BLOCK_SIZE=3;
 
 --
--- Indizes für die Tabelle `Ersatzeintragung`
+-- Indizes für die Tabelle `ersatzeintragung`
 --
-ALTER TABLE `Ersatzeintragung`
+ALTER TABLE `ersatzeintragung`
   ADD PRIMARY KEY (`stationID`,`mitarbeiterID`,`abwesenheitsmeldungID`);
 
 --
--- Indizes für die Tabelle `Mitarbeiter`
+-- Indizes für die Tabelle `mitarbeiter`
 --
-ALTER TABLE `Mitarbeiter`
+ALTER TABLE `mitarbeiter`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indizes für die Tabelle `Schichttausch`
+-- Indizes für die Tabelle `schichttausch`
 --
-ALTER TABLE `Schichttausch`
+ALTER TABLE `schichttausch`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indizes für die Tabelle `Schichtzuweisung`
+-- Indizes für die Tabelle `schichtzuweisung`
 --
-ALTER TABLE `Schichtzuweisung`
+ALTER TABLE `schichtzuweisung`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indizes für die Tabelle `Station`
+-- Indizes für die Tabelle `station`
 --
-ALTER TABLE `Station`
+ALTER TABLE `station`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indizes für die Tabelle `Tag`
+-- Indizes für die Tabelle `tag`
 --
-ALTER TABLE `Tag`
+ALTER TABLE `tag`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indizes für die Tabelle `Wunsch`
+-- Indizes für die Tabelle `wunsch`
 --
-ALTER TABLE `Wunsch`
+ALTER TABLE `wunsch`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -271,37 +288,36 @@ ALTER TABLE `Wunsch`
 --
 
 --
--- AUTO_INCREMENT für Tabelle `Abwesenheitsmeldung`
+-- AUTO_INCREMENT für Tabelle `abwesenheitsmeldung`
 --
-ALTER TABLE `Abwesenheitsmeldung`
+ALTER TABLE `abwesenheitsmeldung`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT für Tabelle `Mitarbeiter`
+-- AUTO_INCREMENT für Tabelle `mitarbeiter`
 --
-ALTER TABLE `Mitarbeiter`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
-
+ALTER TABLE `mitarbeiter`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 --
--- AUTO_INCREMENT für Tabelle `Schichttausch`
+-- AUTO_INCREMENT für Tabelle `schichttausch`
 --
-ALTER TABLE `Schichttausch`
+ALTER TABLE `schichttausch`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT für Tabelle `Schichtzuweisung`
+-- AUTO_INCREMENT für Tabelle `schichtzuweisung`
 --
-ALTER TABLE `Schichtzuweisung`
+ALTER TABLE `schichtzuweisung`
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT für Tabelle `Station`
+-- AUTO_INCREMENT für Tabelle `station`
 --
-ALTER TABLE `Station`
+ALTER TABLE `station`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT für Tabelle `wunsch`
+--
+ALTER TABLE `wunsch`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;COMMIT;
 
---
--- AUTO_INCREMENT für Tabelle `Wunsch`
---
-ALTER TABLE `Wunsch`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

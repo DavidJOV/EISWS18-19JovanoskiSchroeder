@@ -393,6 +393,7 @@ exports.updateUeberstunden = updateUeberstunden;
 exports.loeschenMitarbeiter = loeschenMitarbeiter;
 exports.updateWunschRating = updateWunschRating;
 exports.updateDienstplanRating = updateDienstplanRating;
+
 //ALT
 
 exports.benachrichtigungVermerken = benachrichtigungVermerken;
