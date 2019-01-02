@@ -379,77 +379,85 @@ var getDienstplan = function getDienstplan(id) {
 
   return new Promise(function(resolve, reject) {
 
-      //  Dienstplan mit gennanter ID
+    //  Dienstplan mit gennanter ID
 
-      var tage = {
-        schichtzuweisung: []
-      }
-
-
-      var dienstplan = {
-        stationID: "",
-        datumBeginn: "",
-        datumEnde: "",
-        tage: [],
-      }
-
-      var maxAnzahlTage = 31;
-      var maxSchichten = 4;
-
-      let sql = "SELECT * FROM dienstplan WHERE id = " + id;
-
-      connection.query(sql, function(err, result) {
-          if (err) reject(err);
-          else {
-
-            dienstplan.stationID = result.stationID;
-            dienstplan.datumBeginn = result.datumBeginn;
-            dienstplan.datumEnde = result.datumEnde;
+    var tage = {
+      schichtzuweisung: []
+    }
 
 
+    var dienstplan = {
+      stationID: "",
+      datumBeginn: "",
+      datumEnde: "",
+      tage: [],
+    }
 
+    var maxAnzahlTage = 31;
+    var maxSchichten = 4;
 
-            console.log("result roh:\n" + JSON.stringify(result));
-            console.log("result 1:\n" + JSON.stringify(result[0]));
-            console.log("tag1:\n " + JSON.stringify(result[0].tag1));
+    let sql = "SELECT * FROM dienstplan WHERE id = " + id;
 
-            for (let i = 1; i <= maxAnzahlTage; i++) {
-              var temp;
-              temp = eval(result[0].tag1);
-              
-              let sql2 = "SELECT * FROM tag WHERE id = " + temp;
+    connection.query(sql, function(err, result) {
+      if (err) reject(err);
+
+      else if (result[0]!=undefined) {
+
+        dienstplan.stationID = result[0].stationID;
+        dienstplan.datumBeginn = result[0].datumBeginn;
+        dienstplan.datumEnde = result[0].datumEnde;
+        dienstplan.tage = [result[0].tag1, result[0].tag2, result[0].tag3, result[0].tag4, result[0].tag5,
+        result[0].tag6, result[0].tag7, result[0].tag8, result[0].tag9, result[0].tag10, result[0].tag11,
+        result[0].tag12, result[0].tag13, result[0].tag14, result[0].tag15, result[0].tag16, result[0].tag17,
+        result[0].tag18, result[0].tag19, result[0].tag20, result[0].tag21, result[0].tag22, result[0].tag23,
+        result[0].tag24, result[0].tag25, result[0].tag26, result[0].tag27, result[0].tag28, result[0].tag29,
+        result[0].tag30, result[0].tag31];
 
 
 
+        for (let i = 0; i < 1; i++) {
+
+          let sql2 = "SELECT * FROM tag WHERE id = " + dienstplan.tage[i]; // WORKAROUND -> NICHT HARDCODEN!!!
 
 
-              connection.query(sql2, function(err, result2) {
-                  if (err) reject(err);
-                  else {
+          connection.query(sql2, function(err, result2) {
+            if (err) reject(err);
+            else {
 
+              tage.schichtzuweisung[i] = {
+                fruehschicht: result2[0].schichtzuweisungID1,
+                zwischenschicht: result2[0].schichtzuweisungID2,
+                spaetschicht: result2[0].schichtzuweisungID3,
+                nachtschicht: result2[0].schichtzuweisungID4
+              }
 
+              let sql3 = "SELECT * FROM schichtzuweisung WHERE id = " + tage.schichtzuweisung[i].fruehschicht + " OR " + tage.schichtzuweisung[i].zwischenschicht + " OR " + tage.schichtzuweisung[i].spaetschicht + " OR " + tage.schichtzuweisung[i].nachtschicht;
 
+              connection.query(sql3, function(err, result3) {
+                if (err) reject(err);
+                else {
 
-                    for (let j = 1; j <= maxSchichten; j++) {
-                      var schicht = "schichtzuweisungID"+j;
-                      let sql3 = "SELECT * FROM schichtzuweisung WHERE id = " + result2[0].schicht;
-
-                      connection.query(sql3, function(err, result3) {
-                          if (err) reject(err);
-                          else {
-                            dienstplan.tage[i].schichtzuweisung[j] = result3;
-                          }
-                        });
+                  var dienstplanErgebnis = {
+                    Metadaten: result,
+                    Tage: result2,
+                    Schichten: result3
                   }
+
+                  resolve(dienstplanErgebnis);
+
                 }
-                resolve(dienstplan);
               });
 
-          }
-        }
-      });
+            }
 
-    //resolve(dienstplan);
+          });
+
+        }
+      }
+      else {resolve("Kein Dienstplan mit dieser ID vorhanden!")}
+    });
+
+
   });
 }
 

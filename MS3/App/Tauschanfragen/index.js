@@ -12,8 +12,8 @@ router.get('/', (req, res) => {
         res.status(200).send(tauschListe);
       }
     })
-    .catch(function(error) {
-      res.status(400).send(error);
+    .catch(function(err) {
+      res.status(400).send(err);
     });
 });
 
@@ -31,8 +31,8 @@ router.get('/:id', (req, res) => {
         }
       }
     })
-    .catch(function(error) {
-      res.status(400).send(error);
+    .catch(function(err) {
+      res.status(400).send(err);
     });
 
 });

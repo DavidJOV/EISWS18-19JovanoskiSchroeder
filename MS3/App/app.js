@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-/*// Phantom console.log finden - helper code
+// Phantom console.log finden - helper code
 ['log', 'warn'].forEach(function(method) {
     var old = console[method];
     console[method] = function() {
@@ -15,7 +15,7 @@ app.use(express.json());
       var args = [].slice.apply(arguments).concat([stack[1].trim()]);
       return old.apply(console, args);
     };
-  });*/
+  });
 
 
 
