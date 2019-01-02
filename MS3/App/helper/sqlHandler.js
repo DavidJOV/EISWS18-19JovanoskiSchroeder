@@ -415,9 +415,9 @@ var getDienstplan = function getDienstplan(id) {
 
             for (let i = 1; i <= maxAnzahlTage; i++) {
               var temp;
-              temp = eval(result[0].tag+i);
-              var tmp = parseInt(temp);
-              let sql2 = "SELECT * FROM tag WHERE id = " + tmp;
+              temp = eval(result[0].tag1);
+              
+              let sql2 = "SELECT * FROM tag WHERE id = " + temp;
 
 
 
