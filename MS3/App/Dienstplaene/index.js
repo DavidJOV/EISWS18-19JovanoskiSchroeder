@@ -29,8 +29,8 @@ router.get('/:id', (req, res) => {
     }
 });
 
-// Get auf einen einzelnen Dienstplan
-router.get('/:id/:tagId', (req, res) => {  //TagId oder Datum?
+// Get auf einen einzelnen Tag eines Dienstplans
+router.get('/:id/:tagId', (req, res) => {
     //DB req auf alle Dienstpläne
     if (dienstplanListe === undefined) res.status(500).send("Could not read DATA");
     else {// Kann auch mit der ID direkt in der DB gesucht werden.
@@ -53,7 +53,7 @@ router.post('/', bodyParser.json(), (req, res) => {
 
   var tag = new Object();
 
-  // In Datenbank speichern? Anlegen, wie / wann?
+  // Schichtzuweiseungen -> Mitarbeiter eingeteilt (fair) -> Schichten Tagen zuordnen (Fair, Wünsche, Konrtolle Gesetze) -> Tage ins Array
 
     const dienstplan = {
         stationID: req.body.stationID, // noch in Datenbank hinzufügen
@@ -70,7 +70,7 @@ router.post('/', bodyParser.json(), (req, res) => {
 
 
 
-// PUT Tag? Nicht eher Schichtzuweisung?
+// PUT Schichtzuweisung
 
 
 

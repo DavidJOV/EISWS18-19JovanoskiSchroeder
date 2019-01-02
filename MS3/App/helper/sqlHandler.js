@@ -4,7 +4,7 @@ var connection = dbConnection.connection;
 
 //Mitarbeiter Funktionen
 
-//******************************************************************************************************************** 
+//********************************************************************************************************************
 
 var getMitarbeiter = function getMitarbeiter() {
 
@@ -184,7 +184,7 @@ var getAbwesenheiten = function getAbwesenheiten() {
 
     return new Promise(function (resolve, reject) {
 
-        // Alle Abwesenheiten derd Station 
+        // Alle Abwesenheiten derd Station
 
         let sql = "SELECT id, stationID, mitarbeiterID, DATE_FORMAT(datumBeginn, \"%W %M %e %Y\"),DATE_FORMAT(datumEnde, \"%W %M %e %Y\") FROM  abwesenheitsmeldung";
         connection.query(sql, function (err, result) {
@@ -234,7 +234,7 @@ var updateAbwesenheit = function updateAbwesenheit(id, abwesenheitUpdate) {
 
         var sql = "UPDATE abwesenheitsmeldung SET datumBeginn = \"" + abwesenheitUpdate.datumBeginn + "\", datumEnde= \"" + abwesenheitUpdate.datumEnde + "\" WHERE id =" + id;
 
-      
+
         connection.query(sql, function (err, result) {
             if (err) {
                 console.log(err)
@@ -277,8 +277,125 @@ var loescheAbwesenheit = function loescheAbwesenheit(id) {
 
 //********************************************************************************************************************
 
+// Tauschanfragen-Funktionen
+//********************************************************************************************************************
 
-//ALT SQL HANDLER RP CODE 
+// Lesen aller Tauschanfragen der DB
+var getTauschanfragen = function getTauschanfragen() {
+
+    return new Promise(function (resolve, reject) {
+
+        // Alle Tauschanfragen
+
+        let sql = "SELECT id, stationID, mitarbeiterID, DATE_FORMAT(datumTausch, \"%W %M %e %Y\"),tauschStatus FROM  schichttausch";
+        connection.query(sql, function (err, result) {
+            if (err) reject(err);
+            else {
+
+                resolve(result);
+
+            }
+        });
+    });
+}
+
+
+
+// Erstellen neuer Tauschanfrage
+var neueTauschanfrage = function neueTauschanfrage(schichttausch) {
+    return new Promise(function (resolve, reject) {
+
+        //In der Datenbank hinzufügen
+
+        var sql = "INSERT INTO schichttausch (stationID, MitarbeiterID, datumTausch, tauschStatus) VALUES ( \"" + schichttausch.stationID + "\",\"" + schichttausch.MitarbeiterID + "\",\"" + schichttausch.datumTausch + "\",\"" + schichttausch.tauschStatus + "\")";
+
+
+        connection.query(sql, function (err, result) {
+            if (err) {
+                console.log(err)
+                reject(err);
+
+            }
+            else {
+                resolve(schichttausch);
+                console.log("1 neue Tauschanfrage");
+            }
+        });
+
+
+    });
+}
+
+
+// Aktualisieren einer Tauschanfragen
+var updateTauschanfrage = function updateTauschanfrage(id, tauschUpdate) {
+    return new Promise(function (resolve, reject) {
+
+        // Tauschanfrage aktuallisieren
+
+        var sql = "UPDATE schichttausch SET tauschStatus = \"" + tauschUpdate.tauschStatus + "\" WHERE id =" + id;
+
+
+        connection.query(sql, function (err, result) {
+            if (err) {
+                console.log(err)
+                reject(err);
+
+            }
+            else {
+                resolve(result);
+                console.log("Tauschanfrage wurde aktuallisiert");
+            }
+        });
+
+
+    });
+}
+
+
+// Löschen einer Tauschanfragen
+var loescheTauschanfrage = function loescheTauschanfrage(id) {
+    return new Promise(function (resolve, reject) {
+
+        //Loeschen einer Tauschanfrage
+
+        var sql = "DELETE FROM schichttausch WHERE id = " + id;
+
+
+        connection.query(sql, function (err, result) {
+            if (err) {
+                console.log(err)
+                reject(err);
+
+            }
+            else {
+                resolve(result);
+                console.log("Tauschanfrage wurde gelöscht");
+            }
+        });
+
+
+    });
+}
+
+//****************************************************************************************************************************
+
+
+
+// Diensplan-Funktionen
+//****************************************************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+//ALT SQL HANDLER RP CODE
 
 var neuerPfleger = function neuerPfleger(pfleger) {
     return new Promise(function (resolve, reject) {
