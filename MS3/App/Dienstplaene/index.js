@@ -1,14 +1,14 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
-
+var sqlHandler = require("../helper/sqlHandler");
 
 
 
 
 // Get auf alle Dienstpläne
 router.get('/', (req, res) => {
-    //DB req auf Dienstpläne
+
     if (dienstplanListe === undefined) res.status(500).send("Could not read DATA");
     else {
         res.status(200).send(dienstplanListe);
@@ -17,16 +17,17 @@ router.get('/', (req, res) => {
 
 // Get auf einen einzelnen Dienstplan
 router.get('/:id', (req, res) => {
-    //DB req auf alle Dienstpläne
-    if (dienstplanListe === undefined) res.status(500).send("Could not read DATA");
-    else {// Kann auch mit der ID direkt in der DB gesucht werden.
-        const dienst = dienstplanListe.find(c => c.id === parseInt(req.params.id)); // Datenbank anbindung fehlt noch
-        if (!dienst) { res.status(404).send("Kein Dienstplan mit der angebenen ID vorhanden!"); }
+    sqlHandler.getDienstplan(req.params.id)
+    .then(function(dienstplan){
+        if (!dienstplan) { res.status(404).send("Kein Dienstplan mit der angebenen ID vorhanden!"); }
 
         else {
-            res.status(200).send(dienst);
+            res.status(200).send(dienstplan);
         }
-    }
+    })
+    .catch(function (err) {
+        res.status(400).send(err);
+    });
 });
 
 // Get auf einen einzelnen Tag eines Dienstplans
@@ -49,9 +50,9 @@ router.get('/:id/:tagId', (req, res) => {
 router.post('/', bodyParser.json(), (req, res) => {
 
 
-  var schichtzuweisung = new Object();
+  //var schichtzuweisung = new Object();
 
-  var tag = new Object();
+  //var tag = new Object();
 
   // Schichtzuweiseungen -> Mitarbeiter eingeteilt (fair) -> Schichten Tagen zuordnen (Fair, Wünsche, Konrtolle Gesetze) -> Tage ins Array
 
@@ -71,7 +72,11 @@ router.post('/', bodyParser.json(), (req, res) => {
 
 
 // PUT Schichtzuweisung
+router.put('/:id/:tagId/:schichtzuweisungId', (req, res) => {
+//sqlHandler
 
+
+  });
 
 
 

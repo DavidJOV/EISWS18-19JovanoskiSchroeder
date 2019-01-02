@@ -32,14 +32,14 @@ const settings = {
 const mitarbeiter = require('./Mitarbeiter/index.js');
 app.use('/Mitarbeiter', mitarbeiter);
 
-//const dienstplaene = require('./Dienstplaene/index.js');
-//app.use('/Dienstplaene', dienstplaene);
+const dienstplaene = require('./Dienstplaene/index.js');
+app.use('/Dienstplaene', dienstplaene);
 
 const abwesenheiten = require('./Abwesenheiten/index.js');
 app.use('/Abwesenheiten', abwesenheiten);
 
-/*const tauschanfragen = require('./tauschfragen/index.js');
-app.use('/tauschanfragen', tauschanfragen);*/
+const tauschanfragen = require('./Tauschanfragen/index.js');
+app.use('/tauschanfragen', tauschanfragen);
 
 
 app.listen(settings.port, () => console.log("Express app listening on port: " + settings.port + "!"))
