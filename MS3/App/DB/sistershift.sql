@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Erstellungszeit: 02. Jan 2019 um 17:49
+-- Erstellungszeit: 02. Jan 2019 um 19:04
 -- Server-Version: 5.7.24-log
 -- PHP-Version: 7.2.10
 
@@ -186,6 +186,16 @@ CREATE TABLE `schichtzuweisung` (
   `mitarbeiterID10` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Daten für Tabelle `schichtzuweisung`
+--
+
+INSERT INTO `schichtzuweisung` (`id`, `datum`, `schichtArt`, `mitarbeiterID1`, `mitarbeiterID2`, `mitarbeiterID3`, `mitarbeiterID4`, `mitarbeiterID5`, `mitarbeiterID6`, `mitarbeiterID7`, `mitarbeiterID8`, `mitarbeiterID9`, `mitarbeiterID10`) VALUES
+(1, '2019-01-02', 'Frueschicht', 1, 2, 3, 4, 5, 6, 78, 8, 9, 88),
+(2, '2019-01-02', 'Spaetschicht', 2, 77, 3, 4, 5, 6, 78, 8, 9, 99),
+(3, '2019-01-02', 'Zwischenschicht', 2, 77, 3, 4, 5, 6, 78, 8, 9, 1),
+(4, '2019-01-02', 'Nachtschicht', 2, 77, 3, 4, 5, 6, 78, 8, 9, 33);
+
 -- --------------------------------------------------------
 
 --
@@ -216,6 +226,13 @@ CREATE TABLE `tag` (
   `schichtzuweisungID4` int(10) NOT NULL,
   `datum` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `tag`
+--
+
+INSERT INTO `tag` (`id`, `schichtzuweisungID1`, `schichtzuweisungID2`, `schichtzuweisungID3`, `schichtzuweisungID4`, `datum`) VALUES
+(1, 1, 2, 3, 4, '2019-01-02');
 
 -- --------------------------------------------------------
 
@@ -323,7 +340,7 @@ ALTER TABLE `schichttausch`
 -- AUTO_INCREMENT für Tabelle `schichtzuweisung`
 --
 ALTER TABLE `schichtzuweisung`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT für Tabelle `station`
