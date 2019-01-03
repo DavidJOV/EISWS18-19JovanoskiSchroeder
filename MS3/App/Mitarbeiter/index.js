@@ -3,11 +3,11 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var sqlHandler = require("../helper/sqlHandler");
 
-
+var hw = "hallo WELT"
 //var connection = dbConnection.connection; // DB Verbindung
 // GET auf die Liste aller Mitarbeiter
-router.get('/', (req, res) => {
-    sqlHandler.getMitarbeiter()
+router.get('/', (req, res) => { res.status(200).send(hw)
+   /* sqlHandler.getMitarbeiter()
         .then(function (mitarbeiterListe) { // <- So ist es richtig! Noch bei den anderen Funktionen ändern!!!!
             if (mitarbeiterListe === undefined) res.status(500).send("Could not read DATA");
             else {
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
         })
         .catch(function (error) {
             res.status(400).send(error);
-        });
+        });*/
 
 });
 
