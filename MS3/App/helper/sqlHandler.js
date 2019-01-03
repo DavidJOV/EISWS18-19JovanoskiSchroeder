@@ -368,7 +368,7 @@ var loescheTauschanfrage = function loescheTauschanfrage(id) {
 
 //****************************************************************************************************************************
 
-// Schichtzuwesung-Funktionen
+// Schichtzuweisung-Funktionen
 //****************************************************************************************************************************
 
 // Erstellen neuer Schichtzuweisung
@@ -457,7 +457,7 @@ var updateSchichtzuweisung = function updateSchichtzuweisung(date, schicht, schi
 
 
 // Löschen einer Schichtzuweisung
-var loescheZuweisung = function loescheZuweisung(date, schicht) {
+var loescheSchichtzuweisung = function loescheSchichtzuweisung(date, schicht) {
   return new Promise(function(resolve, reject) {
 
     //Loeschen einer Schichtzuweisung
@@ -482,6 +482,100 @@ var loescheZuweisung = function loescheZuweisung(date, schicht) {
 
 
 //****************************************************************************************************************************
+
+//Tag - Funktionen
+//****************************************************************************************************************************
+
+// Erstellen eines neuen Tags
+var neuerTag = function neuerTag(tag) {
+  return new Promise(function(resolve, reject) {
+
+    //In der Datenbank hinzufügen
+
+    var sql = "INSERT INTO tag (schichtzuweisungID1, schichtzuweisungID2, schichtzuweisungID3, schichtzuweisungID4, datum) VALUES ( \"" + tag.schichtzuweisungID1 + "\",\"" + tag.schichtzuweisungID2 + "\",\"" + tag.schichtzuweisungID3 + "\",\"" + tag.schichtzuweisungID4 + "\",\"" + tag.datum + "\")";
+
+
+    connection.query(sql, function(err, result) {
+      if (err) {
+        console.log(err)
+        reject(err);
+
+      } else {
+        resolve(tag);
+      //  console.log("neuer Tag");
+      }
+    });
+
+
+  });
+}
+
+
+// Lesen aller Tage aus der DB
+var getTage = function getTage() {
+
+  return new Promise(function(resolve, reject) {
+
+    // Alle Tauschanfragen
+
+    let sql = "SELECT id,schichtzuweisungID1, schichtzuweisungID2, schichtzuweisungID3, schichtzuweisungID4, DATE_FORMAT(datum, \"%W %M %e %Y\") FROM tag";
+    connection.query(sql, function(err, result) {
+      if (err) reject(err);
+      else {
+
+        resolve(result);
+
+      }
+    });
+  });
+}
+
+
+
+
+
+// Lesen eines Tages mit Datum aus der DB
+var getTag = function getTag(date) {
+
+  return new Promise(function(resolve, reject) {
+
+    let sql = "SELECT id,schichtzuweisungID1, schichtzuweisungID2, schichtzuweisungID3, schichtzuweisungID4, DATE_FORMAT(datum, \"%W %M %e %Y\") FROM tag WHERE datum = " + date;
+
+    connection.query(sql, function(err, result) {
+      if (err) reject(err);
+      else {
+
+        resolve(result);
+
+      }
+    });
+  });
+}
+
+
+// Löschen eines Tages
+var loescheTag = function loescheTag(date) {
+  return new Promise(function(resolve, reject) {
+
+    //Loeschen eines Tags
+
+    var sql = "DELETE FROM tag WHERE date = " + date;
+
+
+    connection.query(sql, function(err, result) {
+      if (err) {
+        console.log(err)
+        reject(err);
+
+      } else {
+        resolve(result);
+      //  console.log("Tag wurde gelöscht");
+      }
+    });
+
+
+  });
+}
 
 
 
@@ -810,8 +904,22 @@ exports.neueTauschanfrage = neueTauschanfrage;
 exports.updateTauschanfrage = updateTauschanfrage;
 exports.loescheTauschanfrage = loescheTauschanfrage;
 
+//Schichtzuweisungen
+exports.getSchichtzuweisung = getSchichtzuweisung;
+exports.getSchichtzuweisungen = getSchichtzuweisungen;
+exports.neueSchichtzuweisung = neueSchichtzuweisung;
+exports.updateSchichtzuweisung = updateSchichtzuweisung;
+exports.loescheSchichtzuweisung = loescheSchichtzuweisung;
+
+//Tag
+exports.getTage = getTage;
+exports.getTag = getTag;
+exports.neuerTag = neuerTag;
+exports.loescheTag = loescheTag;
+
 //Dienstplans
 exports.getDienstplan = getDienstplan;
+
 
 
 
