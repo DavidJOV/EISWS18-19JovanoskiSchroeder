@@ -6,24 +6,20 @@ var sqlHandler = require("../helper/sqlHandler");
 
 
 
-// Get auf alle Dienstpläne
+/* // Get auf alle Dienstpläne
 router.get('/', (req, res) => {
 
     if (dienstplanListe === undefined) res.status(500).send("Could not read DATA");
     else {
         res.status(200).send(dienstplanListe);
     }
-});
+}); */ // Nicht benötigt!
 
 // Get auf einen einzelnen Dienstplan
 router.get('/:id', (req, res) => {
     sqlHandler.getDienstplan(req.params.id)
     .then(function(dienstplan){
-        if (!dienstplan) { res.status(404).send("Kein Dienstplan mit der angebenen ID vorhanden!"); }
-
-        else {
             res.status(200).send(dienstplan);
-        }
     })
     .catch(function (err) {
         res.status(400).send(err);

@@ -50,7 +50,7 @@ router.post('/', bodyParser.json(), (req, res) => {
     .then(function(schichttausch) {
       if (schichttausch === undefined) res.status(400).send("Tauschanfrage konnte nicht erstellt werden");
       else {
-        res.status(201).send(schichttausch);
+        res.status(201).send("Neue Tauschanfrage erstellt: \n" + JSON.stringify(schichttausch));
       }
 
     })
@@ -77,7 +77,7 @@ router.put('/:id', (req, res) => {
 
           sqlHandler.updateTauschanfrage(id, tauschUpdate)
             .then(function(tauschUpdate) {
-              res.status(200).send(tauschUpdate);
+              res.status(200).send("Tauschanfrage erfolgreich aktuallisiert \n"+ JSON.stringify(tauschUpdate));
 
             })
             .catch(function(err) {

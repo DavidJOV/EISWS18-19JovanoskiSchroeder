@@ -308,7 +308,7 @@ var neueTauschanfrage = function neueTauschanfrage(schichttausch) {
 
       } else {
         resolve(schichttausch);
-        console.log("1 neue Tauschanfrage");
+      //  console.log("1 neue Tauschanfrage");
       }
     });
 
@@ -333,7 +333,7 @@ var updateTauschanfrage = function updateTauschanfrage(id, tauschUpdate) {
 
       } else {
         resolve(result);
-        console.log("Tauschanfrage wurde aktuallisiert");
+        //console.log("Tauschanfrage wurde aktuallisiert");
       }
     });
 
@@ -358,13 +358,128 @@ var loescheTauschanfrage = function loescheTauschanfrage(id) {
 
       } else {
         resolve(result);
-        console.log("Tauschanfrage wurde gelöscht");
+      //  console.log("Tauschanfrage wurde gelöscht");
       }
     });
 
 
   });
 }
+
+//****************************************************************************************************************************
+
+// Schichtzuwesung-Funktionen
+//****************************************************************************************************************************
+
+// Erstellen neuer Schichtzuweisung
+var neueSchichtzuweisung = function neueSchichtzuweisung(zuweisung) {
+  return new Promise(function(resolve, reject) {
+
+    //In der Datenbank hinzufügen
+
+    var sql = "INSERT INTO schichtzuweisung (datum, schichtArt, mitarbeiterID1, mitarbeiterID2, mitarbeiterID3,mitarbeiterID4,mitarbeiterID5,mitarbeiterID6,mitarbeiterID7,mitarbeiterID8,mitarbeiterID9,mitarbeiterID10) VALUES ( \"" + zuweisung.datum + "\",\"" + zuweisung.schichtArt + "\",\"" + zuweisung.mitarbeiterID1 + "\",\"" + zuweisung.mitarbeiterID2 + "\",\"" + zuweisung.mitarbeiterID3 + "\",\"" + zuweisung.mitarbeiterID4 + "\",\"" + zuweisung.mitarbeiterID5 + "\",\"" + zuweisung.mitarbeiterID6 + "\",\"" + zuweisung.mitarbeiterID7 + "\",\"" + zuweisung.mitarbeiterID8 + "\",\"" + zuweisung.mitarbeiterID9 + "\",\"" + zuweisung.mitarbeiterID10 + "\")";
+
+
+    connection.query(sql, function(err, result) {
+      if (err) {
+        console.log(err)
+        reject(err);
+
+      } else {
+        resolve(zuweisung);
+      }
+    });
+
+
+  });
+}
+
+
+// Lesen einer Schichtzuweisungen eines Datums aus der DB
+var getSchichtzuweisung = function getSchichtzuweisung(date, schicht) {
+
+  return new Promise(function(resolve, reject) {
+
+    let sql = "SELECT id, DATE_FORMAT(datum, \"%W %M %e %Y\"), schichtArt, mitarbeiterID1, mitarbeiterID2,mitarbeiterID3,mitarbeiterID4,mitarbeiterID5,mitarbeiterID6,mitarbeiterID7,mitarbeiterID8,mitarbeiterID9,mitarbeiterID10 FROM schichtzuweisung WHERE datum = " + date "AND schichtArt = " + schicht;
+
+    connection.query(sql, function(err, result) {
+      if (err) reject(err);
+      else {
+
+        resolve(result);
+
+      }
+    });
+  });
+}
+
+// Lesen aller Schichtzuweisungen eines Datums aus der DB
+var getSchichtzuweisungen = function getSchichtzuweisungen(date) {
+
+  return new Promise(function(resolve, reject) {
+
+    let sql = "SELECT id, DATE_FORMAT(datum, \"%W %M %e %Y\"), schichtArt, mitarbeiterID1, mitarbeiterID2,mitarbeiterID3,mitarbeiterID4,mitarbeiterID5,mitarbeiterID6,mitarbeiterID7,mitarbeiterID8,mitarbeiterID9,mitarbeiterID10 FROM schichtzuweisung WHERE datum = " + date;
+
+    connection.query(sql, function(err, result) {
+      if (err) reject(err);
+      else {
+
+        resolve(result);
+
+      }
+    });
+  });
+}
+
+// Aktualisieren einer Schichtzuweisung
+var updateSchichtzuweisung = function updateSchichtzuweisung(date, schicht, schichtUpdate) {
+  return new Promise(function(resolve, reject) {
+
+    // Schichtzuweisung aktuallisieren
+
+    var sql = "UPDATE schichtzuweisung SET mitarbeiterID1 = \"" + schichtUpdate.miarbeiterID1 + "\",mitarbeiterID2 = \"" + schichtUpdate.miarbeiterID2 + "\",mitarbeiterID3 = \"" + schichtUpdate.miarbeiterID3 + "\",mitarbeiterID4 = \"" + schichtUpdate.miarbeiterID4 + "\", mitarbeiterID5 = \"" + schichtUpdate.miarbeiterID5 + "\",mitarbeiterID6 = \"" + schichtUpdate.miarbeiterID6 + "\", mitarbeiterID7 = \"" + schichtUpdate.miarbeiterID7 + "\",mitarbeiterID8 = \"" + schichtUpdate.miarbeiterID8 + "\",mitarbeiterID9 = \"" + schichtUpdate.miarbeiterID9 + "\", mitarbeiterID10 = \"" + schichtUpdate.miarbeiterID10 + "\", WHERE datum =" + date "AND schichtArt = " + schicht;
+
+
+    connection.query(sql, function(err, result) {
+      if (err) {
+        console.log(err)
+        reject(err);
+
+      } else {
+        resolve(result);
+        //console.log("Schicht wurde aktuallisiert");
+      }
+    });
+
+
+  });
+}
+
+
+// Löschen einer Schichtzuweisung
+var loescheZuweisung = function loescheZuweisung(date, schicht) {
+  return new Promise(function(resolve, reject) {
+
+    //Loeschen einer Schichtzuweisung
+
+    var sql = "DELETE FROM schichttausch WHERE date = " + date "AND schichtArt = " + schicht;
+
+
+    connection.query(sql, function(err, result) {
+      if (err) {
+        console.log(err)
+        reject(err);
+
+      } else {
+        resolve(result);
+      //  console.log("Schicht wurde gelöscht");
+      }
+    });
+
+
+  });
+}
+
 
 //****************************************************************************************************************************
 
