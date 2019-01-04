@@ -377,7 +377,7 @@ var neueSchichtzuweisung = function neueSchichtzuweisung(zuweisung) {
 
     //In der Datenbank hinzufügen
 
-    var sql = "INSERT INTO schichtzuweisung (datum, schichtArt, mitarbeiterID1, mitarbeiterID2, mitarbeiterID3,mitarbeiterID4,mitarbeiterID5,mitarbeiterID6,mitarbeiterID7,mitarbeiterID8,mitarbeiterID9,mitarbeiterID10) VALUES ( \"" + zuweisung.datum + "\",\"" + zuweisung.schichtArt + "\",\"" + zuweisung.mitarbeiterID1 + "\",\"" + zuweisung.mitarbeiterID2 + "\",\"" + zuweisung.mitarbeiterID3 + "\",\"" + zuweisung.mitarbeiterID4 + "\",\"" + zuweisung.mitarbeiterID5 + "\",\"" + zuweisung.mitarbeiterID6 + "\",\"" + zuweisung.mitarbeiterID7 + "\",\"" + zuweisung.mitarbeiterID8 + "\",\"" + zuweisung.mitarbeiterID9 + "\",\"" + zuweisung.mitarbeiterID10 + "\")";
+    var sql = "INSERT INTO schichtzuweisung (datum, schichtArt, mitarbeiterID1, mitarbeiterID2, mitarbeiterID3,mitarbeiterID4,mitarbeiterID5,mitarbeiterID6,mitarbeiterID7,mitarbeiterID8,mitarbeiterID9,mitarbeiterID10) VALUES ( \"" + zuweisung.datum + "\",\"" + zuweisung.schichtArt + "\",\"" + zuweisung.mitarbeiterID1 + "\",\"" + zuweisung.mitarbeiterID2 + "\",\"" + zuweisung.mitarbeiterID3 + "\",\"" + zuweisung.mitarbeiterID4 + "\")";
 
 
     connection.query(sql, function(err, result) {
@@ -400,7 +400,7 @@ var getSchichtzuweisung = function getSchichtzuweisung(date, schicht) {
 
   return new Promise(function(resolve, reject) {
 
-    let sql = "SELECT id, DATE_FORMAT(datum, \"%W %M %e %Y\"), schichtArt, mitarbeiterID1, mitarbeiterID2,mitarbeiterID3,mitarbeiterID4,mitarbeiterID5,mitarbeiterID6,mitarbeiterID7,mitarbeiterID8,mitarbeiterID9,mitarbeiterID10 FROM schichtzuweisung WHERE datum = " + date +"AND schichtArt = " + schicht;
+    let sql = "SELECT * FROM schichtzuweisung WHERE datum = " + date +"AND schichtArt = " + schicht;
 
     connection.query(sql, function(err, result) {
       if (err) reject(err);
@@ -418,7 +418,7 @@ var getSchichtzuweisungen = function getSchichtzuweisungen(date) {
 
   return new Promise(function(resolve, reject) {
 
-    let sql = "SELECT id, DATE_FORMAT(datum, \"%W %M %e %Y\"), schichtArt, mitarbeiterID1, mitarbeiterID2,mitarbeiterID3,mitarbeiterID4,mitarbeiterID5,mitarbeiterID6,mitarbeiterID7,mitarbeiterID8,mitarbeiterID9,mitarbeiterID10 FROM schichtzuweisung WHERE datum = " + date;
+    let sql = "SELECT * FROM schichtzuweisung WHERE datum = " + date;
 
     connection.query(sql, function(err, result) {
       if (err) reject(err);
@@ -437,7 +437,7 @@ var updateSchichtzuweisung = function updateSchichtzuweisung(date, schicht, schi
 
     // Schichtzuweisung aktuallisieren
 
-    var sql = "UPDATE schichtzuweisung SET mitarbeiterID1 = \"" + schichtUpdate.miarbeiterID1 + "\",mitarbeiterID2 = \"" + schichtUpdate.miarbeiterID2 + "\",mitarbeiterID3 = \"" + schichtUpdate.miarbeiterID3 + "\",mitarbeiterID4 = \"" + schichtUpdate.miarbeiterID4 + "\", mitarbeiterID5 = \"" + schichtUpdate.miarbeiterID5 + "\",mitarbeiterID6 = \"" + schichtUpdate.miarbeiterID6 + "\", mitarbeiterID7 = \"" + schichtUpdate.miarbeiterID7 + "\",mitarbeiterID8 = \"" + schichtUpdate.miarbeiterID8 + "\",mitarbeiterID9 = \"" + schichtUpdate.miarbeiterID9 + "\", mitarbeiterID10 = \"" + schichtUpdate.miarbeiterID10 + "\", WHERE datum =" + date + "AND schichtArt = " + schicht;
+    var sql = "UPDATE schichtzuweisung SET mitarbeiterID1 = \"" + schichtUpdate.miarbeiterID1 + "\",mitarbeiterID2 = \"" + schichtUpdate.miarbeiterID2 + "\",mitarbeiterID3 = \"" + schichtUpdate.miarbeiterID3 + "\",mitarbeiterID4 = \"" + schichtUpdate.miarbeiterID4 + "\" WHERE datum =" + date + "AND schichtArt = " + schicht;
 
 
     connection.query(sql, function(err, result) {
@@ -537,7 +537,7 @@ var getTag = function getTag(date) {
 
   return new Promise(function(resolve, reject) {
 
-    let sql = "SELECT id,schichtzuweisungID1, schichtzuweisungID2, schichtzuweisungID3, schichtzuweisungID4, DATE_FORMAT(datum, \"%W %M %e %Y\") FROM tag WHERE datum = " + date;
+    let sql = "SELECT * FROM tag WHERE datum = " + date;
 
     connection.query(sql, function(err, result) {
       if (err) reject(err);
@@ -577,7 +577,7 @@ var loescheTag = function loescheTag(date) {
 
 
 
-// Diensplan-Funktionen
+// Dienstplan-Funktionen
 //****************************************************************************************************************************
 
 // Lesen eines Dienstplans aus der DB
@@ -675,8 +675,7 @@ var neuerDienstplan = function neuerDienstplan(dp) {
 
     //In der Datenbank hinzufügen
 
-    var sql = "INSERT INTO dienstplan (stationID, datumBeginn, datumEnde, tag1, tag2,tag3,tag4,tag5,tag6,tag7,tag8,tag9,tag10,tag11,tag12,tag13,tag14,tag15,tag16,tag17,tag18,tag19,tag20,tag21,tag22,tag23,tag24,tag25,tag26,tag27,tag28,tag29,tag30,tag31) VALUES ( \"" + dp.stationID + "\",\"" + dp.datumBeginn + "\",\"" + dp.datumEnde + "\",\"" + dp.tag1 + "\",\"" + dp.tag2 + "\",\"" + dp.tag3 + "\",\"" + dp.tag4 + "\",\"" + dp.tag5 + "\",\"" + dp.tag6 + "\",\"" + dp.tag7 + "\",\"" + dp.tag8 + "\",\"" + dp.tag9 + "\",\"" + dp.tag10 + "\",\"" + dp.tag11 + "\",\"" + dp.tag12 + "\",\"" + dp.tag13 + "\",\"" + dp.tag14 + "\",\"" + dp.tag15 + "\",\"" + dp.tag16 + "\",\"" + dp.tag17 + "\",\"" + dp.tag18 + "\",\"" + dp.tag19 + "\",\"" + dp.tag20 + "\",\"" + dp.tag21 + "\",\"" + dp.tag22 + "\",\"" + dp.tag23 + "\",\"" + dp.tag24 + "\",\"" + dp.tag25 + "\",\"" + dp.tag26 + "\",\"" + dp.tag27 + "\",\"" + dp.tag28 + "\",\"" + dp.tag29 + "\",\"" + dp.tag30 + "\",\"" + dp.tag31 + "\")";
-
+    var sql = "INSERT INTO dienstplan (stationID, monat, tag1, tag2,tag3,tag4,tag5,tag6,tag7,tag8,tag9,tag10,tag11,tag12,tag13,tag14,tag15,tag16,tag17,tag18,tag19,tag20,tag21,tag22,tag23,tag24,tag25,tag26,tag27,tag28,tag29,tag30,tag31) VALUES ( \"" + dp.stationID + "\",\"" + dp.monat + "\",\"" + dp.monatsTage[0] + "\",\"" + dp.monatsTage[1] + "\",\"" + dp.monatsTage[2] + "\",\"" + dp.monatsTage[3] + "\",\"" + dp.monatsTage[4] + "\",\"" + dp.monatsTage[5] + "\",\"" + dp.monatsTage[6] + "\",\"" + dp.monatsTage[7] + "\",\"" + dp.monatsTage[8] + "\",\"" + dp.monatsTage[9] + "\",\"" + dp.monatsTage[10] + "\",\"" + dp.monatsTage[11] + "\",\"" + dp.monatsTage[12] + "\",\"" + dp.monatsTage[13] + "\",\"" + dp.monatsTage[14] + "\",\"" + dp.monatsTage[15] + "\",\"" + dp.monatsTage[16] + "\",\"" + dp.monatsTage[17] + "\",\"" + dp.monatsTage[18] + "\",\"" + dp.monatsTage[19] + "\",\"" + dp.monatsTage[20] + "\",\"" + dp.monatsTage[21] + "\",\"" + dp.monatsTage[22] + "\",\"" + dp.monatsTage[23] + "\",\"" + dp.monatsTage[24] + "\",\"" + dp.monatsTage[25] + "\",\"" + dp.monatsTage[26] + "\",\"" + dp.monatsTage[27] + "\",\"" + dp.monatsTage[28] + "\",\"" + dp.monatsTage[29] + "\",\"" + dp.monatsTage[30] + "\")";
 
     connection.query(sql, function(err, result) {
       if (err) {
@@ -939,7 +938,7 @@ exports.loescheTag = loescheTag;
 
 //Dienstplans
 exports.getDienstplan = getDienstplan;
-
+exports.neuerDienstplan = neuerDienstplan;
 
 
 

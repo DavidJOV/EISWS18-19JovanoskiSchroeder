@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Erstellungszeit: 04. Jan 2019 um 14:45
+-- Erstellungszeit: 04. Jan 2019 um 16:44
 -- Server-Version: 5.7.24-log
 -- PHP-Version: 7.2.10
 
@@ -140,7 +140,21 @@ CREATE TABLE `mitarbeiter` (
 
 INSERT INTO `mitarbeiter` (`id`, `stationID`, `anrede`, `vorname`, `name`, `beschaeftigungsArt`, `beschaeftigungsBeginn`, `rolle`, `wunschRating`, `dienstplanRating`, `ueberstunden`) VALUES
 (16, 1, 'Herr', 'Max', 'Mustermann', 'Teilzeit', '2018-12-13', 'Arzt', 2, 2, 24),
-(17, 1, 'Herr', 'Manfred', 'Mustermann', 'Teilzeit', '2018-12-13', 'Arzt', 0, 3, 0);
+(17, 1, 'Herr', 'Manfred', 'Mustermann', 'Teilzeit', '2018-12-13', 'Arzt', 0, 3, 0),
+(18, 1, 'Frau', 'Marta', 'Mustermann', 'VOLL', '2018-12-13', 'Krankenpfleger', 0, 0, 0),
+(19, 1, 'Frau', 'a', 'Mustermann', 'VOLL', '2018-12-13', 'Krankenpfleger', 0, 0, 0),
+(20, 1, 'Frau', 'b', 'Mustermann', 'VOLL', '2018-12-13', 'Krankenpfleger', 0, 0, 0),
+(21, 1, 'Frau', 'c', 'Mustermann', 'VOLL', '2018-12-13', 'Krankenpfleger', 0, 0, 0),
+(22, 1, 'Frau', 'd', 'Mustermann', 'VOLL', '2018-12-13', 'Krankenpfleger', 0, 0, 0),
+(23, 1, 'Frau', '8', 'Mustermann', 'VOLL', '2018-12-13', 'Krankenpfleger', 0, 0, 0),
+(24, 1, 'Frau', '9', 'Mustermann', 'VOLL', '2018-12-13', 'Krankenpfleger', 0, 0, 0),
+(25, 1, 'Frau', '10', 'Mustermann', 'VOLL', '2018-12-13', 'Krankenpfleger', 0, 0, 0),
+(26, 1, 'Frau', '11', 'Mustermann', 'VOLL', '2018-12-13', 'Krankenpfleger', 0, 0, 0),
+(27, 1, 'Frau', '12', 'Mustermann', 'VOLL', '2018-12-13', 'Krankenpfleger', 0, 0, 0),
+(28, 1, 'Frau', '13', 'Mustermann', 'VOLL', '2018-12-13', 'Krankenpfleger', 0, 0, 0),
+(29, 1, 'Frau', '14', 'Mustermann', 'VOLL', '2018-12-13', 'Krankenpfleger', 0, 0, 0),
+(30, 1, 'Frau', '15', 'Mustermann', 'VOLL', '2018-12-13', 'Krankenpfleger', 0, 0, 0),
+(31, 1, 'Frau', '16', 'Mustermann', 'VOLL', '2018-12-13', 'Krankenpfleger', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -171,29 +185,23 @@ INSERT INTO `schichttausch` (`stationID`, `mitarbeiterID`, `id`, `datumTausch`, 
 
 CREATE TABLE `schichtzuweisung` (
   `id` int(20) NOT NULL,
-  `datum` date NOT NULL,
+  `datum` varchar(15) NOT NULL,
   `schichtArt` varchar(30) NOT NULL,
   `mitarbeiterID1` int(10) NOT NULL,
   `mitarbeiterID2` int(10) NOT NULL,
   `mitarbeiterID3` int(10) NOT NULL,
-  `mitarbeiterID4` int(10) NOT NULL,
-  `mitarbeiterID5` int(10) NOT NULL,
-  `mitarbeiterID6` int(10) NOT NULL,
-  `mitarbeiterID7` int(10) NOT NULL,
-  `mitarbeiterID8` int(10) NOT NULL,
-  `mitarbeiterID9` int(10) NOT NULL,
-  `mitarbeiterID10` int(10) NOT NULL
+  `mitarbeiterID4` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `schichtzuweisung`
 --
 
-INSERT INTO `schichtzuweisung` (`id`, `datum`, `schichtArt`, `mitarbeiterID1`, `mitarbeiterID2`, `mitarbeiterID3`, `mitarbeiterID4`, `mitarbeiterID5`, `mitarbeiterID6`, `mitarbeiterID7`, `mitarbeiterID8`, `mitarbeiterID9`, `mitarbeiterID10`) VALUES
-(1, '2019-01-02', 'Frueschicht', 1, 2, 3, 4, 5, 6, 78, 8, 9, 88),
-(2, '2019-01-02', 'Spaetschicht', 2, 77, 3, 4, 5, 6, 78, 8, 9, 99),
-(3, '2019-01-02', 'Zwischenschicht', 2, 77, 3, 4, 5, 6, 78, 8, 9, 1),
-(4, '2019-01-02', 'Nachtschicht', 2, 77, 3, 4, 5, 6, 78, 8, 9, 33);
+INSERT INTO `schichtzuweisung` (`id`, `datum`, `schichtArt`, `mitarbeiterID1`, `mitarbeiterID2`, `mitarbeiterID3`, `mitarbeiterID4`) VALUES
+(1, '2019-01-02', 'Frueschicht', 1, 2, 3, 4),
+(2, '2019-01-02', 'Spaetschicht', 2, 77, 3, 4),
+(3, '2019-01-02', 'Zwischenschicht', 2, 77, 3, 4),
+(4, '2019-01-02', 'Nachtschicht', 2, 77, 3, 4);
 
 -- --------------------------------------------------------
 
@@ -223,7 +231,7 @@ CREATE TABLE `tag` (
   `schichtzuweisungID2` int(10) NOT NULL,
   `schichtzuweisungID3` int(10) NOT NULL,
   `schichtzuweisungID4` int(10) NOT NULL,
-  `datum` date NOT NULL
+  `datum` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -328,7 +336,7 @@ ALTER TABLE `abwesenheitsmeldung`
 -- AUTO_INCREMENT für Tabelle `mitarbeiter`
 --
 ALTER TABLE `mitarbeiter`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT für Tabelle `schichttausch`
