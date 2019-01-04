@@ -26,34 +26,64 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// Get auf einen einzelnen Tag eines Dienstplans
-router.get('/:id/:tagId', (req, res) => {
-    //DB req auf alle Dienstpläne
-    if (dienstplanListe === undefined) res.status(500).send("Could not read DATA");
-    else {// Kann auch mit der ID direkt in der DB gesucht werden.
-        const dienst = dienstplanListe.find(c => c.id === parseInt(req.params.id)); // Datenbank anbindung fehlt noch
-        if (!dienst) { res.status(404).send("Kein Dienstplan mit der angebenen ID vorhanden!"); }
 
-        else {
-          const tag = dienst.monatsTage.find(c => c.id === parseInt(req.params.tagId));
-          if (!tag) { res.status(404).send("Kein Tag mit der angebenen ID vorhanden!"); }
-            else {res.status(200).send(tag);}
-        }
-    }
+
+// Get auf einen einzelnen Tag eines Dienstplans
+/*
+router.get('/:id/:date', (req, res) => {
+    sqlHandler.getTag(req.params.date)
+    .then(function(tag){
+        res.status(200).send(tag);
+    })
+    .catch(function (err) {
+        res.status(400).send(err);
+    });
 });
+
+*/
+
+
+
+
+
+
 
 // Erstellen eines neuen Dienstplan
 router.post('/', bodyParser.json(), (req, res) => {
 
 
-  //var schichtzuweisung = new Object();
+  var schichtzuweisung = {
+      datum: "",
+      schichtArt: "",
+      mitarbeiterID1: "",
+      mitarbeiterID2: "",
+      mitarbeiterID3: "",
+      mitarbeiterID4: "",
+      mitarbeiterID5: "",
+      mitarbeiterID6: "",
+      mitarbeiterID7: "",
+      mitarbeiterID8: "",
+      mitarbeiterID9: "",
+      mitarbeiterID10: ""
+  }
 
-  //var tag = new Object();
+  var tag = {
+    schichtzuweisungID1: "",
+    schichtzuweisungID2: "",
+    schichtzuweisungID3: "",
+    schichtzuweisungID4: "",
+    datum: ""
+  }
+
+
+if req.body.datumBeginn
+
+
 
   // Schichtzuweiseungen -> Mitarbeiter eingeteilt (fair) -> Schichten Tagen zuordnen (Fair, Wünsche, Konrtolle Gesetze) -> Tage ins Array
 
     const dienstplan = {
-        stationID: req.body.stationID, // noch in Datenbank hinzufügen
+        stationID: req.body.stationID,
         datumBeginn: req.body.datumBeginn,
         datumEnde: req.body.datumEnde,
         monatsTage: []
@@ -68,7 +98,7 @@ router.post('/', bodyParser.json(), (req, res) => {
 
 
 // PUT Schichtzuweisung
-router.put('/:id/:tagId/:schichtzuweisungId', (req, res) => {
+router.put('/:id/:date/:schicht', (req, res) => {
 //sqlHandler
 
 

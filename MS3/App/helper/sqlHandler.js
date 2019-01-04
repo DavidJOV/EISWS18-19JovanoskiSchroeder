@@ -516,9 +516,7 @@ var getTage = function getTage() {
 
   return new Promise(function(resolve, reject) {
 
-    // Alle Tauschanfragen
-
-    let sql = "SELECT id,schichtzuweisungID1, schichtzuweisungID2, schichtzuweisungID3, schichtzuweisungID4, DATE_FORMAT(datum, \"%W %M %e %Y\") FROM tag";
+    let sql = "SELECT * FROM tag";
     connection.query(sql, function(err, result) {
       if (err) reject(err);
       else {
@@ -597,8 +595,7 @@ var getDienstplan = function getDienstplan(id) {
 
     var dienstplan = {
       stationID: "",
-      datumBeginn: "",
-      datumEnde: "",
+      monat: "",
       tage: [],
     }
 
@@ -613,8 +610,7 @@ var getDienstplan = function getDienstplan(id) {
       else if (result[0]!=undefined) {
 
         dienstplan.stationID = result[0].stationID;
-        dienstplan.datumBeginn = result[0].datumBeginn;
-        dienstplan.datumEnde = result[0].datumEnde;
+        dienstplan.monat = result[0].monat;
         dienstplan.tage = [result[0].tag1, result[0].tag2, result[0].tag3, result[0].tag4, result[0].tag5,
         result[0].tag6, result[0].tag7, result[0].tag8, result[0].tag9, result[0].tag10, result[0].tag11,
         result[0].tag12, result[0].tag13, result[0].tag14, result[0].tag15, result[0].tag16, result[0].tag17,
@@ -647,9 +643,9 @@ var getDienstplan = function getDienstplan(id) {
                 else {
 
                   var dienstplanErgebnis = {
-                    Metadaten: result,
-                    Tage: result2,
-                    Schichten: result3
+                    metadaten: result,
+                    tage: result2,
+                    schichten: result3
                   }
 
                   resolve(dienstplanErgebnis);
@@ -671,7 +667,31 @@ var getDienstplan = function getDienstplan(id) {
 }
 
 
+// Anlegen eines Dienstplans
 
+// Erstellen eines neuen Dienstplans
+var neuerDienstplan = function neuerDienstplan(dp) {
+  return new Promise(function(resolve, reject) {
+
+    //In der Datenbank hinzufügen
+
+    var sql = "INSERT INTO dienstplan (stationID, datumBeginn, datumEnde, tag1, tag2,tag3,tag4,tag5,tag6,tag7,tag8,tag9,tag10,tag11,tag12,tag13,tag14,tag15,tag16,tag17,tag18,tag19,tag20,tag21,tag22,tag23,tag24,tag25,tag26,tag27,tag28,tag29,tag30,tag31) VALUES ( \"" + dp.stationID + "\",\"" + dp.datumBeginn + "\",\"" + dp.datumEnde + "\",\"" + dp.tag1 + "\",\"" + dp.tag2 + "\",\"" + dp.tag3 + "\",\"" + dp.tag4 + "\",\"" + dp.tag5 + "\",\"" + dp.tag6 + "\",\"" + dp.tag7 + "\",\"" + dp.tag8 + "\",\"" + dp.tag9 + "\",\"" + dp.tag10 + "\",\"" + dp.tag11 + "\",\"" + dp.tag12 + "\",\"" + dp.tag13 + "\",\"" + dp.tag14 + "\",\"" + dp.tag15 + "\",\"" + dp.tag16 + "\",\"" + dp.tag17 + "\",\"" + dp.tag18 + "\",\"" + dp.tag19 + "\",\"" + dp.tag20 + "\",\"" + dp.tag21 + "\",\"" + dp.tag22 + "\",\"" + dp.tag23 + "\",\"" + dp.tag24 + "\",\"" + dp.tag25 + "\",\"" + dp.tag26 + "\",\"" + dp.tag27 + "\",\"" + dp.tag28 + "\",\"" + dp.tag29 + "\",\"" + dp.tag30 + "\",\"" + dp.tag31 + "\")";
+
+
+    connection.query(sql, function(err, result) {
+      if (err) {
+        console.log(err)
+        reject(err);
+
+      } else {
+        resolve(dp);
+      //  console.log("neuer Dienstplan");
+      }
+    });
+
+
+  });
+}
 
 
 

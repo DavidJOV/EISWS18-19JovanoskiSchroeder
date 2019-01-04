@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Erstellungszeit: 02. Jan 2019 um 19:04
+-- Erstellungszeit: 04. Jan 2019 um 14:45
 -- Server-Version: 5.7.24-log
 -- PHP-Version: 7.2.10
 
@@ -45,8 +45,7 @@ CREATE TABLE `abwesenheitsmeldung` (
 CREATE TABLE `dienstplan` (
   `stationID` int(9) NOT NULL,
   `id` int(9) NOT NULL,
-  `datumBeginn` date NOT NULL,
-  `datumEnde` date NOT NULL,
+  `monat` int(10) NOT NULL,
   `tag1` int(9) NOT NULL,
   `tag2` int(9) NOT NULL,
   `tag3` int(9) NOT NULL,
@@ -84,8 +83,8 @@ CREATE TABLE `dienstplan` (
 -- Daten für Tabelle `dienstplan`
 --
 
-INSERT INTO `dienstplan` (`stationID`, `id`, `datumBeginn`, `datumEnde`, `tag1`, `tag2`, `tag3`, `tag4`, `tag5`, `tag6`, `tag7`, `tag8`, `tag9`, `tag10`, `tag11`, `tag12`, `tag13`, `tag14`, `tag15`, `tag16`, `tag17`, `tag18`, `tag19`, `tag20`, `tag21`, `tag22`, `tag23`, `tag24`, `tag25`, `tag26`, `tag27`, `tag28`, `tag29`, `tag30`, `tag31`) VALUES
-(2, 1, '2019-01-02', '2019-01-31', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31);
+INSERT INTO `dienstplan` (`stationID`, `id`, `monat`, `tag1`, `tag2`, `tag3`, `tag4`, `tag5`, `tag6`, `tag7`, `tag8`, `tag9`, `tag10`, `tag11`, `tag12`, `tag13`, `tag14`, `tag15`, `tag16`, `tag17`, `tag18`, `tag19`, `tag20`, `tag21`, `tag22`, `tag23`, `tag24`, `tag25`, `tag26`, `tag27`, `tag28`, `tag29`, `tag30`, `tag31`) VALUES
+(2, 1, 11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31);
 
 -- --------------------------------------------------------
 
@@ -232,7 +231,8 @@ CREATE TABLE `tag` (
 --
 
 INSERT INTO `tag` (`id`, `schichtzuweisungID1`, `schichtzuweisungID2`, `schichtzuweisungID3`, `schichtzuweisungID4`, `datum`) VALUES
-(1, 1, 2, 3, 4, '2019-01-02');
+(1, 1, 2, 3, 4, '2019-01-02'),
+(2, 3, 5, 6, 99, '2019-05-01');
 
 -- --------------------------------------------------------
 
