@@ -5,6 +5,7 @@ var connection = mysql.createConnection({
     user: 'root',
     password: 'root',
     database: 'sistershift',
+    timezone: 'gmt', // <-- Sehr wichtig! Löst das Problem der falsch formatierten Datumsangabe
     multipleStatements : false // Sicherheits Aspekt - keine Sql injections.
 });
 connection.connect(function (err) {

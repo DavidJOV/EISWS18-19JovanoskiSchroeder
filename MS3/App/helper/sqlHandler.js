@@ -400,7 +400,7 @@ var getSchichtzuweisung = function getSchichtzuweisung(date, schicht) {
 
   return new Promise(function(resolve, reject) {
 
-    let sql = "SELECT id, DATE_FORMAT(datum, \"%W %M %e %Y\"), schichtArt, mitarbeiterID1, mitarbeiterID2,mitarbeiterID3,mitarbeiterID4,mitarbeiterID5,mitarbeiterID6,mitarbeiterID7,mitarbeiterID8,mitarbeiterID9,mitarbeiterID10 FROM schichtzuweisung WHERE datum = " + date "AND schichtArt = " + schicht;
+    let sql = "SELECT id, DATE_FORMAT(datum, \"%W %M %e %Y\"), schichtArt, mitarbeiterID1, mitarbeiterID2,mitarbeiterID3,mitarbeiterID4,mitarbeiterID5,mitarbeiterID6,mitarbeiterID7,mitarbeiterID8,mitarbeiterID9,mitarbeiterID10 FROM schichtzuweisung WHERE datum = " + date +"AND schichtArt = " + schicht;
 
     connection.query(sql, function(err, result) {
       if (err) reject(err);
@@ -437,7 +437,7 @@ var updateSchichtzuweisung = function updateSchichtzuweisung(date, schicht, schi
 
     // Schichtzuweisung aktuallisieren
 
-    var sql = "UPDATE schichtzuweisung SET mitarbeiterID1 = \"" + schichtUpdate.miarbeiterID1 + "\",mitarbeiterID2 = \"" + schichtUpdate.miarbeiterID2 + "\",mitarbeiterID3 = \"" + schichtUpdate.miarbeiterID3 + "\",mitarbeiterID4 = \"" + schichtUpdate.miarbeiterID4 + "\", mitarbeiterID5 = \"" + schichtUpdate.miarbeiterID5 + "\",mitarbeiterID6 = \"" + schichtUpdate.miarbeiterID6 + "\", mitarbeiterID7 = \"" + schichtUpdate.miarbeiterID7 + "\",mitarbeiterID8 = \"" + schichtUpdate.miarbeiterID8 + "\",mitarbeiterID9 = \"" + schichtUpdate.miarbeiterID9 + "\", mitarbeiterID10 = \"" + schichtUpdate.miarbeiterID10 + "\", WHERE datum =" + date "AND schichtArt = " + schicht;
+    var sql = "UPDATE schichtzuweisung SET mitarbeiterID1 = \"" + schichtUpdate.miarbeiterID1 + "\",mitarbeiterID2 = \"" + schichtUpdate.miarbeiterID2 + "\",mitarbeiterID3 = \"" + schichtUpdate.miarbeiterID3 + "\",mitarbeiterID4 = \"" + schichtUpdate.miarbeiterID4 + "\", mitarbeiterID5 = \"" + schichtUpdate.miarbeiterID5 + "\",mitarbeiterID6 = \"" + schichtUpdate.miarbeiterID6 + "\", mitarbeiterID7 = \"" + schichtUpdate.miarbeiterID7 + "\",mitarbeiterID8 = \"" + schichtUpdate.miarbeiterID8 + "\",mitarbeiterID9 = \"" + schichtUpdate.miarbeiterID9 + "\", mitarbeiterID10 = \"" + schichtUpdate.miarbeiterID10 + "\", WHERE datum =" + date + "AND schichtArt = " + schicht;
 
 
     connection.query(sql, function(err, result) {
@@ -462,7 +462,7 @@ var loescheSchichtzuweisung = function loescheSchichtzuweisung(date, schicht) {
 
     //Loeschen einer Schichtzuweisung
 
-    var sql = "DELETE FROM schichttausch WHERE date = " + date "AND schichtArt = " + schicht;
+    var sql = "DELETE FROM schichttausch WHERE date = " + date +"AND schichtArt = " + schicht;
 
 
     connection.query(sql, function(err, result) {
