@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Erstellungszeit: 04. Jan 2019 um 16:44
--- Server-Version: 5.7.24-log
--- PHP-Version: 7.2.10
+-- Erstellungszeit: 05. Jan 2019 um 23:36
+-- Server-Version: 5.6.34-log
+-- PHP-Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -46,45 +46,38 @@ CREATE TABLE `dienstplan` (
   `stationID` int(9) NOT NULL,
   `id` int(9) NOT NULL,
   `monat` int(10) NOT NULL,
-  `tag1` int(9) NOT NULL,
-  `tag2` int(9) NOT NULL,
-  `tag3` int(9) NOT NULL,
-  `tag4` int(9) NOT NULL,
-  `tag5` int(9) NOT NULL,
-  `tag6` int(9) NOT NULL,
-  `tag7` int(9) NOT NULL,
-  `tag8` int(9) NOT NULL,
-  `tag9` int(9) NOT NULL,
-  `tag10` int(9) NOT NULL,
-  `tag11` int(9) NOT NULL,
-  `tag12` int(9) NOT NULL,
-  `tag13` int(9) NOT NULL,
-  `tag14` int(9) NOT NULL,
-  `tag15` int(9) NOT NULL,
-  `tag16` int(9) NOT NULL,
-  `tag17` int(9) NOT NULL,
-  `tag18` int(9) NOT NULL,
-  `tag19` int(9) NOT NULL,
-  `tag20` int(9) NOT NULL,
-  `tag21` int(9) NOT NULL,
-  `tag22` int(9) NOT NULL,
-  `tag23` int(9) NOT NULL,
-  `tag24` int(9) NOT NULL,
-  `tag25` int(9) NOT NULL,
-  `tag26` int(9) NOT NULL,
-  `tag27` int(9) NOT NULL,
-  `tag28` int(9) NOT NULL,
-  `tag29` int(9) NOT NULL,
-  `tag30` int(9) NOT NULL,
-  `tag31` int(9) NOT NULL
+  `tag1` int(9) DEFAULT NULL,
+  `tag2` int(9) DEFAULT NULL,
+  `tag3` int(9) DEFAULT NULL,
+  `tag4` int(9) DEFAULT NULL,
+  `tag5` int(9) DEFAULT NULL,
+  `tag6` int(9) DEFAULT NULL,
+  `tag7` int(9) DEFAULT NULL,
+  `tag8` int(9) DEFAULT NULL,
+  `tag9` int(9) DEFAULT NULL,
+  `tag10` int(9) DEFAULT NULL,
+  `tag11` int(9) DEFAULT NULL,
+  `tag12` int(9) DEFAULT NULL,
+  `tag13` int(9) DEFAULT NULL,
+  `tag14` int(9) DEFAULT NULL,
+  `tag15` int(9) DEFAULT NULL,
+  `tag16` int(9) DEFAULT NULL,
+  `tag17` int(9) DEFAULT NULL,
+  `tag18` int(9) DEFAULT NULL,
+  `tag19` int(9) DEFAULT NULL,
+  `tag20` int(9) DEFAULT NULL,
+  `tag21` int(9) DEFAULT NULL,
+  `tag22` int(9) DEFAULT NULL,
+  `tag23` int(9) DEFAULT NULL,
+  `tag24` int(9) DEFAULT NULL,
+  `tag25` int(9) DEFAULT NULL,
+  `tag26` int(9) DEFAULT NULL,
+  `tag27` int(9) DEFAULT NULL,
+  `tag28` int(9) DEFAULT NULL,
+  `tag29` int(9) DEFAULT NULL,
+  `tag30` int(9) DEFAULT NULL,
+  `tag31` int(9) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Daten für Tabelle `dienstplan`
---
-
-INSERT INTO `dienstplan` (`stationID`, `id`, `monat`, `tag1`, `tag2`, `tag3`, `tag4`, `tag5`, `tag6`, `tag7`, `tag8`, `tag9`, `tag10`, `tag11`, `tag12`, `tag13`, `tag14`, `tag15`, `tag16`, `tag17`, `tag18`, `tag19`, `tag20`, `tag21`, `tag22`, `tag23`, `tag24`, `tag25`, `tag26`, `tag27`, `tag28`, `tag29`, `tag30`, `tag31`) VALUES
-(2, 1, 11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31);
 
 -- --------------------------------------------------------
 
@@ -193,16 +186,6 @@ CREATE TABLE `schichtzuweisung` (
   `mitarbeiterID4` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Daten für Tabelle `schichtzuweisung`
---
-
-INSERT INTO `schichtzuweisung` (`id`, `datum`, `schichtArt`, `mitarbeiterID1`, `mitarbeiterID2`, `mitarbeiterID3`, `mitarbeiterID4`) VALUES
-(1, '2019-01-02', 'Frueschicht', 1, 2, 3, 4),
-(2, '2019-01-02', 'Spaetschicht', 2, 77, 3, 4),
-(3, '2019-01-02', 'Zwischenschicht', 2, 77, 3, 4),
-(4, '2019-01-02', 'Nachtschicht', 2, 77, 3, 4);
-
 -- --------------------------------------------------------
 
 --
@@ -233,14 +216,6 @@ CREATE TABLE `tag` (
   `schichtzuweisungID4` int(10) NOT NULL,
   `datum` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Daten für Tabelle `tag`
---
-
-INSERT INTO `tag` (`id`, `schichtzuweisungID1`, `schichtzuweisungID2`, `schichtzuweisungID3`, `schichtzuweisungID4`, `datum`) VALUES
-(1, 1, 2, 3, 4, '2019-01-02'),
-(2, 3, 5, 6, 99, '2019-05-01');
 
 -- --------------------------------------------------------
 
@@ -331,37 +306,41 @@ ALTER TABLE `wunsch`
 --
 ALTER TABLE `abwesenheitsmeldung`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+--
+-- AUTO_INCREMENT für Tabelle `dienstplan`
+--
+ALTER TABLE `dienstplan`
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=186;
 --
 -- AUTO_INCREMENT für Tabelle `mitarbeiter`
 --
 ALTER TABLE `mitarbeiter`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
-
 --
 -- AUTO_INCREMENT für Tabelle `schichttausch`
 --
 ALTER TABLE `schichttausch`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT für Tabelle `schichtzuweisung`
 --
 ALTER TABLE `schichtzuweisung`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7397;
 --
 -- AUTO_INCREMENT für Tabelle `station`
 --
 ALTER TABLE `station`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
-
+--
+-- AUTO_INCREMENT für Tabelle `tag`
+--
+ALTER TABLE `tag`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1978;
 --
 -- AUTO_INCREMENT für Tabelle `wunsch`
 --
 ALTER TABLE `wunsch`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
-COMMIT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
