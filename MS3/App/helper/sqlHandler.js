@@ -491,23 +491,23 @@ var loescheSchichtzuweisung = function loescheSchichtzuweisung(date, schicht) {
 // Erstellen eines neuen Tags
 var neuerTag = function neuerTag(tag) {
     return new Promise(function(resolve, reject) {
-        
+
         //In der Datenbank hinzufügen
-       // console.log(tag)
+        // console.log(tag)
         var sql = "INSERT INTO tag (schichtzuweisungID1, schichtzuweisungID2, schichtzuweisungID3, schichtzuweisungID4, datum) VALUES ( \"" + tag.schichtzuweisungID1 + "\",\"" + tag.schichtzuweisungID2 + "\",\"" + tag.schichtzuweisungID3 + "\",\"" + tag.schichtzuweisungID4 + "\",\"" + tag.datum + "\")";
 
 
         connection.query(sql, function(err, result) {
-         
-          
+
+
             if (err) {
                 console.log(err)
                 reject(err);
 
             } else {
-              
+
                 //console.log(neuerTag) // Loggt immer den Letzen Tag schreibt aber den richtigen in die DB wieso???
-              resolve(tag)
+                resolve(tag)
 
             }
         })
@@ -519,12 +519,12 @@ var neuerTag = function neuerTag(tag) {
 var getTage = function getTage() {
 
     return new Promise(function(resolve, reject) {
-      
+
         let sql = "SELECT * FROM tag";
         connection.query(sql, function(err, result) {
             if (err) reject(err);
             else {
-             
+
                 resolve(result);
 
             }
@@ -540,16 +540,16 @@ var getTage = function getTage() {
 var getTag = function getTag(date) {
 
     return new Promise(function(resolve, reject) {
-      var neuerTag;
-        let sql = "SELECT * FROM tag WHERE datum = " + "\""+date+"\"";
+        var neuerTag;
+        let sql = "SELECT * FROM tag WHERE datum = " + "\"" + date + "\"";
 
         connection.query(sql, function(err, result) {
             if (err) reject(err);
             else {
-              neuerTag= {
-                tag : result
-              }
-                
+                neuerTag = {
+                    tag: result
+                }
+
                 resolve(neuerTag);
 
             }
@@ -594,7 +594,7 @@ var getDienstplan = function getDienstplan(id) {
     return new Promise(function(resolve, reject) {
 
         //  Dienstplan mit gennanter ID
-
+        var arrayTage = new Array();
         var tage = {
             schichtzuweisung: []
         }
@@ -603,11 +603,11 @@ var getDienstplan = function getDienstplan(id) {
         var dienstplan = {
             stationID: "",
             monat: "",
-            tage: [],
+            tage: []
         }
-
-        var maxAnzahlTage = 31;
-        var maxSchichten = 4;
+        
+        var maxAnzahlTage;
+        
 
         let sql = "SELECT * FROM dienstplan WHERE id = " + id;
 
@@ -625,23 +625,24 @@ var getDienstplan = function getDienstplan(id) {
                 result[0].tag24, result[0].tag25, result[0].tag26, result[0].tag27, result[0].tag28, result[0].tag29,
                 result[0].tag30, result[0].tag31];
 
+               maxAnzahlTage = tagZaehler(dienstplan.monat,"2019");
 
-
-                for (let i = 0; i < 1; i++) {
-
+                for (let i = 0; i < maxAnzahlTage; i++) {
+                   
                     let sql2 = "SELECT * FROM tag WHERE id = " + dienstplan.tage[i]; // WORKAROUND -> NICHT HARDCODEN!!!
-
+                    
 
                     connection.query(sql2, function(err, result2) {
                         if (err) reject(err);
                         else {
-
                             tage.schichtzuweisung[i] = {
                                 fruehschicht: result2[0].schichtzuweisungID1,
                                 zwischenschicht: result2[0].schichtzuweisungID2,
                                 spaetschicht: result2[0].schichtzuweisungID3,
                                 nachtschicht: result2[0].schichtzuweisungID4
                             }
+                            arrayTage.push(result2)
+                          }
 
                             let sql3 = "SELECT * FROM schichtzuweisung WHERE id = " + tage.schichtzuweisung[i].fruehschicht + " OR " + tage.schichtzuweisung[i].zwischenschicht + " OR " + tage.schichtzuweisung[i].spaetschicht + " OR " + tage.schichtzuweisung[i].nachtschicht;
 
@@ -651,16 +652,16 @@ var getDienstplan = function getDienstplan(id) {
 
                                     var dienstplanErgebnis = {
                                         metadaten: result,
-                                        tage: result2,
+                                        tage: arrayTage,
                                         schichten: result3
                                     }
-
-                                    resolve(dienstplanErgebnis);
+                                    resolve(dienstplanErgebnis)
+                                  
 
                                 }
                             });
 
-                        }
+                        
 
                     });
 
@@ -679,40 +680,40 @@ var getDienstplan = function getDienstplan(id) {
 // Erstellen eines neuen Dienstplans
 var neuerDienstplan = function neuerDienstplan(dp) {
     return new Promise(function(resolve, reject) {
-      var tag29;
-      var tag30;
-      var tag31;
+        var tag29;
+        var tag30;
+        var tag31;
         //In der Datenbank hinzufügen
-      
-     var anzahlTage = tagZaehler(dp.monat,"2019");
-     // Februar
-     if(anzahlTage < 29){
-       tag29 = -1;
-       tag30 = -1;
-       tag31 = -1;
-     }
-     // Schaltjahr
-     else if(anzahlTage < 30){
-      tag29 = dp.monatsTage[28].tag[0].id;
-      tag30 = -1;
-      tag31 = -1;
-    }// Monate mit 30 Tagen
-     else if(anzahlTage < 31){
-      tag29 = dp.monatsTage[28].tag[0].id;
-      tag30 = dp.monatsTage[29].tag[0].id; 
-      tag31 = -1;
-     }//Monate mit 31 Tagen
-     else{
-       tag29 = dp.monatsTage[28].tag[0].id;
-       tag30 = dp.monatsTage[29].tag[0].id;
-       tag31 = dp.monatsTage[30].tag[0].id;
-     }
-      
-      
-      
-      
+
+        var anzahlTage = tagZaehler(dp.monat, "2019");
+        // Februar
+        if (anzahlTage < 29) {
+            tag29 = -1;
+            tag30 = -1;
+            tag31 = -1;
+        }
+        // Schaltjahr
+        else if (anzahlTage < 30) {
+            tag29 = dp.monatsTage[28].tag[0].id;
+            tag30 = -1;
+            tag31 = -1;
+        }// Monate mit 30 Tagen
+        else if (anzahlTage < 31) {
+            tag29 = dp.monatsTage[28].tag[0].id;
+            tag30 = dp.monatsTage[29].tag[0].id;
+            tag31 = -1;
+        }//Monate mit 31 Tagen
+        else {
+            tag29 = dp.monatsTage[28].tag[0].id;
+            tag30 = dp.monatsTage[29].tag[0].id;
+            tag31 = dp.monatsTage[30].tag[0].id;
+        }
+
+
+
+
         var sql = "INSERT INTO dienstplan (stationID, monat, tag1, tag2,tag3,tag4,tag5,tag6,tag7,tag8,tag9,tag10,tag11,tag12,tag13,tag14,tag15,tag16,tag17,tag18,tag19,tag20,tag21,tag22,tag23,tag24,tag25,tag26,tag27,tag28,tag29,tag30,tag31) VALUES ( \"" + dp.stationID + "\",\"" + dp.monat + "\",\"" + dp.monatsTage[0].tag[0].id + "\",\"" + dp.monatsTage[1].tag[0].id + "\",\"" + dp.monatsTage[2].tag[0].id + "\",\"" + dp.monatsTage[3].tag[0].id + "\",\"" + dp.monatsTage[4].tag[0].id + "\",\"" + dp.monatsTage[5].tag[0].id + "\",\"" + dp.monatsTage[6].tag[0].id + "\",\"" + dp.monatsTage[7].tag[0].id + "\",\"" + dp.monatsTage[8].tag[0].id + "\",\"" + dp.monatsTage[9].tag[0].id + "\",\"" + dp.monatsTage[10].tag[0].id + "\",\"" + dp.monatsTage[11].tag[0].id + "\",\"" + dp.monatsTage[12].tag[0].id + "\",\"" + dp.monatsTage[13].tag[0].id + "\",\"" + dp.monatsTage[14].tag[0].id + "\",\"" + dp.monatsTage[15].tag[0].id + "\",\"" + dp.monatsTage[16].tag[0].id + "\",\"" + dp.monatsTage[17].tag[0].id + "\",\"" + dp.monatsTage[18].tag[0].id + "\",\"" + dp.monatsTage[19].tag[0].id + "\",\"" + dp.monatsTage[20].tag[0].id + "\",\"" + dp.monatsTage[21].tag[0].id + "\",\"" + dp.monatsTage[22].tag[0].id + "\",\"" + dp.monatsTage[23].tag[0].id + "\",\"" + dp.monatsTage[24].tag[0].id + "\",\"" + dp.monatsTage[25].tag[0].id + "\",\"" + dp.monatsTage[26].tag[0].id + "\",\"" + dp.monatsTage[27].tag[0].id + "\",\"" + tag29 + "\",\"" + tag30 + "\",\"" + tag31 + "\")";
-        
+
         connection.query(sql, function(err, result) {
             if (err) {
                 console.log(err)
