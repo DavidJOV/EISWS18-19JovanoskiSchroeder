@@ -65,7 +65,7 @@ router.post('/', bodyParser.json(), (req, res) => {
     const dienstplan = {
         stationID: req.body.stationID,
         monat: req.body.monat,
-        monatsTage: []
+        monatsTage: new Array()
     };
 
 
@@ -104,7 +104,7 @@ router.post('/', bodyParser.json(), (req, res) => {
 
             console.log("TAGE:\n" + anzahlTage);
 
-            for (let i = 1; i <= 5; i++) {
+            for (let i = 1; i <= anzahlTage; i++) {
                 var promiseTage = new Promise(function(resolve, reject) {
 
                     for (let j = 0; j <= anzahlSchichten; j++) {
@@ -194,7 +194,7 @@ router.post('/', bodyParser.json(), (req, res) => {
                         if (j == 3) {
                             let datum = i + "-" + req.body.monat + "-2019";
                             if (i < 10) { datum = "0" + i + "-" + req.body.monat + "-2019"; }
-                            console.log(datum)
+                            
                             schichtzuweisung.datum = datum;
                             schichtzuweisung.schichtArt = "Nachtschicht";
                             schichtzuweisung.mitarbeiterID1 = mitarbeiterListe[12].id;
@@ -226,20 +226,38 @@ router.post('/', bodyParser.json(), (req, res) => {
                 })
 
 
-
+                var promiseDienstplan = new Promise(function(resolve, reject) {
 
                 promiseTage.then(function(tag) {
 
-
+                   // console.log(tag) // -> loggt die richtigen Tage
 
                     sqlHandler.neuerTag(tag)
-                        .then(function(tag) {
-                            if (tag === undefined) console.log("Tag konnte nicht erstellt werden");
-                            else {
-                                dienstplan.monatsTage[i - 1] = tag;
-                            }
+                        .then(function() {
+                            
+                                let datum = i + "-" + req.body.monat + "-2019";
+                            if (i < 10) { datum = "0" + i + "-" + req.body.monat + "-2019"; }
+                                
+                            sqlHandler.getTag(datum)
+                                .then(function(tag) {
+                                   
+                                    if (tag === undefined) console.log("Tag konnte nicht erstellt werden");
+                                    else {
+                                        dienstplan.monatsTage.push(tag);
+                                        if(i==anzahlTage){
+                                            
+                                                resolve(dienstplan)
+                                        
+                                    }
+                                }
 
+                                })
+                                .catch(function(err) {
+                                    console.log(err);
+                                });
+                            
                         })
+
                         .catch(function(err) {
                             console.log(err);
                         });
@@ -247,31 +265,39 @@ router.post('/', bodyParser.json(), (req, res) => {
                     .catch(function(err) {
                         console.log(err);
                     });
-
+                
                 // .then...
 
 
 
-
-
+            });
+                
 
             } // For Schleife i
+            promiseDienstplan.then(function(dienstplan){
+
+                
+                
+
+                sqlHandler.neuerDienstplan(dienstplan)
+                    .then(function(dienstplan) {
+                        if (dienstplan === undefined) res.status(400).send("Dienstplan konnte nicht erstellt werden");
+                        else {
+                            res.status(201).send(dienstplan);
+                        }
+            
+                    })
+                    .catch(function(err) {
+                        res.status(400).send(err);
+                    });
+                });
         }).catch(function(err) { //
             console.log(err); //
-        });
-
-
-    sqlHandler.neuerDienstplan(dienstplan)
-        .then(function(dienstplan) {
-            if (dienstplan === undefined) res.status(400).send("Dienstplan konnte nicht erstellt werden");
-            else {
-                res.status(201).send(dienstplan);
-            }
-
         })
-        .catch(function(err) {
-            res.status(400).send(err);
-        });
+        
+    
+       
+
 
 
 });
