@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
-var sqlHandler = require("../helper/sqlHandler");
+var sqlHandler = require("../helper/sqlHandler.js");
 var tagZaehler = require("../helper/tagberechnung.js").getDaysInMonth;
+var counter = require("../helper/overgiveAsync.js");
 
 
 
@@ -18,12 +19,12 @@ router.get('/', (req, res) => {
 // Get auf einen einzelnen Dienstplan
 router.get('/:id', (req, res) => {
     sqlHandler.getDienstplan(req.params.id)
-    .then(function(dienstplan){
+        .then(function(dienstplan) {
             res.status(200).send(dienstplan);
-    })
-    .catch(function (err) {
-        res.status(400).send(err);
-    });
+        })
+        .catch(function(err) {
+            res.status(400).send(err);
+        });
 });
 
 
@@ -51,195 +52,226 @@ router.get('/:id/:date', (req, res) => {
 // Erstellen eines neuen Dienstplan
 router.post('/', bodyParser.json(), (req, res) => {
 
-  var mitarbeiterListe;
-  var anzahlSchichten = 4;
-  var anzahlMitarbeiterSchicht = 4;
-
-  const dienstplan = {
-      stationID: req.body.stationID,
-      monat: req.body.monat,
-      monatsTage: []
-  };
 
 
-  var schichtzuweisung = {
-      datum: "",
-      schichtArt: "",
-      mitarbeiterID1: "",
-      mitarbeiterID2: "",
-      mitarbeiterID3: "",
-      mitarbeiterID4: ""
-  }
+    var mitarbeiterListe;
+    var anzahlSchichten = 4;
+    var anzahlMitarbeiterSchicht = 4;
+    var fruehschicht = "Fruehschicht";
+    var spaetschicht = "Spaetschicht";
+    var zwischenschicht = "Zwischenschicht";
+    var nachtschicht = "Nachtschicht";
 
-  var tag = {
-    schichtzuweisungID1: "",
-    schichtzuweisungID2: "",
-    schichtzuweisungID3: "",
-    schichtzuweisungID4: "",
-    datum: ""
-  }
+    const dienstplan = {
+        stationID: req.body.stationID,
+        monat: req.body.monat,
+        monatsTage: []
+    };
 
 
-  sqlHandler.getMitarbeiter()
-       .then(function (maListe) { // <- So ist es richtig! Noch bei den anderen Funktionen ändern!!!!
-           if (maListe === undefined) console.log("Keine Mitarbeiter vorhanden!");
-           else {
-
-             mitarbeiterListe = maListe;
-
-             console.log("1:\n");
-             console.log(mitarbeiterListe);
-
-
-             console.log("2:\n");
-             console.log(JSON.parse(mitarbeiterListe));
-
-             console.log("3:\n");
-             console.log(JSON.stringify(mitarbeiterListe));
-
-           }
-       })
-       .catch(function (error) {
-           console.log(error);
-       }).then(function(mitarbeiterListe){
-
-  var anzahlTage = tagZaehler(req.body.monat,2019,0); // Berechnung Tage im Monat x
-    console.log(anzahlTage);
-    console.log("TAGE:\n"+anzahlTage);
-
-  for (let i = 1 ; i <= anzahlTage ; i++) {
-    for (let j = 0 ; j< anzahlSchichten ; j++){
-       if (j == 0) {
-         let datum = i+"-"+req.body.monat+"-2019";
-            if(i<10){datum="0"+i+"-"+req.body.monat+"-2019";}
-
-console.log("Array POSITION 1: \n" +mitarbeiterListe[0]);
-
-
-        schichtzuweisung.datum=datum;
-        schichtzuweisung.schichtArt="Frueschicht";
-        schichtzuweisung.mitarbeiterID1=mitarbeiterListe[0].id;
-        schichtzuweisung.mitarbeiterID2=mitarbeiterListe[1].id;
-        schichtzuweisung.mitarbeiterID3=mitarbeiterListe[2].id;
-        schichtzuweisung.mitarbeiterID4=mitarbeiterListe[3].id;
-        sqlHandler.neueSchichtzuweisung(schichtzuweisung)
-        .then(function (schichtzuweisung) {
-            if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht erstellt werden");
-        })
-        .catch(function (err) {
-            console.log(err);
-        }).then(function(schichtzuweisung){
-          sqlHandler.getSchichtzuweisung(schichtzuweisung.datum, schichtzuweisung.schichtArt)
-          .then(function(schicht){
-            tag.schichtzuweisungID1=schicht.id;
-          })
-        })
-       }
-
-
-       if (j == 1) {
-         let datum = i+"-"+req.body.monat+"-2019";
-            if(i<10){datum="0"+i+"-"+req.body.monat+"-2019";}
-        schichtzuweisung.datum=datum;
-        schichtzuweisung.schichtArt="Zwischenschicht";
-        schichtzuweisung.mitarbeiterID1=mitarbeiterListe[4].id;
-        schichtzuweisung.mitarbeiterID2=mitarbeiterListe[5].id;
-        schichtzuweisung.mitarbeiterID3=mitarbeiterListe[6].id;
-        schichtzuweisung.mitarbeiterID4=mitarbeiterListe[7].id;
-        sqlHandler.neueSchichtzuweisung(schichtzuweisung)
-        .then(function (schichtzuweisung) {
-            if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht erstellt werden");
-        })
-        .catch(function (err) {
-            console.log(err);
-        }).then(function(schichtzuweisung){
-          sqlHandler.getSchichtzuweisung(schichtzuweisung.datum, schichtzuweisung.schichtArt)
-          .then(function(schicht){
-            tag.schichtzuweisungID2=schicht.id;
-          })
-        })
-       }
-
-
-       if (j == 3) {
-         let datum = i+"-"+req.body.monat+"-2019";
-            if(i<10){datum="0"+i+"-"+req.body.monat+"-2019";}
-        schichtzuweisung.datum=datum;
-        schichtzuweisung.schichtArt="Spaetschicht";
-        schichtzuweisung.mitarbeiterID1=mitarbeiterListe[8].id;
-        schichtzuweisung.mitarbeiterID2=mitarbeiterListe[9].id;
-        schichtzuweisung.mitarbeiterID3=mitarbeiterListe[10].id;
-        schichtzuweisung.mitarbeiterID4=mitarbeiterListe[11].id;
-        sqlHandler.neueSchichtzuweisung(schichtzuweisung)
-        .then(function (schichtzuweisung) {
-            if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht erstellt werden");
-        })
-        .catch(function (err) {
-            console.log(err);
-        }).then(function(schichtzuweisung){
-          sqlHandler.getSchichtzuweisung(schichtzuweisung.datum, schichtzuweisung.schichtArt)
-          .then(function(schicht){
-            tag.schichtzuweisungID3=schicht.id;
-          })
-        })
-       }
-
-
-       if (j == 4) {
-         let datum = i+"-"+req.body.monat+"-2019";
-            if(i<10){datum="0"+i+"-"+req.body.monat+"-2019";}
-        schichtzuweisung.datum=datum;
-        schichtzuweisung.schichtArt="Nachtschiht";
-        schichtzuweisung.mitarbeiterID1=mitarbeiterListe[12].id;
-        schichtzuweisung.mitarbeiterID2=mitarbeiterListe[13].id;
-        schichtzuweisung.mitarbeiterID3=mitarbeiterListe[14].id;
-        schichtzuweisung.mitarbeiterID4=mitarbeiterListe[15].id;
-        sqlHandler.neueSchichtzuweisung(schichtzuweisung)
-        .then(function (schichtzuweisung) {
-            if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht erstellt werden");
-        })
-        .catch(function (err) {
-            console.log(err);
-        }).then(function(schichtzuweisung){
-          sqlHandler.getSchichtzuweisung(schichtzuweisung.datum, schichtzuweisung.schichtArt)
-          .then(function(schicht){
-            tag.schichtzuweisungID4=schicht.id;
-          })
-        })
-       }
-
+    var schichtzuweisung = {
+        datum: "",
+        schichtArt: "",
+        mitarbeiterID1: "",
+        mitarbeiterID2: "",
+        mitarbeiterID3: "",
+        mitarbeiterID4: ""
     }
 
-    sqlHandler.neuerTag(tag)
-    .then(function (tag) {
-        if (tag === undefined) console.log("Tag konnte nicht erstellt werden");
-        else {
-          console.log(i);
-            dienstplan.monatsTage[i-1] = tag;
-        }
-
-    })
-    .catch(function (err) {
-        console.log(err);
-    });
-
-}
-})                       //
-.catch(function (err) { //
-    console.log(err); //
-  }); // ERSTES PROMISE NACH GET MA-LISTE
-
-sqlHandler.neuerDienstplan(dienstplan)
-.then(function (dienstplan) {
-    if (dienstplan === undefined) res.status(400).send("Dienstplan konnte nicht erstellt werden");
-    else {
-        res.status(201).send(dienstplan);
+    var tag = {
+        schichtzuweisungID1: "",
+        schichtzuweisungID2: "",
+        schichtzuweisungID3: "",
+        schichtzuweisungID4: "",
+        datum: ""
     }
 
-})
-.catch(function (err) {
-    res.status(400).send(err);
-});
+
+    sqlHandler.getMitarbeiter()
+        .then(function(maListe) { // <- So ist es richtig! Noch bei den anderen Funktionen ändern!!!!
+            if (maListe === undefined) console.log("Keine Mitarbeiter vorhanden!");
+            else {
+
+                mitarbeiterListe = maListe;
+
+            }
+        })
+        .catch(function(error) {
+            console.log(error);
+        }).then(function() {
+
+            var anzahlTage = tagZaehler(req.body.monat, 2019, 0); // Berechnung Tage im Monat x
+
+            console.log("TAGE:\n" + anzahlTage);
+
+            for (let i = 1; i <= 5; i++) {
+                var promiseTage = new Promise(function(resolve, reject) {
+
+                    for (let j = 0; j <= anzahlSchichten; j++) {
+
+                        if (j == 0) {
+                            let datum = i + "-" + req.body.monat + "-2019";
+                            if (i < 10) { datum = "0" + i + "-" + req.body.monat + "-2019"; }
+
+
+
+
+                            schichtzuweisung.datum = datum;
+                            schichtzuweisung.schichtArt = "Fruehschicht";
+                            schichtzuweisung.mitarbeiterID1 = mitarbeiterListe[0].id;
+                            schichtzuweisung.mitarbeiterID2 = mitarbeiterListe[1].id;
+                            schichtzuweisung.mitarbeiterID3 = mitarbeiterListe[2].id;
+                            schichtzuweisung.mitarbeiterID4 = mitarbeiterListe[3].id;
+                            sqlHandler.neueSchichtzuweisung(schichtzuweisung)
+                                .then(function(schichtzuweisung) {
+                                    if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht erstellt werden");
+                                })
+                                .catch(function(err) {
+                                    console.log(err);
+                                }).then(function() {
+                                    sqlHandler.getSchichtzuweisung(datum, fruehschicht)
+                                        .then(function(schicht) {
+                                            tag.schichtzuweisungID1 = schicht[0].id;
+
+                                        })
+                                })
+                        }
+
+
+                        if (j == 1) {
+                            let datum = i + "-" + req.body.monat + "-2019";
+                            if (i < 10) { datum = "0" + i + "-" + req.body.monat + "-2019"; }
+                            schichtzuweisung.datum = datum;
+                            schichtzuweisung.schichtArt = "Zwischenschicht";
+                            schichtzuweisung.mitarbeiterID1 = mitarbeiterListe[4].id;
+                            schichtzuweisung.mitarbeiterID2 = mitarbeiterListe[5].id;
+                            schichtzuweisung.mitarbeiterID3 = mitarbeiterListe[6].id;
+                            schichtzuweisung.mitarbeiterID4 = mitarbeiterListe[7].id;
+                            sqlHandler.neueSchichtzuweisung(schichtzuweisung)
+                                .then(function(schichtzuweisung) {
+                                    if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht erstellt werden");
+                                })
+                                .catch(function(err) {
+                                    console.log(err);
+                                }).then(function() {
+                                    sqlHandler.getSchichtzuweisung(datum, zwischenschicht)
+                                        .then(function(schicht) {
+
+                                            tag.schichtzuweisungID2 = schicht[0].id;
+
+                                        }).catch(function(err) {
+                                            console.log(err);
+                                        })
+                                })
+                        }
+
+
+                        if (j == 2) {
+                            let datum = i + "-" + req.body.monat + "-2019";
+                            if (i < 10) { datum = "0" + i + "-" + req.body.monat + "-2019"; }
+                            schichtzuweisung.datum = datum;
+                            schichtzuweisung.schichtArt = "Spaetschicht";
+                            schichtzuweisung.mitarbeiterID1 = mitarbeiterListe[8].id;
+                            schichtzuweisung.mitarbeiterID2 = mitarbeiterListe[9].id;
+                            schichtzuweisung.mitarbeiterID3 = mitarbeiterListe[10].id;
+                            schichtzuweisung.mitarbeiterID4 = mitarbeiterListe[11].id;
+                            sqlHandler.neueSchichtzuweisung(schichtzuweisung)
+                                .then(function(schichtzuweisung) {
+                                    if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht erstellt werden");
+                                })
+                                .catch(function(err) {
+                                    console.log(err);
+                                }).then(function() {
+                                    sqlHandler.getSchichtzuweisung(datum, spaetschicht)
+                                        .then(function(schicht) {
+                                            tag.schichtzuweisungID3 = schicht[0].id;
+
+                                        })
+                                })
+                        }
+
+
+                        if (j == 3) {
+                            let datum = i + "-" + req.body.monat + "-2019";
+                            if (i < 10) { datum = "0" + i + "-" + req.body.monat + "-2019"; }
+                            console.log(datum)
+                            schichtzuweisung.datum = datum;
+                            schichtzuweisung.schichtArt = "Nachtschicht";
+                            schichtzuweisung.mitarbeiterID1 = mitarbeiterListe[12].id;
+                            schichtzuweisung.mitarbeiterID2 = mitarbeiterListe[13].id;
+                            schichtzuweisung.mitarbeiterID3 = mitarbeiterListe[14].id;
+                            schichtzuweisung.mitarbeiterID4 = mitarbeiterListe[15].id;
+                            sqlHandler.neueSchichtzuweisung(schichtzuweisung)
+                                .then(function(schichtzuweisung) {
+                                    if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht erstellt werden");
+                                })
+                                .catch(function(err) {
+                                    console.log(err);
+                                }).then(function() {
+                                    sqlHandler.getSchichtzuweisung(datum, nachtschicht)
+                                        .then(function(schicht) {
+                                            tag.schichtzuweisungID4 = schicht[0].id;
+
+                                            tag.datum = datum;
+
+                                            resolve(tag)
+                                        })
+
+                                })
+                        }
+
+
+
+                    }
+                })
+
+
+
+
+                promiseTage.then(function(tag) {
+
+
+
+                    sqlHandler.neuerTag(tag)
+                        .then(function(tag) {
+                            if (tag === undefined) console.log("Tag konnte nicht erstellt werden");
+                            else {
+                                dienstplan.monatsTage[i - 1] = tag;
+                            }
+
+                        })
+                        .catch(function(err) {
+                            console.log(err);
+                        });
+                })
+                    .catch(function(err) {
+                        console.log(err);
+                    });
+
+                // .then...
+
+
+
+
+
+
+            } // For Schleife i
+        }).catch(function(err) { //
+            console.log(err); //
+        });
+
+
+    sqlHandler.neuerDienstplan(dienstplan)
+        .then(function(dienstplan) {
+            if (dienstplan === undefined) res.status(400).send("Dienstplan konnte nicht erstellt werden");
+            else {
+                res.status(201).send(dienstplan);
+            }
+
+        })
+        .catch(function(err) {
+            res.status(400).send(err);
+        });
 
 
 });
@@ -251,10 +283,10 @@ sqlHandler.neuerDienstplan(dienstplan)
 
 // PUT Schichtzuweisung
 router.put('/:id/:date/:schicht', (req, res) => {
-//sqlHandler
+    //sqlHandler
 
 
-  });
+});
 
 
 
@@ -295,4 +327,9 @@ router.delete('/:id', (req, res) => {
     }
 
 });
+
+function overGive(i, callback) {
+    callback(i);
+}
+
 module.exports = router;

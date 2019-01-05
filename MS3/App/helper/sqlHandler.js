@@ -377,7 +377,7 @@ var neueSchichtzuweisung = function neueSchichtzuweisung(zuweisung) {
 
     //In der Datenbank hinzufügen
 
-    var sql = "INSERT INTO schichtzuweisung (datum, schichtArt, mitarbeiterID1, mitarbeiterID2, mitarbeiterID3,mitarbeiterID4,mitarbeiterID5,mitarbeiterID6,mitarbeiterID7,mitarbeiterID8,mitarbeiterID9,mitarbeiterID10) VALUES ( \"" + zuweisung.datum + "\",\"" + zuweisung.schichtArt + "\",\"" + zuweisung.mitarbeiterID1 + "\",\"" + zuweisung.mitarbeiterID2 + "\",\"" + zuweisung.mitarbeiterID3 + "\",\"" + zuweisung.mitarbeiterID4 + "\")";
+    var sql = "INSERT INTO schichtzuweisung (datum, schichtArt, mitarbeiterID1, mitarbeiterID2, mitarbeiterID3,mitarbeiterID4) VALUES ( \"" + zuweisung.datum + "\",\"" + zuweisung.schichtArt + "\",\"" + zuweisung.mitarbeiterID1 + "\",\"" + zuweisung.mitarbeiterID2 + "\",\"" + zuweisung.mitarbeiterID3 + "\",\"" + zuweisung.mitarbeiterID4 + "\")";
 
 
     connection.query(sql, function(err, result) {
@@ -400,13 +400,14 @@ var getSchichtzuweisung = function getSchichtzuweisung(date, schicht) {
 
   return new Promise(function(resolve, reject) {
 
-    let sql = "SELECT * FROM schichtzuweisung WHERE datum = " + date +"AND schichtArt = " + schicht;
+    let sql = "SELECT * FROM schichtzuweisung WHERE datum = \"" + date +"\" AND schichtArt = \"" + schicht +"\"";
 
     connection.query(sql, function(err, result) {
       if (err) reject(err);
       else {
 
         resolve(result);
+        
 
       }
     });
@@ -502,7 +503,7 @@ var neuerTag = function neuerTag(tag) {
 
       } else {
         resolve(tag);
-      //  console.log("neuer Tag");
+       
       }
     });
 
