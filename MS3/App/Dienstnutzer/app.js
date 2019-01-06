@@ -54,30 +54,21 @@ router.get('/mitarbeiter/:id', (req, res) => {
 
 // GET auf das Mitarbeiter anlegen Formular
 router.get('/mitarbeiter', (req, res) => {
-    let resourceURI = serviceURL + '/mitarbeiter';
 
-    var options = {
-        uri: resourceURI,
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json'
-        }
-    }
+        res.status(200).render("mitarbeiterPOST");
 
-    request(options, (err, res2, body) => {
+    });
 
-        if (err) {
-            console.log(err);
-            return;
-        }
-        body = JSON.parse(body);
-        console.log(body)
-        res.status(200).render("pugtest");
+
+// GET auf das Dienstplan anlegen Formular
+router.get('/dienstplaene', (req, res) => {
+    
+        res.status(200).render("dienstplanPOST");
         //res.status(200).send(JSON.parse(body))
         
 
     });
-});
+
 
 app.use(router)
 app.listen(settings.port, () => console.log("Express app listening on port: " + settings.port + "!"))
