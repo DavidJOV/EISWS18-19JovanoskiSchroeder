@@ -65,6 +65,7 @@ router.post('/', bodyParser.json(), (req, res) => {
     const dienstplan = {
         stationID: req.body.stationID,
         monat: req.body.monat,
+        jahr: req.body.jahr,
         monatsTage: new Array()
     };
 
@@ -85,7 +86,7 @@ router.post('/', bodyParser.json(), (req, res) => {
         schichtzuweisungID4: "",
         datum: ""
     }
-    sqlHandler.getDienstplanByMonat(req.body.monat)
+    sqlHandler.getDienstplanByMonat(req.body.monat,req.body.jahr)
     .then(function(){
 
     sqlHandler.getMitarbeiter()
@@ -101,7 +102,7 @@ router.post('/', bodyParser.json(), (req, res) => {
             console.log(error);
         }).then(function() {
 
-            var anzahlTage = tagZaehler(req.body.monat, 2019, 0); // Berechnung Tage im Monat x
+            var anzahlTage = tagZaehler(req.body.monat, req.body.jahr, 0); // Berechnung Tage im Monat x
 
             console.log("TAGE:\n" + anzahlTage);
 
@@ -111,8 +112,8 @@ router.post('/', bodyParser.json(), (req, res) => {
                     for (let j = 0; j <= anzahlSchichten; j++) {
 
                         if (j == 0) {
-                            let datum = i + "-" + req.body.monat + "-2019";
-                            if (i < 10) { datum = "0" + i + "-" + req.body.monat + "-2019"; }
+                            let datum = i + "-" + req.body.monat + "-"+ req.body.jahr;
+                            if (i < 10) { datum = "0" + i + "-" + req.body.monat + "-"+ req.body.jahr; }
 
 
 
@@ -140,8 +141,8 @@ router.post('/', bodyParser.json(), (req, res) => {
 
 
                         if (j == 1) {
-                            let datum = i + "-" + req.body.monat + "-2019";
-                            if (i < 10) { datum = "0" + i + "-" + req.body.monat + "-2019"; }
+                            let datum = i + "-" + req.body.monat + "-"+ req.body.jahr;
+                            if (i < 10) { datum = "0" + i + "-" + req.body.monat + "-"+ req.body.jahr; }
                             schichtzuweisung.datum = datum;
                             schichtzuweisung.schichtArt = "Zwischenschicht";
                             schichtzuweisung.mitarbeiterID1 = mitarbeiterListe[4].id;
@@ -168,8 +169,8 @@ router.post('/', bodyParser.json(), (req, res) => {
 
 
                         if (j == 2) {
-                            let datum = i + "-" + req.body.monat + "-2019";
-                            if (i < 10) { datum = "0" + i + "-" + req.body.monat + "-2019"; }
+                            let datum = i + "-" + req.body.monat + "-"+ req.body.jahr;
+                            if (i < 10) { datum = "0" + i + "-" + req.body.monat + "-"+ req.body.jahr; }
                             schichtzuweisung.datum = datum;
                             schichtzuweisung.schichtArt = "Spaetschicht";
                             schichtzuweisung.mitarbeiterID1 = mitarbeiterListe[8].id;
@@ -193,8 +194,8 @@ router.post('/', bodyParser.json(), (req, res) => {
 
 
                         if (j == 3) {
-                            let datum = i + "-" + req.body.monat + "-2019";
-                            if (i < 10) { datum = "0" + i + "-" + req.body.monat + "-2019"; }
+                            let datum = i + "-" + req.body.monat + "-"+ req.body.jahr;
+                            if (i < 10) { datum = "0" + i + "-" + req.body.monat + "-"+ req.body.jahr; }
                             
                             schichtzuweisung.datum = datum;
                             schichtzuweisung.schichtArt = "Nachtschicht";
@@ -236,8 +237,8 @@ router.post('/', bodyParser.json(), (req, res) => {
                     sqlHandler.neuerTag(tag)
                         .then(function() {
                             
-                                let datum = i + "-" + req.body.monat + "-2019";
-                            if (i < 10) { datum = "0" + i + "-" + req.body.monat + "-2019"; }
+                                let datum = i + "-" + req.body.monat + "-"+ req.body.jahr;
+                            if (i < 10) { datum = "0" + i + "-" + req.body.monat + "-"+ req.body.jahr; }
                                 
                             sqlHandler.getTag(datum)
                                 .then(function(tag) {
