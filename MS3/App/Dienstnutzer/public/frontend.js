@@ -20,6 +20,7 @@ function speichereMitarbeiter(mitarbeiter) {
     xmlhttp.open("POST", "http://localhost:3000/mitarbeiter");
     xmlhttp.setRequestHeader("Content-Type", "application/json");
     xmlhttp.send(JSON.stringify(neuerMitarbeiter));
+    console.log(neuerMitarbeiter)
 }
 
 function erstelleDienstplan(dienstplan) {
