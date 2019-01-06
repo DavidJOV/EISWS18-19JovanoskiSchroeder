@@ -85,7 +85,8 @@ router.post('/', bodyParser.json(), (req, res) => {
         schichtzuweisungID4: "",
         datum: ""
     }
-
+    sqlHandler.getDienstplanByMonat(req.body.monat)
+    .then(function(){
 
     sqlHandler.getMitarbeiter()
         .then(function(maListe) { // <- So ist es richtig! Noch bei den anderen Funktionen ändern!!!!
@@ -294,6 +295,9 @@ router.post('/', bodyParser.json(), (req, res) => {
         }).catch(function(err) { //
             console.log(err); //
         })
+    }).catch(function(msg) { 
+        res.status(404).send(msg); 
+    })
         
     
        
@@ -354,8 +358,6 @@ router.delete('/:id', (req, res) => {
 
 });
 
-function overGive(i, callback) {
-    callback(i);
-}
+
 
 module.exports = router;

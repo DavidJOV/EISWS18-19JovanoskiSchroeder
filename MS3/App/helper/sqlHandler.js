@@ -675,6 +675,27 @@ var getDienstplan = function getDienstplan(id) {
 }
 
 
+// Get Dienstplan mit Datum als Parameter
+
+var getDienstplanByMonat = function getDienstplanByMonat(monat) {
+
+
+    return new Promise(function(resolve, reject) {
+
+        //  Dienstplan mit gennanter ID
+       
+        let sql = "SELECT * FROM dienstplan WHERE monat = " + monat;
+
+        connection.query(sql, function(err, result) {
+        
+            if (result[0] == undefined) resolve();
+
+            else{
+                reject("Diesen Dienstplan gibt es schon!");
+             }})
+        })
+    }
+
 // Anlegen eines Dienstplans
 
 // Erstellen eines neuen Dienstplans
@@ -976,6 +997,7 @@ exports.loescheTag = loescheTag;
 //Dienstplans
 exports.getDienstplan = getDienstplan;
 exports.neuerDienstplan = neuerDienstplan;
+exports.getDienstplanByMonat = getDienstplanByMonat;
 
 
 
