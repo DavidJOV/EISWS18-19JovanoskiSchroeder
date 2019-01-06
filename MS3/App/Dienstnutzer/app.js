@@ -72,7 +72,7 @@ router.get('/mitarbeiter', (req, res) => {
         }
         body = JSON.parse(body);
         console.log(body)
-        res.status(200).render("mitarbeiterPOST");
+        res.status(200).render("pugtest");
         //res.status(200).send(JSON.parse(body))
         
 

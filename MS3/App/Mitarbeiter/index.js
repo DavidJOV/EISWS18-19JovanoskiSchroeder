@@ -83,7 +83,7 @@ router.put('/:id', (req, res) => {
 
 // Erstellen eines neuen Mitarbeiters
 router.post('/', bodyParser.json(), (req, res) => {
-
+console.log(req.body)
     const mitarbeiter = {
         stationID: req.body.stationID, // noch in Datenbank hinzufügen
         anrede: req.body.anrede,
