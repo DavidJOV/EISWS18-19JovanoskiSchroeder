@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Erstellungszeit: 05. Jan 2019 um 23:36
+-- Erstellungszeit: 06. Jan 2019 um 20:20
 -- Server-Version: 5.6.34-log
 -- PHP-Version: 7.1.7
 
@@ -46,6 +46,7 @@ CREATE TABLE `dienstplan` (
   `stationID` int(9) NOT NULL,
   `id` int(9) NOT NULL,
   `monat` int(10) NOT NULL,
+  `jahr` int(10) NOT NULL,
   `tag1` int(9) DEFAULT NULL,
   `tag2` int(9) DEFAULT NULL,
   `tag3` int(9) DEFAULT NULL,
@@ -120,7 +121,7 @@ CREATE TABLE `mitarbeiter` (
   `vorname` varchar(30) NOT NULL,
   `name` varchar(30) NOT NULL,
   `beschaeftigungsArt` varchar(30) NOT NULL,
-  `beschaeftigungsBeginn` date NOT NULL,
+  `beschaeftigungsBeginn` varchar(15) NOT NULL,
   `rolle` varchar(30) NOT NULL,
   `wunschRating` int(10) NOT NULL,
   `dienstplanRating` int(10) NOT NULL,
@@ -162,13 +163,6 @@ CREATE TABLE `schichttausch` (
   `datumTausch` date NOT NULL,
   `tauschStatus` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Daten für Tabelle `schichttausch`
---
-
-INSERT INTO `schichttausch` (`stationID`, `mitarbeiterID`, `id`, `datumTausch`, `tauschStatus`) VALUES
-(1, 2, 1, '2019-01-02', 0);
 
 -- --------------------------------------------------------
 
@@ -310,12 +304,12 @@ ALTER TABLE `abwesenheitsmeldung`
 -- AUTO_INCREMENT für Tabelle `dienstplan`
 --
 ALTER TABLE `dienstplan`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=186;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT für Tabelle `mitarbeiter`
 --
 ALTER TABLE `mitarbeiter`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
 --
 -- AUTO_INCREMENT für Tabelle `schichttausch`
 --
@@ -325,7 +319,7 @@ ALTER TABLE `schichttausch`
 -- AUTO_INCREMENT für Tabelle `schichtzuweisung`
 --
 ALTER TABLE `schichtzuweisung`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7397;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1445;
 --
 -- AUTO_INCREMENT für Tabelle `station`
 --
@@ -335,7 +329,7 @@ ALTER TABLE `station`
 -- AUTO_INCREMENT für Tabelle `tag`
 --
 ALTER TABLE `tag`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1978;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=362;
 --
 -- AUTO_INCREMENT für Tabelle `wunsch`
 --
