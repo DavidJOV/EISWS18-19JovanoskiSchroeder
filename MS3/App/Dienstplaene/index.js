@@ -44,7 +44,91 @@ router.get('/:id/:date', (req, res) => {
 */
 
 
-// BRANCH COMMIT TEST
+
+// Function -> Verändert Grunddienstplan aus POST, dass Wuensche (evtl. alle anderen Aspekte der fainiss [später]) berücksichtigt werden
+
+var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienstplan){
+
+
+  var anzahlSchichten = 4;
+  var anzahlMitarbeiterSchicht = 4;
+  var mitarbeiterWunsch = {
+    mitarbeiterID: "",
+    datum: "",
+    schichtArt: ""
+  }
+  var mitarbeiterWuenscheListe = new Array();
+
+
+  sqlHandler.getWuenscheStation(dienstplan.stationID)
+      .then(function(wunschListe) {
+          if (wunschListe === undefined) console.log("Keine Wuensche auf dieser Station vorhanden!");
+          else {
+            for (let y = 0 ; y<wunschListe.length ; y++){
+              mitarbeiterWunsch.mitarbeiterID = wunschListe[y].mitarbeiterID;
+              mitarbeiterWunsch.datum = wunschListe[y].datumWunsch;
+              mitarbeiterWunsch.schichtArt = wunschListe[y].schichtArt;
+
+              mitarbeiterWuenscheListe.push(mitarbeiterWuensche);
+            }
+          }
+      })
+      .catch(function(error) {
+          console.log(error);
+      }).then(function() {
+        sqlHandler.getDienstplan(dienstplan.id)
+        .then(function (dp){
+          for (let i ; i < dp.schichten.length ; i++ ){
+            if (mitarbeiterWuenscheListe[i].datum && mitarbeiterWuenscheListe[i].mitarbeiterID == dp.schichten[i].datum && (dp.schichten[i].mitarbeiterID1 || dp.schichten[i].mitarbeiterID2 || dp.schichten[i].mitarbeiterID3 || dp.schichten[i].mitarbeiterID4){
+              sqlHandler.updateSchichtzuweisung() // continue.... Dp im Nachhinein anpassen...
+            }
+          }
+
+
+        })
+
+
+
+
+
+
+
+      })//then ....
+
+
+
+} // end of function
+
+
+
+// function nach jedem einsetzen eines MA in eine Schicht aufrufen... (Station benötigt dann mehr als 4 Mitarbeiter!)
+var wunschKontrolle = function wunschKontroll(stationID ,id, datum){
+
+  sqlHandler.getWuenscheStation(stationID)
+      .then(function(wunschListe) {
+          if (wunschListe === undefined) console.log("Keine Wuensche auf dieser Station vorhanden!");
+          else {
+            for (let y = 0 ; y<wunschListe.length ; y++){
+              if (id && datum == wunschListe[y].mitarbeitID && wunschListe.[y].datumWunsch){
+              return 1;
+              }
+              else {
+                return 0;
+              }
+            }
+          }
+      })
+      .catch(function(error) {
+          console.log(error);
+      })
+
+
+
+
+} // end of function
+
+
+
 
 
 
@@ -267,7 +351,7 @@ router.post('/', bodyParser.json(), (req, res) => {
                         console.log(err);
                     });
 
-                // .then...
+
 
 
 

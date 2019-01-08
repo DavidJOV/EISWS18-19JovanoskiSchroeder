@@ -781,6 +781,28 @@ var neuerWunsch = function neuerWunsch(wunsch) {
 }
 
 
+// Lesen aller Wünsche der Mitarbeiter einers Station
+var getWuenscheStation = function getWuenscheStation(stationID) {
+
+    return new Promise(function(resolve, reject) {
+
+        let sql = "SELECT * FROM wunsch WHERE stationID = " + stationID;
+
+        connection.query(sql, function(err, result) {
+            if (err) reject(err);
+            else {
+
+                resolve(result);
+
+            }
+        });
+    });
+}
+
+
+
+
+
 // Lesen aller Wünsche eines Mitarbeiters aus der DB
 var getWuensche = function getWuensche(stationID, mitarbeiterID) {
 
@@ -1099,7 +1121,7 @@ exports.neuerWunsch = neuerWunsch;
 exports.getWuensche = getWuensche;
 exports.updateWunsch = updateWunsch;
 exports.loescheWunsch = loescheWunsch;
-
+exports.getWuenscheStation=getWuenscheStation;
 
 
 //ALT
