@@ -16,6 +16,8 @@ router.get('/', (req, res) => {
     }
 }); */ // Nicht benötigt!
 
+
+
 // Get auf einen einzelnen Dienstplan
 router.get('/:id', (req, res) => {
     sqlHandler.getDienstplan(req.params.id)
@@ -45,10 +47,12 @@ router.get('/:id/:date', (req, res) => {
 
 
 
-// Function -> Verändert Grunddienstplan aus POST, dass Wuensche (evtl. alle anderen Aspekte der fainiss [später]) berücksichtigt werden
-// continue.... Dp im Nachhinein anpassen...
 
-var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienstplan){
+
+
+
+// Function -> Verändert Grunddienstplan aus POST nach Erstellung und Speicherung in der DB, sodass Wuensche (evtl. alle anderen Aspekte der fainiss [später]) berücksichtigt werden
+var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienstplan){ //"dienstplan" ist das Result vom Datenbank-Zugrtiff getDienstplan
 
 
   var mitarbeiterWunsch = {
@@ -156,8 +160,11 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
     })// 1. then ....
 
 
-
 } // end of function
+
+// continue ... Welcher MA übernimmt dann die Schicht ? -> Evtl Ausbauen, auch auf Fainiss bezogen etc...
+
+
 
 
 
