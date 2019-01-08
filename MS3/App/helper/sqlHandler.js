@@ -606,9 +606,9 @@ var getDienstplan = function getDienstplan(id) {
             jahr: "",
             tage: []
         }
-        
+
         var maxAnzahlTage;
-        
+
 
         let sql = "SELECT * FROM dienstplan WHERE id = " + id;
 
@@ -630,9 +630,9 @@ var getDienstplan = function getDienstplan(id) {
                maxAnzahlTage = tagZaehler(dienstplan.monat,dienstplan.jahr);
 
                 for (let i = 0; i < maxAnzahlTage; i++) {
-                   
+
                     let sql2 = "SELECT * FROM tag WHERE id = " + dienstplan.tage[i]; // WORKAROUND -> NICHT HARDCODEN!!!
-                    
+
 
                     connection.query(sql2, function(err, result2) {
                         if (err) reject(err);
@@ -658,12 +658,12 @@ var getDienstplan = function getDienstplan(id) {
                                         schichten: result3
                                     }
                                     resolve(dienstplanErgebnis)
-                                  
+
 
                                 }
                             });
 
-                        
+
 
                     });
 
@@ -685,11 +685,11 @@ var getDienstplanByMonat = function getDienstplanByMonat(monat,jahr) {
     return new Promise(function(resolve, reject) {
 
         //  Dienstplan mit gennanter ID
-       
+
         let sql = "SELECT * FROM dienstplan WHERE monat = " + monat + " AND jahr = " +jahr;
 
         connection.query(sql, function(err, result) {
-        
+
             if (result[0] == undefined) resolve();
 
             else{
@@ -752,7 +752,100 @@ var neuerDienstplan = function neuerDienstplan(dp) {
     });
 }
 
+//##################################################################################################################
 
+// Wunsch-Funktionen
+//##################################################################################################################
+
+// Erstellen eines Wunsches
+var neuerWunsch = function neuerWunsch(wunsch) {
+    return new Promise(function(resolve, reject) {
+
+        //In der Datenbank hinzufügen
+
+        var sql = "INSERT INTO wunsch (stationID, mitarbeiterID, datumWunsch, wunschBeschreibung, schichtArt,wunschStatus) VALUES ( \"" + wunsch.stationID + "\",\"" + wunsch.mitarbeiterID + "\",\"" + wunsch.datumWunsch + "\",\"" + wunsch.wunschBeschreibung + "\",\"" + wunsch.schichtArt + "\",\"" + wunsch.wunschStatus + "\")";
+
+
+        connection.query(sql, function(err, result) {
+            if (err) {
+                console.log(err)
+                reject(err);
+
+            } else {
+                resolve(wunsch);
+            }
+        });
+
+
+    });
+}
+
+
+// Lesen aller Wünsche eines Mitarbeiters aus der DB
+var getWuensche = function getWuensche(stationID, mitarbeiterID) {
+
+    return new Promise(function(resolve, reject) {
+
+        let sql = "SELECT * FROM wunsch WHERE stationID = " + stationID + "AND mitarbeiterID = " + mitarbeiterID;
+
+        connection.query(sql, function(err, result) {
+            if (err) reject(err);
+            else {
+
+                resolve(result);
+
+            }
+        });
+    });
+}
+
+
+// Aktualisieren wunsch (wunschStatus)
+var updateWunsch = function updateWunsch(stationID, mitarbeiterID, date, wunschUpdate) {
+    return new Promise(function(resolve, reject) {
+
+        // Schichtzuweisung aktuallisieren
+
+        var sql = "UPDATE wunsch SET wunschStatus = \"" + wunschUpdate.wunschStatus + "\" WHERE stationID =" + stationID + "AND mitarbeiterID = " + mitarbeiterID + "AND datumWunsch = " +date;
+
+
+        connection.query(sql, function(err, result) {
+            if (err) {
+                console.log(err)
+                reject(err);
+
+            } else {
+                resolve(result);
+                //console.log("Wunsch wurde aktuallisiert");
+            }
+        });
+
+    });
+}
+
+
+// Löschen eines Wunsches
+var loescheWunsch = function leoscheWunsch(stationID, mitarbeiterID, date) {
+    return new Promise(function(resolve, reject) {
+
+
+        var sql = "DELETE FROM wunsch WHERE stationID =" + stationID + "AND mitarbeiterID = " + mitarbeiterID + "AND datumWunsch = " +date;
+
+
+        connection.query(sql, function(err, result) {
+            if (err) {
+                console.log(err)
+                reject(err);
+
+            } else {
+                resolve(result);
+                //  console.log("Wunsch wurde gelöscht");
+            }
+        });
+
+
+    });
+}
 
 
 
@@ -1000,6 +1093,12 @@ exports.loescheTag = loescheTag;
 exports.getDienstplan = getDienstplan;
 exports.neuerDienstplan = neuerDienstplan;
 exports.getDienstplanByMonat = getDienstplanByMonat;
+
+// Wunsch
+exports.neuerWunsch = neuerWunsch;
+exports.getWuensche = getWuensche;
+exports.updateWunsch = updateWunsch;
+exports.loescheWunsch = loescheWunsch;
 
 
 

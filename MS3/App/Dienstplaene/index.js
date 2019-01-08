@@ -45,10 +45,6 @@ router.get('/:id/:date', (req, res) => {
 
 
 
-
-
-
-
 // Erstellen eines neuen Dienstplan
 router.post('/', bodyParser.json(), (req, res) => {
 
@@ -196,7 +192,7 @@ router.post('/', bodyParser.json(), (req, res) => {
                         if (j == 3) {
                             let datum = i + "-" + req.body.monat + "-"+ req.body.jahr;
                             if (i < 10) { datum = "0" + i + "-" + req.body.monat + "-"+ req.body.jahr; }
-                            
+
                             schichtzuweisung.datum = datum;
                             schichtzuweisung.schichtArt = "Nachtschicht";
                             schichtzuweisung.mitarbeiterID1 = mitarbeiterListe[12].id;
@@ -236,20 +232,20 @@ router.post('/', bodyParser.json(), (req, res) => {
 
                     sqlHandler.neuerTag(tag)
                         .then(function() {
-                            
+
                                 let datum = i + "-" + req.body.monat + "-"+ req.body.jahr;
                             if (i < 10) { datum = "0" + i + "-" + req.body.monat + "-"+ req.body.jahr; }
-                                
+
                             sqlHandler.getTag(datum)
                                 .then(function(tag) {
-                                   
+
                                     if (tag === undefined) console.log("Tag konnte nicht erstellt werden");
                                     else {
                                         dienstplan.monatsTage.push(tag);
                                         if(i==anzahlTage){
-                                            
+
                                                 resolve(dienstplan)
-                                        
+
                                     }
                                 }
 
@@ -257,7 +253,7 @@ router.post('/', bodyParser.json(), (req, res) => {
                                 .catch(function(err) {
                                     console.log(err);
                                 });
-                            
+
                         })
 
                         .catch(function(err) {
@@ -267,19 +263,19 @@ router.post('/', bodyParser.json(), (req, res) => {
                     .catch(function(err) {
                         console.log(err);
                     });
-                
+
                 // .then...
 
 
 
             });
-                
+
 
             } // For Schleife i
             promiseDienstplan.then(function(dienstplan){
 
-                
-                
+
+
 
                 sqlHandler.neuerDienstplan(dienstplan)
                     .then(function(dienstplan) {
@@ -287,7 +283,7 @@ router.post('/', bodyParser.json(), (req, res) => {
                         else {
                             res.status(201).send(dienstplan);
                         }
-            
+
                     })
                     .catch(function(err) {
                         res.status(400).send(err);
@@ -296,12 +292,12 @@ router.post('/', bodyParser.json(), (req, res) => {
         }).catch(function(err) { //
             console.log(err); //
         })
-    }).catch(function(msg) { 
-        res.status(404).send(msg); 
+    }).catch(function(msg) {
+        res.status(404).send(msg);
     })
-        
-    
-       
+
+
+
 
 
 
