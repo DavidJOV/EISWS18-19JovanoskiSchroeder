@@ -46,18 +46,24 @@ router.get('/:id/:date', (req, res) => {
 
 
 // Function -> Verändert Grunddienstplan aus POST, dass Wuensche (evtl. alle anderen Aspekte der fainiss [später]) berücksichtigt werden
+// continue.... Dp im Nachhinein anpassen...
 
 var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienstplan){
 
 
-  var anzahlSchichten = 4;
-  var anzahlMitarbeiterSchicht = 4;
   var mitarbeiterWunsch = {
     mitarbeiterID: "",
     datum: "",
     schichtArt: ""
   }
   var mitarbeiterWuenscheListe = new Array();
+
+  var schichtzuweisungUpdate = {
+    mitarbeiterID1: "",
+    mitarbeiterID2: "",
+    mitarbeiterID3: "",
+    mitarbeiterID4: ""
+  }
 
 
   sqlHandler.getWuenscheStation(dienstplan.stationID)
@@ -79,21 +85,75 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
         sqlHandler.getDienstplan(dienstplan.id)
         .then(function (dp){
           for (let i ; i < dp.schichten.length ; i++ ){
-            if (mitarbeiterWuenscheListe[i].datum && mitarbeiterWuenscheListe[i].mitarbeiterID == dp.schichten[i].datum && (dp.schichten[i].mitarbeiterID1 || dp.schichten[i].mitarbeiterID2 || dp.schichten[i].mitarbeiterID3 || dp.schichten[i].mitarbeiterID4){
-              sqlHandler.updateSchichtzuweisung() // continue.... Dp im Nachhinein anpassen...
+            if (mitarbeiterWuenscheListe[i].datum && mitarbeiterWuenscheListe[i].mitarbeiterID == dp.schichten[i].datum && dp.schichten[i].mitarbeiterID1){
+              schichtzuweisungUpdate.mitarbeiterID1 = // ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
+              schichtzuweisungUpdate.mitarbeiterID2 = dp.schichten[i].mitarbeiterID2;
+              schichtzuweisungUpdate.mitarbeiterID3 = dp.schichten[i].mitarbeiterID3;
+              schichtzuweisungUpdate.mitarbeiterID4 = dp.schichten[i].mitarbeiterID4;
+
+            sqlHandler.updateSchichtzuweisung(dp.schichten[i].datum, dp.schichten[i].schichtArt,schichtzuweisungUpdate)
+            .then(function(schichtzuweisung) {
+                if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht aktualisiert werden");
+            })
+            .catch(function(err) {
+                console.log(err);
+            })
             }
-          }
 
 
-        })
+            if (mitarbeiterWuenscheListe[i].datum && mitarbeiterWuenscheListe[i].mitarbeiterID == dp.schichten[i].datum && dp.schichten[i].mitarbeiterID2){
+              schichtzuweisungUpdate.mitarbeiterID1 = dp.schichten[i].mitarbeiterID1;
+              schichtzuweisungUpdate.mitarbeiterID2 = // ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
+              schichtzuweisungUpdate.mitarbeiterID3 = dp.schichten[i].mitarbeiterID3;
+              schichtzuweisungUpdate.mitarbeiterID4 = dp.schichten[i].mitarbeiterID4;
+
+            sqlHandler.updateSchichtzuweisung(dp.schichten[i].datum, dp.schichten[i].schichtArt,schichtzuweisungUpdate)
+            .then(function(schichtzuweisung) {
+                if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht aktualisiert werden");
+            })
+            .catch(function(err) {
+                console.log(err);
+            })
+            }
 
 
+            if (mitarbeiterWuenscheListe[i].datum && mitarbeiterWuenscheListe[i].mitarbeiterID == dp.schichten[i].datum && dp.schichten[i].mitarbeiterID3){
+              schichtzuweisungUpdate.mitarbeiterID1 = dp.schichten[i].mitarbeiterID1;
+              schichtzuweisungUpdate.mitarbeiterID2 = dp.schichten[i].mitarbeiterID2;
+              schichtzuweisungUpdate.mitarbeiterID3 = // ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
+              schichtzuweisungUpdate.mitarbeiterID4 = dp.schichten[i].mitarbeiterID4;
+
+            sqlHandler.updateSchichtzuweisung(dp.schichten[i].datum, dp.schichten[i].schichtArt,schichtzuweisungUpdate)
+            .then(function(schichtzuweisung) {
+                if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht aktualisiert werden");
+            })
+            .catch(function(err) {
+                console.log(err);
+            })
+            }
 
 
+            if (mitarbeiterWuenscheListe[i].datum && mitarbeiterWuenscheListe[i].mitarbeiterID == dp.schichten[i].datum && dp.schichten[i].mitarbeiterID4){
+              schichtzuweisungUpdate.mitarbeiterID1 = dp.schichten[i].mitarbeiterID1;
+              schichtzuweisungUpdate.mitarbeiterID2 = dp.schichten[i].mitarbeiterID2;
+              schichtzuweisungUpdate.mitarbeiterID3 = dp.schichten[i].mitarbeiterID3;
+              schichtzuweisungUpdate.mitarbeiterID4 = // ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
+
+            sqlHandler.updateSchichtzuweisung(dp.schichten[i].datum, dp.schichten[i].schichtArt,schichtzuweisungUpdate)
+            .then(function(schichtzuweisung) {
+                if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht aktualisiert werden");
+            })
+            .catch(function(err) {
+                console.log(err);
+            })
+            }
+
+          } // for i - Schleife
 
 
+        }) // 2. then....
 
-      })//then ....
+    })// 1. then ....
 
 
 
@@ -110,7 +170,7 @@ var wunschKontrolle = function wunschKontroll(stationID ,id, datum){
           else {
             for (let y = 0 ; y<wunschListe.length ; y++){
               if (id && datum == wunschListe[y].mitarbeitID && wunschListe.[y].datumWunsch){
-              return 1;
+              // ändere Schichtzuweisung ...
               }
               else {
                 return 0;
@@ -121,9 +181,6 @@ var wunschKontrolle = function wunschKontroll(stationID ,id, datum){
       .catch(function(error) {
           console.log(error);
       })
-
-
-
 
 } // end of function
 

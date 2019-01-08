@@ -439,7 +439,7 @@ var updateSchichtzuweisung = function updateSchichtzuweisung(date, schicht, schi
 
         // Schichtzuweisung aktuallisieren
 
-        var sql = "UPDATE schichtzuweisung SET mitarbeiterID1 = \"" + schichtUpdate.miarbeiterID1 + "\",mitarbeiterID2 = \"" + schichtUpdate.miarbeiterID2 + "\",mitarbeiterID3 = \"" + schichtUpdate.miarbeiterID3 + "\",mitarbeiterID4 = \"" + schichtUpdate.miarbeiterID4 + "\" WHERE datum =" + date + "AND schichtArt = " + schicht;
+        var sql = "UPDATE schichtzuweisung SET mitarbeiterID1 = \"" + schichtUpdate.mitarbeiterID1 + "\",mitarbeiterID2 = \"" + schichtUpdate.mitarbeiterID2 + "\",mitarbeiterID3 = \"" + schichtUpdate.mitarbeiterID3 + "\",mitarbeiterID4 = \"" + schichtUpdate.mitarbeiterID4 + "\" WHERE datum =" + date + "AND schichtArt = " + schicht;
 
 
         connection.query(sql, function(err, result) {
