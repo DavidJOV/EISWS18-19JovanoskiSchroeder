@@ -52,7 +52,7 @@ router.get('/:id/:date', (req, res) => {
 
 
 // Function -> Verändert Grunddienstplan aus POST nach Erstellung und Speicherung in der DB, sodass Wuensche (evtl. alle anderen Aspekte der fainiss [später]) berücksichtigt werden
-var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienstplan){ //"dienstplan" ist das Result vom Datenbank-Zugrtiff getDienstplan
+var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienstplan){ //"dienstplan" ist das Objekt, welches auch zum Schreiben in die Datenbank verwendet wurde.
 
 
   var mitarbeiterWunsch = {
