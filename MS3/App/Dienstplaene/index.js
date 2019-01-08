@@ -52,7 +52,7 @@ router.get('/:id/:date', (req, res) => {
 
 
 // Function -> Verändert Grunddienstplan aus POST nach Erstellung und Speicherung in der DB, sodass Wuensche (evtl. alle anderen Aspekte der fainiss [später]) berücksichtigt werden
-var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienstplan){ //"dienstplan" ist das Objekt, welches auch zum Schreiben in die Datenbank verwendet wurde.
+var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienstplan){ //"dienstplan" ist ein Objekt, mit dem auch ein Dienstplan erstellt werden kann -> Bei POST verwendet, um den DP in die Datenbank zu schreiben.
 
 
   var mitarbeiterWunsch = {
@@ -86,7 +86,7 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
       .catch(function(error) {
           console.log(error);
       }).then(function() {
-        sqlHandler.getDienstplan(dienstplan.id)
+        sqlHandler.getDienstplanByDate(dienstplan.monat, dienstplan.jahr)
         .then(function (dp){
           for (let i ; i < dp.schichten.length ; i++ ){
             if (mitarbeiterWuenscheListe[i].datum && mitarbeiterWuenscheListe[i].mitarbeiterID == dp.schichten[i].datum && dp.schichten[i].mitarbeiterID1){

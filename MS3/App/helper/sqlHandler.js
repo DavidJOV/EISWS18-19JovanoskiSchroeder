@@ -587,7 +587,7 @@ var loescheTag = function loescheTag(date) {
 // Dienstplan-Funktionen
 //****************************************************************************************************************************
 
-// Lesen eines Dienstplans aus der DB
+// Lesen eines Dienstplans aus der DB mit ID
 var getDienstplan = function getDienstplan(id) {
 
 
@@ -675,6 +675,98 @@ var getDienstplan = function getDienstplan(id) {
 
     });
 }
+
+
+// Lesen eines Dienstplans aus der DB mit monat + Jahr
+var getDienstplanByDate = function getDienstplanByDate(monat, jahr) {
+
+
+    return new Promise(function(resolve, reject) {
+
+        //  Dienstplan mit gennanter ID
+        var arrayTage = new Array();
+        var tage = {
+            schichtzuweisung: []
+        }
+
+
+        var dienstplan = {
+            stationID: "",
+            monat: "",
+            jahr: "",
+            tage: []
+        }
+
+        var maxAnzahlTage;
+
+
+        let sql = "SELECT * FROM dienstplan WHERE monat = " + monat + "AND jahr = " + jahr;
+
+        connection.query(sql, function(err, result) {
+            if (err) reject(err);
+
+            else if (result[0] != undefined) {
+
+                dienstplan.stationID = result[0].stationID;
+                dienstplan.monat = result[0].monat;
+                dienstplan.jahr = result[0].jahr;
+                dienstplan.tage = [result[0].tag1, result[0].tag2, result[0].tag3, result[0].tag4, result[0].tag5,
+                result[0].tag6, result[0].tag7, result[0].tag8, result[0].tag9, result[0].tag10, result[0].tag11,
+                result[0].tag12, result[0].tag13, result[0].tag14, result[0].tag15, result[0].tag16, result[0].tag17,
+                result[0].tag18, result[0].tag19, result[0].tag20, result[0].tag21, result[0].tag22, result[0].tag23,
+                result[0].tag24, result[0].tag25, result[0].tag26, result[0].tag27, result[0].tag28, result[0].tag29,
+                result[0].tag30, result[0].tag31];
+
+               maxAnzahlTage = tagZaehler(dienstplan.monat,dienstplan.jahr);
+
+                for (let i = 0; i < maxAnzahlTage; i++) {
+
+                    let sql2 = "SELECT * FROM tag WHERE id = " + dienstplan.tage[i]; // WORKAROUND -> NICHT HARDCODEN!!!
+
+
+                    connection.query(sql2, function(err, result2) {
+                        if (err) reject(err);
+                        else {
+                            tage.schichtzuweisung[i] = {
+                                fruehschicht: result2[0].schichtzuweisungID1,
+                                zwischenschicht: result2[0].schichtzuweisungID2,
+                                spaetschicht: result2[0].schichtzuweisungID3,
+                                nachtschicht: result2[0].schichtzuweisungID4
+                            }
+                            arrayTage.push(result2)
+                          }
+
+                            let sql3 = "SELECT * FROM schichtzuweisung WHERE id = " + tage.schichtzuweisung[i].fruehschicht + " OR " + tage.schichtzuweisung[i].zwischenschicht + " OR " + tage.schichtzuweisung[i].spaetschicht + " OR " + tage.schichtzuweisung[i].nachtschicht;
+
+                            connection.query(sql3, function(err, result3) {
+                                if (err) reject(err);
+                                else {
+
+                                    var dienstplanErgebnis = {
+                                        metadaten: result,
+                                        tage: arrayTage,
+                                        schichten: result3
+                                    }
+                                    resolve(dienstplanErgebnis)
+
+
+                                }
+                            });
+
+
+
+                    });
+
+                }
+            }
+            else { resolve("Kein Dienstplan für diesen Monat vorhanden!") }
+        });
+
+
+    });
+}
+
+
 
 
 // Get Dienstplan mit Datum als Parameter
@@ -1115,6 +1207,7 @@ exports.loescheTag = loescheTag;
 exports.getDienstplan = getDienstplan;
 exports.neuerDienstplan = neuerDienstplan;
 exports.getDienstplanByMonat = getDienstplanByMonat;
+exports.getDienstplanByDate = getDienstplanByDate;
 
 // Wunsch
 exports.neuerWunsch = neuerWunsch;
