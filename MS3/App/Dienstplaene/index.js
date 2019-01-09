@@ -86,6 +86,34 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
       .catch(function(error) {
           console.log(error);
       }).then(function() {
+
+        for (let j = 0 ; j < mitarbeiterWuenscheListe.lentgh ; j++){
+          for (let z = 0 ; z<mitarbeiterWuenscheListe.lenght ; z++){
+
+            if (mitarbeiterWuenscheListe[j].datum == mitarbeiterWuenscheListe[z].datum){
+              sqlHanlder.getMitarbeiter(mitarbeiterWuenscheListe[j].mitarbeiterID)
+              .then (function (mitarbeiterJ){
+                  sqlHanlder.getMitarbeiter(mitarbeiterWuenscheListe[z].mitarbeiterID)
+                  .then (function (mitarbeiterZ){
+
+                    if(mitarbeiterJ.wunschRating >= mitarbeiterZ.wunschRating){
+                      mitarbeiterWuenscheListe.splice(z,1);
+                      sqlHandler.updateWunschRating(mitarbeiterJ.id, -1);
+                      sqlHandler.updateWunschRating(mitarbeiterZ.id, 1);
+                    }
+                    else {
+                      mitarbeiterWuenscheListe.splice(j,1);
+                      sqlHandler.updateWunschRating(mitarbeiterJ.id, 1);
+                      sqlHandler.updateWunschRating(mitarbeiterZ.id, -1);
+                    }
+
+                  })// zweiter get MA
+              }) // erster get MA
+            } // if - Bedingung
+
+          } // for z - schleife
+        } // for j -schleife
+
         sqlHandler.getDienstplanByDate(dienstplan.monat, dienstplan.jahr)
         .then(function (dp){
           for (let i ; i < dp.schichten.length ; i++ ){

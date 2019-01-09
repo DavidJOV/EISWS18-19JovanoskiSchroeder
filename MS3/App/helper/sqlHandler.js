@@ -853,7 +853,7 @@ var neuerWunsch = function neuerWunsch(wunsch) {
 
         //In der Datenbank hinzufügen
 
-        var sql = "INSERT INTO wunsch (stationID, mitarbeiterID, datumWunsch, wunschBeschreibung, schichtArt,wunschStatus) VALUES ( \"" + wunsch.stationID + "\",\"" + wunsch.mitarbeiterID + "\",\"" + wunsch.datumWunsch + "\",\"" + wunsch.wunschBeschreibung + "\",\"" + wunsch.schichtArt + "\",\"" + wunsch.wunschStatus + "\")";
+        var sql = "INSERT INTO wunsch (stationID, mitarbeiterID, datumWunsch, wunschBeschreibung, schichtArt) VALUES ( \"" + wunsch.stationID + "\",\"" + wunsch.mitarbeiterID + "\",\"" + wunsch.datumWunsch + "\",\"" + wunsch.wunschBeschreibung + "\",\"" + wunsch.schichtArt + "\")";
 
 
         connection.query(sql, function(err, result) {
@@ -912,7 +912,7 @@ var getWuensche = function getWuensche(stationID, mitarbeiterID) {
 }
 
 
-// Aktualisieren wunsch (wunschStatus)
+/*// Aktualisieren wunsch (wunschStatus)
 var updateWunsch = function updateWunsch(stationID, mitarbeiterID, date, wunschUpdate) {
     return new Promise(function(resolve, reject) {
 
@@ -934,6 +934,7 @@ var updateWunsch = function updateWunsch(stationID, mitarbeiterID, date, wunschU
 
     });
 }
+*/
 
 
 // Löschen eines Wunsches

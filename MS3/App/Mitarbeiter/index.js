@@ -7,7 +7,7 @@ var sqlHandler = require("../helper/sqlHandler");
 
 //var connection = dbConnection.connection; // DB Verbindung
 // GET auf die Liste aller Mitarbeiter
-router.get('/', (req, res) => { 
+router.get('/', (req, res) => {
    sqlHandler.getMitarbeiter()
         .then(function (mitarbeiterListe) { // <- So ist es richtig! Noch bei den anderen Funktionen ändern!!!!
             if (mitarbeiterListe === undefined) res.status(500).send("Could not read DATA");
@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
 
 });
 
-// GET auf einen einzelnen Mitarbeiter 
+// GET auf einen einzelnen Mitarbeiter
 router.get('/:id', (req, res) => {
     sqlHandler.getMitarbeiter()
         .then(function (mitarbeiterListe) {
@@ -183,6 +183,38 @@ router.get('/:id/ueberstunden', (req, res) => {
         });
 
 });
+
+
+//Post Wunsch eines Mitarbeiters
+router.post('/:id/wunsch', (req, res) => {
+
+  var wunsch = {
+    stationID = req.body.stationID;
+    mitarbeitID = req.params.id;
+    datumWunsch = req.body.datumWunsch;
+    wunschBeschreibung = req.body.wunschBeschreibung;
+    schichtArt = req.body.schichtArt;
+  }
+
+
+
+    sqlHandler.neuerWunsch(wunsch)
+    .then(function (wunsch) {
+        if (wunsch === undefined) res.status(400).send("Wunsch konnte nicht erstellt werden");
+        else {
+            res.status(201).send(wunsch);
+        }
+
+    })
+    .catch(function (err) {
+        res.status(400).send(err);
+    });
+
+});
+
+
+
+
 
 // Aktuallisieren des Wunsch Ratings
 router.put('/:id/wunschRating', (req, res) => {
