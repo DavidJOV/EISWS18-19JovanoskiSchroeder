@@ -167,7 +167,29 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
 
 
 
+var erfuelleWunsch = function erfuelleWunsch(mitarbeiterWunsch, dienstplan){
+//[OK]
+// früh -> Spät
+// früh -> Nachtschicht (next day)
+// Zwischen -> Spät
+// Zwischen -> Nacht (next day)
+// Spät -> Nachtschicht (next day)
+// Nacht -> Tag frei dann beliebige Schicht
 
+if (dienstplan.schicht == "Fruehschicht"){
+
+}
+
+
+
+
+
+
+
+} // End of Function
+
+
+/*
 // function nach jedem einsetzen eines MA in eine Schicht aufrufen... (Station benötigt dann mehr als 4 Mitarbeiter!)
 var wunschKontrolle = function wunschKontroll(stationID ,id, datum){
 
@@ -191,7 +213,7 @@ var wunschKontrolle = function wunschKontroll(stationID ,id, datum){
 
 } // end of function
 
-
+*/
 
 
 
@@ -202,11 +224,10 @@ router.post('/', bodyParser.json(), (req, res) => {
 
 
     var mitarbeiterListe;
-    var anzahlSchichten = 4;
+    var anzahlSchichten = 3;
     var anzahlMitarbeiterSchicht = 4;
     var fruehschicht = "Fruehschicht";
     var spaetschicht = "Spaetschicht";
-    var zwischenschicht = "Zwischenschicht";
     var nachtschicht = "Nachtschicht";
 
     const dienstplan = {
@@ -230,7 +251,6 @@ router.post('/', bodyParser.json(), (req, res) => {
         schichtzuweisungID1: "",
         schichtzuweisungID2: "",
         schichtzuweisungID3: "",
-        schichtzuweisungID4: "",
         datum: ""
     }
     sqlHandler.getDienstplanByMonat(req.body.monat,req.body.jahr)
@@ -253,8 +273,22 @@ router.post('/', bodyParser.json(), (req, res) => {
 
             console.log("TAGE:\n" + anzahlTage);
 
+
+
+            var mitarbeiterZuweisung;
+            var nummerierung1 = [0,1,2,3,4,5,6,7,8,9,10,11];
+            var nummerierung2 = [12,13,14,15,16,17,2,3,4,5,0,1];
+            var nummerierung3 = [6,7,8,9,10,11,12,13,14,15,16,17];
+
             for (let i = 1; i <= anzahlTage; i++) {
+
+                if (i<3 || (i>=7 && i<9) || (i>=13 && i<15) || (i>=19 && i<21) || (i>=25 && i<27) ){mitarbeiterZuweisung=nummerierung1;}
+                else if (i<5 || (i>=9 && i<11) || (i>=15 && i<17) || (i>=21 && i<23) || (i>=27 && i<29) ){mitarbeiterZuweisung=nummerierung2;}
+                else if (i<7 || (i>=11 && i<13) || (i>=17 && i<19) || (i>=23 && i<25) || (i>=29 && i<=31) ){mitarbeiterZuweisung=nummerierung3;}
+
+
                 var promiseTage = new Promise(function(resolve, reject) {
+
 
                     for (let j = 0; j <= anzahlSchichten; j++) {
 
@@ -267,10 +301,10 @@ router.post('/', bodyParser.json(), (req, res) => {
 
                             schichtzuweisung.datum = datum;
                             schichtzuweisung.schichtArt = "Fruehschicht";
-                            schichtzuweisung.mitarbeiterID1 = mitarbeiterListe[0].id;
-                            schichtzuweisung.mitarbeiterID2 = mitarbeiterListe[1].id;
-                            schichtzuweisung.mitarbeiterID3 = mitarbeiterListe[2].id;
-                            schichtzuweisung.mitarbeiterID4 = mitarbeiterListe[3].id;
+                            schichtzuweisung.mitarbeiterID1 = mitarbeiterListe[mitarbeiterZuweisung[0]].id;
+                            schichtzuweisung.mitarbeiterID2 = mitarbeiterListe[mitarbeiterZuweisung[1]].id;
+                            schichtzuweisung.mitarbeiterID3 = mitarbeiterListe[mitarbeiterZuweisung[2]].id;
+                            schichtzuweisung.mitarbeiterID4 = mitarbeiterListe[mitarbeiterZuweisung[3]].id;
                             sqlHandler.neueSchichtzuweisung(schichtzuweisung)
                                 .then(function(schichtzuweisung) {
                                     if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht erstellt werden");
@@ -291,39 +325,11 @@ router.post('/', bodyParser.json(), (req, res) => {
                             let datum = i + "-" + req.body.monat + "-"+ req.body.jahr;
                             if (i < 10) { datum = "0" + i + "-" + req.body.monat + "-"+ req.body.jahr; }
                             schichtzuweisung.datum = datum;
-                            schichtzuweisung.schichtArt = "Zwischenschicht";
-                            schichtzuweisung.mitarbeiterID1 = mitarbeiterListe[4].id;
-                            schichtzuweisung.mitarbeiterID2 = mitarbeiterListe[5].id;
-                            schichtzuweisung.mitarbeiterID3 = mitarbeiterListe[6].id;
-                            schichtzuweisung.mitarbeiterID4 = mitarbeiterListe[7].id;
-                            sqlHandler.neueSchichtzuweisung(schichtzuweisung)
-                                .then(function(schichtzuweisung) {
-                                    if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht erstellt werden");
-                                })
-                                .catch(function(err) {
-                                    console.log(err);
-                                }).then(function() {
-                                    sqlHandler.getSchichtzuweisung(datum, zwischenschicht)
-                                        .then(function(schicht) {
-
-                                            tag.schichtzuweisungID2 = schicht[0].id;
-
-                                        }).catch(function(err) {
-                                            console.log(err);
-                                        })
-                                })
-                        }
-
-
-                        if (j == 2) {
-                            let datum = i + "-" + req.body.monat + "-"+ req.body.jahr;
-                            if (i < 10) { datum = "0" + i + "-" + req.body.monat + "-"+ req.body.jahr; }
-                            schichtzuweisung.datum = datum;
                             schichtzuweisung.schichtArt = "Spaetschicht";
-                            schichtzuweisung.mitarbeiterID1 = mitarbeiterListe[8].id;
-                            schichtzuweisung.mitarbeiterID2 = mitarbeiterListe[9].id;
-                            schichtzuweisung.mitarbeiterID3 = mitarbeiterListe[10].id;
-                            schichtzuweisung.mitarbeiterID4 = mitarbeiterListe[11].id;
+                            schichtzuweisung.mitarbeiterID1 = mitarbeiterListe[mitarbeiterZuweisung[4]].id;
+                            schichtzuweisung.mitarbeiterID2 = mitarbeiterListe[mitarbeiterZuweisung[5]].id;
+                            schichtzuweisung.mitarbeiterID3 = mitarbeiterListe[mitarbeiterZuweisung[6]].id;
+                            schichtzuweisung.mitarbeiterID4 = mitarbeiterListe[mitarbeiterZuweisung[7]].id;
                             sqlHandler.neueSchichtzuweisung(schichtzuweisung)
                                 .then(function(schichtzuweisung) {
                                     if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht erstellt werden");
@@ -333,23 +339,23 @@ router.post('/', bodyParser.json(), (req, res) => {
                                 }).then(function() {
                                     sqlHandler.getSchichtzuweisung(datum, spaetschicht)
                                         .then(function(schicht) {
-                                            tag.schichtzuweisungID3 = schicht[0].id;
+                                            tag.schichtzuweisungID2 = schicht[0].id;
 
                                         })
                                 })
                         }
 
 
-                        if (j == 3) {
+                        if (j == 2) {
                             let datum = i + "-" + req.body.monat + "-"+ req.body.jahr;
                             if (i < 10) { datum = "0" + i + "-" + req.body.monat + "-"+ req.body.jahr; }
 
                             schichtzuweisung.datum = datum;
                             schichtzuweisung.schichtArt = "Nachtschicht";
-                            schichtzuweisung.mitarbeiterID1 = mitarbeiterListe[12].id;
-                            schichtzuweisung.mitarbeiterID2 = mitarbeiterListe[13].id;
-                            schichtzuweisung.mitarbeiterID3 = mitarbeiterListe[14].id;
-                            schichtzuweisung.mitarbeiterID4 = mitarbeiterListe[15].id;
+                            schichtzuweisung.mitarbeiterID1 = mitarbeiterListe[mitarbeiterZuweisung[8]].id;
+                            schichtzuweisung.mitarbeiterID2 = mitarbeiterListe[mitarbeiterZuweisung[9]].id;
+                            schichtzuweisung.mitarbeiterID3 = mitarbeiterListe[mitarbeiterZuweisung[10]].id;
+                            schichtzuweisung.mitarbeiterID4 = mitarbeiterListe[mitarbeiterZuweisung[11]].id;
                             sqlHandler.neueSchichtzuweisung(schichtzuweisung)
                                 .then(function(schichtzuweisung) {
                                     if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht erstellt werden");
@@ -359,7 +365,7 @@ router.post('/', bodyParser.json(), (req, res) => {
                                 }).then(function() {
                                     sqlHandler.getSchichtzuweisung(datum, nachtschicht)
                                         .then(function(schicht) {
-                                            tag.schichtzuweisungID4 = schicht[0].id;
+                                            tag.schichtzuweisungID3 = schicht[0].id;
 
                                             tag.datum = datum;
 

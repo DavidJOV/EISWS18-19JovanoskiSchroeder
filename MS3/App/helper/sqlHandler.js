@@ -494,7 +494,7 @@ var neuerTag = function neuerTag(tag) {
 
         //In der Datenbank hinzufügen
         // console.log(tag)
-        var sql = "INSERT INTO tag (schichtzuweisungID1, schichtzuweisungID2, schichtzuweisungID3, schichtzuweisungID4, datum) VALUES ( \"" + tag.schichtzuweisungID1 + "\",\"" + tag.schichtzuweisungID2 + "\",\"" + tag.schichtzuweisungID3 + "\",\"" + tag.schichtzuweisungID4 + "\",\"" + tag.datum + "\")";
+        var sql = "INSERT INTO tag (schichtzuweisungID1, schichtzuweisungID2, schichtzuweisungID3, datum) VALUES ( \"" + tag.schichtzuweisungID1 + "\",\"" + tag.schichtzuweisungID2 + "\",\"" + tag.schichtzuweisungID3 + "\",\"" + tag.datum + "\")";
 
 
         connection.query(sql, function(err, result) {
@@ -639,14 +639,13 @@ var getDienstplan = function getDienstplan(id) {
                         else {
                             tage.schichtzuweisung[i] = {
                                 fruehschicht: result2[0].schichtzuweisungID1,
-                                zwischenschicht: result2[0].schichtzuweisungID2,
-                                spaetschicht: result2[0].schichtzuweisungID3,
-                                nachtschicht: result2[0].schichtzuweisungID4
+                                spaetschicht: result2[0].schichtzuweisungID2,
+                                nachtschicht: result2[0].schichtzuweisungID3
                             }
                             arrayTage.push(result2)
                           }
 
-                            let sql3 = "SELECT * FROM schichtzuweisung WHERE id = " + tage.schichtzuweisung[i].fruehschicht + " OR " + tage.schichtzuweisung[i].zwischenschicht + " OR " + tage.schichtzuweisung[i].spaetschicht + " OR " + tage.schichtzuweisung[i].nachtschicht;
+                            let sql3 = "SELECT * FROM schichtzuweisung WHERE id = " + tage.schichtzuweisung[i].fruehschicht + " OR " + tage.schichtzuweisung[i].spaetschicht + " OR " + tage.schichtzuweisung[i].nachtschicht;
 
                             connection.query(sql3, function(err, result3) {
                                 if (err) reject(err);
@@ -729,14 +728,13 @@ var getDienstplanByDate = function getDienstplanByDate(monat, jahr) {
                         else {
                             tage.schichtzuweisung[i] = {
                                 fruehschicht: result2[0].schichtzuweisungID1,
-                                zwischenschicht: result2[0].schichtzuweisungID2,
-                                spaetschicht: result2[0].schichtzuweisungID3,
-                                nachtschicht: result2[0].schichtzuweisungID4
+                                spaetschicht: result2[0].schichtzuweisungID2,
+                                nachtschicht: result2[0].schichtzuweisungID3
                             }
                             arrayTage.push(result2)
                           }
 
-                            let sql3 = "SELECT * FROM schichtzuweisung WHERE id = " + tage.schichtzuweisung[i].fruehschicht + " OR " + tage.schichtzuweisung[i].zwischenschicht + " OR " + tage.schichtzuweisung[i].spaetschicht + " OR " + tage.schichtzuweisung[i].nachtschicht;
+                            let sql3 = "SELECT * FROM schichtzuweisung WHERE id = " + tage.schichtzuweisung[i].fruehschicht + " OR " + tage.schichtzuweisung[i].spaetschicht + " OR " + tage.schichtzuweisung[i].nachtschicht;
 
                             connection.query(sql3, function(err, result3) {
                                 if (err) reject(err);
