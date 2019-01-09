@@ -276,21 +276,21 @@ router.post('/', bodyParser.json(), (req, res) => {
 
 
             var mitarbeiterZuweisung;
-            var nummerierung1 = [0,1,2,3,4,5,6,7,8,9,10,11];
-            var nummerierung2 = [12,13,14,15,16,17,2,3,4,5,0,1];
-            var nummerierung3 = [6,7,8,9,10,11,12,13,14,15,16,17];
+            var zyklus1 = [0,1,2,3,4,5,6,7,8,9,10,11];
+            var zyklus2 = [12,13,14,15,16,17,2,3,4,5,0,1];
+            var zyklus3 = [6,7,8,9,10,11,12,13,14,15,16,17];
 
             for (let i = 1; i <= anzahlTage; i++) {
 
-                if (i<3 || (i>=7 && i<9) || (i>=13 && i<15) || (i>=19 && i<21) || (i>=25 && i<27) ){mitarbeiterZuweisung=nummerierung1;}
-                else if (i<5 || (i>=9 && i<11) || (i>=15 && i<17) || (i>=21 && i<23) || (i>=27 && i<29) ){mitarbeiterZuweisung=nummerierung2;}
-                else if (i<7 || (i>=11 && i<13) || (i>=17 && i<19) || (i>=23 && i<25) || (i>=29 && i<=31) ){mitarbeiterZuweisung=nummerierung3;}
+                if (i<3 || (i>=7 && i<9) || (i>=13 && i<15) || (i>=19 && i<21) || (i>=25 && i<27) ){mitarbeiterZuweisung=zyklus1;}
+                else if (i<5 || (i>=9 && i<11) || (i>=15 && i<17) || (i>=21 && i<23) || (i>=27 && i<29) ){mitarbeiterZuweisung=zyklus2;}
+                else if (i<7 || (i>=11 && i<13) || (i>=17 && i<19) || (i>=23 && i<25) || (i>=29 && i<=31) ){mitarbeiterZuweisung=zyklus3;}
 
 
                 var promiseTage = new Promise(function(resolve, reject) {
 
 
-                    for (let j = 0; j <= anzahlSchichten; j++) {
+                    for (let j = 0; j < anzahlSchichten; j++) {
 
                         if (j == 0) {
                             let datum = i + "-" + req.body.monat + "-"+ req.body.jahr;
