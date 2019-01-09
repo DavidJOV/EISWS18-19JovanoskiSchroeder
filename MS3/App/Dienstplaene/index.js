@@ -9,7 +9,6 @@ var counter = require("../helper/overgiveAsync.js");
 
 /* // Get auf alle Dienstpläne
 router.get('/', (req, res) => {
-
     if (dienstplanListe === undefined) res.status(500).send("Could not read DATA");
     else {
         res.status(200).send(dienstplanListe);
@@ -42,7 +41,6 @@ router.get('/:id/:date', (req, res) => {
         res.status(400).send(err);
     });
 });
-
 */
 
 
@@ -53,7 +51,7 @@ router.get('/:id/:date', (req, res) => {
 
 // Function -> Verändert Grunddienstplan aus POST nach Erstellung und Speicherung in der DB, sodass Wuensche (evtl. alle anderen Aspekte der fainiss [später]) berücksichtigt werden
 var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienstplan){ //"dienstplan" ist ein Objekt, mit dem auch ein Dienstplan erstellt werden kann -> Bei POST verwendet, um den DP in die Datenbank zu schreiben.
-
+console.log(dienstplan)
 
   var mitarbeiterWunsch = {
     mitarbeiterID: "",
@@ -79,7 +77,7 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
               mitarbeiterWunsch.datum = wunschListe[y].datumWunsch;
               mitarbeiterWunsch.schichtArt = wunschListe[y].schichtArt;
 
-              mitarbeiterWuenscheListe.push(mitarbeiterWuensche);
+              mitarbeiterWuenscheListe.push(mitarbeiterWunsch);
             }
           }
       })
@@ -107,6 +105,8 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
                       sqlHandler.updateWunschRating(mitarbeiterZ.id, -1);
                     }
 
+                  }).then(function(){
+                      console.log(mitarbeiterWuenscheListe)
                   })// zweiter get MA
               }) // erster get MA
             } // if - Bedingung
@@ -220,7 +220,6 @@ if (dienstplan.schicht == "Fruehschicht"){
 /*
 // function nach jedem einsetzen eines MA in eine Schicht aufrufen... (Station benötigt dann mehr als 4 Mitarbeiter!)
 var wunschKontrolle = function wunschKontroll(stationID ,id, datum){
-
   sqlHandler.getWuenscheStation(stationID)
       .then(function(wunschListe) {
           if (wunschListe === undefined) console.log("Keine Wuensche auf dieser Station vorhanden!");
@@ -238,9 +237,7 @@ var wunschKontrolle = function wunschKontroll(stationID ,id, datum){
       .catch(function(error) {
           console.log(error);
       })
-
 } // end of function
-
 */
 
 
@@ -463,10 +460,11 @@ router.post('/', bodyParser.json(), (req, res) => {
 
 
                 sqlHandler.neuerDienstplan(dienstplan)
-                    .then(function(dienstplan) {
-                        if (dienstplan === undefined) res.status(400).send("Dienstplan konnte nicht erstellt werden");
+                    .then(function(dienstplanDB) {
+                        if (dienstplanDB === undefined) res.status(400).send("Dienstplan konnte nicht erstellt werden");
                         else {
-                            res.status(201).send(dienstplan);
+                            res.status(201).send(dienstplanDB);
+                            korrigiereSchichtzuweisungen (dienstplan)
                         }
 
                     })

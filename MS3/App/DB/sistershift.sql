@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Erstellungszeit: 09. Jan 2019 um 17:06
+-- Erstellungszeit: 09. Jan 2019 um 18:18
 -- Server-Version: 5.6.34-log
 -- PHP-Version: 7.1.7
 
@@ -530,8 +530,7 @@ CREATE TABLE `wunsch` (
   `id` int(10) NOT NULL,
   `datumWunsch` date NOT NULL,
   `wunschBeschreibung` varchar(100) NOT NULL,
-  `schichtArt` varchar(20) NOT NULL,
-  `wunschStatus` tinyint(1) NOT NULL
+  `schichtArt` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
