@@ -3,14 +3,43 @@ $(document).ready(function() {
    $.get(url,function(dienstplan){
     console.log(dienstplan)
    
+   
     // page is now ready, initialize the calendar..
     $('#calendar').fullCalendar({
+        
+        eventSources: [
+
+            // your event source
+            {
+              events: [ // put the array in the `events` property
+                {
+                  title  : 'Fruehdienst',
+                  start  : '2019-01-01'
+                },
+                {
+                  title  : 'Fruehdienst',
+                  start  : '2019-01-05',
+                  end    : '2019-01-07'
+                },
+                {
+                  title  : 'Fruehdienst',
+                  start  : '2019-01-09T12:30:00',
+                }
+              ],
+              color: 'black',     // an option!
+              textColor: 'yellow' // an option!
+            }
+        
+            // any other event sources...
+        
+          ]
+        
        
-       
+          
         
     });
   
-
+    
 
 });
 })
