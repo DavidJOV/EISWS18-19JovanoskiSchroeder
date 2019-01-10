@@ -88,7 +88,12 @@ router.get('/dienstplaene', (req, res) => {
     // GET auf das Dienstplan anlegen Formular
 router.get('/dienstplaene/:id', (req, res) => {
     
-    res.status(200).render("DienstplanGET");
+    if(!req.query.mitarbeiter){
+        console.log(req.query)
+    res.status(200).render("DienstplanGET");}
+    else{ console.log("x")
+        res.status(200).render("DienstplanSingleGET");
+    }
     //res.status(200).send(JSON.parse(body))
     
 

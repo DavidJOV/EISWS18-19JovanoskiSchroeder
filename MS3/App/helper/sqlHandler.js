@@ -634,7 +634,7 @@ var getDienstplan = function getDienstplan(id) {
 
                     let sql2 = "SELECT * FROM tag WHERE id = " + dienstplan.tage[i]; // WORKAROUND -> NICHT HARDCODEN!!!
 
-                    console.log(dienstplan.tage[i],i)
+                    
                     connection.query(sql2, function(err, result2) {
                         if (err) reject(err);
                         else {
@@ -643,7 +643,7 @@ var getDienstplan = function getDienstplan(id) {
                                 spaetschicht: result2[0].schichtzuweisungID2,
                                 nachtschicht: result2[0].schichtzuweisungID3
                             }
-                           console.log( tage.schichtzuweisung[i],i)
+                           
                             arrayTage.push(result2)
                           }
 

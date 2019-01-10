@@ -39,7 +39,7 @@ $(document).ready(function () {
       events.push(element.schicht1, element.schicht2, element.schicht3)
 
     })
-    console.log(events)
+    
 
 
 
