@@ -79,7 +79,7 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
               mitarbeiterWunsch.datum = wunschListe[y].datumWunsch;
               mitarbeiterWunsch.schichtArt = wunschListe[y].schichtArt;
 
-              mitarbeiterWuenscheListe.push(mitarbeiterWuensche);
+              mitarbeiterWuenscheListe.push(mitarbeiterWunsch);
             }
           }
       })
@@ -463,10 +463,11 @@ router.post('/', bodyParser.json(), (req, res) => {
 
 
                 sqlHandler.neuerDienstplan(dienstplan)
-                    .then(function(dienstplan) {
-                        if (dienstplan === undefined) res.status(400).send("Dienstplan konnte nicht erstellt werden");
+                    .then(function(dienstplanDB) {
+                        if (dienstplanDB === undefined) res.status(400).send("Dienstplan konnte nicht erstellt werden");
                         else {
-                            res.status(201).send(dienstplan);
+                          //  res.status(201).send(dienstplanDB);
+                          korrigiereSchichtzuweisungen(dienstplan);
                         }
 
                     })

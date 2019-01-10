@@ -699,7 +699,7 @@ var getDienstplanByDate = function getDienstplanByDate(monat, jahr) {
         var maxAnzahlTage;
 
 
-        let sql = "SELECT * FROM dienstplan WHERE monat = " + monat + "AND jahr = " + jahr;
+        let sql = "SELECT * FROM dienstplan WHERE monat = " + monat + " AND jahr = " + jahr;
 
         connection.query(sql, function(err, result) {
             if (err) reject(err);
@@ -1211,7 +1211,7 @@ exports.getDienstplanByDate = getDienstplanByDate;
 // Wunsch
 exports.neuerWunsch = neuerWunsch;
 exports.getWuensche = getWuensche;
-exports.updateWunsch = updateWunsch;
+//exports.updateWunsch = updateWunsch;
 exports.loescheWunsch = loescheWunsch;
 exports.getWuenscheStation=getWuenscheStation;
 
