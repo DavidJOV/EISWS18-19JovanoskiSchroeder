@@ -85,6 +85,15 @@ router.get('/dienstplaene', (req, res) => {
 
     });
 
+    // GET auf das Dienstplan anlegen Formular
+router.get('/dienstplaene/:id', (req, res) => {
+    
+    res.status(200).render("DienstplanGET");
+    //res.status(200).send(JSON.parse(body))
+    
+
+});
+
 
 app.use(router)
 app.listen(settings.port, () => console.log("Express app listening on port: " + settings.port + "!"))
