@@ -699,7 +699,7 @@ var getDienstplanByDate = function getDienstplanByDate(monat, jahr) {
         var maxAnzahlTage;
 
 
-        let sql = "SELECT * FROM dienstplan WHERE monat = " + monat + "AND jahr = " + jahr;
+        let sql = "SELECT * FROM dienstplan WHERE monat = " + monat + " AND jahr = " + jahr;
 
         connection.query(sql, function(err, result) {
             if (err) reject(err);

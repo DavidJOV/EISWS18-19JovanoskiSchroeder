@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Erstellungszeit: 09. Jan 2019 um 17:06
--- Server-Version: 5.6.34-log
--- PHP-Version: 7.1.7
+-- Erstellungszeit: 10. Jan 2019 um 12:48
+-- Server-Version: 5.7.24-log
+-- PHP-Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -528,10 +528,9 @@ CREATE TABLE `wunsch` (
   `stationID` int(10) NOT NULL,
   `mitarbeiterID` int(10) NOT NULL,
   `id` int(10) NOT NULL,
-  `datumWunsch` date NOT NULL,
+  `datumWunsch` varchar(15) NOT NULL,
   `wunschBeschreibung` varchar(100) NOT NULL,
-  `schichtArt` varchar(20) NOT NULL,
-  `wunschStatus` tinyint(1) NOT NULL
+  `schichtArt` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -607,41 +606,49 @@ ALTER TABLE `wunsch`
 --
 ALTER TABLE `abwesenheitsmeldung`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT für Tabelle `dienstplan`
 --
 ALTER TABLE `dienstplan`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT für Tabelle `mitarbeiter`
 --
 ALTER TABLE `mitarbeiter`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
 --
 -- AUTO_INCREMENT für Tabelle `schichttausch`
 --
 ALTER TABLE `schichttausch`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT für Tabelle `schichtzuweisung`
 --
 ALTER TABLE `schichtzuweisung`
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=339;
+
 --
 -- AUTO_INCREMENT für Tabelle `station`
 --
 ALTER TABLE `station`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT für Tabelle `tag`
 --
 ALTER TABLE `tag`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+
 --
 -- AUTO_INCREMENT für Tabelle `wunsch`
 --
 ALTER TABLE `wunsch`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;COMMIT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -185,16 +185,18 @@ router.get('/:id/ueberstunden', (req, res) => {
 });
 
 
+
+
 //Post Wunsch eines Mitarbeiters
 router.post('/:id/wunsch', (req, res) => {
 
   var wunsch = {
     stationID : req.body.stationID,
-    mitarbeitID : req.params.id,
+    mitarbeiterID : req.params.id,
     datumWunsch : req.body.datumWunsch,
     wunschBeschreibung : req.body.wunschBeschreibung,
     schichtArt : req.body.schichtArt
-  }
+  };
 
 
 
