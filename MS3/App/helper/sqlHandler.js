@@ -1211,7 +1211,7 @@ exports.getDienstplanByDate = getDienstplanByDate;
 // Wunsch
 exports.neuerWunsch = neuerWunsch;
 exports.getWuensche = getWuensche;
-exports.updateWunsch = updateWunsch;
+//exports.updateWunsch = updateWunsch;
 exports.loescheWunsch = loescheWunsch;
 exports.getWuenscheStation=getWuenscheStation;
 
