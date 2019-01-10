@@ -60,7 +60,7 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
     datum: "",
     schichtArt: ""
   }
-  var mitarbeiterWuenscheListe = new Array();
+  var mitarbeiterWuenscheListe;
 
   var schichtzuweisungUpdate = {
     mitarbeiterID1: "",
@@ -74,18 +74,14 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
       .then(function(wunschListe) {
           if (wunschListe === undefined) console.log("Keine Wuensche auf dieser Station vorhanden!");
           else {
-            for (let y = 0 ; y<wunschListe.length ; y++){
-              mitarbeiterWunsch.mitarbeiterID = wunschListe[y].mitarbeiterID;
-              mitarbeiterWunsch.datum = wunschListe[y].datumWunsch;
-              mitarbeiterWunsch.schichtArt = wunschListe[y].schichtArt;
-
-              mitarbeiterWuenscheListe.push(mitarbeiterWunsch);
-            }
+            mitarbeiterWuenscheListe = wunschListe;
           }
       })
       .catch(function(error) {
           console.log(error);
       }).then(function() {
+
+        var wunschSuche = new Promise(function(resolve, reject) {
 
         for (let j = 0 ; j < mitarbeiterWuenscheListe.lentgh ; j++){
           for (let z = 0 ; z<mitarbeiterWuenscheListe.lenght ; z++){
@@ -113,12 +109,17 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
 
           } // for z - schleife
         } // for j -schleife
+        resolve(mitarbeiterWuenscheListe);
+})
+      wunschSuche.then (function (mitarbeiterWuenscheListe){
+
+        var promiseUpdate = new Promise(function(resolve, reject) {
 
         sqlHandler.getDienstplanByDate(dienstplan.monat, dienstplan.jahr)
         .then(function (dp){
           for (let i ; i < dp.schichten.length ; i++ ){
-            if (mitarbeiterWuenscheListe[i].datum && mitarbeiterWuenscheListe[i].mitarbeiterID == dp.schichten[i].datum && dp.schichten[i].mitarbeiterID1){
-              schichtzuweisungUpdate.mitarbeiterID1 = // ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
+            if ((mitarbeiterWuenscheListe[i].datum == dp.schichten[i].datum) && (mitarbeiterWuenscheListe[i].mitarbeiterID == dp.schichten[i].mitarbeiterID1)){
+              schichtzuweisungUpdate.mitarbeiterID1 = 0; // ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
               schichtzuweisungUpdate.mitarbeiterID2 = dp.schichten[i].mitarbeiterID2;
               schichtzuweisungUpdate.mitarbeiterID3 = dp.schichten[i].mitarbeiterID3;
               schichtzuweisungUpdate.mitarbeiterID4 = dp.schichten[i].mitarbeiterID4;
@@ -133,9 +134,9 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
             }
 
 
-            if (mitarbeiterWuenscheListe[i].datum && mitarbeiterWuenscheListe[i].mitarbeiterID == dp.schichten[i].datum && dp.schichten[i].mitarbeiterID2){
+            else if ((mitarbeiterWuenscheListe[i].datum == dp.schichten[i].datum) && (mitarbeiterWuenscheListe[i].mitarbeiterID == dp.schichten[i].mitarbeiterID2)){
               schichtzuweisungUpdate.mitarbeiterID1 = dp.schichten[i].mitarbeiterID1;
-              schichtzuweisungUpdate.mitarbeiterID2 = // ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
+              schichtzuweisungUpdate.mitarbeiterID2 = 0;// ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
               schichtzuweisungUpdate.mitarbeiterID3 = dp.schichten[i].mitarbeiterID3;
               schichtzuweisungUpdate.mitarbeiterID4 = dp.schichten[i].mitarbeiterID4;
 
@@ -149,10 +150,10 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
             }
 
 
-            if (mitarbeiterWuenscheListe[i].datum && mitarbeiterWuenscheListe[i].mitarbeiterID == dp.schichten[i].datum && dp.schichten[i].mitarbeiterID3){
+            else if ((mitarbeiterWuenscheListe[i].datum == dp.schichten[i].datum) && (mitarbeiterWuenscheListe[i].mitarbeiterID == dp.schichten[i].mitarbeiterID3)){
               schichtzuweisungUpdate.mitarbeiterID1 = dp.schichten[i].mitarbeiterID1;
               schichtzuweisungUpdate.mitarbeiterID2 = dp.schichten[i].mitarbeiterID2;
-              schichtzuweisungUpdate.mitarbeiterID3 = // ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
+              schichtzuweisungUpdate.mitarbeiterID3 = 0;// ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
               schichtzuweisungUpdate.mitarbeiterID4 = dp.schichten[i].mitarbeiterID4;
 
             sqlHandler.updateSchichtzuweisung(dp.schichten[i].datum, dp.schichten[i].schichtArt,schichtzuweisungUpdate)
@@ -165,11 +166,11 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
             }
 
 
-            if (mitarbeiterWuenscheListe[i].datum && mitarbeiterWuenscheListe[i].mitarbeiterID == dp.schichten[i].datum && dp.schichten[i].mitarbeiterID4){
+            else if ((mitarbeiterWuenscheListe[i].datum == dp.schichten[i].datum) && (mitarbeiterWuenscheListe[i].mitarbeiterID == dp.schichten[i].mitarbeiterID4)){
               schichtzuweisungUpdate.mitarbeiterID1 = dp.schichten[i].mitarbeiterID1;
               schichtzuweisungUpdate.mitarbeiterID2 = dp.schichten[i].mitarbeiterID2;
               schichtzuweisungUpdate.mitarbeiterID3 = dp.schichten[i].mitarbeiterID3;
-              schichtzuweisungUpdate.mitarbeiterID4 = // ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
+              schichtzuweisungUpdate.mitarbeiterID4 = 0; // ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
 
             sqlHandler.updateSchichtzuweisung(dp.schichten[i].datum, dp.schichten[i].schichtArt,schichtzuweisungUpdate)
             .then(function(schichtzuweisung) {
@@ -182,10 +183,21 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
 
           } // for i - Schleife
 
-
         }) // 2. then....
+        resolve();
+        })//PromiseUpdate
 
-    })// 1. then ....
+        promiseUpdate.then (function (){
+
+          sqlHandler.getDienstplanByDate(dienstplan.monat, dienstplan.jahr)
+          .then (function (finalerDienstplan){
+              return (finalerDienstplan);
+          })
+        })
+
+        }) // Promise wunschSuche
+
+    })// 1.then
 
 
 } // end of function
@@ -195,7 +207,7 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
 
 
 
-var erfuelleWunsch = function erfuelleWunsch(mitarbeiterWunsch, dienstplan){
+
 //[OK]
 // früh -> Spät
 // früh -> Nachtschicht (next day)
@@ -204,17 +216,9 @@ var erfuelleWunsch = function erfuelleWunsch(mitarbeiterWunsch, dienstplan){
 // Spät -> Nachtschicht (next day)
 // Nacht -> Tag frei dann beliebige Schicht
 
-if (dienstplan.schicht == "Fruehschicht"){
-
-}
 
 
 
-
-
-
-
-} // End of Function
 
 
 /*
@@ -467,7 +471,15 @@ router.post('/', bodyParser.json(), (req, res) => {
                         if (dienstplanDB === undefined) res.status(400).send("Dienstplan konnte nicht erstellt werden");
                         else {
                           //  res.status(201).send(dienstplanDB);
-                          korrigiereSchichtzuweisungen(dienstplan);
+                          var promisefinalerDienstplan = new Promise(function(resolve, reject) {
+                          var finalerDienstplan = korrigiereSchichtzuweisungen(dienstplan);
+                          resolve (finalerDienstplan);
+                        })
+                        promisefinalerDienstplan.then(function(finalerDienstplan){
+                          console.log("Test");
+                          res.status(201).send(finalerDienstplan)
+                        })
+
                         }
 
                     })
@@ -540,6 +552,41 @@ router.delete('/:id', (req, res) => {
     }
 
 });
+
+
+
+
+
+
+// TEST FUNKTION!
+
+router.get('/wuensche/:stationID', (req, res) => {
+    sqlHandler.getWuenscheStation(req.params.stationID)
+        .then(function (wunschListe) {
+            if (wunschListe === undefined) res.status(500).send("Could not read DATA");
+            else {
+              var test = wunschListe;
+                    res.status(200).send(test);
+                }
+        })
+        .catch(function (err) {
+            res.status(400).send(err);
+        });
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
