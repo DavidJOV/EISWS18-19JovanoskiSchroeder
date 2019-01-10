@@ -595,6 +595,7 @@ var getDienstplan = function getDienstplan(id) {
 
         //  Dienstplan mit gennanter ID
         var arrayTage = new Array();
+        var arraySchichten = new Array();
         var tage = {
             schichtzuweisung: []
         }
@@ -633,7 +634,7 @@ var getDienstplan = function getDienstplan(id) {
 
                     let sql2 = "SELECT * FROM tag WHERE id = " + dienstplan.tage[i]; // WORKAROUND -> NICHT HARDCODEN!!!
 
-
+                    console.log(dienstplan.tage[i],i)
                     connection.query(sql2, function(err, result2) {
                         if (err) reject(err);
                         else {
@@ -642,21 +643,22 @@ var getDienstplan = function getDienstplan(id) {
                                 spaetschicht: result2[0].schichtzuweisungID2,
                                 nachtschicht: result2[0].schichtzuweisungID3
                             }
+                           console.log( tage.schichtzuweisung[i],i)
                             arrayTage.push(result2)
                           }
 
-                            let sql3 = "SELECT * FROM schichtzuweisung WHERE id = " + tage.schichtzuweisung[i].fruehschicht + " OR " + tage.schichtzuweisung[i].spaetschicht + " OR " + tage.schichtzuweisung[i].nachtschicht;
+                            let sql3 = "SELECT * FROM schichtzuweisung WHERE id = " + tage.schichtzuweisung[i].fruehschicht + " OR id= " + tage.schichtzuweisung[i].spaetschicht + " OR id= " + tage.schichtzuweisung[i].nachtschicht;
 
                             connection.query(sql3, function(err, result3) {
                                 if (err) reject(err);
                                 else {
-
+                                    arraySchichten.push(result3)
                                     var dienstplanErgebnis = {
                                         metadaten: result,
                                         tage: arrayTage,
-                                        schichten: result3
+                                        schichten: arraySchichten
                                     }
-                                    resolve(dienstplanErgebnis)
+                                  if(i+1 == maxAnzahlTage)  resolve(dienstplanErgebnis);
 
 
                                 }

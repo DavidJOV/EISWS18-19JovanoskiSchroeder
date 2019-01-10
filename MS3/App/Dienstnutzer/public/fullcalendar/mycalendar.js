@@ -1,7 +1,7 @@
 $(document).ready(function() {
-   var url = "http://localhost:3000/Dienstplaene/"+getIndexVonDienstplan();
+   var url = "http://localhost:3000/Dienstplaene/"+1//getIndexVonDienstplan();
    $.get(url,function(dienstplan){
-    console.log(dienstplan)
+    console.log(dienstplan.schichten)
    
    
     // page is now ready, initialize the calendar..
