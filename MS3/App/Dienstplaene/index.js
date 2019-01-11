@@ -82,7 +82,6 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen(dienstp
         console.log(error);
       }).then(function() {
 
-        console.log("WUNSCHLISTE:\n" + JSON.stringify(mitarbeiterWuenscheListe))
 
         var wunschSuche = new Promise(function(resolve, reject) {
 
