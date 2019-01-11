@@ -31,10 +31,14 @@ function erstelleDienstplan(dienstplan) {
         stationID: input.elements[0].value,
         monat: input.elements[1].value,
         jahr: input.elements[2].value
-    };
-    
+    }
+ 
     var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
     xmlhttp.open("POST", "http://localhost:3000/dienstplaene");
     xmlhttp.setRequestHeader("Content-Type", "application/json");
     xmlhttp.send(JSON.stringify(neuerDienstplan));
+    xmlhttp.onload  = function() {
+        var jsonResponse = JSON.parse(xmlhttp.responseText);
+        window.location.href = "http://localhost:8080/dienstplaene/"+jsonResponse.metadaten[0].id;
+     };
 }
