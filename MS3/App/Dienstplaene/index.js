@@ -55,6 +55,7 @@ router.get('/:id/:date', (req, res) => {
 var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienstplan){ //"dienstplan" ist ein Objekt, mit dem auch ein Dienstplan erstellt werden kann -> Bei POST verwendet, um den DP in die Datenbank zu schreiben.
 
 
+
   var mitarbeiterWunsch = {
     mitarbeiterID: "",
     datum: "",
@@ -81,27 +82,37 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
           console.log(error);
       }).then(function() {
 
+        console.log ("WUNSCHLISTE:\n" + JSON.stringify(mitarbeiterWuenscheListe))
+
         var wunschSuche = new Promise(function(resolve, reject) {
 
-        for (let j = 0 ; j < mitarbeiterWuenscheListe.lentgh ; j++){
-          for (let z = 0 ; z<mitarbeiterWuenscheListe.lenght ; z++){
+        for (let j = 0 ; j < mitarbeiterWuenscheListe.length ; j++){
+          for (let z = j+1 ; z < mitarbeiterWuenscheListe.length ; z++){
 
-            if (mitarbeiterWuenscheListe[j].datum == mitarbeiterWuenscheListe[z].datum){
-              sqlHanlder.getMitarbeiter(mitarbeiterWuenscheListe[j].mitarbeiterID)
+
+            if (mitarbeiterWuenscheListe[j].datumWunsch == mitarbeiterWuenscheListe[z].datumWunsch){
+              sqlHandler.getMitarbeiterById(mitarbeiterWuenscheListe[j].mitarbeiterID)
               .then (function (mitarbeiterJ){
-                  sqlHanlder.getMitarbeiter(mitarbeiterWuenscheListe[z].mitarbeiterID)
+                  sqlHandler.getMitarbeiterById(mitarbeiterWuenscheListe[z].mitarbeiterID)
                   .then (function (mitarbeiterZ){
 
-                    if(mitarbeiterJ.wunschRating >= mitarbeiterZ.wunschRating){
+
+
+                    if(mitarbeiterJ[0].wunschRating >= mitarbeiterZ[0].wunschRating){
+                      console.log("Z:"+z);
                       mitarbeiterWuenscheListe.splice(z,1);
-                      sqlHandler.updateWunschRating(mitarbeiterJ.id, -1);
-                      sqlHandler.updateWunschRating(mitarbeiterZ.id, 1);
+                      sqlHandler.updateWunschRating(mitarbeiterJ[0].id, -1);
+                      sqlHandler.updateWunschRating(mitarbeiterZ[0].id, 1);
+
                     }
                     else {
+                      console.log("J:" +j);
                       mitarbeiterWuenscheListe.splice(j,1);
-                      sqlHandler.updateWunschRating(mitarbeiterJ.id, 1);
-                      sqlHandler.updateWunschRating(mitarbeiterZ.id, -1);
+                      sqlHandler.updateWunschRating(mitarbeiterJ[0].id, 1);
+                      sqlHandler.updateWunschRating(mitarbeiterZ[0].id, -1);
+
                     }
+
 
                   })// zweiter get MA
               }) // erster get MA
@@ -109,22 +120,40 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
 
           } // for z - schleife
         } // for j -schleife
-        resolve(mitarbeiterWuenscheListe);
+
+        setTimeout(function(){ resolve(mitarbeiterWuenscheListe) }, 300);
 })
       wunschSuche.then (function (mitarbeiterWuenscheListe){
+
+
 
         var promiseUpdate = new Promise(function(resolve, reject) {
 
         sqlHandler.getDienstplanByDate(dienstplan.monat, dienstplan.jahr)
         .then(function (dp){
-          for (let i ; i < dp.schichten.length ; i++ ){
-            if ((mitarbeiterWuenscheListe[i].datum == dp.schichten[i].datum) && (mitarbeiterWuenscheListe[i].mitarbeiterID == dp.schichten[i].mitarbeiterID1)){
+
+          var elements = new Array();
+
+          for (var p = 0; p < dp.schichten.length ; p++){
+          dp.schichten[p].forEach(function(element){
+            elements.push(element)
+          })
+        }
+
+
+
+
+        for ( let j = 0 ; j < mitarbeiterWuenscheListe.length ; j++){
+          for (let i = 0; i < elements.length ; i++ ){
+
+
+            if ((mitarbeiterWuenscheListe[j].datumWunsch == elements[i].datum) && (mitarbeiterWuenscheListe[j].mitarbeiterID == elements[i].mitarbeiterID1)){
               schichtzuweisungUpdate.mitarbeiterID1 = 0; // ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
-              schichtzuweisungUpdate.mitarbeiterID2 = dp.schichten[i].mitarbeiterID2;
-              schichtzuweisungUpdate.mitarbeiterID3 = dp.schichten[i].mitarbeiterID3;
-              schichtzuweisungUpdate.mitarbeiterID4 = dp.schichten[i].mitarbeiterID4;
+              schichtzuweisungUpdate.mitarbeiterID2 = elements[i].mitarbeiterID2;
+              schichtzuweisungUpdate.mitarbeiterID3 = elements[i].mitarbeiterID3;
+              schichtzuweisungUpdate.mitarbeiterID4 = elements[i].mitarbeiterID4;
 
-            sqlHandler.updateSchichtzuweisung(dp.schichten[i].datum, dp.schichten[i].schichtArt,schichtzuweisungUpdate)
+            sqlHandler.updateSchichtzuweisung(elements[i].datum, elements[i].schichtArt,schichtzuweisungUpdate)
             .then(function(schichtzuweisung) {
                 if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht aktualisiert werden");
             })
@@ -134,13 +163,13 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
             }
 
 
-            else if ((mitarbeiterWuenscheListe[i].datum == dp.schichten[i].datum) && (mitarbeiterWuenscheListe[i].mitarbeiterID == dp.schichten[i].mitarbeiterID2)){
-              schichtzuweisungUpdate.mitarbeiterID1 = dp.schichten[i].mitarbeiterID1;
+            else if ((mitarbeiterWuenscheListe[j].datumWunsch == elements[i].datum) && (mitarbeiterWuenscheListe[j].mitarbeiterID == elements[i].mitarbeiterID2)){
+              schichtzuweisungUpdate.mitarbeiterID1 = elements[i].mitarbeiterID1;
               schichtzuweisungUpdate.mitarbeiterID2 = 0;// ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
-              schichtzuweisungUpdate.mitarbeiterID3 = dp.schichten[i].mitarbeiterID3;
-              schichtzuweisungUpdate.mitarbeiterID4 = dp.schichten[i].mitarbeiterID4;
+              schichtzuweisungUpdate.mitarbeiterID3 = elements[i].mitarbeiterID3;
+              schichtzuweisungUpdate.mitarbeiterID4 = elements[i].mitarbeiterID4;
 
-            sqlHandler.updateSchichtzuweisung(dp.schichten[i].datum, dp.schichten[i].schichtArt,schichtzuweisungUpdate)
+            sqlHandler.updateSchichtzuweisung(elements[i].datum, elements[i].schichtArt,schichtzuweisungUpdate)
             .then(function(schichtzuweisung) {
                 if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht aktualisiert werden");
             })
@@ -150,13 +179,13 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
             }
 
 
-            else if ((mitarbeiterWuenscheListe[i].datum == dp.schichten[i].datum) && (mitarbeiterWuenscheListe[i].mitarbeiterID == dp.schichten[i].mitarbeiterID3)){
-              schichtzuweisungUpdate.mitarbeiterID1 = dp.schichten[i].mitarbeiterID1;
-              schichtzuweisungUpdate.mitarbeiterID2 = dp.schichten[i].mitarbeiterID2;
+            else if ((mitarbeiterWuenscheListe[j].datumWunsch == elements[i].datum) && (mitarbeiterWuenscheListe[j].mitarbeiterID == elements[i].mitarbeiterID3)){
+              schichtzuweisungUpdate.mitarbeiterID1 = elements[i].mitarbeiterID1;
+              schichtzuweisungUpdate.mitarbeiterID2 = elements[i].mitarbeiterID2;
               schichtzuweisungUpdate.mitarbeiterID3 = 0;// ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
-              schichtzuweisungUpdate.mitarbeiterID4 = dp.schichten[i].mitarbeiterID4;
+              schichtzuweisungUpdate.mitarbeiterID4 = elements[i].mitarbeiterID4;
 
-            sqlHandler.updateSchichtzuweisung(dp.schichten[i].datum, dp.schichten[i].schichtArt,schichtzuweisungUpdate)
+            sqlHandler.updateSchichtzuweisung(elements[i].datum, elements[i].schichtArt,schichtzuweisungUpdate)
             .then(function(schichtzuweisung) {
                 if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht aktualisiert werden");
             })
@@ -166,13 +195,13 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
             }
 
 
-            else if ((mitarbeiterWuenscheListe[i].datum == dp.schichten[i].datum) && (mitarbeiterWuenscheListe[i].mitarbeiterID == dp.schichten[i].mitarbeiterID4)){
-              schichtzuweisungUpdate.mitarbeiterID1 = dp.schichten[i].mitarbeiterID1;
-              schichtzuweisungUpdate.mitarbeiterID2 = dp.schichten[i].mitarbeiterID2;
-              schichtzuweisungUpdate.mitarbeiterID3 = dp.schichten[i].mitarbeiterID3;
+            else if ((mitarbeiterWuenscheListe[j].datumWunsch == elements[i].datum) && (mitarbeiterWuenscheListe[j].mitarbeiterID == elements[i].mitarbeiterID4)){
+              schichtzuweisungUpdate.mitarbeiterID1 = elements[i].mitarbeiterID1;
+              schichtzuweisungUpdate.mitarbeiterID2 = elements[i].mitarbeiterID2;
+              schichtzuweisungUpdate.mitarbeiterID3 = elements[i].mitarbeiterID3;
               schichtzuweisungUpdate.mitarbeiterID4 = 0; // ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
 
-            sqlHandler.updateSchichtzuweisung(dp.schichten[i].datum, dp.schichten[i].schichtArt,schichtzuweisungUpdate)
+            sqlHandler.updateSchichtzuweisung(elements[i].datum, elements[i].schichtArt,schichtzuweisungUpdate)
             .then(function(schichtzuweisung) {
                 if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht aktualisiert werden");
             })
@@ -182,14 +211,14 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen (dienst
             }
 
           } // for i - Schleife
-
+        } // for j -Schleife
         }) // 2. then....
-        resolve();
+        resolve("Dienstplan aktualisiert");
         })//PromiseUpdate
 
-        promiseUpdate.then (function (){
+       promiseUpdate.then (function (){
 
-          sqlHandler.getDienstplanByDate(dienstplan.monat, dienstplan.jahr)
+         sqlHandler.getDienstplanByDate(dienstplan.monat, dienstplan.jahr)
           .then (function (finalerDienstplan){
               return (finalerDienstplan);
           })
@@ -230,7 +259,7 @@ var wunschKontrolle = function wunschKontroll(stationID ,id, datum){
           if (wunschListe === undefined) console.log("Keine Wuensche auf dieser Station vorhanden!");
           else {
             for (let y = 0 ; y<wunschListe.length ; y++){
-              if (id && datum == wunschListe[y].mitarbeitID && wunschListe.[y].datumWunsch){
+              if (id && datum == wunschListe[y].mitarbeiterID && wunschListe.[y].datumWunsch){
               // ändere Schichtzuweisung ...
               }
               else {
@@ -472,11 +501,13 @@ router.post('/', bodyParser.json(), (req, res) => {
                         else {
                           //  res.status(201).send(dienstplanDB);
                           var promisefinalerDienstplan = new Promise(function(resolve, reject) {
+                            console.log(dienstplan)
                           var finalerDienstplan = korrigiereSchichtzuweisungen(dienstplan);
                           resolve (finalerDienstplan);
                         })
                         promisefinalerDienstplan.then(function(finalerDienstplan){
                           console.log("Test");
+                          //console.log(finalerDienstplan);
                           res.status(201).send(finalerDienstplan)
                         })
 

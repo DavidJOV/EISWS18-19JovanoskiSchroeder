@@ -29,6 +29,31 @@ var getMitarbeiter = function getMitarbeiter() {
     });
 }
 
+
+var getMitarbeiterById = function getMitarbeiterById(id) {
+
+    return new Promise(function(resolve, reject) {
+
+        // Alle Mitarbeiter die auf der Station arbeiten
+
+        let sql = "SELECT * FROM Mitarbeiter WHERE id = " +id;
+        connection.query(sql, function(err, result) {
+            if (err) reject(err);
+            else {
+
+                // Datenbank Daten aufbereiten.
+
+                let mitarbeiterString = JSON.stringify(result);
+                var mitarbeiter = JSON.parse(mitarbeiterString);
+                resolve(mitarbeiter);
+
+            }
+        });
+    });
+}
+
+
+
 var neuerMitarbeiter = function neuerMitarbeiter(mitarbeiter) {
     return new Promise(function(resolve, reject) {
 
@@ -439,7 +464,7 @@ var updateSchichtzuweisung = function updateSchichtzuweisung(date, schicht, schi
 
         // Schichtzuweisung aktuallisieren
 
-        var sql = "UPDATE schichtzuweisung SET mitarbeiterID1 = \"" + schichtUpdate.mitarbeiterID1 + "\",mitarbeiterID2 = \"" + schichtUpdate.mitarbeiterID2 + "\",mitarbeiterID3 = \"" + schichtUpdate.mitarbeiterID3 + "\",mitarbeiterID4 = \"" + schichtUpdate.mitarbeiterID4 + "\" WHERE datum =" + date + "AND schichtArt = " + schicht;
+        var sql = "UPDATE schichtzuweisung SET mitarbeiterID1 = \"" + schichtUpdate.mitarbeiterID1 + "\",mitarbeiterID2 = \"" + schichtUpdate.mitarbeiterID2 + "\",mitarbeiterID3 = \"" + schichtUpdate.mitarbeiterID3 + "\",mitarbeiterID4 = \"" + schichtUpdate.mitarbeiterID4 + "\" WHERE datum = \"" + date + "\" AND schichtArt = \"" + schicht + "\"";
 
 
         connection.query(sql, function(err, result) {
@@ -634,7 +659,7 @@ var getDienstplan = function getDienstplan(id) {
 
                     let sql2 = "SELECT * FROM tag WHERE id = " + dienstplan.tage[i]; // WORKAROUND -> NICHT HARDCODEN!!!
 
-                    
+
                     connection.query(sql2, function(err, result2) {
                         if (err) reject(err);
                         else {
@@ -643,7 +668,7 @@ var getDienstplan = function getDienstplan(id) {
                                 spaetschicht: result2[0].schichtzuweisungID2,
                                 nachtschicht: result2[0].schichtzuweisungID3
                             }
-                           
+
                             arrayTage.push(result2)
                           }
 
@@ -682,89 +707,91 @@ var getDienstplan = function getDienstplan(id) {
 var getDienstplanByDate = function getDienstplanByDate(monat, jahr) {
 
 
-    return new Promise(function(resolve, reject) {
+      return new Promise(function(resolve, reject) {
 
-        //  Dienstplan mit gennanter ID
-        var arrayTage = new Array();
-        var tage = {
-            schichtzuweisung: []
-        }
-
-
-        var dienstplan = {
-            stationID: "",
-            monat: "",
-            jahr: "",
-            tage: []
-        }
-
-        var maxAnzahlTage;
+          //  Dienstplan mit gennanter ID
+          var arrayTage = new Array();
+          var arraySchichten = new Array();
+          var tage = {
+              schichtzuweisung: []
+          }
 
 
-        let sql = "SELECT * FROM dienstplan WHERE monat = " + monat + " AND jahr = " + jahr;
+          var dienstplan = {
+              stationID: "",
+              monat: "",
+              jahr: "",
+              tage: []
+          }
 
-        connection.query(sql, function(err, result) {
-            if (err) reject(err);
-
-            else if (result[0] != undefined) {
-
-                dienstplan.stationID = result[0].stationID;
-                dienstplan.monat = result[0].monat;
-                dienstplan.jahr = result[0].jahr;
-                dienstplan.tage = [result[0].tag1, result[0].tag2, result[0].tag3, result[0].tag4, result[0].tag5,
-                result[0].tag6, result[0].tag7, result[0].tag8, result[0].tag9, result[0].tag10, result[0].tag11,
-                result[0].tag12, result[0].tag13, result[0].tag14, result[0].tag15, result[0].tag16, result[0].tag17,
-                result[0].tag18, result[0].tag19, result[0].tag20, result[0].tag21, result[0].tag22, result[0].tag23,
-                result[0].tag24, result[0].tag25, result[0].tag26, result[0].tag27, result[0].tag28, result[0].tag29,
-                result[0].tag30, result[0].tag31];
-
-               maxAnzahlTage = tagZaehler(dienstplan.monat,dienstplan.jahr);
-
-                for (let i = 0; i < maxAnzahlTage; i++) {
-
-                    let sql2 = "SELECT * FROM tag WHERE id = " + dienstplan.tage[i]; // WORKAROUND -> NICHT HARDCODEN!!!
+          var maxAnzahlTage;
 
 
-                    connection.query(sql2, function(err, result2) {
-                        if (err) reject(err);
-                        else {
-                            tage.schichtzuweisung[i] = {
-                                fruehschicht: result2[0].schichtzuweisungID1,
-                                spaetschicht: result2[0].schichtzuweisungID2,
-                                nachtschicht: result2[0].schichtzuweisungID3
+          let sql = "SELECT * FROM dienstplan WHERE monat = " + monat + " AND jahr = " +jahr;
+
+          connection.query(sql, function(err, result) {
+              if (err) reject(err);
+
+              else if (result[0] != undefined) {
+
+                  dienstplan.stationID = result[0].stationID;
+                  dienstplan.monat = result[0].monat;
+                  dienstplan.jahr = result[0].jahr;
+                  dienstplan.tage = [result[0].tag1, result[0].tag2, result[0].tag3, result[0].tag4, result[0].tag5,
+                  result[0].tag6, result[0].tag7, result[0].tag8, result[0].tag9, result[0].tag10, result[0].tag11,
+                  result[0].tag12, result[0].tag13, result[0].tag14, result[0].tag15, result[0].tag16, result[0].tag17,
+                  result[0].tag18, result[0].tag19, result[0].tag20, result[0].tag21, result[0].tag22, result[0].tag23,
+                  result[0].tag24, result[0].tag25, result[0].tag26, result[0].tag27, result[0].tag28, result[0].tag29,
+                  result[0].tag30, result[0].tag31];
+
+                 maxAnzahlTage = tagZaehler(dienstplan.monat,dienstplan.jahr);
+
+                  for (let i = 0; i < maxAnzahlTage; i++) {
+
+                      let sql2 = "SELECT * FROM tag WHERE id = " + dienstplan.tage[i]; // WORKAROUND -> NICHT HARDCODEN!!!
+
+
+                      connection.query(sql2, function(err, result2) {
+                          if (err) reject(err);
+                          else {
+                              tage.schichtzuweisung[i] = {
+                                  fruehschicht: result2[0].schichtzuweisungID1,
+                                  spaetschicht: result2[0].schichtzuweisungID2,
+                                  nachtschicht: result2[0].schichtzuweisungID3
+                              }
+
+                              arrayTage.push(result2)
                             }
-                            arrayTage.push(result2)
-                          }
 
-                            let sql3 = "SELECT * FROM schichtzuweisung WHERE id = " + tage.schichtzuweisung[i].fruehschicht + " OR " + tage.schichtzuweisung[i].spaetschicht + " OR " + tage.schichtzuweisung[i].nachtschicht;
+                              let sql3 = "SELECT * FROM schichtzuweisung WHERE id = " + tage.schichtzuweisung[i].fruehschicht + " OR id= " + tage.schichtzuweisung[i].spaetschicht + " OR id= " + tage.schichtzuweisung[i].nachtschicht;
 
-                            connection.query(sql3, function(err, result3) {
-                                if (err) reject(err);
-                                else {
-
-                                    var dienstplanErgebnis = {
-                                        metadaten: result,
-                                        tage: arrayTage,
-                                        schichten: result3
-                                    }
-                                    resolve(dienstplanErgebnis)
+                              connection.query(sql3, function(err, result3) {
+                                  if (err) reject(err);
+                                  else {
+                                      arraySchichten.push(result3)
+                                      var dienstplanErgebnis = {
+                                          metadaten: result,
+                                          tage: arrayTage,
+                                          schichten: arraySchichten
+                                      }
+                                    if(i+1 == maxAnzahlTage)  resolve(dienstplanErgebnis);
 
 
-                                }
-                            });
+                                  }
+                              });
 
 
 
-                    });
+                      });
 
-                }
-            }
-            else { resolve("Kein Dienstplan für diesen Monat vorhanden!") }
-        });
+                  }
+              }
+              else { resolve("Kein Dienstplan mit dieser ID vorhanden!") }
+          });
 
 
-    });
-}
+      });
+  }
 
 
 
@@ -1179,6 +1206,7 @@ exports.updateUeberstunden = updateUeberstunden;
 exports.loescheMitarbeiter = loescheMitarbeiter;
 exports.updateWunschRating = updateWunschRating;
 exports.updateDienstplanRating = updateDienstplanRating;
+exports.getMitarbeiterById = getMitarbeiterById;
 //Abwesenheitsmeldung
 exports.getAbwesenheiten = getAbwesenheiten;
 exports.neueAbwesenheit = neueAbwesenheit;
