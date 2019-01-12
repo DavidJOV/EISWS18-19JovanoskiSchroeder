@@ -483,6 +483,33 @@ var updateSchichtzuweisung = function updateSchichtzuweisung(date, schicht, schi
 }
 
 
+// Eintragung eines Wunsch-Tauschs
+var updateSchichtzuweisungWunsch = function updateSchichtzuweisungWunsch(mitarbeiterID, tauschenderMitarbeiter) {
+    return new Promise(function(resolve, reject) {
+
+        // Schichtzuweisung aktuallisieren
+
+        var sql = "UPDATE schichtzuweisung SET mitarbeiterID"+tauschenderMitarbeiter.idNummer+" = \"" + mitarbeiterID + "\" WHERE datum = \"" + tauschenderMitarbeiter.datum + "\" AND schichtArt = \"" + tauschenderMitarbeiter.schichtArt + "\"";
+
+
+        connection.query(sql, function(err, result) {
+            if (err) {
+                console.log(err)
+                reject(err);
+
+            } else {
+                resolve(result);
+                //console.log("Schicht wurde aktuallisiert");
+            }
+        });
+
+
+    });
+}
+
+
+
+
 // Löschen einer Schichtzuweisung
 var loescheSchichtzuweisung = function loescheSchichtzuweisung(date, schicht) {
     return new Promise(function(resolve, reject) {
@@ -1226,6 +1253,7 @@ exports.getSchichtzuweisungen = getSchichtzuweisungen;
 exports.neueSchichtzuweisung = neueSchichtzuweisung;
 exports.updateSchichtzuweisung = updateSchichtzuweisung;
 exports.loescheSchichtzuweisung = loescheSchichtzuweisung;
+exports.updateSchichtzuweisungWunsch = updateSchichtzuweisungWunsch;
 
 //Tag
 exports.getTage = getTage;

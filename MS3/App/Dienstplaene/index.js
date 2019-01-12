@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 var sqlHandler = require("../helper/sqlHandler.js");
+var wuensche = require("../helper/wuensche.js");
 var tagZaehler = require("../helper/tagberechnung.js").getDaysInMonth;
 var counter = require("../helper/overgiveAsync.js");
 
@@ -50,7 +51,7 @@ router.get('/:id/:date', (req, res) => {
 
 
 
-
+/*
 // Function -> Verändert Grunddienstplan aus POST nach Erstellung und Speicherung in der DB, sodass Wuensche (evtl. alle anderen Aspekte der fainiss [später]) berücksichtigt werden
 var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen(dienstplan) { //"dienstplan" ist ein Objekt, mit dem auch ein Dienstplan erstellt werden kann -> Bei POST verwendet, um den DP in die Datenbank zu schreiben.
   return new Promise(function (resolve, reject) {
@@ -266,7 +267,7 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen(dienstp
   });// end of return new Promise ...
 
 } // end of function
-
+*/
 // continue ... Welcher MA übernimmt dann die Schicht ? -> Evtl Ausbauen, auch auf Fainiss bezogen etc...
 
 
@@ -556,7 +557,7 @@ router.post('/', bodyParser.json(), (req, res) => {
                 else {
                   //  res.status(201).send(dienstplanDB);
 
-                  korrigiereSchichtzuweisungen(dienstplan).then(function (finalerDienstplan) {
+                 wuensche.korrigiereSchichtzuweisungen(dienstplan).then(function (finalerDienstplan) {
                     if (finalerDienstplan == -1) {
                       sqlHandler.getDienstplanByDate(dienstplan.monat, dienstplan.jahr)
                         .then(function (dienstplanOhneWuensche) {
