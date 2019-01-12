@@ -21,10 +21,10 @@ router.get('/', (req, res) => {
 // Get auf einen einzelnen Dienstplan
 router.get('/:id', (req, res) => {
   sqlHandler.getDienstplan(req.params.id)
-    .then(function(dienstplan) {
+    .then(function (dienstplan) {
       res.status(200).send(dienstplan);
     })
-    .catch(function(err) {
+    .catch(function (err) {
       res.status(400).send(err);
     });
 });
@@ -53,7 +53,11 @@ router.get('/:id/:date', (req, res) => {
 
 // Function -> Verändert Grunddienstplan aus POST nach Erstellung und Speicherung in der DB, sodass Wuensche (evtl. alle anderen Aspekte der fainiss [später]) berücksichtigt werden
 var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen(dienstplan) { //"dienstplan" ist ein Objekt, mit dem auch ein Dienstplan erstellt werden kann -> Bei POST verwendet, um den DP in die Datenbank zu schreiben.
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
+    if (dienstplan.monat < 10) {
+      var monat = "-0" + dienstplan.monat + "-";
+    }
+    var monat = "-" + dienstplan.monat + "-";
 
 
     var mitarbeiterWunsch = {
@@ -71,177 +75,195 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen(dienstp
     }
 
 
-    sqlHandler.getWuenscheStation(dienstplan.stationID)
-      .then(function(wunschListe) {
-        if (wunschListe === undefined) console.log("Keine Wuensche auf dieser Station vorhanden!");
+    sqlHandler.getWuenscheStation(dienstplan.stationID, monat)
+      .then(function (wunschListe) {
+        if (wunschListe.length == 0) {
+
+          console.log("Keine Wuensche auf dieser Station vorhanden!");
+          resolve(-1);
+        }
         else {
           mitarbeiterWuenscheListe = wunschListe;
-        }
-      })
-      .catch(function(error) {
-        console.log(error);
-      }).then(function() {
-
-
-        var wunschSuche = new Promise(function(resolve, reject) {
-
-          for (let j = 0; j < mitarbeiterWuenscheListe.length; j++) {
-            for (let z = j + 1; z < mitarbeiterWuenscheListe.length; z++) {
-
-
-              if (mitarbeiterWuenscheListe[j].datumWunsch == mitarbeiterWuenscheListe[z].datumWunsch) {
-                sqlHandler.getMitarbeiterById(mitarbeiterWuenscheListe[j].mitarbeiterID)
-                  .then(function(mitarbeiterJ) {
-                    sqlHandler.getMitarbeiterById(mitarbeiterWuenscheListe[z].mitarbeiterID)
-                      .then(function(mitarbeiterZ) {
 
 
 
-                        if (mitarbeiterJ[0].wunschRating >= mitarbeiterZ[0].wunschRating) {
 
-                          mitarbeiterWuenscheListe.splice(z, 1);
-                          sqlHandler.updateWunschRating(mitarbeiterJ[0].id, -1);
-                          sqlHandler.updateWunschRating(mitarbeiterZ[0].id, 1);
+          var wunschSuche = new Promise(function (resolve, reject) {
 
-                        } else {
-
-                          mitarbeiterWuenscheListe.splice(j, 1);
-                          sqlHandler.updateWunschRating(mitarbeiterJ[0].id, 1);
-                          sqlHandler.updateWunschRating(mitarbeiterZ[0].id, -1);
-
-                        }
+            for (let j = 0; j < mitarbeiterWuenscheListe.length; j++) {
+              for (let z = j + 1; z < mitarbeiterWuenscheListe.length; z++) {
 
 
-                      }) // zweiter get MA
-                  }) // erster get MA
-              } // if - Bedingung
-
-            } // for z - schleife
-          } // for j -schleife
-
-          setTimeout(function() {
-            resolve(mitarbeiterWuenscheListe)
-          }, 300);
-        })
-        wunschSuche.then(function(mitarbeiterWuenscheListe) {
+                if (mitarbeiterWuenscheListe[j].datumWunsch == mitarbeiterWuenscheListe[z].datumWunsch) {
+                  sqlHandler.getMitarbeiterById(mitarbeiterWuenscheListe[j].mitarbeiterID)
+                    .then(function (mitarbeiterJ) {
+                      sqlHandler.getMitarbeiterById(mitarbeiterWuenscheListe[z].mitarbeiterID)
+                        .then(function (mitarbeiterZ) {
 
 
 
-          var promiseUpdate = new Promise(function(resolve, reject) {
+                          if (mitarbeiterJ[0].wunschRating >= mitarbeiterZ[0].wunschRating) {
 
-            sqlHandler.getDienstplanByDate(dienstplan.monat, dienstplan.jahr)
-              .then(function(dp) {
+                            mitarbeiterWuenscheListe.splice(z, 1);
+                            sqlHandler.updateWunschRating(mitarbeiterJ[0].id, -1);
+                            sqlHandler.updateWunschRating(mitarbeiterZ[0].id, 1);
 
-                var elements = new Array();
+                          } else {
 
-                for (var p = 0; p < dp.schichten.length; p++) {
-                  dp.schichten[p].forEach(function(element) {
-                    elements.push(element)
-                  })
-                }
+                            mitarbeiterWuenscheListe.splice(j, 1);
+                            sqlHandler.updateWunschRating(mitarbeiterJ[0].id, 1);
+                            sqlHandler.updateWunschRating(mitarbeiterZ[0].id, -1);
 
-
-                //  var promiseLoop = new Promise(function(resolve, reject) {
+                          }
 
 
-                for (var j = 0; j < mitarbeiterWuenscheListe.length; j++) {
-                  for (var i = 0; i < elements.length; i++) {
-
-
-                    if ((mitarbeiterWuenscheListe[j].datumWunsch == elements[i].datum) && (mitarbeiterWuenscheListe[j].mitarbeiterID == elements[i].mitarbeiterID1)) {
-                      schichtzuweisungUpdate.mitarbeiterID1 = 0; // ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
-                      schichtzuweisungUpdate.mitarbeiterID2 = elements[i].mitarbeiterID2;
-                      schichtzuweisungUpdate.mitarbeiterID3 = elements[i].mitarbeiterID3;
-                      schichtzuweisungUpdate.mitarbeiterID4 = elements[i].mitarbeiterID4;
-
-                      sqlHandler.updateSchichtzuweisung(elements[i].datum, elements[i].schichtArt, schichtzuweisungUpdate)
-                        .then(function(schichtzuweisung) {
-                          if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht aktualisiert werden");
-                        })
-                        .catch(function(err) {
+                        }).catch(function (err) {
                           console.log(err);
-                        })
-                    } else if ((mitarbeiterWuenscheListe[j].datumWunsch == elements[i].datum) && (mitarbeiterWuenscheListe[j].mitarbeiterID == elements[i].mitarbeiterID2)) {
-                      schichtzuweisungUpdate.mitarbeiterID1 = elements[i].mitarbeiterID1;
-                      schichtzuweisungUpdate.mitarbeiterID2 = 0; // ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
-                      schichtzuweisungUpdate.mitarbeiterID3 = elements[i].mitarbeiterID3;
-                      schichtzuweisungUpdate.mitarbeiterID4 = elements[i].mitarbeiterID4;
+                        }) // zweiter get MA
+                    }).catch(function (err) {
+                      console.log(err);
+                    }) // erster get MA
+                } // if - Bedingung
 
-                      sqlHandler.updateSchichtzuweisung(elements[i].datum, elements[i].schichtArt, schichtzuweisungUpdate)
-                        .then(function(schichtzuweisung) {
-                          if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht aktualisiert werden");
-                        })
-                        .catch(function(err) {
-                          console.log(err);
-                        })
-                    } else if ((mitarbeiterWuenscheListe[j].datumWunsch == elements[i].datum) && (mitarbeiterWuenscheListe[j].mitarbeiterID == elements[i].mitarbeiterID3)) {
-                      schichtzuweisungUpdate.mitarbeiterID1 = elements[i].mitarbeiterID1;
-                      schichtzuweisungUpdate.mitarbeiterID2 = elements[i].mitarbeiterID2;
-                      schichtzuweisungUpdate.mitarbeiterID3 = 0; // ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
-                      schichtzuweisungUpdate.mitarbeiterID4 = elements[i].mitarbeiterID4;
+              } // for z - schleife
+            } // for j -schleife
 
-                      sqlHandler.updateSchichtzuweisung(elements[i].datum, elements[i].schichtArt, schichtzuweisungUpdate)
-                        .then(function(schichtzuweisung) {
-                          if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht aktualisiert werden");
-                        })
-                        .catch(function(err) {
-                          console.log(err);
-                        })
-                    } else if ((mitarbeiterWuenscheListe[j].datumWunsch == elements[i].datum) && (mitarbeiterWuenscheListe[j].mitarbeiterID == elements[i].mitarbeiterID4)) {
-                      schichtzuweisungUpdate.mitarbeiterID1 = elements[i].mitarbeiterID1;
-                      schichtzuweisungUpdate.mitarbeiterID2 = elements[i].mitarbeiterID2;
-                      schichtzuweisungUpdate.mitarbeiterID3 = elements[i].mitarbeiterID3;
-                      schichtzuweisungUpdate.mitarbeiterID4 = 0; // ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
-
-                      sqlHandler.updateSchichtzuweisung(elements[i].datum, elements[i].schichtArt, schichtzuweisungUpdate)
-                        .then(function(schichtzuweisung) {
-                          if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht aktualisiert werden");
-                        })
-                        .catch(function(err) {
-                          console.log(err);
-                        })
-                    }
-
-                  } // for i - Schleife
-                  if (j + 1 == mitarbeiterWuenscheListe.length) {
-                    resolve("Dienstplan aktualisiert");
-                  }
-                } // for j -Schleife
-
-                //  if(j)
-
-                //  }) //promise loop
-
-              }) // 2. then....
-
-          }) //PromiseUpdate
-
-          promiseUpdate.then(function() {
-
-
-            sqlHandler.getDienstplanByDate(dienstplan.monat, dienstplan.jahr)
-              .then(function(finalerDienstplan) {
-
-                var promiseConnect = new Promise(function(resolve, reject) {
-                  resolve(finalerDienstplan);
-
-                })
-
-                promiseConnect.then(function(finalerDienstplan) {
-                  resolve(finalerDienstplan);
-                })
-              })
-
+            setTimeout(function () {
+              resolve(mitarbeiterWuenscheListe)
+            }, 300);
           })
 
-        }) // Promise wunschSuche
+          wunschSuche.then(function (mitarbeiterWuenscheListe) {
 
+
+
+            var promiseUpdate = new Promise(function (resolve, reject) {
+
+              sqlHandler.getDienstplanByDate(dienstplan.monat, dienstplan.jahr)
+                .then(function (dp) {
+
+                  var elements = new Array();
+
+                  for (var p = 0; p < dp.schichten.length; p++) {
+                    dp.schichten[p].forEach(function (element) {
+                      elements.push(element)
+                    })
+                  }
+
+
+                  //  var promiseLoop = new Promise(function(resolve, reject) {
+
+
+                  for (var j = 0; j < mitarbeiterWuenscheListe.length; j++) {
+                    for (var i = 0; i < elements.length; i++) {
+
+
+                      if ((mitarbeiterWuenscheListe[j].datumWunsch == elements[i].datum) && (mitarbeiterWuenscheListe[j].mitarbeiterID == elements[i].mitarbeiterID1)) {
+                        schichtzuweisungUpdate.mitarbeiterID1 = 0; // ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
+                        schichtzuweisungUpdate.mitarbeiterID2 = elements[i].mitarbeiterID2;
+                        schichtzuweisungUpdate.mitarbeiterID3 = elements[i].mitarbeiterID3;
+                        schichtzuweisungUpdate.mitarbeiterID4 = elements[i].mitarbeiterID4;
+
+                        sqlHandler.updateSchichtzuweisung(elements[i].datum, elements[i].schichtArt, schichtzuweisungUpdate)
+                          .then(function (schichtzuweisung) {
+                            if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht aktualisiert werden");
+                          })
+                          .catch(function (err) {
+                            console.log(err);
+                          })
+                      } else if ((mitarbeiterWuenscheListe[j].datumWunsch == elements[i].datum) && (mitarbeiterWuenscheListe[j].mitarbeiterID == elements[i].mitarbeiterID2)) {
+                        schichtzuweisungUpdate.mitarbeiterID1 = elements[i].mitarbeiterID1;
+                        schichtzuweisungUpdate.mitarbeiterID2 = 0; // ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
+                        schichtzuweisungUpdate.mitarbeiterID3 = elements[i].mitarbeiterID3;
+                        schichtzuweisungUpdate.mitarbeiterID4 = elements[i].mitarbeiterID4;
+
+                        sqlHandler.updateSchichtzuweisung(elements[i].datum, elements[i].schichtArt, schichtzuweisungUpdate)
+                          .then(function (schichtzuweisung) {
+                            if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht aktualisiert werden");
+                          })
+                          .catch(function (err) {
+                            console.log(err);
+                          })
+                      } else if ((mitarbeiterWuenscheListe[j].datumWunsch == elements[i].datum) && (mitarbeiterWuenscheListe[j].mitarbeiterID == elements[i].mitarbeiterID3)) {
+                        schichtzuweisungUpdate.mitarbeiterID1 = elements[i].mitarbeiterID1;
+                        schichtzuweisungUpdate.mitarbeiterID2 = elements[i].mitarbeiterID2;
+                        schichtzuweisungUpdate.mitarbeiterID3 = 0; // ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
+                        schichtzuweisungUpdate.mitarbeiterID4 = elements[i].mitarbeiterID4;
+
+                        sqlHandler.updateSchichtzuweisung(elements[i].datum, elements[i].schichtArt, schichtzuweisungUpdate)
+                          .then(function (schichtzuweisung) {
+                            if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht aktualisiert werden");
+                          })
+                          .catch(function (err) {
+                            console.log(err);
+                          })
+                      } else if ((mitarbeiterWuenscheListe[j].datumWunsch == elements[i].datum) && (mitarbeiterWuenscheListe[j].mitarbeiterID == elements[i].mitarbeiterID4)) {
+                        schichtzuweisungUpdate.mitarbeiterID1 = elements[i].mitarbeiterID1;
+                        schichtzuweisungUpdate.mitarbeiterID2 = elements[i].mitarbeiterID2;
+                        schichtzuweisungUpdate.mitarbeiterID3 = elements[i].mitarbeiterID3;
+                        schichtzuweisungUpdate.mitarbeiterID4 = 0; // ID +1 ??? Welcher MA soll die Schicht dann übernehmen?
+
+                        sqlHandler.updateSchichtzuweisung(elements[i].datum, elements[i].schichtArt, schichtzuweisungUpdate)
+                          .then(function (schichtzuweisung) {
+                            if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht aktualisiert werden");
+                          })
+                          .catch(function (err) {
+                            console.log(err);
+                          })
+                      }
+
+                    } // for i - Schleife
+                    if (j + 1 == mitarbeiterWuenscheListe.length) {
+                      resolve("Dienstplan aktualisiert");
+                    }
+                  } // for j -Schleife
+
+                  //  if(j)
+
+                  //  }) //promise loop
+
+                }).catch(function (err) {
+                  console.log(err);
+                }) // 2. then....
+
+            }) //PromiseUpdate
+
+            promiseUpdate.then(function () {
+
+
+              sqlHandler.getDienstplanByDate(dienstplan.monat, dienstplan.jahr)
+                .then(function (finalerDienstplan) {
+
+                  var promiseConnect = new Promise(function (resolve, reject) {
+                    resolve(finalerDienstplan);
+
+                  })
+
+                  promiseConnect.then(function (finalerDienstplan) {
+                    resolve(finalerDienstplan);
+                  })
+                }).catch(function (err) {
+                  console.log(err);
+                })
+
+            }).catch(function (err) {
+              console.log(err);
+            })
+
+          })
+            .catch(function (err) {
+              console.log(err);
+            }) // Promise wunschSuche
+
+        }
       }) // 1.then
+      .catch(function (err) {
+        console.log(err);
+      })
 
 
 
-
-  }); // end of return new Promise ...
+  });// end of return new Promise ...
 
 } // end of function
 
@@ -329,10 +351,10 @@ router.post('/', bodyParser.json(), (req, res) => {
     datum: ""
   }
   sqlHandler.getDienstplanByMonat(req.body.monat, req.body.jahr)
-    .then(function() {
+    .then(function () {
 
       sqlHandler.getMitarbeiter()
-        .then(function(maListe) { // <- So ist es richtig! Noch bei den anderen Funktionen ändern!!!!
+        .then(function (maListe) { // <- So ist es richtig! Noch bei den anderen Funktionen ändern!!!!
           if (maListe === undefined) console.log("Keine Mitarbeiter vorhanden!");
           else {
 
@@ -340,9 +362,9 @@ router.post('/', bodyParser.json(), (req, res) => {
 
           }
         })
-        .catch(function(error) {
+        .catch(function (error) {
           console.log(error);
-        }).then(function() {
+        }).then(function () {
 
           var anzahlTage = tagZaehler(req.body.monat, req.body.jahr, 0); // Berechnung Tage im Monat x
 
@@ -355,6 +377,13 @@ router.post('/', bodyParser.json(), (req, res) => {
           var zyklus2 = [12, 13, 14, 15, 16, 17, 2, 3, 4, 5, 0, 1];
           var zyklus3 = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
 
+          if (anzahlTage < 31) {
+            zyklus1 = [12, 13, 14, 15, 16, 17, 2, 3, 4, 5, 0, 1];
+            zyklus2 = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+            zyklus3 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+
+          }
+
           for (let i = 1; i <= anzahlTage; i++) {
 
             if (i < 3 || (i >= 7 && i < 9) || (i >= 13 && i < 15) || (i >= 19 && i < 21) || (i >= 25 && i < 27)) {
@@ -366,7 +395,7 @@ router.post('/', bodyParser.json(), (req, res) => {
             }
 
 
-            var promiseTage = new Promise(function(resolve, reject) {
+            var promiseTage = new Promise(function (resolve, reject) {
 
 
               for (let j = 0; j < anzahlSchichten; j++) {
@@ -387,14 +416,14 @@ router.post('/', bodyParser.json(), (req, res) => {
                   schichtzuweisung.mitarbeiterID3 = mitarbeiterListe[mitarbeiterZuweisung[2]].id;
                   schichtzuweisung.mitarbeiterID4 = mitarbeiterListe[mitarbeiterZuweisung[3]].id;
                   sqlHandler.neueSchichtzuweisung(schichtzuweisung)
-                    .then(function(schichtzuweisung) {
+                    .then(function (schichtzuweisung) {
                       if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht erstellt werden");
                     })
-                    .catch(function(err) {
+                    .catch(function (err) {
                       console.log(err);
-                    }).then(function() {
+                    }).then(function () {
                       sqlHandler.getSchichtzuweisung(datum, fruehschicht)
-                        .then(function(schicht) {
+                        .then(function (schicht) {
                           tag.schichtzuweisungID1 = schicht[0].id;
 
                         })
@@ -414,14 +443,14 @@ router.post('/', bodyParser.json(), (req, res) => {
                   schichtzuweisung.mitarbeiterID3 = mitarbeiterListe[mitarbeiterZuweisung[6]].id;
                   schichtzuweisung.mitarbeiterID4 = mitarbeiterListe[mitarbeiterZuweisung[7]].id;
                   sqlHandler.neueSchichtzuweisung(schichtzuweisung)
-                    .then(function(schichtzuweisung) {
+                    .then(function (schichtzuweisung) {
                       if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht erstellt werden");
                     })
-                    .catch(function(err) {
+                    .catch(function (err) {
                       console.log(err);
-                    }).then(function() {
+                    }).then(function () {
                       sqlHandler.getSchichtzuweisung(datum, spaetschicht)
-                        .then(function(schicht) {
+                        .then(function (schicht) {
                           tag.schichtzuweisungID2 = schicht[0].id;
 
                         })
@@ -442,14 +471,14 @@ router.post('/', bodyParser.json(), (req, res) => {
                   schichtzuweisung.mitarbeiterID3 = mitarbeiterListe[mitarbeiterZuweisung[10]].id;
                   schichtzuweisung.mitarbeiterID4 = mitarbeiterListe[mitarbeiterZuweisung[11]].id;
                   sqlHandler.neueSchichtzuweisung(schichtzuweisung)
-                    .then(function(schichtzuweisung) {
+                    .then(function (schichtzuweisung) {
                       if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht erstellt werden");
                     })
-                    .catch(function(err) {
+                    .catch(function (err) {
                       console.log(err);
-                    }).then(function() {
+                    }).then(function () {
                       sqlHandler.getSchichtzuweisung(datum, nachtschicht)
-                        .then(function(schicht) {
+                        .then(function (schicht) {
                           tag.schichtzuweisungID3 = schicht[0].id;
 
                           tag.datum = datum;
@@ -466,45 +495,45 @@ router.post('/', bodyParser.json(), (req, res) => {
             })
 
 
-            var promiseDienstplan = new Promise(function(resolve, reject) {
+            var promiseDienstplan = new Promise(function (resolve, reject) {
 
-              promiseTage.then(function(tag) {
+              promiseTage.then(function (tag) {
 
-                  // console.log(tag) // -> loggt die richtigen Tage
+                // console.log(tag) // -> loggt die richtigen Tage
 
-                  sqlHandler.neuerTag(tag)
-                    .then(function() {
+                sqlHandler.neuerTag(tag)
+                  .then(function () {
 
-                      let datum = i + "-" + req.body.monat + "-" + req.body.jahr;
-                      if (i < 10) {
-                        datum = "0" + i + "-" + req.body.monat + "-" + req.body.jahr;
-                      }
+                    let datum = i + "-" + req.body.monat + "-" + req.body.jahr;
+                    if (i < 10) {
+                      datum = "0" + i + "-" + req.body.monat + "-" + req.body.jahr;
+                    }
 
-                      sqlHandler.getTag(datum)
-                        .then(function(tag) {
+                    sqlHandler.getTag(datum)
+                      .then(function (tag) {
 
-                          if (tag === undefined) console.log("Tag konnte nicht erstellt werden");
-                          else {
-                            dienstplan.monatsTage.push(tag);
-                            if (i == anzahlTage) {
+                        if (tag === undefined) console.log("Tag konnte nicht erstellt werden");
+                        else {
+                          dienstplan.monatsTage.push(tag);
+                          if (i == anzahlTage) {
 
-                              resolve(dienstplan)
+                            resolve(dienstplan)
 
-                            }
                           }
+                        }
 
-                        })
-                        .catch(function(err) {
-                          console.log(err);
-                        });
+                      })
+                      .catch(function (err) {
+                        console.log(err);
+                      });
 
-                    })
+                  })
 
-                    .catch(function(err) {
-                      console.log(err);
-                    });
-                })
-                .catch(function(err) {
+                  .catch(function (err) {
+                    console.log(err);
+                  });
+              })
+                .catch(function (err) {
                   console.log(err);
                 });
 
@@ -516,33 +545,43 @@ router.post('/', bodyParser.json(), (req, res) => {
 
 
           } // For Schleife i
-          promiseDienstplan.then(function(dienstplan) {
+          promiseDienstplan.then(function (dienstplan) {
 
 
 
 
             sqlHandler.neuerDienstplan(dienstplan)
-              .then(function(dienstplanDB) {
+              .then(function (dienstplanDB) {
                 if (dienstplanDB === undefined) res.status(400).send("Dienstplan konnte nicht erstellt werden");
                 else {
                   //  res.status(201).send(dienstplanDB);
 
-                  korrigiereSchichtzuweisungen(dienstplan).then(function(finalerDienstplan) {
-                    res.status(201).send(finalerDienstplan);
+                  korrigiereSchichtzuweisungen(dienstplan).then(function (finalerDienstplan) {
+                    if (finalerDienstplan == -1) {
+                      sqlHandler.getDienstplanByDate(dienstplan.monat, dienstplan.jahr)
+                        .then(function (dienstplanOhneWuensche) {
+                          res.status(201).send(dienstplanOhneWuensche);
+                        })
+
+                    }
+                    else {
+                      res.status(201).send(finalerDienstplan);
+                    }
+
                   });
 
 
                 }
 
               })
-              .catch(function(err) {
+              .catch(function (err) {
                 res.status(400).send(err);
               });
           });
-        }).catch(function(err) { //
+        }).catch(function (err) { //
           console.log(err); //
         })
-    }).catch(function(msg) {
+    }).catch(function (msg) {
       res.status(404).send(msg);
     })
 
@@ -614,14 +653,14 @@ router.delete('/:id', (req, res) => {
 
 router.get('/wuensche/:stationID', (req, res) => {
   sqlHandler.getWuenscheStation(req.params.stationID)
-    .then(function(wunschListe) {
+    .then(function (wunschListe) {
       if (wunschListe === undefined) res.status(500).send("Could not read DATA");
       else {
         var test = wunschListe;
         res.status(200).send(test);
       }
     })
-    .catch(function(err) {
+    .catch(function (err) {
       res.status(400).send(err);
     });
 

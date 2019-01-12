@@ -901,19 +901,20 @@ var neuerWunsch = function neuerWunsch(wunsch) {
 
 
 // Lesen aller Wünsche der Mitarbeiter einers Station
-var getWuenscheStation = function getWuenscheStation(stationID) {
+var getWuenscheStation = function getWuenscheStation(stationID,monat) {
 
     return new Promise(function(resolve, reject) {
 
-        let sql = "SELECT * FROM wunsch WHERE stationID = " + stationID;
+        let sql = "SELECT * FROM wunsch WHERE stationID = " + stationID + " AND  datumWunsch LIKE \"%"+monat+"%\"";
 
         connection.query(sql, function(err, result) {
             if (err) reject(err);
             else {
-
+               
                 resolve(result);
 
             }
+            
         });
     });
 }
