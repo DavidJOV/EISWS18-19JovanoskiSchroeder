@@ -14,13 +14,7 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen(dienstp
     }
     var mitarbeiterWuenscheListe;
 
-    var schichtzuweisungUpdate = {
-      mitarbeiterID1: "",
-      mitarbeiterID2: "",
-      mitarbeiterID3: "",
-      mitarbeiterID4: ""
-    }
-
+    
 
     sqlHandler.getWuenscheStation(dienstplan.stationID, monat)
       .then(function(wunschListe) {
@@ -105,10 +99,8 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen(dienstp
 
 
                         if ((mitarbeiterWuenscheListe[j].datumWunsch == elements[i].datum) && (mitarbeiterWuenscheListe[j].mitarbeiterID == elements[i].mitarbeiterID1)) {
-
-                          schichtzuweisungUpdate.mitarbeiterID2 = elements[i].mitarbeiterID2;
-                          schichtzuweisungUpdate.mitarbeiterID3 = elements[i].mitarbeiterID3;
-                          schichtzuweisungUpdate.mitarbeiterID4 = elements[i].mitarbeiterID4;
+                          let schichtzuweisungUpdate = new schichtzuweisungUpdateObject(-1,elements[i].mitarbeiterID2,elements[i].mitarbeiterID3,elements[i].mitarbeiterID4)
+                         
 
                           tauscheSchicht(elements[i], elements, mitarbeiterWuenscheListe[j].mitarbeiterID).then(function(resolveObject) {
                             return new Promise(function(resolve, reject) {
@@ -135,10 +127,7 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen(dienstp
 
 
                         } else if ((mitarbeiterWuenscheListe[j].datumWunsch == elements[i].datum) && (mitarbeiterWuenscheListe[j].mitarbeiterID == elements[i].mitarbeiterID2)) {
-
-                          schichtzuweisungUpdate.mitarbeiterID1 = elements[i].mitarbeiterID1;
-                          schichtzuweisungUpdate.mitarbeiterID3 = elements[i].mitarbeiterID3;
-                          schichtzuweisungUpdate.mitarbeiterID4 = elements[i].mitarbeiterID4;
+                          let schichtzuweisungUpdate = new schichtzuweisungUpdateObject(elements[i].mitarbeiterID1,-1,elements[i].mitarbeiterID3,elements[i].mitarbeiterID4);
 
                           tauscheSchicht(elements[i], elements, mitarbeiterWuenscheListe[j].mitarbeiterID).then(function(resolveObject) {
                             return new Promise(function(resolve, reject) {
@@ -161,9 +150,7 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen(dienstp
 
                           })
                         } else if ((mitarbeiterWuenscheListe[j].datumWunsch == elements[i].datum) && (mitarbeiterWuenscheListe[j].mitarbeiterID == elements[i].mitarbeiterID3)) {
-                          schichtzuweisungUpdate.mitarbeiterID1 = elements[i].mitarbeiterID1;
-                          schichtzuweisungUpdate.mitarbeiterID2 = elements[i].mitarbeiterID2;
-                          schichtzuweisungUpdate.mitarbeiterID4 = elements[i].mitarbeiterID4;
+                          let schichtzuweisungUpdate = new schichtzuweisungUpdateObject(elements[i].mitarbeiterID1,elements[i].mitarbeiterID2,-1,elements[i].mitarbeiterID4);
 
                           tauscheSchicht(elements[i], elements, mitarbeiterWuenscheListe[j].mitarbeiterID).then(function(resolveObject) {
                             return new Promise(function(resolve, reject) {
@@ -186,9 +173,8 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen(dienstp
 
                           })
                         } else if ((mitarbeiterWuenscheListe[j].datumWunsch == elements[i].datum) && (mitarbeiterWuenscheListe[j].mitarbeiterID == elements[i].mitarbeiterID4)) {
-                          schichtzuweisungUpdate.mitarbeiterID1 = elements[i].mitarbeiterID1;
-                          schichtzuweisungUpdate.mitarbeiterID2 = elements[i].mitarbeiterID2;
-                          schichtzuweisungUpdate.mitarbeiterID3 = elements[i].mitarbeiterID3;
+                          let schichtzuweisungUpdate = new schichtzuweisungUpdateObject(elements[i].mitarbeiterID1,elements[i].mitarbeiterID2,elements[i].mitarbeiterID3,-1);
+
 
                           tauscheSchicht(elements[i], elements, mitarbeiterWuenscheListe[j].mitarbeiterID).then(function(resolveObject) {
                             return new Promise(function(resolve, reject) {
@@ -198,7 +184,7 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen(dienstp
                             }).then(function(resolveObject) {
 
                               schichtzuweisungUpdate.mitarbeiterID4 = resolveObject.tauschId;
-
+                              console.log(resolveObject.tauschID)
                               sqlHandler.updateSchichtzuweisung(resolveObject.elements[i].datum, resolveObject.elements[i].schichtArt, schichtzuweisungUpdate)
                                 .then(function(schichtzuweisung) {
                                   if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht aktualisiert werden");
@@ -361,6 +347,14 @@ function passendeMitarbeiterSchicht(mitarbeiterID, datum, idNummer, schichtArt) 
   this.idNummer = idNummer;
   this.schichtArt = schichtArt;
 }
+//Konstruktor zum erstellen von SchichtzuweisungsUpdates.
+function schichtzuweisungUpdateObject(maID1,maID2,maID3,maID4) {
+  this.mitarbeiterID1 = maID1;
+  this.mitarbeiterID2 = maID2;
+  this.mitarbeiterID3 = maID3;
+  this.mitarbeiterID4 = maID4;
+}
+
 
 
 exports.korrigiereSchichtzuweisungen = korrigiereSchichtzuweisungen;
