@@ -184,7 +184,6 @@ var korrigiereSchichtzuweisungen = function korrigiereSchichtzuweisungen(dienstp
                           }).then(function (resolveObject) {
 
                             schichtzuweisungUpdate.mitarbeiterID4 = resolveObject.tauschId;
-                            console.log(resolveObject.tauschID)
                             sqlHandler.updateSchichtzuweisung(resolveObject.elements[i].datum, resolveObject.elements[i].schichtArt, schichtzuweisungUpdate)
                               .then(function (schichtzuweisung) {
                                 if (schichtzuweisung === undefined) console.log("Schichtzuweisung konnte nicht aktualisiert werden");
