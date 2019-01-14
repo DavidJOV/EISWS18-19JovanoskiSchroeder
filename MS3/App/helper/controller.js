@@ -59,26 +59,66 @@ return new Promise(function(resolve,reject){
   
   
   
+           
+            //********************************************************ANFANG Kommentarblock***************************************************************************** 
+            // Im Folgenden wird die Variation der Schichtzuweisungen gesichtert. Indem verschiedene Zyklen monatlich zugewiesen werden.
+            // So haben alle Mitarbeiter auf dauer den selben Pool an Schichten, und keiner muss bspw. mehr Nächte arbeiten als jemand anderes.
             var mitarbeiterZuweisung;
-            var zyklus1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-            var zyklus2 = [12, 13, 14, 15, 16, 17, 2, 3, 4, 5, 0, 1];
-            var zyklus3 = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+           
+            
+            
+            // Zyklen für Januar,April,Juli,Oktober
+             var zyklus1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+             var zyklus2 = [12, 13, 14, 15, 16, 17, 2, 3, 4, 5, 0, 1];
+             var zyklus3 = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
   
-            if (anzahlTage < 31) {
-              zyklus1 = [12, 13, 14, 15, 16, 17, 2, 3, 4, 5, 0, 1];
-              zyklus2 = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
-              zyklus3 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+           
+            // Zyklen für Februar,Mai,August,November
+             var zyklus4 = [12, 13, 14, 15, 16, 17, 2, 3, 4, 5, 0, 1];
+             var zyklus5 = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+             var zyklus6 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
   
-            }
+            
+           // Zyklen für März,Juni,September,Dezember
+            var zyklus7 = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+             var zyklus8 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+             var zyklus9 = [12, 13, 14, 15, 16, 17, 2, 3, 4, 5, 0, 1];
   
+            
+            // Variable verteilung der Schichten auf die Tage
             for (let i = 1; i <= anzahlTage; i++) {
   
               if (i < 3 || (i >= 7 && i < 9) || (i >= 13 && i < 15) || (i >= 19 && i < 21) || (i >= 25 && i < 27)) {
-                mitarbeiterZuweisung = zyklus1;
+                if (monat == 1||monat ==4||monat ==7||monat ==10 ) {
+                  mitarbeiterZuweisung = zyklus1;
+                }
+                else  if (monat == monat ==2||monat ==5||monat ==8||monat ==11 ) {
+                  mitarbeiterZuweisung = zyklus4;
+                }
+                else  if (monat == monat ==3||monat ==6||monat ==9||monat ==12 ) {
+                  mitarbeiterZuweisung = zyklus7;
+                }
+               
               } else if (i < 5 || (i >= 9 && i < 11) || (i >= 15 && i < 17) || (i >= 21 && i < 23) || (i >= 27 && i < 29)) {
-                mitarbeiterZuweisung = zyklus2;
+                if (monat == 1|| monat ==4|| monat ==7|| monat ==10 ) {
+                  mitarbeiterZuweisung = zyklus2;
+                }
+                else  if (monat == 2|| monat ==5||monat ==8||monat ==11 ) {
+                  mitarbeiterZuweisung = zyklus5;
+                }
+                else  if (monat == 3||monat ==6||monat ==9||monat ==12 ) {
+                  mitarbeiterZuweisung = zyklus8;
+                }
               } else if (i < 7 || (i >= 11 && i < 13) || (i >= 17 && i < 19) || (i >= 23 && i < 25) || (i >= 29 && i <= 31)) {
-                mitarbeiterZuweisung = zyklus3;
+                if (monat == 1||monat ==4||monat ==7||monat ==10 ) {
+                  mitarbeiterZuweisung = zyklus3;
+                }
+                else  if (monat == 2||monat ==5||monat ==8||monat ==11 ) {
+                  mitarbeiterZuweisung = zyklus6;
+                }
+                else  if (monat == 3||monat ==6||monat ==9||monat ==12 ) {
+                  mitarbeiterZuweisung = zyklus9;
+                }
               }
   
   
