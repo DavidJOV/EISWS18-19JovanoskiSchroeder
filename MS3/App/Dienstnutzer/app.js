@@ -94,6 +94,22 @@ router.get('/abwesenheiten', (req, res) => {  // <- Durch dieses GET wir kein PO
 
 });
 
+router.get('/abwesenheiten/bestaetigung', (req, res) => {  // <- Durch dieses GET wir kein POST ausgelöst!
+    
+    res.status(200).render("bestaetigung"); 
+    //res.status(200).send(JSON.parse(body))
+    
+
+});
+
+router.get('/abwesenheiten/entschuldigung', (req, res) => {  // <- Durch dieses GET wir kein POST ausgelöst!
+    
+    res.status(404).render("entschuldigung"); 
+    //res.status(200).send(JSON.parse(body))
+    
+
+});
+
 
 // GET auf das Abwesenheit einreichen Formular
 router.post('/abwesenheiten', (req, res) => {
@@ -158,9 +174,9 @@ ersatzAnfrage (mitarbeiterListe, dienstplan, abwesenheit);
 
 
 
+res.status(201).send("Abwesenheit eingereicht!");
 
-
-} // end of POST Abwesenheiten
+}) // end of POST Abwesenheiten
 
     // GET auf einen Dienstplan
 router.get('/dienstplaene/:id', (req, res) => {

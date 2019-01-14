@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    link(rel="stylesheet", href="/static/style.css")
+    script(src='/static/frontend.js')
+  body
+    h3 Neue Abwesenheitsmeldung einreichen
+    div
+      form(id = "Abwesenheit")
+        label(for='fname') Station ID
+        input#fname(type='text', name='firstname', placeholder='Station ID...')
+        label(for='lname') MitarbeiterID
+        input#lname(type='text', name='lastname', placeholder='Mitarbeiter ID..')
+        label(for='fname') Beginn der Abwesenheit
+        input#fname(type='text', name='firstname', placeholder='Beginn der Abwesenheit..')
+        label(for='lname') Voraussichtliches Ende der Abwesenheit 
+        input#lname(type='text', name='lastname', placeholder='Ende der Abwesenheit..')
+        input(type='button', value='Submit', onclick="speichereAbwesenheit(document.getElementById('Abwesenheit'))")
