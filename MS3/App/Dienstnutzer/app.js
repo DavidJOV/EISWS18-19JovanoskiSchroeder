@@ -25,16 +25,16 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
-  
+
   app.get('/', function(req, res, next) {
     // Handle the get for this route
   });
-  
+
   app.post('/', function(req, res, next) {
    // Handle the post for this route
   });
   //_________________________________________
- 
+
   const settings = {
     port: process.env.PORT || 8080
   };
@@ -63,7 +63,7 @@ router.get('/mitarbeiter/:id', (req, res) => {
         console.log(body)
         res.status(200).render("mitarbeiterGet" , { title: 'MitarbeiterInfos', vorname:body.vorname, name:body.name, rolle:body.rolle, beschaeftigungsArt:body.beschaeftigungsArt,beschaeftigungsBeginn:body.beschaeftigungsBeginn, ueberstunden:body.ueberstunden});
         //res.status(200).send(JSON.parse(body))
-        
+
 
     });
 });
@@ -78,33 +78,93 @@ router.get('/mitarbeiter', (req, res) => { // <- Durch dieses GET wir kein POST 
 
 // GET auf das Dienstplan anlegen Formular
 router.get('/dienstplaene', (req, res) => { // <- Durch dieses GET wir kein POST ausgelöst!
-    
+
         res.status(200).render("dienstplanPOST");
         //res.status(200).send(JSON.parse(body))
-        
+
 
     });
 
 // GET auf das Abwesenheit einreichen Formular
 router.get('/abwesenheiten', (req, res) => {  // <- Durch dieses GET wir kein POST ausgelöst!
-    
-    res.status(200).render("abwesenheitenPOST"); 
+
+    res.status(200).render("abwesenheitenPOST");
     //res.status(200).send(JSON.parse(body))
-    
+
 
 });
 
 
 // GET auf das Abwesenheit einreichen Formular
-router.post('/abwesenheiten', (req, res) => {  
-    //Funktion abwesenheitenController.js
-    
+router.post('/abwesenheiten', (req, res) => {
 
+  const abwesenheit = {
+      stationID: req.body.stationID,
+      mitarbeiterID: req.body.mitarbeiterID,
+      datumBeginn: req.body.datumBeginn,
+      datumEnde: req.body.datumEnde
+  };
+
+
+// GET auf alle Mitarbeiter
+  let resourceURI = serviceURL + '/Mitarbeiter';
+
+  var options = {
+      uri: resourceURI,
+      method: 'GET',
+      headers: {
+          'Accept': 'application/json'
+      }
+  }
+
+  request(options, (err, res2, body) => {
+
+      if (err) {
+          console.log(err);
+          return;
+      }
+      body = JSON.parse(body);
+
+      var mitarbeiterListe = body;
 });
 
-    // GET auf einen Dienstplan 
+// GET auf den altuellen Dienstplan
+
+let resourceURI2 = serviceURL + '/Dienstplaene/'+id;
+
+var options = {
+    uri: resourceURI,
+    method: 'GET',
+    headers: {
+        'Accept': 'application/json'
+    }
+}
+
+request(options, (err, res3, body) => {
+
+    if (err) {
+        console.log(err);
+        return;
+    }
+    body = JSON.parse(body);
+
+    var dienstplan = dienstplan;
+});
+
+
+
+
+ersatzAnfrage (mitarbeiterListe, dienstplan, abwesenheit);
+
+
+
+
+
+} // end of POST Abwesenheiten
+
+    // GET auf einen Dienstplan
 router.get('/dienstplaene/:id', (req, res) => {
-    
+
     if(!req.query.mitarbeiter){
         console.log(req.query)
     res.status(200).render("DienstplanGET");}
@@ -112,7 +172,7 @@ router.get('/dienstplaene/:id', (req, res) => {
         res.status(200).render("DienstplanSingleGET");
     }
     //res.status(200).send(JSON.parse(body))
-    
+
 
 });
 

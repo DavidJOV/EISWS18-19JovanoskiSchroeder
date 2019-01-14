@@ -41,8 +41,8 @@ router.get('/:id', (req, res) => {
 router.post('/', bodyParser.json(), (req, res) => {
 
     const abwesenheit = {
-        stationID: req.body.stationID, 
-        MitarbeiterID: req.body.MitarbeiterID,
+        stationID: req.body.stationID,
+        mitarbeiterID: req.body.mitarbeiterID,
         datumBeginn: req.body.datumBeginn,
         datumEnde: req.body.datumEnde
     };
@@ -59,24 +59,24 @@ router.post('/', bodyParser.json(), (req, res) => {
         });
 
 });
-// Aktuallisieren einer Abwesenheit 
+// Aktuallisieren einer Abwesenheit
 router.put('/:id', (req, res) => {
-    
+
     sqlHandler.getAbwesenheiten()
         .then(function (abwesenheitenListe) {
-            
+
             if (abwesenheitenListe === undefined) res.status(500).send("Could not read DATA");
             else {
-                const abwesenheit = abwesenheitenListe.find(c => c.id === parseInt(req.params.id)); 
+                const abwesenheit = abwesenheitenListe.find(c => c.id === parseInt(req.params.id));
                 if (!abwesenheit) { res.status(404).send("Diese ID gehört keiner Abwesenheit!"); }
-                
+
                 else {
                     const abwesenheitUpdate = {
                         datumBeginn: req.body.datumBeginn,
                         datumEnde: req.body.datumEnde
                     };
                     let id = req.params.id;
-                    
+
                     sqlHandler.updateAbwesenheit(id,abwesenheitUpdate)
                         .then(function (abwesenheitUpdate) {
                             res.status(200).send(abwesenheitUpdate);
