@@ -94,11 +94,32 @@ router.get('/abwesenheiten', (req, res) => {  // <- Durch dieses GET wir kein PO
 
 });
 
+router.get('/abwesenheiten/bestaetigung', (req, res) => {  // <- Durch dieses GET wir kein POST ausgelöst!
+    
+    res.status(200).render("bestaetigung"); 
+    //res.status(200).send(JSON.parse(body))
+    
+
+});
+
+router.get('/abwesenheiten/entschuldigung', (req, res) => {  // <- Durch dieses GET wir kein POST ausgelöst!
+    
+    res.status(404).render("entschuldigung"); 
+    //res.status(200).send(JSON.parse(body))
+    
+
+});
+
 
 // GET auf das Abwesenheit einreichen Formular
 router.post('/abwesenheiten', (req, res) => {  
     //Funktion abwesenheitenController.js
     
+    //Wenn alles geklapt dann:
+    res.status(201).send("Abwesenheit eingereicht!");
+
+    // Wenn nicht dann: 
+    //res.status(404).render("entschuldigung");
 
 });
 
