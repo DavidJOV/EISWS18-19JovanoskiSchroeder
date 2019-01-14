@@ -69,7 +69,7 @@ router.get('/mitarbeiter/:id', (req, res) => {
 });
 
 // GET auf das Mitarbeiter anlegen Formular
-router.get('/mitarbeiter', (req, res) => {
+router.get('/mitarbeiter', (req, res) => { // <- Durch dieses GET wir kein POST ausgelöst!
 
         res.status(200).render("mitarbeiterPOST");
 
@@ -77,7 +77,7 @@ router.get('/mitarbeiter', (req, res) => {
 
 
 // GET auf das Dienstplan anlegen Formular
-router.get('/dienstplaene', (req, res) => {
+router.get('/dienstplaene', (req, res) => { // <- Durch dieses GET wir kein POST ausgelöst!
     
         res.status(200).render("dienstplanPOST");
         //res.status(200).send(JSON.parse(body))
@@ -85,7 +85,24 @@ router.get('/dienstplaene', (req, res) => {
 
     });
 
-    // GET auf das Dienstplan anlegen Formular
+// GET auf das Abwesenheit einreichen Formular
+router.get('/abwesenheiten', (req, res) => {  // <- Durch dieses GET wir kein POST ausgelöst!
+    
+    res.status(200).render("abwesenheitenPOST"); 
+    //res.status(200).send(JSON.parse(body))
+    
+
+});
+
+
+// GET auf das Abwesenheit einreichen Formular
+router.post('/abwesenheiten', (req, res) => {  
+    //Funktion abwesenheitenController.js
+    
+
+});
+
+    // GET auf einen Dienstplan 
 router.get('/dienstplaene/:id', (req, res) => {
     
     if(!req.query.mitarbeiter){
