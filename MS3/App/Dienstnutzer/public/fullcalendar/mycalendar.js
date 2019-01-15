@@ -48,9 +48,7 @@ $(document).ready(function () {
 
     // page is now ready, initialize the calendar..
     $('#calendar').fullCalendar({
-
-      
-
+ 
       eventSources: [
 
         // your event source
@@ -70,7 +68,7 @@ $(document).ready(function () {
     });
     // Springe zu dem Monat in dem Der Dienstplan beginnt.
     $('#calendar').fullCalendar( 'gotoDate', einzelSchichten[0].schicht1.start )
-
+    
 
   });
 })

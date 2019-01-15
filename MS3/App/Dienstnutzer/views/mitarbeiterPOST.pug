@@ -2,9 +2,19 @@ doctype html
 html
   head
     link(rel="stylesheet", href="/static/style.css")
+    script(src='/static/navigation.js')
     script(src='/static/frontend.js')
   body
     h3 Neuen Mitarbeiter anlegen
+    ul
+      li
+        a(id='goToDienstplan' onclick='goToDienstplan()') Dienstplan erstellen
+      li
+        a(id='goToWuensche' onclick='goToWuensche()') Wunsch einreichen
+      li
+        a(id='goToAbwesenheiten' onclick='goToAbwesenheiten()') Abwesenheit einreichen
+      li
+        a(id='goToMitarbeiter' onclick='goToMitarbeiter()') Mitarbeiter anlegen
     div
       form(id = "Mitarbeiter")
         label(for='fname') Station ID

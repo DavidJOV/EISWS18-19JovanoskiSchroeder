@@ -2,10 +2,20 @@ doctype html
 html
   head
     link(rel="stylesheet", href="/static/style.css")
+    script(src='/static/navigation.js')
     script(src='/static/frontend.js')
     script(src='/static/fullcalendar/jquery.min.js')
   body
     h3 Erstellen eines Dienstplans
+    ul
+      li
+        a(id='goToDienstplan' onclick='goToDienstplan()') Dienstplan erstellen
+      li
+        a(id='goToWuensche' onclick='goToWuensche()') Wunsch einreichen
+      li
+        a(id='goToAbwesenheiten' onclick='goToAbwesenheiten()') Abwesenheit einreichen
+      li
+        a(id='goToMitarbeiter' onclick='goToMitarbeiter()') Mitarbeiter anlegen
     div
       form(id = "Dienstplan")
         label(for='fname') Station ID

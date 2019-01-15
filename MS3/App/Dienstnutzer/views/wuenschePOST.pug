@@ -5,7 +5,7 @@ html
     script(src='/static/navigation.js')
     script(src='/static/frontend.js')
   body
-    h3 Neue Abwesenheitsmeldung einreichen
+    h3 Neuen Wunsch einreichen
     ul
       li
         a(id='goToDienstplan' onclick='goToDienstplan()') Dienstplan erstellen
@@ -16,13 +16,15 @@ html
       li
         a(id='goToMitarbeiter' onclick='goToMitarbeiter()') Mitarbeiter anlegen
     div
-      form(id = "Abwesenheit")
+      form(id = "Wunsch")
         label(for='fname') Station ID
         input#fname(type='text', name='firstname', placeholder='Station ID...')
         label(for='lname') MitarbeiterID
         input#lname(type='text', name='lastname', placeholder='Mitarbeiter ID..')
-        label(for='fname') Beginn der Abwesenheit
-        input#fname(type='text', name='firstname', placeholder='Beginn der Abwesenheit..')
-        label(for='lname') Voraussichtliches Ende der Abwesenheit 
-        input#lname(type='text', name='lastname', placeholder='Ende der Abwesenheit..')
-        input(type='button', value='Submit', onclick="speichereAbwesenheit(document.getElementById('Abwesenheit'))")
+        label(for='fname') Datum des Wunsches
+        input#fname(type='text', name='firstname', placeholder='Datum..')
+        label(for='lname') Wunschbeschreibung
+        input#lname(type='text', name='lastname', placeholder='Beschreibung..')
+        label(for='lname') Alternativ Schicht
+        input#lname(type='text', name='lastname', placeholder='Schicht..')
+        input(type='button', value='Submit', onclick="speichereWunsch(document.getElementById('Wunsch'))")

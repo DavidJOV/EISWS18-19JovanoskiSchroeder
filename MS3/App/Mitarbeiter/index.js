@@ -188,11 +188,11 @@ router.get('/:id/ueberstunden', (req, res) => {
 
 
 //Post Wunsch eines Mitarbeiters
-router.post('/:id/wunsch', (req, res) => {
+router.post('/wuensche', (req, res) => {
 
   var wunsch = {
     stationID : req.body.stationID,
-    mitarbeiterID : req.params.id,
+    mitarbeiterID : req.body.mitarbeiterID,
     datumWunsch : req.body.datumWunsch,
     wunschBeschreibung : req.body.wunschBeschreibung,
     schichtArt : req.body.schichtArt

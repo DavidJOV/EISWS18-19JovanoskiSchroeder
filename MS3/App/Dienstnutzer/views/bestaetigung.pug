@@ -2,6 +2,15 @@ doctype html
 html
   head
     link(rel="stylesheet", href="/static/style.css")
-    
+    script(src='/static/navigation.js')
   body
+    ul
+      li
+        a(id='goToDienstplan' onclick='goToDienstplan()') Dienstplan erstellen
+      li
+        a(id='goToWuensche' onclick='goToWuensche()') Wunsch einreichen
+      li
+        a(id='goToAbwesenheiten' onclick='goToAbwesenheiten()') Abwesenheit einreichen
+      li
+        a(id='goToMitarbeiter' onclick='goToMitarbeiter()') Mitarbeiter anlegen
     h1 Ihre Anfrage wurde erfolgreich Bearbeitet

@@ -23,6 +23,25 @@ function speichereMitarbeiter(mitarbeiter) {
     console.log(neuerMitarbeiter)
 }
 
+function speichereWunsch(wunsch) {
+
+    var input = wunsch;
+
+    var neuerWunsch = {
+        stationID: input.elements[0].value,
+        mitarbeiterID: input.elements[1].value,
+        datumWunsch: input.elements[2].value,
+        wunschBeschreibung: input.elements[3].value,
+        schichtArt: input.elements[4].value
+    };
+
+    var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
+    xmlhttp.open("POST", "http://localhost:3000/mitarbeiter/wuensche");
+    xmlhttp.setRequestHeader("Content-Type", "application/json");
+    xmlhttp.send(JSON.stringify(neuerWunsch));
+    console.log(neuerWunsch)
+}
+
 function erstelleDienstplan(dienstplan) {
 
     var input = dienstplan
@@ -43,7 +62,7 @@ function erstelleDienstplan(dienstplan) {
      };
 }
 
-
+// Schießt Req an Dienstnutzer der darauf hin die Daten mit Hilfe seiner Anwendungslogik aufbereitet
 function speichereAbwesenheit(abwesenheit) {
 
     var input = abwesenheit;

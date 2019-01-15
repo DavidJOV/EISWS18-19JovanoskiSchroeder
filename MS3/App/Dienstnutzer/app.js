@@ -76,6 +76,7 @@ router.get('/mitarbeiter', (req, res) => { // <- Durch dieses GET wir kein POST 
     });
 
 
+
 // GET auf das Dienstplan anlegen Formular
 router.get('/dienstplaene', (req, res) => { // <- Durch dieses GET wir kein POST ausgelöst!
 
@@ -84,6 +85,15 @@ router.get('/dienstplaene', (req, res) => { // <- Durch dieses GET wir kein POST
 
 
     });
+
+// GET auf das Wunsch einreichen Formular
+router.get('/wuensche', (req, res) => {  // <- Durch dieses GET wir kein POST ausgelöst!
+
+    res.status(200).render("wuenschePOST");
+    
+
+
+});
 
 // GET auf das Abwesenheit einreichen Formular
 router.get('/abwesenheiten', (req, res) => {  // <- Durch dieses GET wir kein POST ausgelöst!
