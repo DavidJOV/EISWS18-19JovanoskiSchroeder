@@ -5,6 +5,7 @@ app.use(express.json());;
 var router = express.Router();
 var bodyParser = require('body-parser');
 var path = require('path');
+var ersatzAnfrage = require ('../helper/abwesenheitenController.js');
 //PUG
 const pug = require('pug');
 app.set('view engine', 'pug');
@@ -95,20 +96,23 @@ router.get('/abwesenheiten', (req, res) => {  // <- Durch dieses GET wir kein PO
 });
 
 router.get('/abwesenheiten/bestaetigung', (req, res) => {  // <- Durch dieses GET wir kein POST ausgelöst!
-    
-    res.status(200).render("bestaetigung"); 
+
+    res.status(200).render("bestaetigung");
     //res.status(200).send(JSON.parse(body))
-    
+
 
 });
 
 router.get('/abwesenheiten/entschuldigung', (req, res) => {  // <- Durch dieses GET wir kein POST ausgelöst!
-    
-    res.status(404).render("entschuldigung"); 
+
+    res.status(404).render("entschuldigung");
     //res.status(200).send(JSON.parse(body))
-    
+
 
 });
+
+
+
 
 
 // GET auf das Abwesenheit einreichen Formular
@@ -121,6 +125,7 @@ router.post('/abwesenheiten', (req, res) => {
       datumEnde: req.body.datumEnde
   };
 
+var getMitarbeiter = new Promise (function (resolve,reject){
 
 // GET auf alle Mitarbeiter
   let resourceURI = serviceURL + '/Mitarbeiter';
@@ -144,33 +149,58 @@ router.post('/abwesenheiten', (req, res) => {
       var mitarbeiterListe = body;
 });
 
-// GET auf den altuellen Dienstplan
+resolve (mitarbeiterListe);
+}) // end of Promise getMitarbeiter
 
-let resourceURI2 = serviceURL + '/Dienstplaene/'+id;
 
-var options = {
-    uri: resourceURI,
-    method: 'GET',
-    headers: {
-        'Accept': 'application/json'
-    }
-}
+getMitarbeiter.then(function (mitarbeiterListe){
 
-request(options, (err, res3, body) => {
+      var getDienstplan = new Promise (function (resolve, reject){
 
-    if (err) {
-        console.log(err);
-        return;
-    }
-    body = JSON.parse(body);
 
-    var dienstplan = dienstplan;
+  var informationen = {
+    dienstplan: "",
+    mitarbeiterListe: mitarbeiterListe
+  };
+
+  // GET auf den aktuellen Dienstplan
+  let resourceURI2 = serviceURL + '/Dienstplaene/'+id;
+
+  var options = {
+      uri: resourceURI,
+      method: 'GET',
+      headers: {
+          'Accept': 'application/json'
+      }
+  }
+
+  request(options, (err, res3, body) => {
+
+      if (err) {
+          console.log(err);
+          return;
+      }
+      body = JSON.parse(body);
+
+      informationen.dienstplan = body;
+
+      resolve (informationen);
+  });
+
+  }) // end of Promise getDienstplan
+
+  getDienstplan.then(function (informationen){
+
+    ersatzAnfrage.ersatzAnfrage(informationen, abwesenheit);
+
+
+  }).catch(function (error) {
+    console.log(error);
+  });
+
+}).catch(function (error) {
+  console.log(error);
 });
-
-
-
-
-ersatzAnfrage (mitarbeiterListe, dienstplan, abwesenheit);
 
 
 
