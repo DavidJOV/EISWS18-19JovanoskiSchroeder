@@ -1,132 +1,193 @@
 var ersatzAnfrage = function ersatzAnfrage(informationen, abwesenheit) {
 
-  var
+
   return new Promise(function(resolve, reject) {
 
 
-  //  var ersatzBeduerftigeSchichten = new Array();
-    //var schichtDaten = new Array();
+var ersatzBeduerftigeSchichtenErmittlung = new Promise(function(resolve, reject) {
+    // nested Array auflösen
+    var elements = new Array();
+
+    for (var p = 0; p < informationen.dienstplan.schichten.length; p++) {
+      informationen.dienstplan.schichten[p].forEach(function (element) {
+        elements.push(element)
+      })
+
+
+      if (p +1 == informationen.dienstplan.schichten.length ){
     var substringDatum;
-    var ersatzBeduerftigeSchichtInfos ={
-      mitarbeiter: informationen.mitarbeiterliste,
+    var ersatzBeduerftigeSchichtInfos = {
+      alleSchichten: elements,
+      mitarbeiter: informationen.mitarbeiterListe,
       schichten: [],
-      tagDatum: []
+      abwesenderID: abwesenheit.mitarbeiterID
     }
 
 
 
 
-    var ersatzBeduerftigeSchichtenErmittlung = new Promise(function(resovle, reject) {
 
       // Filtern der Schichten, welche Ersatz benötigen:
-      for (let i = 0; i < informationen.dienstplan.schichten.length; i++) {
-        var j = i;
-        if (informationen.dienstplan.schichten[i].datum == abwesenheit.datumBeginn) {
-          do {
-            ersatzBeduerftigeSchichtInfos.schichten.push(informationen.dienstplan.schichten[j]);
-            j++;
-          } while (informationen.dienstplan.schichten[j].datum != abwesenheit.datumEnde)
-        }
-        (
-          if (i + 1 == informationen.dienstplan.schichten.length) {
-            for (let d = 0; d < ersatzBeduerftigeSchichtInfos.schichten.length; d++){
-              substringDatum = ersatzBeduerftigeSchichtInfos.schichten[d].datum.substring(0,1);
-              ersatzBeduerftigeSchichtInfos.tagDatum.push(parseInt(substringDatum));
-              if (d+1 == ersatzBeduerftigeSchichtInfos.schichten.length ) {
-                resolve(ersatzBeduerftigeSchichtInfos);
-              }
+      for (let i = 0; i < elements.length; i++) {
+        if (elements[i].datum == abwesenheit.datumBeginn) {
+          var tmp = i;
+          while (elements[i].datum != abwesenheit.datumEnde) {
+            ersatzBeduerftigeSchichtInfos.schichten.push(elements[i]);
+            i++;
+
+            if (i == elements.length ) {
+              i=tmp;
+              break;
             }
+
+          }
+        }
+      //  console.log(elements)
+        if (i + 1 == elements.length) {
+          resolve(ersatzBeduerftigeSchichtInfos);
         }
       } // for i - Schleife
 
-    }) // End of Promise ersatzBeduerftigeSchichtenErmittlung
+
+  }
+}
+}) // End of Promise ersatzBeduerftigeSchichtenErmittlung
 
     // Ermittlung Mitarbeiter, welche an diesen Tagen frei haben
-    ersatzBeduerftigeTageErmittlung.then(function(ersatzBeduerftigeSchichtInfos) {
+    ersatzBeduerftigeSchichtenErmittlung.then(function(ersatzBeduerftigeSchichtInfos) {
 
-      var ermittlungNichtVerfuegbarerMitarbeiter = new Promise(function(resolve, reject) {
+      var ermittlungVerfuegbarerMitarbeiter = new Promise(function(resolve, reject) {
 
-// for schleife für jeden TAG !
+        console.log(ersatzBeduerftigeSchichtInfos)
+
+        var verfuegbareMitarbeiter = new Array();
+        var alleMitarbeiter = ersatzBeduerftigeSchichtInfos.mitarbeiter;
 
         var erforderlicheInfos = {
-          schichten : ersatzBeduerftigeSchichtInfos.schichten,
-          tagDatum :  ersatzBeduerftigeSchichtInfos.tagDatum,
-          verfuegbareMitarbeiter: []
+          alleSchichten: ersatzBeduerftigeSchichtInfos.alleSchichten,
+          schichten: [],
+          abwesenderID: ersatzBeduerftigeSchichtInfos.abwesenderID
         }
 
-        var alleMitarbeiter = new Array();
-        for (let i = 0; i < ersatzBeduerftigeSchichtInfos.mitarbeiter[i]; i++) {
-          alleMitarbeiter.push(ersatzBeduerftigeSchichtInfos.mitarbeiter[i]);
-        }
+
 
         for (let i = 0; i < ersatzBeduerftigeSchichtInfos.schichten.length; i++) {
           for (let j = 0; j < alleMitarbeiter.length; j++) {
 
-            if (alleMitarbeiter[j].id != ersatzBeduerftigeSchichtInfos.schichten[i].mitarbeiterID1 || alleMitarbeiter[j].id != ersatzBeduerftigeSchichtInfos.schichten[i].mitarbeiterID2 || alleMitarbeiter[j].id != ersatzBeduerftigeSchichtInfos.schichten[i].mitarbeiterID3 || alleMitarbeiter[j].id != ersatzBeduerftigeSchichtInfos.schichten[i].mitarbeiterID4) {
-              erforderlicheInfos.verfuegbareMitarbeiter.push(alleMitarbeiter[j]);
+            if (alleMitarbeiter[j].id != ersatzBeduerftigeSchichtInfos.schichten[i].mitarbeiterID1 && alleMitarbeiter[j].id != ersatzBeduerftigeSchichtInfos.schichten[i].mitarbeiterID2 && alleMitarbeiter[j].id != ersatzBeduerftigeSchichtInfos.schichten[i].mitarbeiterID3 && alleMitarbeiter[j].id != ersatzBeduerftigeSchichtInfos.schichten[i].mitarbeiterID4) {
+              verfuegbareMitarbeiter.push(alleMitarbeiter[j]);
+
             }
             if (j + 1 == alleMitarbeiter.length) {
-                        resolve(erforderlicheInfos);
+              erforderlicheInfos.schichten.push(new schicht(ersatzBeduerftigeSchichtInfos.schichten[i].schichtArt, ersatzBeduerftigeSchichtInfos.schichten[i].datum, verfuegbareMitarbeiter));
+              verfuegbareMitarbeiter = [];
             }
           } // end of j-Schleife
+          if (i + 1 == ersatzBeduerftigeSchichtInfos.schichten.length) {
+            resolve(erforderlicheInfos);
+          }
         } // end of i- Schleife
 
       }) // end of Promise ermittlungNichtVerfuegbarerMitarbeiter
 
-      ermittlungNichtVerfuegbarerMitarbeiter.then(function(nichtVerfuegbareMitarbeiter) {
+      ermittlungVerfuegbarerMitarbeiter.then(function(erforderlicheInfos) {
 
-        var ermittlungFreierMitarbeiter = new Promise(function(resolve, reject) {
-
-          var freieMitarbeiterNachDatum = new Array();
-
-          for (let j = 0; j < nichtVerfuegbareMitarbeiter.length; j++) {
-            for (let i = 0; i < informationen.mitarbeiterListe.length; i++) {
+        // Filtern der verfuegbaren Mitarbeitern nach den gesetzlichen Vorgaben
+        var filternGesetzlicheBedingungen = new Promise(function(resolve, reject) {
 
 
-              if (informationen.mitarbeiterListe[i].id != nichtVerfuegbareMitarbeiter[j].id) {
-                freieMitarbeiter.push(informationen.mitarbeiterListe[i]);
+          for (let i = 0; i < erforderlicheInfos.schichten.length; i++) {
+            var vars = erforderlicheInfos.schichten[i].datum.split("-");
+            var tagVorher = parseInt(vars[0]) - 1;
+            var tagNachher = parseInt(vars[0]) + 1;
+            var monat = vars[1];
+            var jahr = vars[2];
+
+            var datumVorher = tagVorher + "-" + monat + "-" + jahr;
+            var datumNachher = tagNachher + "-" + monat + "-" + jahr;
+
+
+            // Ableich mit Schichten davor
+            if (erforderlicheInfos.alleSchichten[i].datum == datumVorher) {
+              for (let z = 0; z < erforderlicheInfos.schichten.length; z++) {
+                for (let y = 0; y < erforderlicheInfos.schichten.verfuegbareMitarbeiter.length; y++) {
+
+                  if (erforderlicheInfos.schichten[z].verfuegbareMitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID1 || erforderlicheInfos.schicht.verfuegbareMitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID2 || erforderlicheInfos.schicht.verfuegbareMitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID3 || erforderlicheInfos.schicht.verfuegbareMitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID4) {
+
+                    // Vor einer Fruehschicht nur Fruehschicht!
+                    if (erforderlicheInfos.schichten[z].schichtArt == "Fruehschicht") {
+                      if (erforderlicheInfos.alleSchichten[i].schichtArt != "Fruehschicht") {
+                        erforderlicheInfos.schichten[z].verfuegbareMitarbeiter[y].splice(y, 1);
+                      }
+                    }
+                    // Vor Spaetschicht darf nur Frueh oder Spaet gearbeitet werden
+                    if (erforderlicheInfos.schichten[z].schichtArt == "Spaetschicht") {
+                      if (erforderlicheInfos.alleSchichten[i].schichtArt == "Nachtschicht") {
+                        erforderlicheInfos.schichten[z].verfuegbareMitarbeiter[y].splice(y, 1);
+                      }
+                    }
+                    // Vor einer Nachtschicht darf Frueh oder Spaet gearbeitet werden
+                    if (erforderlicheInfos.schichten[z].schichtArt == "Nachtschicht") {
+                      if (erforderlicheInfos.alleSchichten[i].schichtArt == "Nachtschicht") {
+                        erforderlicheInfos.schichten[z].verfuegbareMitarbeiter[y].splice(y, 1);
+                      }
+                    }
+
+                  }
+                }
               }
-              if (i + 1 == informationen.mitarbeiterListe.length) {
-                resolve(freieMitarbeiter);
+            }
+
+            // Abgleich mit Schichten danach
+            if (erforderlicheInfos.alleSchichten[i].datum == datumNachher) {
+              for (let z = 0; z < erforderlicheInfos.schichten.length; z++) {
+                for (let y = 0; y < erforderlicheInfos.schichten.verfuegbareMitarbeiter.length; y++) {
+
+                  if (erforderlicheInfos.schichten[z].verfuegbareMitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID1 || erforderlicheInfos.schicht.verfuegbareMitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID2 || erforderlicheInfos.schicht.verfuegbareMitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID3 || erforderlicheInfos.schicht.verfuegbareMitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID4) {
+
+                    // Vor Spaetschicht darf nur Frueh oder Spaet gearbeitet werden
+                    if (erforderlicheInfos.schichten[z].schichtArt == "Spaetschicht") {
+                      if (erforderlicheInfos.alleSchichten[i].schichtArt == "Fruehschicht") {
+                        erforderlicheInfos.schichten[z].verfuegbareMitarbeiter[y].splice(y, 1);
+                      }
+                    }
+                    // Vor einer Nachtschicht darf Frueh oder Spaet gearbeitet werden
+                    if (erforderlicheInfos.schichten[z].schichtArt == "Nachtschicht") {
+                      if (erforderlicheInfos.alleSchichten[i].schichtArt != "Nachtschicht") {
+                        erforderlicheInfos.schichten[z].verfuegbareMitarbeiter[y].splice(y, 1);
+                      }
+                    }
+
+                  }
+                }
               }
+            }
 
-            } //end of i-Schleife
+            if (i + 1 == erforderlicheInfos.schichten.length) {
+              resolve(erforderlicheInfos);
+            }
+          } // ende i - Schleife
 
-          } // end of j-Schleife
+        }) // end of Promise
 
-        }) // end of Promise ermittlungFreierMitarbeiter
+        filternGesetzlicheBedingungen.then(function(erforderlicheInfos) {
 
-        ermittlungFreierMitarbeiter.then(function(freieMitarbeiterNachDatum) {
-
-
-
-
+          resolve(erforderlicheInfos);
 
 
         }).catch(function(error) {
           console.log(error);
-        });
-
-
-
-
-
-        var ersatz = {
-          datum: "",
-          schicht: "",
-          ErsatzMitarbeiterID: []
-        }
-
+        })
 
 
       }).catch(function(error) {
         console.log(error);
-      });
+      })
 
 
     }).catch(function(error) {
       console.log(error);
-    });
+    })
 
 
 
@@ -137,19 +198,11 @@ var ersatzAnfrage = function ersatzAnfrage(informationen, abwesenheit) {
 
 
 
-
-// array -> mitarbeiter die da arbeiten ermitteln.
-
-// -> alle mitarbeiter id -> in array -> cutten von mitarbeiter die arbeiten.
-
-// -> ermittle Ma (NUR NACH DATUM) -> cutten nach schichten...
-
-// dieses Array ErsatzMitarbeiterID filtern nach höchsten Überstunden -> Auswahl niedrigste!
-
-// resolve diese Mitarbeiter ID -> putten der dazugehörigen Schichtenzuweisungen
-
-// NACH JEDEM TAG WIEDERHOLEN!
-
+function schicht(schichtArt, datum, mitarbeiter) {
+  this.schichtArt = schichtArt;
+  this.datum = datum;
+  this.mitarbeiter = mitarbeiter;
+}
 
 
 

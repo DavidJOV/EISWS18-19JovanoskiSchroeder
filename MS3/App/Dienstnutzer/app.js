@@ -5,7 +5,7 @@ app.use(express.json());;
 var router = express.Router();
 var bodyParser = require('body-parser');
 var path = require('path');
-var ersatzAnfrage = require ('../helper/abwesenheitenController.js');
+var ersatzAnfrage = require("./helper/abwesenheitenController.js");
 //PUG
 const pug = require('pug');
 app.set('view engine', 'pug');
@@ -91,7 +91,7 @@ router.get('/dienstplaene', (req, res) => { // <- Durch dieses GET wir kein POST
 router.get('/wuensche', (req, res) => {  // <- Durch dieses GET wir kein POST ausgelöst!
 
     res.status(200).render("wuenschePOST");
-    
+
 
 
 });
@@ -130,15 +130,18 @@ router.post('/abwesenheiten', (req, res) => {
 
   const abwesenheit = {
       stationID: req.body.stationID,
-      mitarbeiterID: req.body.mitarbeiterID,
+      mitarbeiterID: req.body.MitarbeiterID,
       datumBeginn: req.body.datumBeginn,
       datumEnde: req.body.datumEnde
   };
+
 
 var getMitarbeiter = new Promise (function (resolve,reject){
 
 // GET auf alle Mitarbeiter
   let resourceURI = serviceURL + '/Mitarbeiter';
+
+  console.log(resourceURI);
 
   var options = {
       uri: resourceURI,
@@ -157,9 +160,11 @@ var getMitarbeiter = new Promise (function (resolve,reject){
       body = JSON.parse(body);
 
       var mitarbeiterListe = body;
+      resolve (mitarbeiterListe);
+
 });
 
-resolve (mitarbeiterListe);
+
 }) // end of Promise getMitarbeiter
 
 
@@ -168,16 +173,17 @@ getMitarbeiter.then(function (mitarbeiterListe){
       var getDienstplan = new Promise (function (resolve, reject){
 
 
+
   var informationen = {
     dienstplan: "",
     mitarbeiterListe: mitarbeiterListe
   };
 
   // GET auf den aktuellen Dienstplan
-  let resourceURI2 = serviceURL + '/Dienstplaene/'+id;
+  let resourceURI2 = serviceURL + '/Dienstplaene/4';    //HARDCODE
 
   var options = {
-      uri: resourceURI,
+      uri: resourceURI2,
       method: 'GET',
       headers: {
           'Accept': 'application/json'
@@ -201,7 +207,9 @@ getMitarbeiter.then(function (mitarbeiterListe){
 
   getDienstplan.then(function (informationen){
 
-    ersatzAnfrage.ersatzAnfrage(informationen, abwesenheit);
+    ersatzAnfrage.ersatzAnfrage(informationen, abwesenheit).then(function(result){
+      console.log ("HALLO ENDE");
+    });
 
 
   }).catch(function (error) {
