@@ -208,7 +208,7 @@ getMitarbeiter.then(function (mitarbeiterListe){
   getDienstplan.then(function (informationen){
 
     ersatzAnfrage.ersatzAnfrage(informationen, abwesenheit).then(function(result){
-      console.log ("HALLO ENDE");
+      console.log (result);
     });
 
 

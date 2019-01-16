@@ -97,8 +97,9 @@ var ersatzBeduerftigeSchichtenErmittlung = new Promise(function(resolve, reject)
       ermittlungVerfuegbarerMitarbeiter.then(function(erforderlicheInfos) {
 
         // Filtern der verfuegbaren Mitarbeitern nach den gesetzlichen Vorgaben
+       
         var filternGesetzlicheBedingungen = new Promise(function(resolve, reject) {
-
+         
 
 
 
@@ -117,34 +118,41 @@ console.log ("AB HIER WEITER TESTEN");
             var tagNachher = parseInt(vars[0]) + 1;
             var monat = vars[1];
             var jahr = vars[2];
-
+            if(tagVorher < 10){
+              tagVorher = "0"+tagVorher;
+            }
+            if(tagNachher < 10){
+              tagNachher = "0"+tagNachher;
+            }
             var datumVorher = tagVorher + "-" + monat + "-" + jahr;
             var datumNachher = tagNachher + "-" + monat + "-" + jahr;
+            console.log(datumVorher)
+            console.log(datumNachher)
 
 
             // Ableich mit Schichten davor
             if (erforderlicheInfos.alleSchichten[i].datum == datumVorher) {
               for (let z = 0; z < erforderlicheInfos.schichten.length; z++) {
-                for (let y = 0; y < erforderlicheInfos.schichten.verfuegbareMitarbeiter.length; y++) {
-
-                  if (erforderlicheInfos.schichten[z].verfuegbareMitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID1 || erforderlicheInfos.schicht.verfuegbareMitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID2 || erforderlicheInfos.schicht.verfuegbareMitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID3 || erforderlicheInfos.schicht.verfuegbareMitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID4) {
+                for (let y = 0; y < erforderlicheInfos.schichten[z].mitarbeiter.length; y++) {
+               
+                  if (erforderlicheInfos.schichten[z].mitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID1 || erforderlicheInfos.schichten[z].mitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID2 || erforderlicheInfos.schichten[z].mitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID3 || erforderlicheInfos.schichten[z].mitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID4) {
 
                     // Vor einer Fruehschicht nur Fruehschicht!
                     if (erforderlicheInfos.schichten[z].schichtArt == "Fruehschicht") {
                       if (erforderlicheInfos.alleSchichten[i].schichtArt != "Fruehschicht") {
-                        erforderlicheInfos.schichten[z].verfuegbareMitarbeiter[y].splice(y, 1);
+                        erforderlicheInfos.schichten[z].mitarbeiter.splice(y, 1);
                       }
                     }
                     // Vor Spaetschicht darf nur Frueh oder Spaet gearbeitet werden
                     if (erforderlicheInfos.schichten[z].schichtArt == "Spaetschicht") {
                       if (erforderlicheInfos.alleSchichten[i].schichtArt == "Nachtschicht") {
-                        erforderlicheInfos.schichten[z].verfuegbareMitarbeiter[y].splice(y, 1);
+                        erforderlicheInfos.schichten[z].mitarbeiter.splice(y, 1);
                       }
                     }
                     // Vor einer Nachtschicht darf Frueh oder Spaet gearbeitet werden
                     if (erforderlicheInfos.schichten[z].schichtArt == "Nachtschicht") {
                       if (erforderlicheInfos.alleSchichten[i].schichtArt == "Nachtschicht") {
-                        erforderlicheInfos.schichten[z].verfuegbareMitarbeiter[y].splice(y, 1);
+                        erforderlicheInfos.schichten[z].mitarbeiter.splice(y, 1);
                       }
                     }
 
@@ -156,20 +164,20 @@ console.log ("AB HIER WEITER TESTEN");
             // Abgleich mit Schichten danach
             if (erforderlicheInfos.alleSchichten[i].datum == datumNachher) {
               for (let z = 0; z < erforderlicheInfos.schichten.length; z++) {
-                for (let y = 0; y < erforderlicheInfos.schichten.verfuegbareMitarbeiter.length; y++) {
+                for (let y = 0; y < erforderlicheInfos.schichten[z].mitarbeiter.length; y++) {
 
-                  if (erforderlicheInfos.schichten[z].verfuegbareMitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID1 || erforderlicheInfos.schicht.verfuegbareMitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID2 || erforderlicheInfos.schicht.verfuegbareMitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID3 || erforderlicheInfos.schicht.verfuegbareMitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID4) {
+                  if (erforderlicheInfos.schichten[z].mitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID1 || erforderlicheInfos.schichten[z].mitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID2 || erforderlicheInfos.schichten[z].mitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID3 || erforderlicheInfos.schichten[z].mitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID4) {
 
                     // Vor Spaetschicht darf nur Frueh oder Spaet gearbeitet werden
                     if (erforderlicheInfos.schichten[z].schichtArt == "Spaetschicht") {
                       if (erforderlicheInfos.alleSchichten[i].schichtArt == "Fruehschicht") {
-                        erforderlicheInfos.schichten[z].verfuegbareMitarbeiter[y].splice(y, 1);
+                        erforderlicheInfos.schichten[z].mitarbeiter.splice(y, 1);
                       }
                     }
                     // Vor einer Nachtschicht darf Frueh oder Spaet gearbeitet werden
                     if (erforderlicheInfos.schichten[z].schichtArt == "Nachtschicht") {
                       if (erforderlicheInfos.alleSchichten[i].schichtArt != "Nachtschicht") {
-                        erforderlicheInfos.schichten[z].verfuegbareMitarbeiter[y].splice(y, 1);
+                        erforderlicheInfos.schichten[z].mitarbeiter.splice(y, 1);
                       }
                     }
 
@@ -177,8 +185,10 @@ console.log ("AB HIER WEITER TESTEN");
                 }
               }
             }
+            
 
             if (i + 1 == erforderlicheInfos.schichten.length) {
+              //console.log(erforderlicheInfos.schichten[0].mitarbeiter)
               resolve(erforderlicheInfos);
             }
           } // ende i - Schleife
@@ -186,8 +196,39 @@ console.log ("AB HIER WEITER TESTEN");
         }) // end of Promise
 
         filternGesetzlicheBedingungen.then(function(erforderlicheInfos) {
+          
+          var alleFreienMitarbeiter = new Array();
+          for(let i = 0; i < erforderlicheInfos.schichten.length;i++){
+            for(let j =0;j < erforderlicheInfos.schichten[i].mitarbeiter.length;j++){
+              alleFreienMitarbeiter.push(erforderlicheInfos.schichten[i].mitarbeiter[j])
 
-          resolve(erforderlicheInfos);
+            }
+          if(i+1 == erforderlicheInfos.schichten.length){
+            var ersatzMitarbeiter = new Array();
+            
+          alleFreienMitarbeiter.sort((function(a, b){return a.id - b.id}))
+          for(let x = 0; x < alleFreienMitarbeiter.length;x++){
+            if(x < alleFreienMitarbeiter.length-2){
+            if(alleFreienMitarbeiter[x].id == alleFreienMitarbeiter[x+1].id && alleFreienMitarbeiter[x].id == alleFreienMitarbeiter[x+2].id){
+              ersatzMitarbeiter.push(alleFreienMitarbeiter[x])
+            }
+          }
+          if(x+1 == alleFreienMitarbeiter.length){
+            resolve(ersatzMitarbeiter);
+           }
+
+          }
+          
+          
+          }
+            
+         
+          
+          }
+          
+
+
+         
 
 
         }).catch(function(error) {
