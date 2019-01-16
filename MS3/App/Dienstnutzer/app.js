@@ -169,6 +169,8 @@ var getMitarbeiter = new Promise (function (resolve,reject){
 
 
 getMitarbeiter.then(function (mitarbeiterListe){
+    var datumAufgeteilt = req.body.datumBeginn.split("-");
+    
 
       var getDienstplan = new Promise (function (resolve, reject){
 
@@ -180,7 +182,7 @@ getMitarbeiter.then(function (mitarbeiterListe){
   };
 
   // GET auf den aktuellen Dienstplan
-  let resourceURI2 = serviceURL + '/Dienstplaene/4';    //HARDCODE
+  let resourceURI2 = serviceURL + '/Dienstplaene?monat='+datumAufgeteilt[1]+'&jahr='+datumAufgeteilt[2];    //HARDCODE
 
   var options = {
       uri: resourceURI2,

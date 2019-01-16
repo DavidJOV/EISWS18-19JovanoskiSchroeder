@@ -28,6 +28,17 @@ router.get('/:id', (req, res) => {
     });
 });
 
+// Get auf einen einzelnen Dienstplan mit Hilfe von Query-Parametern
+router.get('/', (req, res) => {
+  sqlHandler.getDienstplanByDate(req.query.monat,req.query.jahr)
+    .then(function (dienstplan) {
+      res.status(200).send(dienstplan);
+    })
+    .catch(function (err) {
+      res.status(400).send(err);
+    });
+});
+
 // Erstellen eines neuen Dienstplan
 router.post('/', bodyParser.json(), (req, res) => {
 
