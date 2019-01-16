@@ -69,6 +69,34 @@ router.get('/mitarbeiter/:id', (req, res) => {
     });
 });
 
+// GET auf die Ersatzanfragen eines Mitarbeiters
+router.get('/mitarbeiter/:id/ersatzanfragen', (req, res) => {
+    let resourceURI = serviceURL + '/mitarbeiter/'+req.params.id+"/ersatzanfragen";
+
+    var options = {
+        uri: resourceURI,
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json'
+        }
+    }
+
+    request(options, (err, res2, body) => {
+
+        if (err) {
+            console.log(err);
+            return;
+        }
+        body = JSON.parse(body);
+       
+        
+        res.status(200).render("mitarbeiterErsatzanfragenGet" , { ersatzanfragen:body});
+        
+
+
+    });
+});
+
 // GET auf das Mitarbeiter anlegen Formular
 router.get('/mitarbeiter', (req, res) => { // <- Durch dieses GET wir kein POST ausgelöst!
 
@@ -234,7 +262,7 @@ router.get('/dienstplaene/:id', (req, res) => {
     if(!req.query.mitarbeiter){
         console.log(req.query)
     res.status(200).render("DienstplanGET");}
-    else{ console.log("x")
+    else{ 
         res.status(200).render("DienstplanSingleGET");
     }
     //res.status(200).send(JSON.parse(body))

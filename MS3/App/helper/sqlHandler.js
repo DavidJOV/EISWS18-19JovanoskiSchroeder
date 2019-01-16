@@ -994,6 +994,7 @@ var updateWunsch = function updateWunsch(stationID, mitarbeiterID, date, wunschU
 */
 
 
+
 // Löschen eines Wunsches
 var loescheWunsch = function leoscheWunsch(stationID, mitarbeiterID, date) {
     return new Promise(function(resolve, reject) {
@@ -1017,6 +1018,23 @@ var loescheWunsch = function leoscheWunsch(stationID, mitarbeiterID, date) {
     });
 }
 
+// Lesen aller Ersatzanfragen eines Mitarbeiters aus der DB
+var getErsatzanfragen = function getErsatzanfragen(mitarbeiterID) {
+
+    return new Promise(function(resolve, reject) {
+
+        let sql = "SELECT * FROM ersatzanfrage WHERE mitarbeiterID = " + mitarbeiterID;
+
+        connection.query(sql, function(err, result) {
+            if (err) reject(err);
+            else {
+
+                resolve(result);
+
+            }
+        });
+    });
+}
 
 
 
@@ -1235,6 +1253,7 @@ exports.loescheMitarbeiter = loescheMitarbeiter;
 exports.updateWunschRating = updateWunschRating;
 exports.updateDienstplanRating = updateDienstplanRating;
 exports.getMitarbeiterById = getMitarbeiterById;
+exports.getErsatzanfragen = getErsatzanfragen;
 //Abwesenheitsmeldung
 exports.getAbwesenheiten = getAbwesenheiten;
 exports.neueAbwesenheit = neueAbwesenheit;

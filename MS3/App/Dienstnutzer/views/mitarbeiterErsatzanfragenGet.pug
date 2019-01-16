@@ -1,0 +1,37 @@
+html
+  head
+    link(rel="stylesheet", href="/static/style.css")
+    script(src='/static/navigation.js')
+    script(src='/static/frontend.js')
+    title= title
+  body
+    ul
+      li
+        a(id='goToDienstplan' onclick='goToDienstplan()') Dienstplan erstellen
+      li
+        a(id='goToWuensche' onclick='goToWuensche()') Wunsch einreichen
+      li
+        a(id='goToAbwesenheiten' onclick='goToAbwesenheiten()') Abwesenheit einreichen
+      li
+        a(id='goToMitarbeiter' onclick='goToMitarbeiter()') Mitarbeiter anlegen
+    table#mitarbeiter
+        thead
+                tr 
+                    td Ersatzanfragen
+                    td Informationen
+        each ersatzanfrage,i in ersatzanfragen
+             tbody(id=i)
+                    tr 
+                        td AbwesenheitsmeldungID 
+                        td=ersatzanfrage.abwesenheitsmeldungID
+                    tr   
+                        td Datum der Übernahme 
+                        td=ersatzanfrage.datumUebernahme
+                    tr   
+                        td Art der Schicht 
+                        td=ersatzanfrage.schichtArt
+                    tr
+                        td    
+                            input(type='button', value='Verbindlich Annehmen', id="annehmen",onclick="trageErsatzEin(document.getElementById("+i+"))")
+                        td
+                            input(type='button', value='Verbindlich Ablehnen',id="ablehnen",onclick="loescheErsatzAnfrage(document.getElementById("+i+"))")

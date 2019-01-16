@@ -73,3 +73,9 @@
   li a:hover:not(.active) {
     background-color:  #91ABEB;
   }
+  #annehmen{
+    background-color: green;
+  }
+  #ablehnen{
+    background-color: red;
+  }

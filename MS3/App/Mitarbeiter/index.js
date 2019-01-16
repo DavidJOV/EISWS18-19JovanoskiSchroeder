@@ -267,6 +267,22 @@ router.put('/:id/ueberstunden', (req, res) => {
 });
 
 
+// GET auf die Ersatzanfragen des Mitarbeiters
+router.get('/:id/ersatzanfragen', (req, res) => {
+    sqlHandler.getErsatzanfragen(req.params.id)
+        .then(function (ersatzanfragen) {
+            if (ersatzanfragen === undefined) res.status(404).send("Keine Ersatzanfragen vorhanden!");
+            else {
+                    res.status(200).send(ersatzanfragen);
+                    console.log(ersatzanfragen);
+            }
+        })
+        .catch(function (error) {
+            res.status(400).send(error);
+        });
+
+});
+
 
 
 

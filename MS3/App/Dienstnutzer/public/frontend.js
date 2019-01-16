@@ -89,3 +89,27 @@ function speichereAbwesenheit(abwesenheit) {
     }
     }
 }
+
+function trageErsatzEin(ersatzanfrage){
+    var mitarbeiterID = getIndexVonMitarbeiter();
+
+    console.log(ersatzanfrage)
+    console.log(mitarbeiterID)
+}
+
+function loescheErsatzAnfrage(ersatzanfrage){
+
+     var mitarbeiterID = getIndexVonMitarbeiter();
+
+    console.log(ersatzanfrage)
+    console.log(mitarbeiterID)
+}
+
+function getIndexVonMitarbeiter() {
+    var query = window.location.href
+    console.log(query)
+    var vars = query.split("/");
+
+            return vars[4]
+
+}
