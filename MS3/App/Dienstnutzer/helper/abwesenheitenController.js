@@ -58,10 +58,11 @@ var ersatzBeduerftigeSchichtenErmittlung = new Promise(function(resolve, reject)
 
       var ermittlungVerfuegbarerMitarbeiter = new Promise(function(resolve, reject) {
 
-        console.log(ersatzBeduerftigeSchichtInfos)
+
 
         var verfuegbareMitarbeiter = new Array();
         var alleMitarbeiter = ersatzBeduerftigeSchichtInfos.mitarbeiter;
+
 
         var erforderlicheInfos = {
           alleSchichten: ersatzBeduerftigeSchichtInfos.alleSchichten,
@@ -82,8 +83,11 @@ var ersatzBeduerftigeSchichtenErmittlung = new Promise(function(resolve, reject)
               erforderlicheInfos.schichten.push(new schicht(ersatzBeduerftigeSchichtInfos.schichten[i].schichtArt, ersatzBeduerftigeSchichtInfos.schichten[i].datum, verfuegbareMitarbeiter));
               verfuegbareMitarbeiter = [];
             }
+
           } // end of j-Schleife
           if (i + 1 == ersatzBeduerftigeSchichtInfos.schichten.length) {
+
+
             resolve(erforderlicheInfos);
           }
         } // end of i- Schleife
@@ -94,6 +98,17 @@ var ersatzBeduerftigeSchichtenErmittlung = new Promise(function(resolve, reject)
 
         // Filtern der verfuegbaren Mitarbeitern nach den gesetzlichen Vorgaben
         var filternGesetzlicheBedingungen = new Promise(function(resolve, reject) {
+
+
+
+
+// ergebnis aus Tagfilterung wird korrekt übergeben.
+console.log ("AB HIER WEITER TESTEN");
+
+
+
+
+
 
 
           for (let i = 0; i < erforderlicheInfos.schichten.length; i++) {
