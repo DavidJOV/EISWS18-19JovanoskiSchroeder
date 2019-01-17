@@ -136,7 +136,7 @@ function trageErsatzEin(id){
     
      // HTTP Request an Dienstnutzer
      var xmlhttp = new XMLHttpRequest();   
-     xmlhttp.open("POST", "http://localhost:3000/mitarbeiter/"+mitarbeiterID+"/ersatzanfragen");
+     xmlhttp.open("POST", "http://localhost:3000/mitarbeiter/"+mitarbeiterID+"/ersatzeintragungen");
      xmlhttp.setRequestHeader("Content-Type", "application/json");
      xmlhttp.send(JSON.stringify(ersatzEintragung));
      // User Feedback Erfolg/nichtErfolg
@@ -144,7 +144,7 @@ function trageErsatzEin(id){
          var jsonResponse = JSON.parse(xmlhttp.status)
          console.log(jsonResponse)
          if(jsonResponse == 201){
-         window.location.href = "http://localhost:8080/bestaetigung"
+         window.location.href = "http://localhost:8080/mitarbeiter/"+mitarbeiterID+"/ersatzeintragungen"
      }
      else{
          window.location.href = "http://localhost:8080/entschuldigung"
@@ -152,12 +152,35 @@ function trageErsatzEin(id){
      }
 }
 
-function loescheErsatzAnfrage(ersatzanfrage){
-
-     var mitarbeiterID = getIndexVonMitarbeiter();
-
-    console.log(ersatzanfrage)
-    console.log(mitarbeiterID)
+function loescheErsatzAnfrage(id){
+    var mitarbeiterID = getIndexVonMitarbeiter();
+    var values = new Array();
+    
+    $("#"+id+" td").each(function() {
+        values.push($(this).text());
+       
+    })
+    console.log(values)
+    var ersatzAnfrage = {
+        abwesenheitsmeldungID: parseInt(values[1]),
+        datumUebernahme: values[3]
+    };
+   // HTTP Request an Dienstnutzer
+   var xmlhttp = new XMLHttpRequest();   
+   xmlhttp.open("DELETE", "http://localhost:3000/mitarbeiter/"+mitarbeiterID+"/ersatzeintragungen");
+   xmlhttp.setRequestHeader("Content-Type", "application/json");
+   xmlhttp.send(JSON.stringify(ersatzAnfrage));
+   // User Feedback Erfolg/nichtErfolg
+   xmlhttp.onload  = function() {
+       var jsonResponse = JSON.parse(xmlhttp.status)
+       console.log(jsonResponse)
+       if(jsonResponse == 201){
+      window.location.href = "http://localhost:8080/mitarbeiter/"+mitarbeiterID+"/ersatzanfragen"
+   }
+   else{
+     window.location.href = "http://localhost:8080/entschuldigung"
+   }
+   }
 }
 
 function getIndexVonMitarbeiter() {

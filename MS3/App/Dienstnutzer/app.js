@@ -26,6 +26,7 @@ app.use((req, res, next) => {
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods","GET, POST, PUT, DELETE, OPTIONS")
     next();
   });
 
@@ -92,7 +93,7 @@ router.get('/mitarbeiter/:id/ersatzanfragen', (req, res) => {
 
 
 // GET auf die Ersatzeintragungen eines Mitarbeiters
-router.get('/mitarbeiter/:id/ersatzanfragen', (req, res) => {
+router.get('/mitarbeiter/:id/ersatzeintragungen', (req, res) => {
     let resourceURI = serviceURL + '/mitarbeiter/'+req.params.id+"/ersatzeintragungen";
 
     var options = {

@@ -271,7 +271,7 @@ router.get('/:id/ersatzanfragen', (req, res) => {
       if (ersatzanfragen === undefined) res.status(404).send("Keine Ersatzanfragen vorhanden!");
       else {
         res.status(200).send(ersatzanfragen);
-        console.log(ersatzanfragen);
+        
       }
     })
     .catch(function(error) {
@@ -286,7 +286,7 @@ router.get('/:id/ersatzeintragungen', (req, res) => {
       if (ersatzeintragung === undefined) res.status(404).send("Keine Ersatzeintragungen vorhanden!");
       else {
         res.status(200).send(ersatzeintragung);
-        console.log(ersatzeintragung);
+        
       }
     })
     .catch(function(error) {
@@ -301,22 +301,37 @@ router.get('/:id/ersatzeintragungen', (req, res) => {
 
 // POST auf Ersatzeintragung (Nach Annahme einer Ersatzanfrage)
 
-router.post('/Ersatzeintragung/:mitarbeiterID', (req, res) => {
+router.post('/:mitarbeiterID/ersatzeintragungen', (req, res) => {
 
   var ersatzAnfrage = {
     stationID: "",
     mitarbeiterID: req.params.mitarbeiterID,
-    abwesenheitsmeldungID: req.params.abwesenheitsmeldungID,
-    datumUebernahme: req.params.datumUebernahme,
-    schichtArt: req.params.schichtArt,
+    abwesenheitsmeldungID: req.body.abwesenheitsmeldungID,
+    datumUebernahme: req.body.datumUebernahme,
+    schichtArt: req.body.schichtArt,
     zuErsetzenderMitarbeiter: ""
   }
-  sqlHandler.getAbwesenheitenByID(ersatzanfrage.abwesenheitsmeldungID)
+  sqlHandler.getAbwesenheitenByID(ersatzAnfrage.abwesenheitsmeldungID)
     .then(function(abwesenheit) {
+      //console.log(abwesenheit)
+var ersatzAnfragePromise = new Promise(function(resolve,reject){
+  
 
-      ersatzAnfrage.zuErsetzenderMitarbeiter = abwesenheit.MitarbeiterID;
-      ersatzAnfrage.stationID = abwesenheit.stationID;
-
+      ersatzAnfrage.zuErsetzenderMitarbeiter = abwesenheit[0].MitarbeiterID;
+      ersatzAnfrage.stationID = abwesenheit[0].stationID;
+   
+      if(ersatzAnfrage.stationID != undefined && ersatzAnfrage.zuErsetzenderMitarbeiter!=undefined){
+      resolve(ersatzAnfrage)
+     // console.log(ersatzAnfrage)
+      }
+      else{
+        reject(err)
+        console.log(err)
+      }
+    
+    
+    }) // Promise ersatzAnfragePromise
+    ersatzAnfragePromise.then(function(ersatzAnfrage){ 
       sqlHandler.neueErsatzeintragung(ersatzAnfrage)
         .then(function(ersatzeintragung) {
 
@@ -347,22 +362,22 @@ router.post('/Ersatzeintragung/:mitarbeiterID', (req, res) => {
         }).catch(function(error) {
           res.status(400).send(error);
         });
-
+      }) // then ersatzAnfragePromise
     }).catch(function(error) {
       res.status(400).send(error);
     });
-
+  
 });
 
 
 
 
-router.delete('/Ersatzeintragung/:mitarbeiterID', (req, res) => {
+router.delete('/:mitarbeiterID/ersatzeintragungen', (req, res) => {
 
   var ersatzAnfrage = {
     mitarbeiterID: req.params.mitarbeiterID,
-    abwesenheitsmeldungID: req.params.abwesenheitsmeldungID,
-    datumUebernahme: req.params.datumUebernahme,
+    abwesenheitsmeldungID: req.body.abwesenheitsmeldungID,
+    datumUebernahme: req.body.datumUebernahme,
   }
 
   sqlHandler.loescheErsatzanfrageEinzeln(ersatzAnfrage.abwesenheitsmeldungID, ersatzAnfrage.datumUebernahme, ersatzAnfrage.mitarbeiterID)

@@ -227,7 +227,9 @@ var getAbwesenheitenByID = function getAbwesenheitenByID(abwesenheitsMeldungID) 
 
         let sql = "SELECT * FROM abwesenheitsmeldung WHERE id = "+abwesenheitsMeldungID ;
         connection.query(sql, function(err, result) {
-            if (err) reject(err);
+            if (err){ reject(err);
+            console.log(err)
+            }
             else {
 
 
@@ -519,23 +521,26 @@ var updateSchichtzuweisungErsatz = function updateSchichtzuweisungErsatz(date, s
       let sql = "SELECT * FROM schichtzuweisung WHERE datum = \"" + date + "\" AND schichtArt = \"" + schicht + "\"";
 
       connection.query(sql, function(err, result) {
-          if (err) reject(err);
+          if (err) {
+            console.log(err)  
+            reject(err);
+        }
           else {
 
         // Schichtzuweisung aktuallisieren
         if (alteMaID == result[0].mitarbeiterID1){
         var sql2 = "UPDATE schichtzuweisung SET mitarbeiterID1 = \"" + neueMaID + "\" WHERE datum = \"" + date + "\" AND schichtArt = \"" + schicht + "\"";
       }
-      if (alteMaID == result[0].mitarbeiterID2){
+     else if (alteMaID == result[0].mitarbeiterID2){
       var sql2 = "UPDATE schichtzuweisung SET mitarbeiterID2 = \"" + neueMaID + "\" WHERE datum = \"" + date + "\" AND schichtArt = \"" + schicht + "\"";
     }
-    if (alteMaID == result[0].mitarbeiterID3){
+    else if (alteMaID == result[0].mitarbeiterID3){
     var sql2 = "UPDATE schichtzuweisung SET mitarbeiterID3 = \"" + neueMaID + "\" WHERE datum = \"" + date + "\" AND schichtArt = \"" + schicht + "\"";
   }
-  if (alteMaID == result[0].mitarbeiterID4){
+ else if (alteMaID == result[0].mitarbeiterID4){
   var sql2 = "UPDATE schichtzuweisung SET mitarbeiterID4 = \"" + neueMaID + "\" WHERE datum = \"" + date + "\" AND schichtArt = \"" + schicht + "\"";
 }
-
+if(sql2 != undefined){
         connection.query(sql2, function(err, result2) {
             if (err) {
                 console.log(err)
@@ -546,6 +551,7 @@ var updateSchichtzuweisungErsatz = function updateSchichtzuweisungErsatz(date, s
                 //console.log("Schicht wurde aktuallisiert");
             }
         });
+    }
 
       }
       });
@@ -1161,7 +1167,7 @@ var loescheErsatzanfrage = function loescheErsatzanfrage(abwesenheitsmeldungID, 
     return new Promise(function(resolve, reject) {
 
 
-        var sql = "DELETE FROM ersatzanfrage WHERE abwesenheitsMeldungID =" + abwesenheitsmeldungID + "AND datumUebernahme = " + datumUebernahme;
+        var sql = "DELETE FROM ersatzanfrage WHERE abwesenheitsMeldungID = " + abwesenheitsmeldungID + " AND datumUebernahme = \"" + datumUebernahme+"\"";
 
 
         connection.query(sql, function(err, result) {
@@ -1186,8 +1192,8 @@ var loescheErsatzanfrageEinzeln = function loescheErsatzanfrageEinzeln(abwesenhe
     return new Promise(function(resolve, reject) {
 
 
-        var sql = "DELETE FROM ersatzanfrage WHERE abwesenheitsMeldungID =" + abwesenheitsmeldungID + "AND datumUebernahme = " + datumUebernahme+ "AND mitarbeiterID = "+mitarbeiterID;
-
+        var sql = "DELETE FROM ersatzanfrage WHERE abwesenheitsMeldungID =" + abwesenheitsmeldungID + " AND datumUebernahme = \"" + datumUebernahme+ "\" AND mitarbeiterID = "+mitarbeiterID;
+        console.log(sql)
 
         connection.query(sql, function(err, result) {
             if (err) {
@@ -1231,7 +1237,7 @@ var neueErsatzeintragung = function neueErsatzeintragung(ersatzAnfrage){
 
 
 
-      var sql = "INSERT INTO ersatzeintragung (stationID, mitarbeiterID, abwesenheitsMeldungID, datumUebernahme, schichtArt) VALUES ( \"" + ersatzAnfrage.stationID + "\",\"" + ersatzAnfrage.mitarbeiterID + "\",\"" + ersatzAnfrage.abwesenheitsMeldungID + "\",\"" + ersatzAnfrage.datumUebernahme + "\",\"" + ersatzAnfrage.schichtArt + "\")";
+      var sql = "INSERT INTO ersatzeintragung (stationID, mitarbeiterID, abwesenheitsmeldungID, datumUebernahme, schichtArt) VALUES ( \"" + ersatzAnfrage.stationID + "\",\"" + ersatzAnfrage.mitarbeiterID + "\",\"" + ersatzAnfrage.abwesenheitsmeldungID + "\",\"" + ersatzAnfrage.datumUebernahme + "\",\"" + ersatzAnfrage.schichtArt + "\")";
 
 
       connection.query(sql, function(err, result) {
@@ -1240,7 +1246,7 @@ var neueErsatzeintragung = function neueErsatzeintragung(ersatzAnfrage){
               reject(err);
 
           } else {
-              resolve(ersatzeintragung);
+              resolve(ersatzAnfrage);
           }
       });
 
@@ -1476,12 +1482,16 @@ exports.getMitarbeiterById = getMitarbeiterById;
 exports.getErsatzanfragen = getErsatzanfragen;
 exports.neueErsatzanfrage = neueErsatzanfrage;
 exports.neueErsatzeintragung = neueErsatzeintragung;
+exports.getErsatzeintragung = getErsatzeintragung;
+exports.loescheErsatzanfrage = loescheErsatzanfrage;
+exports.loescheErsatzanfrageEinzeln = loescheErsatzanfrageEinzeln;
 
 //Abwesenheitsmeldung
 exports.getAbwesenheiten = getAbwesenheiten;
 exports.neueAbwesenheit = neueAbwesenheit;
 exports.updateAbwesenheit = updateAbwesenheit;
 exports.loescheAbwesenheit = loescheAbwesenheit;
+exports.getAbwesenheitenByID = getAbwesenheitenByID;
 
 //Tauschanfragen
 exports.getTauschanfragen = getTauschanfragen;

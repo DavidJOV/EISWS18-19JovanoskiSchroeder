@@ -55,7 +55,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: gray;
+    background-color:  #91ABEB;
   }
   
   li {
@@ -71,7 +71,7 @@
   }
   
   li a:hover:not(.active) {
-    background-color:  #91ABEB;
+    background-color:  rgb(85, 107, 161);
   }
   #annehmen{
     background-color: green;
