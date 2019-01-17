@@ -15,12 +15,22 @@ function speichereMitarbeiter(mitarbeiter) {
         beschaeftigungsBeginn: input.elements[5].value,
         rolle: input.elements[6].value
     };
-
-    var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
+    // HTTP Request an Dienstnutzer
+    var xmlhttp = new XMLHttpRequest();   
     xmlhttp.open("POST", "http://localhost:3000/mitarbeiter");
     xmlhttp.setRequestHeader("Content-Type", "application/json");
     xmlhttp.send(JSON.stringify(neuerMitarbeiter));
-    console.log(neuerMitarbeiter)
+    // User Feedback Erfolg/nichtErfolg
+    xmlhttp.onload  = function() {
+        var jsonResponse = JSON.parse(xmlhttp.status)
+        console.log(jsonResponse)
+        if(jsonResponse == 201){
+        window.location.href = "http://localhost:8080/abwesenheiten/bestaetigung"
+    }
+    else{
+        window.location.href = "http://localhost:8080/abwesenheiten/entschuldigung"
+    }
+    }
 }
 
 function speichereWunsch(wunsch) {
@@ -39,7 +49,17 @@ function speichereWunsch(wunsch) {
     xmlhttp.open("POST", "http://localhost:3000/mitarbeiter/wuensche");
     xmlhttp.setRequestHeader("Content-Type", "application/json");
     xmlhttp.send(JSON.stringify(neuerWunsch));
-    console.log(neuerWunsch)
+    // User Feedback Erfolg/nichtErfolg
+    xmlhttp.onload  = function() {
+        var jsonResponse = JSON.parse(xmlhttp.status)
+        console.log(jsonResponse)
+        if(jsonResponse == 201){
+        window.location.href = "http://localhost:8080/abwesenheiten/bestaetigung"
+    }
+    else{
+        window.location.href = "http://localhost:8080/abwesenheiten/entschuldigung"
+    }
+    }
 }
 
 function erstelleDienstplan(dienstplan) {
@@ -56,9 +76,16 @@ function erstelleDienstplan(dienstplan) {
     xmlhttp.open("POST", "http://localhost:3000/dienstplaene");
     xmlhttp.setRequestHeader("Content-Type", "application/json");
     xmlhttp.send(JSON.stringify(neuerDienstplan));
+    // User Feedback Erfolg/nichtErfolg + Redirect auf den erstellten Dienstplan
     xmlhttp.onload  = function() {
         var jsonResponse = JSON.parse(xmlhttp.responseText);
+        var jsonResponseStatusCode = JSON.parse(xmlhttp.status);
+        if(jsonResponseStatusCode == 201){
         window.location.href = "http://localhost:8080/dienstplaene/"+jsonResponse.metadaten[0].id;
+        }
+        else{
+            window.location.href = "http://localhost:8080/abwesenheiten/entschuldigung"
+        }
      };
 }
 
@@ -78,6 +105,7 @@ function speichereAbwesenheit(abwesenheit) {
     xmlhttp.open("POST", "http://localhost:8080/abwesenheiten");
     xmlhttp.setRequestHeader("Content-Type", "application/json");
     xmlhttp.send(JSON.stringify(neueAbwesenheit));
+    // User Feedback Erfolg/nichtErfolg
     xmlhttp.onload  = function() {
         var jsonResponse = JSON.parse(xmlhttp.status)
         console.log(jsonResponse)
