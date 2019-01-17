@@ -1,8 +1,11 @@
+// Darauf warten das das document geladen ist.
 $(document).ready(function () {
   var url = "http://localhost:3000/Dienstplaene/" +getIndexVonDienstplan();
+  // Dienstplan Informationen von Dienstgeber holen
   $.get(url, function (dienstplan) {
     var schichten;
     var arrayOfSchichten = new Array();
+    // Daten aufbereiten -> da im Response eine nested Array steht Arry[[],[],[],[]]
     for (let i = 0; i < dienstplan.schichten.length; i++) {
 
       schichten = {
@@ -53,7 +56,7 @@ $(document).ready(function () {
 
         // your event source
         {
-
+          // das events Array übergeben und die enthaltenen Informationen rendern
           events: events
           // an option!
         }
@@ -72,7 +75,7 @@ $(document).ready(function () {
 
   });
 })
-
+// Dienstplan id aus Browser-URL ziehen
 function getIndexVonDienstplan() {
   var query = window.location.href
   var vars = query.split("/");
@@ -86,7 +89,7 @@ function getIndexVonDienstplan() {
   }
 
 }
-
+// Datum Formatieren
 function datumZuIsoFormat(datum) {
   //console.log(datum)
   var isoDatum;

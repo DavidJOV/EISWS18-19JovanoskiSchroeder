@@ -1,3 +1,4 @@
+//Simple Navigations Funktionen
 function goToDienstplan(){
     window.location.href = "http://localhost:8080/dienstplaene"
 }
