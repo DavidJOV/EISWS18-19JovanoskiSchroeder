@@ -59,6 +59,45 @@ router.post('/', bodyParser.json(), (req, res) => {
         });
 
 });
+
+
+router.post('/Ersatzanfragen', bodyParser.json(), (req, res) => {
+
+    console.log(req.body);
+
+    const ersatzAnfrageInfos = req.body.ersatzAnfrageInfos;
+    const abwesenheit = req.body.abwesenheit;
+
+    console.log(ersatzAnfrageInfos.length);
+    console.log(ersatzAnfrageInfos[0].mitarbeiter.length);
+
+    for (let q = 0 ; q<(ersatzAnfrageInfos.length/3);q++){
+      for ( let j = 0 ; j < ersatzAnfrageInfos[q].mitarbeiter.length ; j++){
+    sqlHandler.neueErsatzanfrage(ersatzAnfrageInfos[q],abwesenheit,j)
+    .then (function (){
+      console.log("Ersatzanfrage erstellt");
+    }).catch(function (err) {
+       res.status(400).send(err);
+    });
+
+    if (q+1 == (ersatzAnfrageInfos.length/3) && j+1 == ersatzAnfrageInfos[q].mitarbeiter.length){
+
+      res.status(201).send("Ersatzanfragen erfolgreich erstellt")
+}
+
+}
+}
+
+
+
+});
+
+
+
+
+
+
+
 // Aktuallisieren einer Abwesenheit
 router.put('/:id', (req, res) => {
 

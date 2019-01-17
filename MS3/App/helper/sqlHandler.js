@@ -204,17 +204,33 @@ var getAbwesenheiten = function getAbwesenheiten() {
 
     return new Promise(function(resolve, reject) {
 
-        // Alle Abwesenheiten derd Station
+        // Alle Abwesenheiten der Station
 
-        let sql = "SELECT id, stationID, mitarbeiterID, DATE_FORMAT(datumBeginn, \"%W %M %e %Y\"),DATE_FORMAT(datumEnde, \"%W %M %e %Y\") FROM  abwesenheitsmeldung";
+        let sql = "SELECT * FROM abwesenheitsmeldung";
         connection.query(sql, function(err, result) {
             if (err) reject(err);
             else {
 
-                // Datenbank Daten aufbereiten.
 
-                //let mitarbeiterString = JSON.stringify(result);
-                // var mitarbeiter = JSON.parse(mitarbeiterString);
+                resolve(result);
+
+            }
+        });
+    });
+}
+
+var getAbwesenheitenByID = function getAbwesenheitenByID(abwesenheitsMeldungID) {
+
+    return new Promise(function(resolve, reject) {
+
+
+
+        let sql = "SELECT * FROM abwesenheitsmeldung WHERE id = "+abwesenheitsMeldungID ;
+        connection.query(sql, function(err, result) {
+            if (err) reject(err);
+            else {
+
+
                 resolve(result);
 
             }
@@ -226,9 +242,10 @@ var getAbwesenheiten = function getAbwesenheiten() {
 var neueAbwesenheit = function neueAbwesenheit(abwesenheitsmeldung) {
     return new Promise(function(resolve, reject) {
 
-        // Neuen Mitarbeiter der Datenbank hinzufügen
+        // Neue Abwesenheit der Datenbank hinzufügen
 
-        var sql = "INSERT INTO abwesenheitsmeldung (stationID, MitarbeiterID, datumBeginn, datumEnde) VALUES ( \"" + abwesenheitsmeldung.stationID + "\",\"" + abwesenheitsmeldung.MitarbeiterID + "\",\"" + abwesenheitsmeldung.datumBeginn + "\",\"" + abwesenheitsmeldung.datumEnde + "\")";
+
+        var sql = "INSERT INTO abwesenheitsmeldung (stationID, MitarbeiterID, datumBeginn, datumEnde) VALUES ( \"" + abwesenheitsmeldung.stationID + "\",\"" + abwesenheitsmeldung.mitarbeiterID + "\",\"" + abwesenheitsmeldung.datumBeginn + "\",\"" + abwesenheitsmeldung.datumEnde + "\")";
 
 
         connection.query(sql, function(err, result) {
@@ -237,9 +254,21 @@ var neueAbwesenheit = function neueAbwesenheit(abwesenheitsmeldung) {
                 reject(err);
 
             } else {
-                resolve(abwesenheitsmeldung);
-                console.log("1 neue Abwesenheitsmeldung");
-            }
+
+                var sql2= "SELECT * FROM abwesenheitsmeldung WHERE stationID = "+ abwesenheitsmeldung.stationID + " AND MitarbeiterID = " + abwesenheitsmeldung.mitarbeiterID + " AND datumBeginn = \"" + abwesenheitsmeldung.datumBeginn + "\" AND datumEnde = \"" + abwesenheitsmeldung.datumEnde +"\"";
+
+                connection.query(sql2, function(err, result2) {
+                    if (err) {
+                        console.log(err)
+                        reject(err);
+
+                    } else {
+                      resolve (result2);
+                    }
+
+
+              });
+        }
         });
 
 
@@ -304,7 +333,7 @@ var getTauschanfragen = function getTauschanfragen() {
 
         // Alle Tauschanfragen
 
-        let sql = "SELECT id, stationID, mitarbeiterID, DATE_FORMAT(datumTausch, \"%W %M %e %Y\"),tauschStatus FROM  schichttausch";
+        let sql = "SELECT * FROM  schichttausch";
         connection.query(sql, function(err, result) {
             if (err) reject(err);
             else {
@@ -937,11 +966,11 @@ var getWuenscheStation = function getWuenscheStation(stationID,monat) {
         connection.query(sql, function(err, result) {
             if (err) reject(err);
             else {
-               
+
                 resolve(result);
 
             }
-            
+
         });
     });
 }
@@ -1018,6 +1047,10 @@ var loescheWunsch = function leoscheWunsch(stationID, mitarbeiterID, date) {
     });
 }
 
+
+//************************************************************************************************
+// Ersatzanfragen / eintragung - Funktionen
+
 // Lesen aller Ersatzanfragen eines Mitarbeiters aus der DB
 var getErsatzanfragen = function getErsatzanfragen(mitarbeiterID) {
 
@@ -1035,6 +1068,79 @@ var getErsatzanfragen = function getErsatzanfragen(mitarbeiterID) {
         });
     });
 }
+
+
+var neueErsatzanfrage = function neueErsatzanfrage(informationen, abwesenheit, index){
+  return new Promise(function(resolve, reject) {
+
+
+    var sql = "SELECT schichtArt FROM schichtzuweisung WHERE datum = \""+abwesenheit.datumBeginn+"\" AND (mitarbeiterID1 = "+abwesenheit.MitarbeiterID+" OR mitarbeiterID2 = "+abwesenheit.MitarbeiterID+" OR mitarbeiterID3 = "+abwesenheit.MitarbeiterID+" OR mitarbeiterID4 = "+abwesenheit.MitarbeiterID+")";
+
+
+    connection.query(sql, function(err, result) {
+        if (err) {
+            console.log(err)
+            reject(err);
+
+        } else {
+
+
+          console.log(result);
+
+      var sql2 = "INSERT INTO ersatzanfrage (stationID, mitarbeiterID, abwesenheitsmeldungID, datumUebernahme, schichtArt) VALUES ( \"" + abwesenheit.stationID + "\",\"" + informationen.mitarbeiter[index].id + "\",\"" + abwesenheit.id + "\",\"" + informationen.datum + "\",\"" + result[0].schichtArt + "\")";
+
+
+      connection.query(sql2, function(err, result2) {
+          if (err) {
+              console.log(err)
+              reject(err);
+
+          } else {
+              resolve("Ersatzanfrage erstellt");
+          }
+      });
+
+    }
+  });
+
+
+  });
+
+
+
+}
+
+
+var neueErsatzeintragung = function neueErsatzeintragung(ersatzAnfrage){
+  return new Promise(function(resolve, reject) {
+      //In der Datenbank hinzufügen
+
+
+
+      var sql = "INSERT INTO ersatzeintragung (stationID, mitarbeiterID, abwesenheitsMeldungID, datumÜbernahme, schichtArt) VALUES ( \"" + ersatzAnfrage.stationID + "\",\"" + ersatzAnfrage.mitarbeiterID + "\",\"" + ersatzAnfrage.abwesenheitsMeldungID + "\",\"" + ersatzAnfrage.datumUebernahme + "\",\"" + ersatzAnfrage.schichtArt + "\")";
+
+
+      connection.query(sql, function(err, result) {
+          if (err) {
+              console.log(err)
+              reject(err);
+
+          } else {
+              resolve(ersatzeintragung);
+          }
+      });
+
+
+  });
+
+
+
+}
+
+
+
+
+
 
 
 
@@ -1254,6 +1360,8 @@ exports.updateWunschRating = updateWunschRating;
 exports.updateDienstplanRating = updateDienstplanRating;
 exports.getMitarbeiterById = getMitarbeiterById;
 exports.getErsatzanfragen = getErsatzanfragen;
+exports.neueErsatzanfrage = neueErsatzanfrage;
+exports.neueErsatzeintragung = neueErsatzeintragung;
 //Abwesenheitsmeldung
 exports.getAbwesenheiten = getAbwesenheiten;
 exports.neueAbwesenheit = neueAbwesenheit;

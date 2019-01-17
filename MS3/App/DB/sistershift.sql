@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Erstellungszeit: 16. Jan 2019 um 22:47
--- Server-Version: 5.6.34-log
--- PHP-Version: 7.1.7
+-- Erstellungszeit: 17. Jan 2019 um 17:15
+-- Server-Version: 5.7.24-log
+-- PHP-Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -32,8 +32,8 @@ CREATE TABLE `abwesenheitsmeldung` (
   `stationID` int(11) NOT NULL,
   `MitarbeiterID` int(11) NOT NULL,
   `id` int(11) NOT NULL,
-  `datumBeginn` date NOT NULL,
-  `datumEnde` date NOT NULL
+  `datumBeginn` varchar(15) NOT NULL,
+  `datumEnde` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -103,14 +103,6 @@ CREATE TABLE `ersatzanfrage` (
   `schichtArt` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Daten für Tabelle `ersatzanfrage`
---
-
-INSERT INTO `ersatzanfrage` (`stationID`, `mitarbeiterID`, `abwesenheitsmeldungID`, `datumUebernahme`, `schichtArt`) VALUES
-(1, 16, 1, '02-1-2019', 'Fruehschicht'),
-(1, 16, 2, '04-2-2019', 'Spaetschicht');
-
 -- --------------------------------------------------------
 
 --
@@ -121,7 +113,7 @@ CREATE TABLE `ersatzeintragung` (
   `stationID` int(10) NOT NULL,
   `mitarbeiterID` int(10) NOT NULL,
   `abwesenheitsmeldungID` int(10) NOT NULL,
-  `datumÜbernahme` date NOT NULL,
+  `datumUebernahme` varchar(15) NOT NULL,
   `schichtArt` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -685,41 +677,49 @@ ALTER TABLE `wunsch`
 --
 ALTER TABLE `abwesenheitsmeldung`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT für Tabelle `dienstplan`
 --
 ALTER TABLE `dienstplan`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT für Tabelle `mitarbeiter`
 --
 ALTER TABLE `mitarbeiter`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
 --
 -- AUTO_INCREMENT für Tabelle `schichttausch`
 --
 ALTER TABLE `schichttausch`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT für Tabelle `schichtzuweisung`
 --
 ALTER TABLE `schichtzuweisung`
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16940;
+
 --
 -- AUTO_INCREMENT für Tabelle `station`
 --
 ALTER TABLE `station`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT für Tabelle `tag`
 --
 ALTER TABLE `tag`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4751;
+
 --
 -- AUTO_INCREMENT für Tabelle `wunsch`
 --
 ALTER TABLE `wunsch`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;COMMIT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -285,6 +285,37 @@ router.get('/:id/ersatzanfragen', (req, res) => {
 
 
 
+// POST auf Ersatzeintragung (Nach Annahme einer Ersatzanfrage)
+
+router.post('/Ersatzeintragung/:mitarbeiterID', (req, res) => {
+  sqlHandler.getErsatzanfragen(req.params.mitarbeiterID)
+  .then(function (ersatzanfrage){
+
+    sqlHandler.getAbwesenheitenByID(ersatzanfrage.abwesenheitsmeldungID)
+    .then (function (abwesenheit){
+        sqlHandler.neueErsatzeintragung(ersatzanfrage)
+          .then(function (ersatzeintragung){
+            sqlHandler.updateUeberstunden(ersatzeintragung.mitarbeiterID,8)
+
+
+      }).catch(function (error) {
+          res.status(400).send(error);
+      });
+
+      }).catch(function (error) {
+          res.status(400).send(error);
+      });
+
+  }).catch(function (error) {
+      res.status(400).send(error);
+  });
+
+
+
+
+});
+
+
 
 
 

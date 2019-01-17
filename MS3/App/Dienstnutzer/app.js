@@ -1,4 +1,4 @@
-/*Mit dieser Datei wird der Dienstnutzer der einem Webserver entspricht gestartet*/ 
+/*Mit dieser Datei wird der Dienstnutzer der einem Webserver entspricht gestartet*/
 
 var request = require('request');
 const express = require('express');
@@ -81,10 +81,10 @@ router.get('/mitarbeiter/:id/ersatzanfragen', (req, res) => {
             return;
         }
         body = JSON.parse(body);
-       
-        
+
+
         res.status(200).render("mitarbeiterErsatzanfragenGet" , { ersatzanfragen:body});
-        
+
 
 
     });
@@ -149,12 +149,55 @@ router.get('/abwesenheiten/entschuldigung', (req, res) => {  // <- Durch dieses 
 // GET auf das Abwesenheit einreichen Formular
 router.post('/abwesenheiten', (req, res) => {
 
+var abwesenheitsErstellung = new Promise (function (resolve,reject){
+
+
+
   const abwesenheit = {
       stationID: req.body.stationID,
       mitarbeiterID: req.body.MitarbeiterID,
       datumBeginn: req.body.datumBeginn,
       datumEnde: req.body.datumEnde
   };
+
+
+  let resourceURI = serviceURL + '/Abwesenheiten';
+
+  console.log(resourceURI);
+
+  var options = {
+      uri: resourceURI,
+      method: 'POST',
+      headers: {
+          'Accept': 'application/json'
+      },
+      json: abwesenheit
+  }
+
+  request(options, (err, res, body) => {
+
+      if (err) {
+          console.log(err);
+          return;
+      }
+    else {
+      var abwx2 = {
+      abwesenheitDB : body[0],
+      abwesenheit : abwesenheit
+    }
+      resolve(abwx2);
+    }
+
+
+
+});
+
+
+
+}) // end of Promise abwesenheitsErstellung
+
+abwesenheitsErstellung.then(function (abwx2){
+
 
 
 var getMitarbeiter = new Promise (function (resolve,reject){
@@ -191,7 +234,7 @@ var getMitarbeiter = new Promise (function (resolve,reject){
 
 getMitarbeiter.then(function (mitarbeiterListe){
     var datumAufgeteilt = req.body.datumBeginn.split("-");
-    
+
 
       var getDienstplan = new Promise (function (resolve, reject){
 
@@ -203,7 +246,7 @@ getMitarbeiter.then(function (mitarbeiterListe){
   };
 
   // GET auf den aktuellen Dienstplan
-  let resourceURI2 = serviceURL + '/Dienstplaene?monat='+datumAufgeteilt[1]+'&jahr='+datumAufgeteilt[2];    //HARDCODE
+  let resourceURI2 = serviceURL + '/Dienstplaene?monat='+datumAufgeteilt[1]+'&jahr='+datumAufgeteilt[2];
 
   var options = {
       uri: resourceURI2,
@@ -230,8 +273,12 @@ getMitarbeiter.then(function (mitarbeiterListe){
 
   getDienstplan.then(function (informationen){
 // Funktionsaufruf löst Kette von Ereignissen aus -> Ziel der Funktion ist es als Ersatz infrage kommende Mitarbeiter eine Ersatzanfragen zu schicken
-    ersatzAnfrage.ersatzAnfrage(informationen, abwesenheit).then(function(result){
-      console.log (result);
+    ersatzAnfrage.ersatzAnfrage(informationen, abwx2.abwesenheit).then(function(ersatzAnfrageInfos){
+    //  console.log (ersatzAnfrageInfos);
+      ersatzAnfrage.erstelleErsatzanfragen(ersatzAnfrageInfos, abwx2.abwesenheitDB);
+console.log("ENDE");
+    }).catch(function (error) {
+      console.log(error);
     });
 
 
@@ -243,7 +290,9 @@ getMitarbeiter.then(function (mitarbeiterListe){
   console.log(error);
 });
 
-
+}).catch(function (error) {
+  console.log(error);
+});
 
 res.status(201).send("Abwesenheit eingereicht!");
 
@@ -255,7 +304,7 @@ router.get('/dienstplaene/:id', (req, res) => {
     if(!req.query.mitarbeiter){
         console.log(req.query)
     res.status(200).render("DienstplanGET");}
-    else{ 
+    else{
         res.status(200).render("DienstplanSingleGET");
     }
 
