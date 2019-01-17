@@ -1,3 +1,5 @@
+/*Mit dieser Datei wird der Dienstnutzer der einem Webserver entspricht gestartet*/ 
+
 var request = require('request');
 const express = require('express');
 const app = express();
@@ -5,16 +7,16 @@ app.use(express.json());;
 var router = express.Router();
 var bodyParser = require('body-parser');
 var path = require('path');
-var ersatzAnfrage = require("./helper/abwesenheitenController.js");
-//PUG
+var ersatzAnfrage = require("./helper/abwesenheitenController.js"); //-> Ursprung von Funktion ersatzAnfrage(informationen, abwesenheit) Zeile 233
+//PUG wird als View-Engine genutzt.
 const pug = require('pug');
 app.set('view engine', 'pug');
-
+// in /views liegen die einzelnen .pug Dateien
 app.set("views", path.join(__dirname, "views"));
 // Statische Dateien Laden über.... (CSS unsw. / inline Css vermieden :)) <- Wichtig! REFERENZ -> https://gist.github.com/joepie91/c0069ab0e0da40cc7b54b8c2203befe1 ( Sehr guter Guide zu PUG)
 app.use("/static", express.static(path.join(__dirname, "public")));
 
-
+// Loggen der Requestpfade
 app.use((req, res, next) => {
     console.log("Time: " + new Date() + " Request-Pfad: " + req.path);
     next();
@@ -27,19 +29,10 @@ app.use(function(req, res, next) {
     next();
   });
 
-  app.get('/', function(req, res, next) {
-    // Handle the get for this route
-  });
-
-  app.post('/', function(req, res, next) {
-   // Handle the post for this route
-  });
-  //_________________________________________
-
   const settings = {
     port: process.env.PORT || 8080
   };
-
+// Dienstnutzer Hostadresse
 var serviceURL = 'http://localhost:3000';
 
 // GET auf einen Mitarbeiter
@@ -53,7 +46,7 @@ router.get('/mitarbeiter/:id', (req, res) => {
             'Accept': 'application/json'
         }
     }
-
+// Mitarbeiter Infos von Dienstgeber holen und in mitarbeiterGet.pug rendern
     request(options, (err, res2, body) => {
 
         if (err) {
@@ -80,7 +73,7 @@ router.get('/mitarbeiter/:id/ersatzanfragen', (req, res) => {
             'Accept': 'application/json'
         }
     }
-
+// Alle Ersatzanfragen eines Mitarbeiters holen und diese dynamisch rendern
     request(options, (err, res2, body) => {
 
         if (err) {
@@ -236,7 +229,7 @@ getMitarbeiter.then(function (mitarbeiterListe){
   }) // end of Promise getDienstplan
 
   getDienstplan.then(function (informationen){
-
+// Funktionsaufruf löst Kette von Ereignissen aus -> Ziel der Funktion ist es als Ersatz infrage kommende Mitarbeiter eine Ersatzanfragen zu schicken
     ersatzAnfrage.ersatzAnfrage(informationen, abwesenheit).then(function(result){
       console.log (result);
     });
@@ -256,7 +249,7 @@ res.status(201).send("Abwesenheit eingereicht!");
 
 }) // end of POST Abwesenheiten
 
-    // GET auf einen Dienstplan
+    // GET auf einen einzelnen Dienstplan
 router.get('/dienstplaene/:id', (req, res) => {
 
     if(!req.query.mitarbeiter){
@@ -265,8 +258,6 @@ router.get('/dienstplaene/:id', (req, res) => {
     else{ 
         res.status(200).render("DienstplanSingleGET");
     }
-    //res.status(200).send(JSON.parse(body))
-
 
 });
 
