@@ -18,21 +18,23 @@ html
     table#mitarbeiter
         thead
                 tr 
-                    td Ersatzanfragen
+                    td Ersatzeintragung
                     td Informationen
-        each ersatzanfrage,i in ersatzanfragen
+        each ersatzeintragung,i in ersatzeintragungen
              tbody(id=i)
                     tr 
-                        td AbwesenheitsmeldungID 
-                        td=ersatzanfrage.abwesenheitsmeldungID
+                        td Station ID 
+                        td=ersatzeintragung.stationID
                     tr   
-                        td Datum der Übernahme 
-                        td=ersatzanfrage.datumUebernahme
+                        td Mitarbeiter ID 
+                        td=ersatzeintragung.mitarbeiterID
                     tr   
-                        td Art der Schicht 
-                        td=ersatzanfrage.schichtArt
+                        td Abwesenheitsmeldung ID 
+                        td=ersatzeintragung.abwesenheitsmeldungID
                     tr
-                        td    
-                            input(type='button', value='Verbindlich Annehmen', id="annehmen",onclick="trageErsatzEin("+i+")")
-                        td
-                            input(type='button', value='Verbindlich Ablehnen',id="ablehnen",onclick="loescheErsatzAnfrage(document.getElementById("+i+"),"+i+")")
+                        td Datum der Übernahme 
+                        td=ersatzeintragung.datumUebernahme
+                    tr
+                        td Art der Schicht 
+                        td=ersatzeintragung.schichtArt
+                    

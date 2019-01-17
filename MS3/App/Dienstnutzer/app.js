@@ -90,12 +90,55 @@ router.get('/mitarbeiter/:id/ersatzanfragen', (req, res) => {
     });
 });
 
+
+// GET auf die Ersatzeintragungen eines Mitarbeiters
+router.get('/mitarbeiter/:id/ersatzanfragen', (req, res) => {
+    let resourceURI = serviceURL + '/mitarbeiter/'+req.params.id+"/ersatzeintragungen";
+
+    var options = {
+        uri: resourceURI,
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json'
+        }
+    }
+// Alle Ersatzeintragungen eines Mitarbeiters holen und diese dynamisch rendern
+    request(options, (err, res2, body) => {
+
+        if (err) {
+            console.log(err);
+            return;
+        }
+        body = JSON.parse(body);
+
+
+        res.status(200).render("mitarbeiterErsatzaneintragungenGet" , { ersatzeintragungen:body});
+
+
+
+    });
+});
+
 // GET auf das Mitarbeiter anlegen Formular
 router.get('/mitarbeiter', (req, res) => { // <- Durch dieses GET wir kein POST ausgelöst!
 
         res.status(200).render("mitarbeiterPOST");
 
     });
+
+// GET auf ersatzanfragen 
+router.get('/ersatzanfragen', (req, res) => { // <- Durch dieses GET wir kein POST ausgelöst!
+
+    res.status(200).render("mitarbeiterErsatzanfragenInput");
+
+});
+
+// GET auf ersatzeintragungen
+router.get('/ersatzeintragungen', (req, res) => { // <- Durch dieses GET wir kein POST ausgelöst!
+
+    res.status(200).render("mitarbeiterErsatzeintragungenInput");
+
+});
 
 
 
@@ -126,7 +169,7 @@ router.get('/abwesenheiten', (req, res) => {  // <- Durch dieses GET wir kein PO
 
 });
 
-router.get('/abwesenheiten/bestaetigung', (req, res) => {  // <- Durch dieses GET wir kein POST ausgelöst!
+router.get('/bestaetigung', (req, res) => {  // <- Durch dieses GET wir kein POST ausgelöst!
 
     res.status(200).render("bestaetigung");
     //res.status(200).send(JSON.parse(body))
@@ -134,7 +177,7 @@ router.get('/abwesenheiten/bestaetigung', (req, res) => {  // <- Durch dieses GE
 
 });
 
-router.get('/abwesenheiten/entschuldigung', (req, res) => {  // <- Durch dieses GET wir kein POST ausgelöst!
+router.get('/entschuldigung', (req, res) => {  // <- Durch dieses GET wir kein POST ausgelöst!
 
     res.status(404).render("entschuldigung");
     //res.status(200).send(JSON.parse(body))

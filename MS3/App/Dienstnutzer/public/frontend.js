@@ -25,10 +25,10 @@ function speichereMitarbeiter(mitarbeiter) {
         var jsonResponse = JSON.parse(xmlhttp.status)
         console.log(jsonResponse)
         if(jsonResponse == 201){
-        window.location.href = "http://localhost:8080/abwesenheiten/bestaetigung"
+        window.location.href = "http://localhost:8080/bestaetigung"
     }
     else{
-        window.location.href = "http://localhost:8080/abwesenheiten/entschuldigung"
+        window.location.href = "http://localhost:8080/entschuldigung"
     }
     }
 }
@@ -54,10 +54,10 @@ function speichereWunsch(wunsch) {
         var jsonResponse = JSON.parse(xmlhttp.status)
         console.log(jsonResponse)
         if(jsonResponse == 201){
-        window.location.href = "http://localhost:8080/abwesenheiten/bestaetigung"
+        window.location.href = "http://localhost:8080/bestaetigung"
     }
     else{
-        window.location.href = "http://localhost:8080/abwesenheiten/entschuldigung"
+        window.location.href = "http://localhost:8080/entschuldigung"
     }
     }
 }
@@ -84,7 +84,7 @@ function erstelleDienstplan(dienstplan) {
         window.location.href = "http://localhost:8080/dienstplaene/"+jsonResponse.metadaten[0].id;
         }
         else{
-            window.location.href = "http://localhost:8080/abwesenheiten/entschuldigung"
+            window.location.href = "http://localhost:8080/entschuldigung"
         }
      };
 }
@@ -110,19 +110,46 @@ function speichereAbwesenheit(abwesenheit) {
         var jsonResponse = JSON.parse(xmlhttp.status)
         console.log(jsonResponse)
         if(jsonResponse == 201){
-        window.location.href = "http://localhost:8080/abwesenheiten/bestaetigung"
+        window.location.href = "http://localhost:8080/bestaetigung"
     }
     else{
-        window.location.href = "http://localhost:8080/abwesenheiten/entschuldigung"
+        window.location.href = "http://localhost:8080/entschuldigung"
     }
     }
 }
 
-function trageErsatzEin(ersatzanfrage){
+function trageErsatzEin(id){
     var mitarbeiterID = getIndexVonMitarbeiter();
-
-    console.log(ersatzanfrage)
-    console.log(mitarbeiterID)
+    var values = new Array();
+    
+    $("#"+id+" td").each(function() {
+        values.push($(this).text());
+       
+    })
+    console.log(values)
+    var ersatzEintragung = {
+        mitarbeiterID: mitarbeiterID,
+        abwesenheitsmeldungID: parseInt(values[1]),
+        datumUebernahme: values[3],
+        schichtArt: values[5]
+    };
+    
+     // HTTP Request an Dienstnutzer
+     var xmlhttp = new XMLHttpRequest();   
+     xmlhttp.open("POST", "http://localhost:3000/mitarbeiter/"+mitarbeiterID+"/ersatzanfragen");
+     xmlhttp.setRequestHeader("Content-Type", "application/json");
+     xmlhttp.send(JSON.stringify(ersatzEintragung));
+     // User Feedback Erfolg/nichtErfolg
+     xmlhttp.onload  = function() {
+         var jsonResponse = JSON.parse(xmlhttp.status)
+         console.log(jsonResponse)
+         if(jsonResponse == 201){
+         window.location.href = "http://localhost:8080/bestaetigung"
+     }
+     else{
+         window.location.href = "http://localhost:8080/entschuldigung"
+     }
+     }
 }
 
 function loescheErsatzAnfrage(ersatzanfrage){
@@ -140,4 +167,15 @@ function getIndexVonMitarbeiter() {
 
             return vars[4]
 
+}
+
+function geheZuErsatzanfragen(element){
+    console.log(element)
+var index = element[0].value;
+window.location.href = "http://localhost:8080/mitarbeiter/"+index+"/ersatzanfragen";
+}
+function geheZuErsatzeintragung(element){
+    console.log(element)
+var index = element[0].value;
+window.location.href = "http://localhost:8080/mitarbeiter/"+index+"/ersatzeintragungen";
 }

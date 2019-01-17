@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    link(rel="stylesheet", href="/static/style.css")
+    script(src='/static/navigation.js')
+    script(src='/static/frontend.js')
+  body
+    ul
+        li
+            a(id='goToDienstplan' onclick='goToDienstplan()') Dienstplan erstellen
+        li
+            a(id='goToWuensche' onclick='goToWuensche()') Wunsch einreichen
+        li
+            a(id='goToAbwesenheiten' onclick='goToAbwesenheiten()') Abwesenheit einreichen
+        li
+            a(id='goToMitarbeiter' onclick='goToMitarbeiter()') Mitarbeiter anlegen
+        li
+            a(id='goToMitarbeiter' onclick='goToErsatzanfragen()') Ersatzanfragen 
+        li
+            a(id='goToMitarbeiter' onclick='goToErsatzeintragungen()') Ersatzeintragungen 
+    h3 Bitte tragen Sie Ihre Mitarbeiter ID ein
+    form(id = "MitarbeiterErsatz")
+        label(for='fname') Ihre Mitarbeiter ID 
+        input#fname(type='text', name='maID', placeholder='Ihre Mitarbeiter ID..')
+        input(type='button', value='Submit',onclick="geheZuErsatzanfragen(document.getElementById('MitarbeiterErsatz'))")

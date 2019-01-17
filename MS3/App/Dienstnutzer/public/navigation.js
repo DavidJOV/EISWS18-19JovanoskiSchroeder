@@ -11,3 +11,9 @@ function goToAbwesenheiten(){
     function goToMitarbeiter(){
     window.location.href = "http://localhost:8080/mitarbeiter"
 }
+function goToErsatzanfragen(){
+    window.location.href = "http://localhost:8080/mitarbeiter/ersatzanfragen"
+}
+function goToErsatzeintragungen(){
+    window.location.href = "http://localhost:8080/mitarbeiter/ersatzeintragungen"
+}
