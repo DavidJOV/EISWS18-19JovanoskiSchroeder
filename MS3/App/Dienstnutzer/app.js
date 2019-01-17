@@ -122,9 +122,25 @@ router.get('/mitarbeiter/:id/ersatzeintragungen', (req, res) => {
 
 // GET auf das Mitarbeiter anlegen Formular
 router.get('/mitarbeiter', (req, res) => { // <- Durch dieses GET wir kein POST ausgelöst!
+    let resourceURI = serviceURL + '/mitarbeiter'
 
-        res.status(200).render("mitarbeiterPOST");
+    var options = {
+        uri: resourceURI,
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json'
+        }
+    }
+// Alle Ersatzeintragungen eines Mitarbeiters holen und diese dynamisch rendern
+    request(options, (err, res2, body) => {
 
+        if (err) {
+            console.log(err);
+            return;
+        }
+        body = JSON.parse(body);
+        res.status(200).render("mitarbeiterListeGet",{mitarbeiterListe:body});
+    });
     });
 
 // GET auf ersatzanfragen 

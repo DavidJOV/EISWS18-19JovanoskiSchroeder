@@ -1,0 +1,49 @@
+html
+  head
+    link(rel="stylesheet", href="/static/style.css")
+    script(src='/static/navigation.js')
+    title= title
+  body
+    ul
+      li
+        a(id='goToDienstplan' onclick='goToDienstplan()') Dienstplan erstellen
+      li
+        a(id='goToWuensche' onclick='goToWuensche()') Wunsch einreichen
+      li
+        a(id='goToAbwesenheiten' onclick='goToAbwesenheiten()') Abwesenheit einreichen
+      li
+        a(id='goToMitarbeiter' onclick='goToMitarbeiter()') Mitarbeiter einsehen
+      li
+        a(id='goToMitarbeiter' onclick='goToErsatzanfragen()') Ersatzanfragen 
+      li
+        a(id='goToMitarbeiter' onclick='goToErsatzeintragungen()') Ersatzeintragungen  
+    table#mitarbeiter
+        thead
+                tr 
+                    td Mitarbeiter Liste
+                    td Informationen
+        each mitarbeiter,i in mitarbeiterListe
+             tbody(id=i)
+                tr 
+                    td Vorname 
+                    td= mitarbeiter.vorname
+                tr
+                    td Name 
+                    td= mitarbeiter.name
+                
+                tr  
+                    td Rolle 
+                    td= mitarbeiter.rolle 
+                tr  
+                    td Beschaeftigungsart 
+                    td= mitarbeiter.beschaeftigungsArt
+                tr  
+                    td Bescheaftigungsbeginn 
+                    td= mitarbeiter.beschaeftigungsBeginn
+                tr 
+                    td Ueberstunden 
+                    td= mitarbeiter.ueberstunden
+                tr
+                    td
+                    td
+       
