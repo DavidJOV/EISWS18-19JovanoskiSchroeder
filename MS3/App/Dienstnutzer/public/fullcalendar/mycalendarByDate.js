@@ -67,7 +67,7 @@ $(document).ready(function() {
 
 
     } else {
-      window.location.href = "https://dienstplanung.herokuapp.com/entschuldigung";
+      window.location.href = "http://dienstplanung.herokuapp.com/entschuldigung";
     }
   })
 })

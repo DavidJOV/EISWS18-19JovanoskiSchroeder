@@ -22,9 +22,9 @@ function speichereMitarbeiter(mitarbeiter) {
     var jsonResponse = JSON.parse(xmlhttp.status)
     console.log(jsonResponse)
     if (jsonResponse == 201) {
-      window.location.href = "https://dienstplanung.herokuapp.com/bestaetigung"
+      window.location.href = "http://dienstplanung.herokuapp.com/bestaetigung"
     } else {
-      window.location.href = "https://dienstplanung.herokuapp.com/entschuldigung"
+      window.location.href = "http://dienstplanung.herokuapp.com/entschuldigung"
     }
   }
 }
@@ -51,9 +51,9 @@ function speichereWunsch(wunsch) {
     var jsonResponse = JSON.parse(xmlhttp.status)
     console.log(jsonResponse)
     if (jsonResponse == 201) {
-      window.location.href = "https://dienstplanung.herokuapp.com/bestaetigung"
+      window.location.href = "http://dienstplanung.herokuapp.com/bestaetigung"
     } else {
-      window.location.href = "https://dienstplanung.herokuapp.com/entschuldigung"
+      window.location.href = "http://dienstplanung.herokuapp.com/entschuldigung"
     }
   }
 }
@@ -79,9 +79,9 @@ function erstelleDienstplan(dienstplan) {
     var jsonResponseStatusCode = JSON.parse(xmlhttp.status);
     if (jsonResponseStatusCode == 201) {
       var jsonResponse = JSON.parse(xmlhttp.responseText);
-      window.location.href = "https://dienstplanung.herokuapp.com/dienstplaene/" + jsonResponse.metadaten[0].id;
+      window.location.href = "http://dienstplanung.herokuapp.com/dienstplaene/" + jsonResponse.metadaten[0].id;
     } else {
-      window.location.href = "https://dienstplanung.herokuapp.com/entschuldigung"
+      window.location.href = "http://dienstplanung.herokuapp.com/entschuldigung"
     }
   };
 }
@@ -100,7 +100,7 @@ function speichereAbwesenheit(abwesenheit) {
   };
 
   var xmlhttp = new XMLHttpRequest(); // new HttpRequest instance
-  xmlhttp.open("POST", "https://dienstplanung.herokuapp.com/abwesenheiten");
+  xmlhttp.open("POST", "http://dienstplanung.herokuapp.com/abwesenheiten");
   xmlhttp.setRequestHeader("Content-Type", "application/json");
   xmlhttp.send(JSON.stringify(neueAbwesenheit));
   // User Feedback Erfolg/nichtErfolg
@@ -108,9 +108,9 @@ function speichereAbwesenheit(abwesenheit) {
     var jsonResponse = JSON.parse(xmlhttp.status)
     console.log(jsonResponse)
     if (jsonResponse == 201) {
-      window.location.href = "https://dienstplanung.herokuapp.com/bestaetigung"
+      window.location.href = "http://dienstplanung.herokuapp.com/bestaetigung"
     } else {
-      window.location.href = "https://dienstplanung.herokuapp.com/entschuldigung"
+      window.location.href = "http://dienstplanung.herokuapp.com/entschuldigung"
     }
   }
 }
@@ -141,9 +141,9 @@ function trageErsatzEin(id) {
     var jsonResponse = JSON.parse(xmlhttp.status)
     console.log(jsonResponse)
     if (jsonResponse == 201) {
-      window.location.href = "https://dienstplanung.herokuapp.com/mitarbeiter/" + mitarbeiterID + "/ersatzeintragungen"
+      window.location.href = "http://dienstplanung.herokuapp.com/mitarbeiter/" + mitarbeiterID + "/ersatzeintragungen"
     } else {
-      window.location.href = "https://dienstplanung.herokuapp.com/entschuldigung"
+      window.location.href = "http://dienstplanung.herokuapp.com/entschuldigung"
     }
   }
 }
@@ -172,9 +172,9 @@ function loescheErsatzAnfrage(id) {
     var jsonResponse = JSON.parse(xmlhttp.status)
     console.log(jsonResponse)
     if (jsonResponse == 201) {
-      window.location.href = "https://dienstplanung.herokuapp.com/mitarbeiter/" + mitarbeiterID + "/ersatzanfragen"
+      window.location.href = "http://dienstplanung.herokuapp.com/mitarbeiter/" + mitarbeiterID + "/ersatzanfragen"
     } else {
-      window.location.href = "https://dienstplanung.herokuapp.com/entschuldigung"
+      window.location.href = "http://dienstplanung.herokuapp.com/entschuldigung"
     }
   }
 }
@@ -192,13 +192,13 @@ function getIndexVonMitarbeiter() {
 function geheZuErsatzanfragen(element) {
   console.log(element)
   var index = element[0].value;
-  window.location.href = "https://dienstplanung.herokuapp.com/mitarbeiter/" + index + "/ersatzanfragen";
+  window.location.href = "http://dienstplanung.herokuapp.com/mitarbeiter/" + index + "/ersatzanfragen";
 }
 
 function geheZuErsatzeintragung(element) {
   console.log(element)
   var index = element[0].value;
-  window.location.href = "https://dienstplanung.herokuapp.com/" + index + "/ersatzeintragungen";
+  window.location.href = "http://dienstplanung.herokuapp.com/" + index + "/ersatzeintragungen";
 }
 
 function getDienstplanBydate(datum) {
@@ -209,7 +209,7 @@ function getDienstplanBydate(datum) {
     jahr: input.elements[1].value,
   };
 
-  window.location.href = "https://dienstplanung.herokuapp.com/dienstplan?monat=" + dienstplanDatum.monat + "&jahr=" + dienstplanDatum.jahr
+  window.location.href = "http://dienstplanung.herokuapp.com/dienstplan?monat=" + dienstplanDatum.monat + "&jahr=" + dienstplanDatum.jahr
 
 
 }
