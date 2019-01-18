@@ -517,6 +517,7 @@ var updateSchichtzuweisungErsatz = function updateSchichtzuweisungErsatz(date, s
         } else if (alteMaID == result[0].mitarbeiterID4) {
           var sql2 = "UPDATE schichtzuweisung SET mitarbeiterID4 = \"" + neueMaID + "\" WHERE datum = \"" + date + "\" AND schichtArt = \"" + schicht + "\"";
         }
+        console.log(sql2)
         if (sql2 != undefined) {
           connection.query(sql2, function(err, result2) {
             if (err) {
