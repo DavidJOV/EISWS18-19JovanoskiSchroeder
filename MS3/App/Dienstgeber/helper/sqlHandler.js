@@ -34,7 +34,7 @@ var getMitarbeiterById = function getMitarbeiterById(id) {
   return new Promise(function(resolve, reject) {
 
 
-    let sql = "SELECT * FROM Mitarbeiter WHERE id = " + id;
+    let sql = "SELECT * FROM mitarbeiter WHERE id = " + id;
     connection.query(sql, function(err, result) {
       if (err) reject(err);
       else {
@@ -55,7 +55,7 @@ var getMitarbeiterById = function getMitarbeiterById(id) {
 var neuerMitarbeiter = function neuerMitarbeiter(mitarbeiter) {
   return new Promise(function(resolve, reject) {
 
-    var sql = "INSERT INTO Mitarbeiter (stationID, anrede, vorname, name, beschaeftigungsBeginn, beschaeftigungsArt, rolle, wunschRating, dienstplanRating, ueberstunden) VALUES ( \"" + mitarbeiter.stationID + "\",\"" + mitarbeiter.anrede + "\",\"" + mitarbeiter.vorname + "\",\"" + mitarbeiter.name + "\",\"" + mitarbeiter.beschaeftigungsBeginn + "\",\"" + mitarbeiter.beschaeftigungsArt + "\",\"" + mitarbeiter.rolle + "\",\"" + mitarbeiter.wunschRating + "\",\"" + mitarbeiter.dienstplanRating + "\",\"" + mitarbeiter.ueberstunden + "\")";
+    var sql = "INSERT INTO mitarbeiter (stationID, anrede, vorname, name, beschaeftigungsBeginn, beschaeftigungsArt, rolle, wunschRating, dienstplanRating, ueberstunden) VALUES ( \"" + mitarbeiter.stationID + "\",\"" + mitarbeiter.anrede + "\",\"" + mitarbeiter.vorname + "\",\"" + mitarbeiter.name + "\",\"" + mitarbeiter.beschaeftigungsBeginn + "\",\"" + mitarbeiter.beschaeftigungsArt + "\",\"" + mitarbeiter.rolle + "\",\"" + mitarbeiter.wunschRating + "\",\"" + mitarbeiter.dienstplanRating + "\",\"" + mitarbeiter.ueberstunden + "\")";
 
     connection.query(sql, function(err, result) {
       if (err) {
@@ -77,7 +77,7 @@ var updateMitarbeiter = function updateMitarbeiter(mitarbeiter) {
   return new Promise(function(resolve, reject) {
 
 
-    var sql = "UPDATE Mitarbeiter SET anrede = \"" + mitarbeiter.anrede + "\" , vorname = \"" + mitarbeiter.vorname + "\", name = \"" + mitarbeiter.name + "\", beschaeftigungsArt = \"" + mitarbeiter.beschaeftigungsArt + "\", rolle =\"" + mitarbeiter.rolle + "\" WHERE id =" + mitarbeiter.id;
+    var sql = "UPDATE mitarbeiter SET anrede = \"" + mitarbeiter.anrede + "\" , vorname = \"" + mitarbeiter.vorname + "\", name = \"" + mitarbeiter.name + "\", beschaeftigungsArt = \"" + mitarbeiter.beschaeftigungsArt + "\", rolle =\"" + mitarbeiter.rolle + "\" WHERE id =" + mitarbeiter.id;
 
 
     connection.query(sql, function(err, result) {
@@ -99,7 +99,7 @@ var updateMitarbeiter = function updateMitarbeiter(mitarbeiter) {
 var loescheMitarbeiter = function loescheMitarbeiter(id) {
   return new Promise(function(resolve, reject) {
 
-    var sql = "DELETE FROM Mitarbeiter WHERE id = " + id;
+    var sql = "DELETE FROM mitarbeiter WHERE id = " + id;
 
 
     connection.query(sql, function(err, result) {
@@ -122,7 +122,7 @@ var loescheMitarbeiter = function loescheMitarbeiter(id) {
 var updateUeberstunden = function updateUeberstunden(id, ueberstunden) {
   return new Promise(function(resolve, reject) {
 
-    var sql = "UPDATE Mitarbeiter SET ueberstunden = ueberstunden + " + ueberstunden + " WHERE id =" + id;
+    var sql = "UPDATE mitarbeiter SET ueberstunden = ueberstunden + " + ueberstunden + " WHERE id =" + id;
 
 
     connection.query(sql, function(err, result) {
@@ -146,7 +146,7 @@ var updateWunschRating = function updateWunschRating(id, rating) {
   return new Promise(function(resolve, reject) {
 
 
-    var sql = "UPDATE Mitarbeiter SET wunschRating = wunschRating + " + rating + " WHERE id =" + id;
+    var sql = "UPDATE mitarbeiter SET wunschRating = wunschRating + " + rating + " WHERE id =" + id;
 
 
     connection.query(sql, function(err, result) {
@@ -170,7 +170,7 @@ var updateDienstplanRating = function updateDienstplanRating(id, rating) {
   return new Promise(function(resolve, reject) {
 
 
-    var sql = "UPDATE Mitarbeiter SET dienstplanRating = dienstplanRating + " + rating + " WHERE id =" + id;
+    var sql = "UPDATE mitarbeiter SET dienstplanRating = dienstplanRating + " + rating + " WHERE id =" + id;
 
 
     connection.query(sql, function(err, result) {

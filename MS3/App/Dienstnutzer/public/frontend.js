@@ -172,7 +172,7 @@ function loescheErsatzAnfrage(id) {
     var jsonResponse = JSON.parse(xmlhttp.status)
     console.log(jsonResponse)
     if (jsonResponse == 204) {
-      window.location.href = "http://dienstplanung.herokuapp.com/mitarbeiter/" + mitarbeiterID + "/ersatzanfragen"
+      window.location.href = "http://dienstplanung.herokuapp.com/bestaetigung"
     } else {
       window.location.href = "http://dienstplanung.herokuapp.com/entschuldigung"
     }
