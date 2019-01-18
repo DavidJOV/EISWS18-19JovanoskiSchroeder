@@ -171,8 +171,8 @@ function loescheErsatzAnfrage(id) {
   xmlhttp.onload = function() {
     var jsonResponse = JSON.parse(xmlhttp.status)
     console.log(jsonResponse)
-    if (jsonResponse == 204) {
-      window.location.href = "http://localhost:8080/bestaetigung"
+    if (jsonResponse == 201) {
+      window.location.href = "http://localhost:8080/mitarbeiter/" + mitarbeiterID + "/ersatzanfragen"
     } else {
       window.location.href = "http://localhost:8080/entschuldigung"
     }

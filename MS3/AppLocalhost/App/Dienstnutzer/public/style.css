@@ -1,0 +1,81 @@
+#mitarbeiter {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #mitarbeiter td, #mitarbeiter th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #mitarbeiter tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #mitarbeiter tr:hover {background-color: #ddd;}
+  
+  #mitarbeiter th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=button] {
+    width: 100%;
+    background-color: #91ABEE;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=button]:hover {
+    background-color: #91ABEB;
+  }
+  
+  div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:  #91ABEB;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color:  rgb(85, 107, 161);
+  }
+  #annehmen{
+    background-color: green;
+  }
+  #ablehnen{
+    background-color: red;
+  }

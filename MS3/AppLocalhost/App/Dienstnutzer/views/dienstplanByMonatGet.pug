@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    link(rel="stylesheet", href="/static/style.css")
+    script(src='/static/navigation.js')
+    script(src='/static/frontend.js')
+  body
+    ul
+        li
+            a(id='goToDienstplan' onclick='goToDienstplan()') Dienstplan erstellen
+        li
+            a(id='goToDienstplanByDate' onclick='goToDienstplanByDate()') Dienstplan finden    
+        li
+            a(id='goToWuensche' onclick='goToWuensche()') Wunsch einreichen
+        li
+            a(id='goToAbwesenheiten' onclick='goToAbwesenheiten()') Abwesenheit einreichen
+        li
+            a(id='goToMitarbeiter' onclick='goToMitarbeiter()') Mitarbeiter einsehen
+        li
+            a(id='goToMitarbeiter' onclick='goToErsatzanfragen()') Ersatzanfragen 
+        li
+            a(id='goToMitarbeiter' onclick='goToErsatzeintragungen()') Ersatzeintragungen 
+    h3 Bitte tragen Sie den Monat und das Jahr des gesuchten Dienstplan ein!
+    form(id = "DienstplanByDate")
+        label(for='fname') Monat 
+        input#fname(type='text', name='maID', placeholder='Monat..')
+        label(for='fname') Jahr
+        input#fname(type='text', name='maID', placeholder='Jahr..')
+        input(type='button', value='Submit',onclick="getDienstplanBydate(document.getElementById('DienstplanByDate'))")

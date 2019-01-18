@@ -1,0 +1,50 @@
+doctype html
+html
+  head
+    link(rel="stylesheet", href="/static/style.css")
+    script(src='/static/navigation.js')
+    script(src='/static/frontend.js')
+    script(src='/static/fullcalendar/jquery.min.js')
+  body
+    h3 Erstellen eines Dienstplans
+    ul
+      li
+        a(id='goToDienstplan' onclick='goToDienstplan()') Dienstplan erstellen
+      li
+        a(id='goToDienstplanByDate' onclick='goToDienstplanByDate()') Dienstplan finden
+      li
+        a(id='goToWuensche' onclick='goToWuensche()') Wunsch einreichen
+      li
+        a(id='goToAbwesenheiten' onclick='goToAbwesenheiten()') Abwesenheit einreichen
+      li
+        a(id='goToMitarbeiter' onclick='goToMitarbeiter()') Mitarbeiter einsehen
+      li
+        a(id='goToMitarbeiter' onclick='goToErsatzanfragen()') Ersatzanfragen 
+      li
+        a(id='goToMitarbeiter' onclick='goToErsatzeintragungen()') Ersatzeintragungen
+    div
+      form(id = "Dienstplan")
+        label(for='fname') Station ID
+        input#fname(type='text', name='firstname')
+        label(for='lname') Monat
+         select#BA(name='BA')
+          option(value='1') Januar
+          option(value='2') Februar
+          option(value='3') März
+          option(value='4') April
+          option(value='5') Mai
+          option(value='6') Juni
+          option(value='7') Juli
+          option(value='8') August
+          option(value='9') September
+          option(value='10') Oktober
+          option(value='11') November
+          option(value='12') Dezember
+        label(for='fname') Jahr
+        select#BA(name='BA')
+          option(value='2019') 2019
+          option(value='2020') 2020
+          option(value='2021') 2021
+          input(type='button', value='Submit', onclick="erstelleDienstplan(document.getElementById('Dienstplan'))")
+
+        

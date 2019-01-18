@@ -1,0 +1,47 @@
+doctype html
+html
+  head
+    link(rel="stylesheet", href="/static/style.css")
+    script(src='/static/navigation.js')
+    script(src='/static/frontend.js')
+  body
+    h3 Neuen Mitarbeiter anlegen
+    ul
+      li
+        a(id='goToDienstplan' onclick='goToDienstplan()') Dienstplan erstellen
+      li
+        a(id='goToDienstplanByDate' onclick='goToDienstplanByDate()') Dienstplan finden  
+      li
+        a(id='goToWuensche' onclick='goToWuensche()') Wunsch einreichen
+      li
+        a(id='goToAbwesenheiten' onclick='goToAbwesenheiten()') Abwesenheit einreichen
+      li
+        a(id='goToMitarbeiter' onclick='goToMitarbeiter()') Mitarbeiter einsehen
+      li
+        a(id='goToMitarbeiter' onclick='goToErsatzanfragen()') Ersatzanfragen 
+      li
+        a(id='goToMitarbeiter' onclick='goToErsatzeintragungen()') Ersatzeintragungen  
+    div
+      form(id = "Mitarbeiter")
+        label(for='fname') Station ID
+        input#fname(type='text', name='firstname', placeholder='Your name..')
+        label(for='lname') Anrede
+        input#lname(type='text', name='lastname', placeholder='Your last name..')
+        label(for='fname') Vorname
+        input#fname(type='text', name='firstname', placeholder='Your name..')
+        label(for='lname') Name
+        input#lname(type='text', name='lastname', placeholder='Your last name..')
+        label(for='fname') Beschäftigungsart
+        select#BA(name='BA')
+          option(value='Vollezeit') Vollzeit
+          option(value='Teilzeit') Teilzeit
+          option(value='Aushilfe') Aushilfe
+        label(for='lname') Beschaeftigungsbeginn
+        input#lname(type='text', name='lastname', placeholder='Your last name..')
+        label(for='lname') Rolle
+        select#Rolle(name='Rolle')
+          option(value='Krankenpfleger') Krankenpfleger
+          option(value='Medizinische Fachkraft') Medizinische Fachkraft
+        input(type='button', value='Submit', onclick="speichereMitarbeiter(document.getElementById('Mitarbeiter'))")
+
+        
