@@ -330,11 +330,13 @@ router.post('/:mitarbeiterID/ersatzeintragungen', (req, res) => {
 
       }) // Promise ersatzAnfragePromise
       ersatzAnfragePromise.then(function(ersatzAnfrage) {
+        console.log(0)
         sqlHandler.neueErsatzeintragung(ersatzAnfrage)
           .then(function(ersatzeintragung) {
-
+            console.log(1)
             sqlHandler.updateSchichtzuweisungErsatz(ersatzeintragung.datumUebernahme, ersatzeintragung.schichtArt, ersatzAnfrage.zuErsetzenderMitarbeiter, ersatzeintragung.mitarbeiterID)
               .then(function() {
+                console.log(2)
 
                 sqlHandler.updateUeberstunden(ersatzeintragung.mitarbeiterID, 8)
                   .then(function() {
