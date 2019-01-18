@@ -1,22 +1,22 @@
 //Simple Navigations Funktionen
 function goToDienstplan(){
-    window.location.href = "http://localhost:8080/dienstplaene"
+    window.location.href = "https://dienstplanung.herokuapp.com/dienstplaene"
 }
 function goToWuensche(){
-    window.location.href = "http://localhost:8080/wuensche"
+    window.location.href = "https://dienstplanung.herokuapp.com/wuensche"
 }
 function goToAbwesenheiten(){
-    window.location.href = "http://localhost:8080/abwesenheiten"
+    window.location.href = "https://dienstplanung.herokuapp.com/abwesenheiten"
 }
     function goToMitarbeiter(){
-    window.location.href = "http://localhost:8080/mitarbeiter"
+    window.location.href = "https://dienstplanung.herokuapp.com/mitarbeiter"
 }
 function goToErsatzanfragen(){
-    window.location.href = "http://localhost:8080/ersatzanfragen"
+    window.location.href = "https://dienstplanung.herokuapp.com/ersatzanfragen"
 }
 function goToErsatzeintragungen(){
-    window.location.href = "http://localhost:8080/ersatzeintragungen"
+    window.location.href = "https://dienstplanung.herokuapp.com/ersatzeintragungen"
 }
 function goToDienstplanByDate(){
-    window.location.href = "http://localhost:8080/dienstplan"
+    window.location.href = "https://dienstplanung.herokuapp.com/dienstplan"
 }

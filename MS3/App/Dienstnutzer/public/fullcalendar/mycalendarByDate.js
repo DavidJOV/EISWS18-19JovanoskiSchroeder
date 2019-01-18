@@ -1,7 +1,7 @@
 // Darauf warten das das document geladen ist.
 $(document).ready(function() {
   var datum = getQueryParamDatum();
-  var url = "http://localhost:3000/Dienstplaene?monat=" + datum.monat + "&jahr=" + datum.jahr;
+  var url = "http://sistershift.ddns.net/Dienstplaene?monat=" + datum.monat + "&jahr=" + datum.jahr;
   // Dienstplan Informationen von Dienstgeber holen
   $.get(url, function(dienstplan) {
     if (dienstplan != "Kein Dienstplan mit dieser ID vorhanden!") {
@@ -67,7 +67,7 @@ $(document).ready(function() {
 
 
     } else {
-      window.location.href = "http://localhost:8080/entschuldigung";
+      window.location.href = "https://dienstplanung.herokuapp.com/entschuldigung";
     }
   })
 })

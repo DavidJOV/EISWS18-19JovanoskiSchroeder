@@ -1,6 +1,6 @@
 // Darauf warten das das document geladen ist.
 $(document).ready(function() {
-  var url = "http://localhost:3000/Dienstplaene/" + getIndexVonDienstplan();
+  var url = "http://sistershift.ddns.net/Dienstplaene/" + getIndexVonDienstplan();
   // Dienstplan Informationen von Dienstgeber holen
   $.get(url, function(dienstplan) {
     var schichten;
