@@ -35,7 +35,7 @@ const settings = {
 };
 
 // Dienstgeber Hostadresse
-var serviceURL = 'http://localhost:3000';
+var serviceURL = 'http://sistershift.ddns.net';
 
 
 // GET auf einen Mitarbeiter

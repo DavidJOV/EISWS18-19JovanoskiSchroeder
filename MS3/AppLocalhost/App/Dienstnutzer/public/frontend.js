@@ -14,7 +14,7 @@ function speichereMitarbeiter(mitarbeiter) {
   };
   // HTTP Request an Dienstnutzer
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("POST", "http://localhost:3000/mitarbeiter");
+  xmlhttp.open("POST", "http://sistershift.ddns.net/mitarbeiter");
   xmlhttp.setRequestHeader("Content-Type", "application/json");
   xmlhttp.send(JSON.stringify(neuerMitarbeiter));
   // User Feedback Erfolg/nichtErfolg
@@ -43,7 +43,7 @@ function speichereWunsch(wunsch) {
   };
 
   var xmlhttp = new XMLHttpRequest(); // new HttpRequest instance
-  xmlhttp.open("POST", "http://localhost:3000/mitarbeiter/wuensche");
+  xmlhttp.open("POST", "http://sistershift.ddns.net/mitarbeiter/wuensche");
   xmlhttp.setRequestHeader("Content-Type", "application/json");
   xmlhttp.send(JSON.stringify(neuerWunsch));
   // User Feedback Erfolg/nichtErfolg
@@ -70,7 +70,7 @@ function erstelleDienstplan(dienstplan) {
   }
 
   var xmlhttp = new XMLHttpRequest(); // new HttpRequest instance
-  xmlhttp.open("POST", "http://localhost:3000/dienstplaene");
+  xmlhttp.open("POST", "http://sistershift.ddns.net/dienstplaene");
   xmlhttp.setRequestHeader("Content-Type", "application/json");
   xmlhttp.send(JSON.stringify(neuerDienstplan));
   // User Feedback Erfolg/nichtErfolg + Redirect auf den erstellten Dienstplan
@@ -133,7 +133,7 @@ function trageErsatzEin(id) {
 
   // HTTP Request an Dienstgeber
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("POST", "http://localhost:3000/mitarbeiter/" + mitarbeiterID + "/ersatzeintragungen");
+  xmlhttp.open("POST", "http://sistershift.ddns.net/mitarbeiter/" + mitarbeiterID + "/ersatzeintragungen");
   xmlhttp.setRequestHeader("Content-Type", "application/json");
   xmlhttp.send(JSON.stringify(ersatzEintragung));
   // User Feedback Erfolg/nichtErfolg
@@ -164,7 +164,7 @@ function loescheErsatzAnfrage(id) {
   };
   // HTTP Request an Dienstnutzer
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("DELETE", "http://localhost:3000/mitarbeiter/" + mitarbeiterID + "/ersatzeintragungen");
+  xmlhttp.open("DELETE", "http://sistershift.ddns.net/mitarbeiter/" + mitarbeiterID + "/ersatzeintragungen");
   xmlhttp.setRequestHeader("Content-Type", "application/json");
   xmlhttp.send(JSON.stringify(ersatzAnfrage));
   // User Feedback Erfolg/nichtErfolg
