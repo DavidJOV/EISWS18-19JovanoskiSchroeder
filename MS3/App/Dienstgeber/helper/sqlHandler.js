@@ -510,15 +510,48 @@ var updateSchichtzuweisungErsatz = function updateSchichtzuweisungErsatz(date, s
         // Ersetzen an der richtigen Stelle
         if (alteMaID == result[0].mitarbeiterID1) {
           var sql2 = "UPDATE schichtzuweisung SET mitarbeiterID1 = \"" + neueMaID + "\" WHERE datum = \"" + date + "\" AND schichtArt = \"" + schicht + "\"";
+          connection.query(sql2, function(err, result2) {
+            if (err) {
+              console.log(err)
+              reject(err);
+
+            } else {
+              console.log("c")
+              console.log(result2)
+              resolve(result2);
+
+            }
+          });
         } else if (alteMaID == result[0].mitarbeiterID2) {
           var sql2 = "UPDATE schichtzuweisung SET mitarbeiterID2 = \"" + neueMaID + "\" WHERE datum = \"" + date + "\" AND schichtArt = \"" + schicht + "\"";
+          connection.query(sql2, function(err, result2) {
+            if (err) {
+              console.log(err)
+              reject(err);
+
+            } else {
+              console.log("c")
+              console.log(result2)
+              resolve(result2);
+
+            }
+          });
         } else if (alteMaID == result[0].mitarbeiterID3) {
           var sql2 = "UPDATE schichtzuweisung SET mitarbeiterID3 = \"" + neueMaID + "\" WHERE datum = \"" + date + "\" AND schichtArt = \"" + schicht + "\"";
+          connection.query(sql2, function(err, result2) {
+            if (err) {
+              console.log(err)
+              reject(err);
+
+            } else {
+              console.log("c")
+              console.log(result2)
+              resolve(result2);
+
+            }
+          });
         } else if (alteMaID == result[0].mitarbeiterID4) {
           var sql2 = "UPDATE schichtzuweisung SET mitarbeiterID4 = \"" + neueMaID + "\" WHERE datum = \"" + date + "\" AND schichtArt = \"" + schicht + "\"";
-        }
-        console.log(sql2)
-        if (sql2 != undefined) {
           connection.query(sql2, function(err, result2) {
             if (err) {
               console.log(err)
@@ -532,7 +565,7 @@ var updateSchichtzuweisungErsatz = function updateSchichtzuweisungErsatz(date, s
             }
           });
         }
-
+        
       }
     });
 
