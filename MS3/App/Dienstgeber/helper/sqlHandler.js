@@ -498,7 +498,7 @@ var updateSchichtzuweisung = function updateSchichtzuweisung(date, schicht, schi
 // Aktualisieren einer Schichtzuwesung mit ID, des Mitarbeiters, welcher ersetzt werden soll + Id, welche alte ID ersetzt
 var updateSchichtzuweisungErsatz = function updateSchichtzuweisungErsatz(date, schicht, alteMaID, neueMaID) {
   return new Promise(function(resolve, reject) {
-
+    console.log("A")
     let sql = "SELECT * FROM schichtzuweisung WHERE datum = \"" + date + "\" AND schichtArt = \"" + schicht + "\"";
 
     connection.query(sql, function(err, result) {
@@ -506,7 +506,7 @@ var updateSchichtzuweisungErsatz = function updateSchichtzuweisungErsatz(date, s
         console.log(err)
         reject(err);
       } else {
-
+        console.log("B")
         // Ersetzen an der richtigen Stelle
         if (alteMaID == result[0].mitarbeiterID1) {
           var sql2 = "UPDATE schichtzuweisung SET mitarbeiterID1 = \"" + neueMaID + "\" WHERE datum = \"" + date + "\" AND schichtArt = \"" + schicht + "\"";
@@ -524,6 +524,8 @@ var updateSchichtzuweisungErsatz = function updateSchichtzuweisungErsatz(date, s
               reject(err);
 
             } else {
+              console.log("c")
+              console.log(result2)
               resolve(result2);
 
             }
