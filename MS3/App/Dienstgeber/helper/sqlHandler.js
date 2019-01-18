@@ -1111,6 +1111,7 @@ var loescheErsatzanfrage = function loescheErsatzanfrage(abwesenheitsmeldungID, 
         reject(err);
 
       } else {
+        console.log(result)
         resolve(result);
 
       }

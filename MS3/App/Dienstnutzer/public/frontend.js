@@ -141,7 +141,7 @@ function trageErsatzEin(id) {
     var jsonResponse = JSON.parse(xmlhttp.status)
     console.log(jsonResponse)
     if (jsonResponse == 201) {
-      window.location.href = "http://dienstplanung.herokuapp.com/mitarbeiter/" + mitarbeiterID + "/ersatzeintragungen"
+      window.location.href = "http://dienstplanung.herokuapp.com/bestaetigung"
     } else {
       window.location.href = "http://dienstplanung.herokuapp.com/entschuldigung"
     }
