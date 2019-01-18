@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    link(rel="stylesheet", href="/static/style.css")
+    script(src='/static/navigation.js')
+    script(src='/static/frontend.js')
+  body
+    h3 Neue Abwesenheitsmeldung einreichen
+    ul
+      li
+        a(id='goToDienstplan' onclick='goToDienstplan()') Dienstplan erstellen
+      li
+        a(id='goToDienstplanByDate' onclick='goToDienstplanByDate()') Dienstplan finden 
+      li
+        a(id='goToWuensche' onclick='goToWuensche()') Wunsch einreichen
+      li
+        a(id='goToAbwesenheiten' onclick='goToAbwesenheiten()') Abwesenheit einreichen
+      li
+        a(id='goToMitarbeiter' onclick='goToMitarbeiter()') Mitarbeiter einsehen
+      li
+        a(id='goToMitarbeiter' onclick='goToErsatzanfragen()') Ersatzanfragen 
+      li
+        a(id='goToMitarbeiter' onclick='goToErsatzeintragungen()') Ersatzeintragungen
+    div
+      form(id = "Abwesenheit")
+        label(for='fname') Station ID
+        input#fname(type='text', name='firstname', placeholder='Station ID...')
+        label(for='lname') MitarbeiterID
+        input#lname(type='text', name='lastname', placeholder='Mitarbeiter ID..')
+        label(for='fname') Beginn der Abwesenheit
+        input#fname(type='text', name='firstname', placeholder='Beginn der Abwesenheit..')
+        label(for='lname') Voraussichtliches Ende der Abwesenheit 
+        input#lname(type='text', name='lastname', placeholder='Ende der Abwesenheit..')
+        input(type='button', value='Submit', onclick="speichereAbwesenheit(document.getElementById('Abwesenheit'))")

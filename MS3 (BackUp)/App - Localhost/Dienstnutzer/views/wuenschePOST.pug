@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    link(rel="stylesheet", href="/static/style.css")
+    script(src='/static/navigation.js')
+    script(src='/static/frontend.js')
+  body
+    h3 Neuen Wunsch einreichen
+    ul
+      li
+        a(id='goToDienstplan' onclick='goToDienstplan()') Dienstplan erstellen
+      li
+        a(id='goToDienstplanByDate' onclick='goToDienstplanByDate()') Dienstplan finden  
+      li
+        a(id='goToWuensche' onclick='goToWuensche()') Wunsch einreichen
+      li
+        a(id='goToAbwesenheiten' onclick='goToAbwesenheiten()') Abwesenheit einreichen
+      li
+        a(id='goToMitarbeiter' onclick='goToMitarbeiter()') Mitarbeiter einsehen
+      li
+        a(id='goToMitarbeiter' onclick='goToErsatzanfragen()') Ersatzanfragen 
+      li
+        a(id='goToMitarbeiter' onclick='goToErsatzeintragungen()') Ersatzeintragungen    
+    div
+      form(id = "Wunsch")
+        label(for='fname') Station ID
+        input#fname(type='text', name='firstname', placeholder='Station ID...')
+        label(for='lname') MitarbeiterID
+        input#lname(type='text', name='lastname', placeholder='Mitarbeiter ID..')
+        label(for='fname') Datum des Wunsches
+        input#fname(type='text', name='firstname', placeholder='Datum..')
+        label(for='lname') Wunschbeschreibung
+        input#lname(type='text', name='lastname', placeholder='Beschreibung..')
+        label(for='lname') Alternativ Schicht
+        input#lname(type='text', name='lastname', placeholder='Schicht..')
+        input(type='button', value='Submit', onclick="speichereWunsch(document.getElementById('Wunsch'))")
