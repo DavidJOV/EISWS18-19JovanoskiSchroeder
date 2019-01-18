@@ -202,3 +202,15 @@ function geheZuErsatzeintragung(element){
 var index = element[0].value;
 window.location.href = "http://localhost:8080/mitarbeiter/"+index+"/ersatzeintragungen";
 }
+function getDienstplanBydate(datum){
+    var input = datum;
+
+    var dienstplanDatum = {
+        monat: input.elements[0].value,
+        jahr: input.elements[1].value,
+    };
+    
+        window.location.href = "http://localhost:8080/dienstplan?monat="+dienstplanDatum.monat+"&jahr="+dienstplanDatum.jahr
+   
+    
+}

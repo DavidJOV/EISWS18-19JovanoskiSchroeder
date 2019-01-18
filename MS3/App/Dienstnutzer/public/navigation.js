@@ -17,3 +17,6 @@ function goToErsatzanfragen(){
 function goToErsatzeintragungen(){
     window.location.href = "http://localhost:8080/ersatzeintragungen"
 }
+function goToDienstplanByDate(){
+    window.location.href = "http://localhost:8080/dienstplan"
+}

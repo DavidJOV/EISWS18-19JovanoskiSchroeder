@@ -20,8 +20,10 @@ html
             a(id='goToMitarbeiter' onclick='goToErsatzanfragen()') Ersatzanfragen 
         li
             a(id='goToMitarbeiter' onclick='goToErsatzeintragungen()') Ersatzeintragungen 
-    h3 Bitte tragen Sie Ihre Mitarbeiter ID ein
-    form(id = "MitarbeiterErsatz")
-        label(for='fname') Ihre Mitarbeiter ID 
-        input#fname(type='text', name='maID', placeholder='Ihre Mitarbeiter ID..')
-        input(type='button', value='Submit',onclick="geheZuErsatzanfragen(document.getElementById('MitarbeiterErsatz'))")
+    h3 Bitte tragen Sie den Monat und das Jahr des gesuchten Dienstplan ein!
+    form(id = "DienstplanByDate")
+        label(for='fname') Monat 
+        input#fname(type='text', name='maID', placeholder='Monat..')
+        label(for='fname') Jahr
+        input#fname(type='text', name='maID', placeholder='Jahr..')
+        input(type='button', value='Submit',onclick="getDienstplanBydate(document.getElementById('DienstplanByDate'))")

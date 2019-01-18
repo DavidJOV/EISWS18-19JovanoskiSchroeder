@@ -161,12 +161,20 @@ router.get('/ersatzeintragungen', (req, res) => { // <- Durch dieses GET wir kei
 
 // GET auf das Dienstplan anlegen Formular
 router.get('/dienstplaene', (req, res) => { // <- Durch dieses GET wir kein POST ausgelöst!
-
+    
         res.status(200).render("dienstplanPOST");
-        //res.status(200).send(JSON.parse(body))
-
-
+        
     });
+    
+// GET auf das Dienstplan anlegen Formular
+router.get('/dienstplan', (req, res) => { // <- Durch dieses GET wir kein POST ausgelöst!
+    if(!req.query.monat){
+    res.status(200).render("dienstplanByMonatGet");
+    }
+    else{
+        res.status(200).render("DienstplanByDateGet")
+    }
+});
 
 // GET auf das Wunsch einreichen Formular
 router.get('/wuensche', (req, res) => {  // <- Durch dieses GET wir kein POST ausgelöst!
