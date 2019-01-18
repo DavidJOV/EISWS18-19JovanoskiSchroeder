@@ -5,7 +5,6 @@ var sqlHandler = require("../helper/sqlHandler");
 
 
 
-//var connection = dbConnection.connection; // DB Verbindung
 // GET auf die Liste aller Mitarbeiter
 router.get('/', (req, res) => {
   sqlHandler.getMitarbeiter()
@@ -27,8 +26,8 @@ router.get('/:id', (req, res) => {
   sqlHandler.getMitarbeiter()
     .then(function(mitarbeiterListe) {
       if (mitarbeiterListe === undefined) res.status(500).send("Could not read DATA");
-      else { // Kann auch mit der ID direkt in der DB gesucht werden.
-        const mitarbeiter = mitarbeiterListe.find(c => c.id === parseInt(req.params.id)); // Datenbank anbindung fehlt noch. MitarbeiterListe muss aus DB gelesen werden.
+      else {
+        const mitarbeiter = mitarbeiterListe.find(c => c.id === parseInt(req.params.id));
         if (!mitarbeiter) {
           res.status(404).send("Diese ID gehört keinem Mitarbeiter!");
         } else {
@@ -41,6 +40,8 @@ router.get('/:id', (req, res) => {
     });
 
 });
+
+
 // Update eines einzelnen Mitarbeiters
 router.put('/:id', (req, res) => {
   sqlHandler.getMitarbeiter()
@@ -85,7 +86,7 @@ router.put('/:id', (req, res) => {
 router.post('/', bodyParser.json(), (req, res) => {
   console.log(req.body)
   const mitarbeiter = {
-    stationID: req.body.stationID, // noch in Datenbank hinzufügen
+    stationID: req.body.stationID,
     anrede: req.body.anrede,
     vorname: req.body.vorname,
     name: req.body.name,
@@ -110,6 +111,8 @@ router.post('/', bodyParser.json(), (req, res) => {
     });
 
 });
+
+
 // Löschen eines Mitarbeiters
 router.delete('/:id', (req, res) => {
   sqlHandler.loescheMitarbeiter(req.params.id)
@@ -125,6 +128,8 @@ router.delete('/:id', (req, res) => {
       res.status(400).send(err);
     });
 });
+
+
 // Übertragen des WunschRatings eines einzelenen Mitarbeiters
 router.get('/:id/wunschRating', (req, res) => {
   sqlHandler.getMitarbeiter()
@@ -134,7 +139,7 @@ router.get('/:id/wunschRating', (req, res) => {
         const mitarbeiter = mitarbeiterListe.find(c => c.id === parseInt(req.params.id));
         if (!mitarbeiter) {
           res.status(404).send("Diese ID gehört keinem Mitarbeiter!");
-        } else { // Übertragen des Wunschratings -> toString() da sonst die Übertragung nicht funktioniert, aber warum ist die Frage?
+        } else {
           res.status(200).send(mitarbeiter.wunschRating.toString());
         }
       }
@@ -144,6 +149,8 @@ router.get('/:id/wunschRating', (req, res) => {
     });
 
 });
+
+
 // Übertragen des DienstplanRatings eines einzelenen Mitarbeiters
 router.get('/:id/dienstplanRating', (req, res) => {
   sqlHandler.getMitarbeiter()
@@ -153,7 +160,7 @@ router.get('/:id/dienstplanRating', (req, res) => {
         const mitarbeiter = mitarbeiterListe.find(c => c.id === parseInt(req.params.id));
         if (!mitarbeiter) {
           res.status(404).send("Diese ID gehört keinem Mitarbeiter!");
-        } else { // Übertragen des DienstplanRatings -> toString() da sonst die Übertragung nicht funktioniert, aber warum ist die Frage?
+        } else {
           res.status(200).send(mitarbeiter.dienstplanRating.toString());
         }
       }
@@ -164,16 +171,17 @@ router.get('/:id/dienstplanRating', (req, res) => {
 
 });
 
+
 // Übertragen der Überstunden eines einzelenen Mitarbeiters
 router.get('/:id/ueberstunden', (req, res) => {
   sqlHandler.getMitarbeiter()
     .then(function(mitarbeiterListe) {
       if (mitarbeiterListe === undefined) res.status(500).send("Could not read DATA");
-      else { // Kann auch mit der ID direkt in der DB gesucht werden.
+      else {
         const mitarbeiter = mitarbeiterListe.find(c => c.id === parseInt(req.params.id));
         if (!mitarbeiter) {
           res.status(404).send("Diese ID gehört keinem Mitarbeiter!");
-        } else { // Übertragen der Überstunden -> toString() da sonst die Übertragung nicht funktioniert, aber warum ist die Frage?
+        } else {
           res.status(200).send(mitarbeiter.ueberstunden.toString());
         }
       }
@@ -183,8 +191,6 @@ router.get('/:id/ueberstunden', (req, res) => {
     });
 
 });
-
-
 
 
 //Post Wunsch eines Mitarbeiters
@@ -197,8 +203,6 @@ router.post('/wuensche', (req, res) => {
     wunschBeschreibung: req.body.wunschBeschreibung,
     schichtArt: req.body.schichtArt
   };
-
-
 
   sqlHandler.neuerWunsch(wunsch)
     .then(function(wunsch) {
@@ -213,9 +217,6 @@ router.post('/wuensche', (req, res) => {
     });
 
 });
-
-
-
 
 
 // Aktuallisieren des Wunsch Ratings
@@ -233,6 +234,7 @@ router.put('/:id/wunschRating', (req, res) => {
 
 });
 
+
 // Aktuallisieren des Dienstplan Ratings
 router.put('/:id/dienstplanRating', (req, res) => {
   sqlHandler.updateDienstplanRating(req.params.id, req.body.dienstplanRating)
@@ -247,6 +249,7 @@ router.put('/:id/dienstplanRating', (req, res) => {
     });
 
 });
+
 
 // Aktuallisieren der Überstunden eines einzelenen Mitarbeiters
 router.put('/:id/ueberstunden', (req, res) => {
@@ -271,7 +274,7 @@ router.get('/:id/ersatzanfragen', (req, res) => {
       if (ersatzanfragen === undefined) res.status(404).send("Keine Ersatzanfragen vorhanden!");
       else {
         res.status(200).send(ersatzanfragen);
-        
+
       }
     })
     .catch(function(error) {
@@ -280,13 +283,14 @@ router.get('/:id/ersatzanfragen', (req, res) => {
 
 });
 
+// GET auf die Ersatzeintragungen des Mitarbeiters
 router.get('/:id/ersatzeintragungen', (req, res) => {
   sqlHandler.getErsatzeintragung(req.params.id)
     .then(function(ersatzeintragung) {
       if (ersatzeintragung === undefined) res.status(404).send("Keine Ersatzeintragungen vorhanden!");
       else {
         res.status(200).send(ersatzeintragung);
-        
+
       }
     })
     .catch(function(error) {
@@ -296,11 +300,7 @@ router.get('/:id/ersatzeintragungen', (req, res) => {
 });
 
 
-
-
-
 // POST auf Ersatzeintragung (Nach Annahme einer Ersatzanfrage)
-
 router.post('/:mitarbeiterID/ersatzeintragungen', (req, res) => {
 
   var ersatzAnfrage = {
@@ -314,64 +314,61 @@ router.post('/:mitarbeiterID/ersatzeintragungen', (req, res) => {
   sqlHandler.getAbwesenheitenByID(ersatzAnfrage.abwesenheitsmeldungID)
     .then(function(abwesenheit) {
       //console.log(abwesenheit)
-var ersatzAnfragePromise = new Promise(function(resolve,reject){
-  
-
-      ersatzAnfrage.zuErsetzenderMitarbeiter = abwesenheit[0].MitarbeiterID;
-      ersatzAnfrage.stationID = abwesenheit[0].stationID;
-   
-      if(ersatzAnfrage.stationID != undefined && ersatzAnfrage.zuErsetzenderMitarbeiter!=undefined){
-      resolve(ersatzAnfrage)
-     // console.log(ersatzAnfrage)
-      }
-      else{
-        reject(err)
-        console.log(err)
-      }
-    
-    
-    }) // Promise ersatzAnfragePromise
-    ersatzAnfragePromise.then(function(ersatzAnfrage){ 
-      sqlHandler.neueErsatzeintragung(ersatzAnfrage)
-        .then(function(ersatzeintragung) {
-
-          sqlHandler.updateSchichtzuweisungErsatz(ersatzeintragung.datumUebernahme, ersatzeintragung.schichtArt, ersatzAnfrage.zuErsetzenderMitarbeiter, ersatzeintragung.mitarbeiterID)
-            .then(function() {
-
-              sqlHandler.updateUeberstunden(ersatzeintragung.mitarbeiterID, 8)
-                .then(function() {
-
-                  sqlHandler.loescheErsatzanfrage(ersatzAnfrage.abwesenheitsmeldungID, ersatzAnfrage.datumUebernahme)
-                    .then(function() {
-                      res.status(201).send("Ersatzanfrage angenommen und Diensplan erfolgreich aktualisiert")
-
-                    }).catch(function(error) {
-                      res.status(400).send(error);
-                    });
+      var ersatzAnfragePromise = new Promise(function(resolve, reject) {
 
 
-                }).catch(function(error) {
-                  res.status(400).send(error);
-                });
+        ersatzAnfrage.zuErsetzenderMitarbeiter = abwesenheit[0].MitarbeiterID;
+        ersatzAnfrage.stationID = abwesenheit[0].stationID;
 
-            }).catch(function(error) {
-              res.status(400).send(error);
-            });
+        if (ersatzAnfrage.stationID != undefined && ersatzAnfrage.zuErsetzenderMitarbeiter != undefined) {
+          resolve(ersatzAnfrage)
+
+        } else {
+          reject(err)
+          console.log(err)
+        }
+
+      }) // Promise ersatzAnfragePromise
+      ersatzAnfragePromise.then(function(ersatzAnfrage) {
+        sqlHandler.neueErsatzeintragung(ersatzAnfrage)
+          .then(function(ersatzeintragung) {
+
+            sqlHandler.updateSchichtzuweisungErsatz(ersatzeintragung.datumUebernahme, ersatzeintragung.schichtArt, ersatzAnfrage.zuErsetzenderMitarbeiter, ersatzeintragung.mitarbeiterID)
+              .then(function() {
+
+                sqlHandler.updateUeberstunden(ersatzeintragung.mitarbeiterID, 8)
+                  .then(function() {
+
+                    sqlHandler.loescheErsatzanfrage(ersatzAnfrage.abwesenheitsmeldungID, ersatzAnfrage.datumUebernahme)
+                      .then(function() {
+                        res.status(201).send("Ersatzanfrage angenommen und Diensplan erfolgreich aktualisiert")
+
+                      }).catch(function(error) {
+                        res.status(400).send(error);
+                      });
 
 
-        }).catch(function(error) {
-          res.status(400).send(error);
-        });
+                  }).catch(function(error) {
+                    res.status(400).send(error);
+                  });
+
+              }).catch(function(error) {
+                res.status(400).send(error);
+              });
+
+
+          }).catch(function(error) {
+            res.status(400).send(error);
+          });
       }) // then ersatzAnfragePromise
     }).catch(function(error) {
       res.status(400).send(error);
     });
-  
+
 });
 
 
-
-
+// Löschen einer Ersatzeintragung von Mitarbeiter x
 router.delete('/:mitarbeiterID/ersatzeintragungen', (req, res) => {
 
   var ersatzAnfrage = {
@@ -381,19 +378,15 @@ router.delete('/:mitarbeiterID/ersatzeintragungen', (req, res) => {
   }
 
   sqlHandler.loescheErsatzanfrageEinzeln(ersatzAnfrage.abwesenheitsmeldungID, ersatzAnfrage.datumUebernahme, ersatzAnfrage.mitarbeiterID)
-  .then(function(){
+    .then(function() {
 
-    res.status(204).send("Ersatzanfrage abgelehnt");
+      res.status(204).send("Ersatzanfrage abgelehnt");
 
-  }).catch(function(error) {
-    res.status(400).send(error);
-  });
+    }).catch(function(error) {
+      res.status(400).send(error);
+    });
 
 });
-
-
-
-
 
 
 module.exports = router;

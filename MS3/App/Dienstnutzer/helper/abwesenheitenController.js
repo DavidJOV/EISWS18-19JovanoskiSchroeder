@@ -1,10 +1,12 @@
+// Auslagerung der Anwendungslogik des Dienstnutzers
+
 var request = require('request');
 
+
+// Funktion zur Ermittlung der Mitarbeiter, welche eine Schicht übernehmen können, die durch eine Abwesenheit unterbesetzt wäre
 var ersatzAnfrage = function ersatzAnfrage(informationen, abwesenheit) {
 
-
   return new Promise(function(resolve, reject) {
-
 
     var ersatzBeduerftigeSchichtenErmittlung = new Promise(function(resolve, reject) {
       // nested Array auflösen
@@ -15,7 +17,6 @@ var ersatzAnfrage = function ersatzAnfrage(informationen, abwesenheit) {
           elements.push(element)
         })
 
-
         if (p + 1 == informationen.dienstplan.schichten.length) {
           var substringDatum;
           var ersatzBeduerftigeSchichtInfos = {
@@ -24,10 +25,6 @@ var ersatzAnfrage = function ersatzAnfrage(informationen, abwesenheit) {
             schichten: [],
             abwesenderID: abwesenheit.mitarbeiterID
           }
-
-
-
-
 
           // Filtern der Schichten, welche Ersatz benötigen:
           for (let i = 0; i < elements.length; i++) {
@@ -44,7 +41,7 @@ var ersatzAnfrage = function ersatzAnfrage(informationen, abwesenheit) {
 
               }
             }
-            //  console.log(elements)
+
             if (i + 1 == elements.length) {
               resolve(ersatzBeduerftigeSchichtInfos);
             }
@@ -55,24 +52,19 @@ var ersatzAnfrage = function ersatzAnfrage(informationen, abwesenheit) {
       }
     }) // End of Promise ersatzBeduerftigeSchichtenErmittlung
 
-    // Ermittlung Mitarbeiter, welche an diesen Tagen frei haben
+    // Ermittlung Mitarbeiter, welche an diesen Tagen frei haben:
     ersatzBeduerftigeSchichtenErmittlung.then(function(ersatzBeduerftigeSchichtInfos) {
 
       var ermittlungVerfuegbarerMitarbeiter = new Promise(function(resolve, reject) {
 
-
-
         var verfuegbareMitarbeiter = new Array();
         var alleMitarbeiter = ersatzBeduerftigeSchichtInfos.mitarbeiter;
-
 
         var erforderlicheInfos = {
           alleSchichten: ersatzBeduerftigeSchichtInfos.alleSchichten,
           schichten: [],
           abwesenderID: ersatzBeduerftigeSchichtInfos.abwesenderID
         }
-
-
 
         for (let i = 0; i < ersatzBeduerftigeSchichtInfos.schichten.length; i++) {
           for (let j = 0; j < alleMitarbeiter.length; j++) {
@@ -98,13 +90,8 @@ var ersatzAnfrage = function ersatzAnfrage(informationen, abwesenheit) {
 
       ermittlungVerfuegbarerMitarbeiter.then(function(erforderlicheInfos) {
 
-        // Filtern der verfuegbaren Mitarbeitern nach den gesetzlichen Vorgaben
-
+        // Filtern der verfuegbaren Mitarbeitern nach den gesetzlichen Vorgaben:
         var filternGesetzlicheBedingungen = new Promise(function(resolve, reject) {
-
-
-
-
 
           for (let i = 0; i < erforderlicheInfos.schichten.length; i++) {
             var vars = erforderlicheInfos.schichten[i].datum.split("-");
@@ -120,18 +107,15 @@ var ersatzAnfrage = function ersatzAnfrage(informationen, abwesenheit) {
             }
             var datumVorher = tagVorher + "-" + monat + "-" + jahr;
             var datumNachher = tagNachher + "-" + monat + "-" + jahr;
-            //console.log(datumVorher)
-            //console.log(datumNachher)
 
-
-            // Ableich mit Schichten davor
+            // Abgleich mit Schichten davor:
             if (erforderlicheInfos.alleSchichten[i].datum == datumVorher) {
               for (let z = 0; z < erforderlicheInfos.schichten.length; z++) {
                 for (let y = 0; y < erforderlicheInfos.schichten[z].mitarbeiter.length; y++) {
 
                   if (erforderlicheInfos.schichten[z].mitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID1 || erforderlicheInfos.schichten[z].mitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID2 || erforderlicheInfos.schichten[z].mitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID3 || erforderlicheInfos.schichten[z].mitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID4) {
 
-                    // Vor einer Fruehschicht nur Fruehschicht!
+                    // Vor einer Fruehschicht nur Fruehschicht
                     if (erforderlicheInfos.schichten[z].schichtArt == "Fruehschicht") {
                       if (erforderlicheInfos.alleSchichten[i].schichtArt != "Fruehschicht") {
                         erforderlicheInfos.schichten[z].mitarbeiter.splice(y, 1);
@@ -155,20 +139,20 @@ var ersatzAnfrage = function ersatzAnfrage(informationen, abwesenheit) {
               }
             }
 
-            // Abgleich mit Schichten danach
+            // Abgleich mit Schichten danach:
             if (erforderlicheInfos.alleSchichten[i].datum == datumNachher) {
               for (let z = 0; z < erforderlicheInfos.schichten.length; z++) {
                 for (let y = 0; y < erforderlicheInfos.schichten[z].mitarbeiter.length; y++) {
 
                   if (erforderlicheInfos.schichten[z].mitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID1 || erforderlicheInfos.schichten[z].mitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID2 || erforderlicheInfos.schichten[z].mitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID3 || erforderlicheInfos.schichten[z].mitarbeiter[y].id == erforderlicheInfos.alleSchichten[i].mitarbeiterID4) {
 
-                    // Vor Spaetschicht darf nur Frueh oder Spaet gearbeitet werden
+                    // Nach einer Spaetschicht darf nur Spaet oder Nacht gearbeitet werden
                     if (erforderlicheInfos.schichten[z].schichtArt == "Spaetschicht") {
                       if (erforderlicheInfos.alleSchichten[i].schichtArt == "Fruehschicht") {
                         erforderlicheInfos.schichten[z].mitarbeiter.splice(y, 1);
                       }
                     }
-                    // Vor einer Nachtschicht darf Frueh oder Spaet gearbeitet werden
+                    // Nach einer Nachtschicht darf nur oder Nacht gearbeitet werden
                     if (erforderlicheInfos.schichten[z].schichtArt == "Nachtschicht") {
                       if (erforderlicheInfos.alleSchichten[i].schichtArt != "Nachtschicht") {
                         erforderlicheInfos.schichten[z].mitarbeiter.splice(y, 1);
@@ -180,9 +164,7 @@ var ersatzAnfrage = function ersatzAnfrage(informationen, abwesenheit) {
               }
             }
 
-
             if (i + 1 == erforderlicheInfos.schichten.length) {
-              //console.log(erforderlicheInfos.schichten[0].mitarbeiter)
               resolve(erforderlicheInfos);
             }
           } // ende i - Schleife
@@ -191,7 +173,7 @@ var ersatzAnfrage = function ersatzAnfrage(informationen, abwesenheit) {
 
         filternGesetzlicheBedingungen.then(function(erforderlicheInfos) {
 
-
+          // Ermittelte Mitarbeiter pro Schicht zusammenfassen -> Verfuegbare Mitarbeiter pro Tag -> Wenn 3 mal als verfuegbar ermittelt = Für den gesamten Tag verfuegbar
           var alleFreienMitarbeiter = new Array();
           for (let i = 0; i < erforderlicheInfos.schichten.length; i++) {
             for (let j = 0; j < erforderlicheInfos.schichten[i].mitarbeiter.length; j++) {
@@ -211,102 +193,83 @@ var ersatzAnfrage = function ersatzAnfrage(informationen, abwesenheit) {
                   }
                 }
                 if (x + 1 == alleFreienMitarbeiter.length) {
-                  for (let z = 0 ; z < erforderlicheInfos.schichten.length; z++){
-                    erforderlicheInfos.schichten[z].mitarbeiter= ersatzMitarbeiter;
-                      if (z +1 == erforderlicheInfos.schichten.length){
-                        resolve (erforderlicheInfos.schichten);
-                      }
+                  for (let z = 0; z < erforderlicheInfos.schichten.length; z++) {
+                    erforderlicheInfos.schichten[z].mitarbeiter = ersatzMitarbeiter;
+                    if (z + 1 == erforderlicheInfos.schichten.length) {
+                      resolve(erforderlicheInfos.schichten); // Array von Schicht-Objekten mit Mitarbeitern, welche als Ersatz in Frage kommen (Konstruktor "schicht" (siehe unten))
+                    }
                   }
                 }
 
               }
 
-
             }
 
           }
-
-
-
 
         }).catch(function(error) {
           console.log(error);
         })
 
-
       }).catch(function(error) {
         console.log(error);
       })
 
-
     }).catch(function(error) {
       console.log(error);
     })
-
-
-
 
   }) // end of return new Promise
 
 } // end of function
 
 
-
+// Konstruktor Schicht
 function schicht(schichtArt, datum, mitarbeiter) {
   this.schichtArt = schichtArt;
   this.datum = datum;
-  this.mitarbeiter = mitarbeiter;
+  this.mitarbeiter = mitarbeiter; // Mitarbeiter, die die genannte Schicht, am genannten Datum übernehmen können
 }
 
 
 
-// Dienstnutzer Hostadresse
+// Dienstgeber Hostadresse
 var serviceURL = 'http://localhost:3000';
 
-var erstelleErsatzanfragen = function erstelleErsatzanfragen(ersatzAnfrageInfos,abwesenheit) {
+// Funktion, welche die Erstellung nach der Ermittlung entsprechenden Ersatzanfragen beim Dienstgeber anstößt
+var erstelleErsatzanfragen = function erstelleErsatzanfragen(ersatzAnfrageInfos, abwesenheit) {
 
-  console.log(abwesenheit);
+  var json = {
+    ersatzAnfrageInfos: ersatzAnfrageInfos,
+    abwesenheit: abwesenheit
+  }
 
-var json = {
-  ersatzAnfrageInfos : ersatzAnfrageInfos,
-  abwesenheit : abwesenheit
-}
+  let resourceURI = serviceURL + '/Abwesenheiten/Ersatzanfragen';
 
+  console.log(resourceURI);
 
-    let resourceURI = serviceURL + '/Abwesenheiten/Ersatzanfragen';
+  var options = {
+    uri: resourceURI,
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json'
+    },
+    json: json
+  }
 
-    console.log(resourceURI);
+  request(options, (err, res, body) => {
 
-    var options = {
-        uri: resourceURI,
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json'
-        },
-        json: json
+    if (err) {
+      console.log(err);
+      return;
     }
-
-    request(options, (err, res, body) => {
-
-        if (err) {
-            console.log(err);
-            return;
-        }
-      if (res.status == 201){
-        console.log(body);
-      }
+    if (res.status == 201) {
+      console.log(body);
+    }
 
   });
 
 } // end of function
-
-
-
-
-
-
-
-
 
 
 exports.erstelleErsatzanfragen = erstelleErsatzanfragen;

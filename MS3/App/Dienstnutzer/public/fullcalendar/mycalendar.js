@@ -1,8 +1,8 @@
 // Darauf warten das das document geladen ist.
-$(document).ready(function () {
-  var url = "http://localhost:3000/Dienstplaene/" +getIndexVonDienstplan();
+$(document).ready(function() {
+  var url = "http://localhost:3000/Dienstplaene/" + getIndexVonDienstplan();
   // Dienstplan Informationen von Dienstgeber holen
-  $.get(url, function (dienstplan) {
+  $.get(url, function(dienstplan) {
     var schichten;
     var arrayOfSchichten = new Array();
     // Daten aufbereiten -> da im Response eine nested Array steht Arry[[],[],[],[]]
@@ -16,42 +16,35 @@ $(document).ready(function () {
 
     var einzelSchichten = new Array();
 
-
-    arrayOfSchichten.forEach(function (element) {
-
+    arrayOfSchichten.forEach(function(element) {
 
       //Fruehschicht
-      var schicht1 = new schicht(element.art[0].schichtArt +" "+element.art[0].mitarbeiterID1 +" "+element.art[0].mitarbeiterID2 +" "+element.art[0].mitarbeiterID3 +" "+element.art[0].mitarbeiterID4 , datumZuIsoFormat(element.art[0].datum), "green", "white")
+      var schicht1 = new schicht(element.art[0].schichtArt + " " + element.art[0].mitarbeiterID1 + " " + element.art[0].mitarbeiterID2 + " " + element.art[0].mitarbeiterID3 + " " + element.art[0].mitarbeiterID4, datumZuIsoFormat(element.art[0].datum), "green", "white")
 
       //Spaetschicht
-      var schicht2 = new schicht(element.art[1].schichtArt +" "+element.art[1].mitarbeiterID1 +" "+element.art[1].mitarbeiterID2 +" "+element.art[1].mitarbeiterID3 +" "+element.art[1].mitarbeiterID4, datumZuIsoFormat(element.art[1].datum), "brown", "white")
+      var schicht2 = new schicht(element.art[1].schichtArt + " " + element.art[1].mitarbeiterID1 + " " + element.art[1].mitarbeiterID2 + " " + element.art[1].mitarbeiterID3 + " " + element.art[1].mitarbeiterID4, datumZuIsoFormat(element.art[1].datum), "brown", "white")
 
       //Nachtschicht
-      var schicht3 = new schicht(element.art[2].schichtArt +" "+element.art[2].mitarbeiterID1 +" "+element.art[2].mitarbeiterID2 +" "+element.art[2].mitarbeiterID3 +" "+element.art[2].mitarbeiterID4, datumZuIsoFormat(element.art[2].datum), "black", "white")
-      einzelSchichten.push({ schicht1, schicht2, schicht3 })
-
-
+      var schicht3 = new schicht(element.art[2].schichtArt + " " + element.art[2].mitarbeiterID1 + " " + element.art[2].mitarbeiterID2 + " " + element.art[2].mitarbeiterID3 + " " + element.art[2].mitarbeiterID4, datumZuIsoFormat(element.art[2].datum), "black", "white")
+      einzelSchichten.push({
+        schicht1,
+        schicht2,
+        schicht3
+      })
 
     })
 
-
     var events = new Array();
     console.log(einzelSchichten)
-    einzelSchichten.forEach(function (element) {
+    einzelSchichten.forEach(function(element) {
 
       events.push(element.schicht1, element.schicht2, element.schicht3)
 
     })
-    
-
-
-
-
-
 
     // page is now ready, initialize the calendar..
     $('#calendar').fullCalendar({
- 
+
       eventSources: [
 
         // your event source
@@ -65,13 +58,10 @@ $(document).ready(function () {
 
       ]
 
-
-
-
     });
     // Springe zu dem Monat in dem Der Dienstplan beginnt.
-    $('#calendar').fullCalendar( 'gotoDate', einzelSchichten[0].schicht1.start )
-    
+    $('#calendar').fullCalendar('gotoDate', einzelSchichten[0].schicht1.start)
+
 
   });
 })
@@ -98,14 +88,11 @@ function datumZuIsoFormat(datum) {
 
   if (datumSplitted[0] < 10 && datumSplitted[1] < 10) {
     isoDatum = datumSplitted[2] + "-0" + datumSplitted[1] + "-" + datumSplitted[0];
-  }
-  else if (datumSplitted[0] < 10) {
+  } else if (datumSplitted[0] < 10) {
     isoDatum = datumSplitted[2] + "-" + datumSplitted[1] + "-" + datumSplitted[0];
-  }
-  else if (datumSplitted[1] < 10) {
+  } else if (datumSplitted[1] < 10) {
     isoDatum = datumSplitted[2] + "-0" + datumSplitted[1] + "-" + datumSplitted[0];
-  }
-  else {
+  } else {
 
     isoDatum = datumSplitted[2] + "-" + datumSplitted[1] + "-" + datumSplitted[0];
   }

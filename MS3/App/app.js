@@ -3,7 +3,8 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-// Phantom console.log finden - helper code
+// Phantom console.log finden - helper code:
+
 /*['log', 'warn'].forEach(function(method) {
     var old = console[method];
     console[method] = function() {
@@ -17,17 +18,16 @@ app.use(express.json());
     };
   });*/
 
-
 app.use((req, res, next) => {
   console.log("Time: " + new Date() + " Request-Pfad: " + req.path);
   next();
 })
 
-// CORS ERLAUBEN NUR FÜR TEST ZWECKE
+// CORS erlauben
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.header("Access-Control-Allow-Methods","GET, POST, PUT, DELETE, OPTIONS")
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
   next();
 });
 
@@ -36,7 +36,7 @@ app.get('/', function(req, res, next) {
 });
 
 app.post('/', function(req, res, next) {
- // Handle the post for this route
+  // Handle the post for this route
 });
 //___________________________________________________
 

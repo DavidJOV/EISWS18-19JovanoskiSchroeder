@@ -3,6 +3,7 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var sqlHandler = require("../helper/sqlHandler");
 
+
 // Get auf die Liste der Tauschanfragen
 router.get('/', (req, res) => {
   sqlHandler.getTauschanfragen()
@@ -16,6 +17,7 @@ router.get('/', (req, res) => {
       res.status(400).send(err);
     });
 });
+
 
 // Get auf eine einzelne Tauschanfrage
 router.get('/:id', (req, res) => {
@@ -36,6 +38,7 @@ router.get('/:id', (req, res) => {
     });
 
 });
+
 
 // Erstellen einer neuen Tauschanfrage
 router.post('/', bodyParser.json(), (req, res) => {
@@ -60,6 +63,7 @@ router.post('/', bodyParser.json(), (req, res) => {
 
 });
 
+
 // Aktuallisieren einer Tauschanfrage
 router.put('/:id', (req, res) => {
   sqlHandler.getTauschanfragen()
@@ -77,7 +81,7 @@ router.put('/:id', (req, res) => {
 
           sqlHandler.updateTauschanfrage(id, tauschUpdate)
             .then(function(tauschUpdate) {
-              res.status(200).send("Tauschanfrage erfolgreich aktuallisiert \n"+ JSON.stringify(tauschUpdate));
+              res.status(200).send("Tauschanfrage erfolgreich aktuallisiert \n" + JSON.stringify(tauschUpdate));
 
             })
             .catch(function(err) {
@@ -92,6 +96,7 @@ router.put('/:id', (req, res) => {
     });
 
 });
+
 
 // Löschen einer Tauschanfrage
 router.delete('/:id', (req, res) => {
@@ -108,5 +113,6 @@ router.delete('/:id', (req, res) => {
       res.status(400).send(err);
     });
 });
+
 
 module.exports = router;

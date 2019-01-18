@@ -7,6 +7,4 @@ var getDaysInMonth = function(month,year) {
 };
 
 
-
-
 exports.getDaysInMonth = getDaysInMonth;
