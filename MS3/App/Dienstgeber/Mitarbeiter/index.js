@@ -338,7 +338,7 @@ router.post('/:mitarbeiterID/ersatzeintragungen', (req, res) => {
 
                 sqlHandler.updateUeberstunden(ersatzeintragung.mitarbeiterID, 8)
                   .then(function() {
-
+                     console.log(ersatzAnfrage) 
                     sqlHandler.loescheErsatzanfrage(ersatzAnfrage.abwesenheitsmeldungID, ersatzAnfrage.datumUebernahme)
                       .then(function() {
                         res.status(201).send("Ersatzanfrage angenommen und Diensplan erfolgreich aktualisiert")
