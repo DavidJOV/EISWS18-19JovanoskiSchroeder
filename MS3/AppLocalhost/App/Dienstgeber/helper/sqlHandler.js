@@ -1050,9 +1050,11 @@ var getErsatzanfragen = function getErsatzanfragen(mitarbeiterID) {
     let sql = "SELECT * FROM ersatzanfrage WHERE mitarbeiterID = " + mitarbeiterID;
 
     connection.query(sql, function(err, result) {
-      if (err) reject(err);
+      if (err){ console.log(err)
+        reject(err);
+      }
       else {
-
+        console.log(result)
         resolve(result);
 
       }

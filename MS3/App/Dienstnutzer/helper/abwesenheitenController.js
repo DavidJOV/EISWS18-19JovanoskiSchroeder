@@ -234,7 +234,7 @@ function schicht(schichtArt, datum, mitarbeiter) {
 
 
 // Dienstgeber Hostadresse
-var serviceURL = 'http://localhost:3000';
+var serviceURL = 'http://sistershift.ddns.net';
 
 // Funktion, welche die Erstellung nach der Ermittlung entsprechenden Ersatzanfragen beim Dienstgeber anstößt
 var erstelleErsatzanfragen = function erstelleErsatzanfragen(ersatzAnfrageInfos, abwesenheit) {

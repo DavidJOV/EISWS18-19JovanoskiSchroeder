@@ -8,7 +8,7 @@ var sqlHandler = require("../helper/sqlHandler");
 // GET auf die Liste aller Mitarbeiter
 router.get('/', (req, res) => {
   sqlHandler.getMitarbeiter()
-    .then(function(mitarbeiterListe) { // <- So ist es richtig! Noch bei den anderen Funktionen ändern!!!!
+    .then(function(mitarbeiterListe) { 
       if (mitarbeiterListe === undefined) res.status(500).send("Could not read DATA");
       else {
 

@@ -33,7 +33,7 @@ const settings = {
 };
 
 // Dienstgeber Hostadresse
-var serviceURL = 'http://sistershift.ddns.net';
+var serviceURL = 'http://localhost:3000';
 
 
 // GET auf einen Mitarbeiter
@@ -73,7 +73,7 @@ router.get('/mitarbeiter/:id', (req, res) => {
 // GET auf die Ersatzanfragen eines Mitarbeiters
 router.get('/mitarbeiter/:id/ersatzanfragen', (req, res) => {
   let resourceURI = serviceURL + '/mitarbeiter/' + req.params.id + "/ersatzanfragen";
-
+  
   var options = {
     uri: resourceURI,
     method: 'GET',
@@ -89,7 +89,7 @@ router.get('/mitarbeiter/:id/ersatzanfragen', (req, res) => {
       return;
     }
     body = JSON.parse(body);
-
+console.log(body)
     res.status(200).render("mitarbeiterErsatzanfragenGet", {
       ersatzanfragen: body
     });
