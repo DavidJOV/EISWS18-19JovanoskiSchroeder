@@ -171,7 +171,7 @@ function loescheErsatzAnfrage(id) {
   xmlhttp.onload = function() {
     var jsonResponse = JSON.parse(xmlhttp.status)
     console.log(jsonResponse)
-    if (jsonResponse == 201) {
+    if (jsonResponse == 204) {
       window.location.href = "http://dienstplanung.herokuapp.com/mitarbeiter/" + mitarbeiterID + "/ersatzanfragen"
     } else {
       window.location.href = "http://dienstplanung.herokuapp.com/entschuldigung"
@@ -198,7 +198,7 @@ function geheZuErsatzanfragen(element) {
 function geheZuErsatzeintragung(element) {
   console.log(element)
   var index = element[0].value;
-  window.location.href = "http://dienstplanung.herokuapp.com/" + index + "/ersatzeintragungen";
+  window.location.href = "http://dienstplanung.herokuapp.com/mitarbeiter/" + index + "/ersatzeintragungen";
 }
 
 function getDienstplanBydate(datum) {
