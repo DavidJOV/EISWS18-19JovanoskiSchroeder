@@ -5,6 +5,7 @@ html
     script(src='/static/navigation.js')
     script(src='/static/frontend.js')
   body
+    h3 Bitte tragen Sie den Monat und das Jahr des gesuchten Dienstplan ein!
     ul
         li
             a(id='goToDienstplan' onclick='goToDienstplan()') Dienstplan erstellen
@@ -20,7 +21,6 @@ html
             a(id='goToMitarbeiter' onclick='goToErsatzanfragen()') Ersatzanfragen 
         li
             a(id='goToMitarbeiter' onclick='goToErsatzeintragungen()') Ersatzeintragungen 
-    h3 Bitte tragen Sie den Monat und das Jahr des gesuchten Dienstplan ein!
     form(id = "DienstplanByDate")
         label(for='fname') Monat 
         input#fname(type='text', name='maID', placeholder='Monat..')
