@@ -11,7 +11,7 @@ var getMitarbeiter = function getMitarbeiter() {
 
   return new Promise(function(resolve, reject) {
 
-    let sql = "SELECT * FROM Mitarbeiter"
+    let sql = "SELECT * FROM mitarbeiter"
     connection.query(sql, function(err, result) {
       if (err) reject(err);
       else {
