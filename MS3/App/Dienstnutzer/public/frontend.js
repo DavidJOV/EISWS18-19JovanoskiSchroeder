@@ -78,9 +78,10 @@ function erstelleDienstplan(dienstplan) {
     xmlhttp.send(JSON.stringify(neuerDienstplan));
     // User Feedback Erfolg/nichtErfolg + Redirect auf den erstellten Dienstplan
     xmlhttp.onload  = function() {
-        var jsonResponse = JSON.parse(xmlhttp.responseText);
+        //var jsonResponse = JSON.parse(xmlhttp.responseText);
         var jsonResponseStatusCode = JSON.parse(xmlhttp.status);
         if(jsonResponseStatusCode == 201){
+            var jsonResponse = JSON.parse(xmlhttp.responseText);
         window.location.href = "http://localhost:8080/dienstplaene/"+jsonResponse.metadaten[0].id;
         }
         else{
