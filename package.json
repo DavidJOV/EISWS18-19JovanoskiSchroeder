@@ -4,7 +4,7 @@
   "description": "Helping nurses planing their shifts",
   "main": "app.js",
   "scripts": {
-    "start": "node ./MS3 (BackUp)/App/Dienstnutzer/app.js"
+    "start": "node ./MS3/App/Dienstnutzer/app.js"
   },
   "repository": {
     "type": "git",
