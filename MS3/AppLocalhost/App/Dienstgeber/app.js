@@ -18,6 +18,9 @@ app.use(express.json());
     };
   });*/
 
+
+
+
 app.use((req, res, next) => {
   console.log("Time: " + new Date() + " Request-Pfad: " + req.path);
   next();
