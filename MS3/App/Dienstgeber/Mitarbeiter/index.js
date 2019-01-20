@@ -8,7 +8,7 @@ var sqlHandler = require("../helper/sqlHandler");
 // GET auf die Liste aller Mitarbeiter
 router.get('/', (req, res) => {
   sqlHandler.getMitarbeiter()
-    .then(function(mitarbeiterListe) { 
+    .then(function(mitarbeiterListe) {
       if (mitarbeiterListe === undefined) res.status(500).send("Could not read DATA");
       else {
 
@@ -340,7 +340,7 @@ router.post('/:mitarbeiterID/ersatzeintragungen', (req, res) => {
 
                 sqlHandler.updateUeberstunden(ersatzeintragung.mitarbeiterID, 8)
                   .then(function() {
-                     console.log(ersatzAnfrage) 
+                     console.log(ersatzAnfrage)
                     sqlHandler.loescheErsatzanfrage(ersatzAnfrage.abwesenheitsmeldungID, ersatzAnfrage.datumUebernahme)
                       .then(function() {
                         res.status(201).send("Ersatzanfrage angenommen und Diensplan erfolgreich aktualisiert")
@@ -370,7 +370,7 @@ router.post('/:mitarbeiterID/ersatzeintragungen', (req, res) => {
 });
 
 
-// Löschen einer Ersatzeintragung von Mitarbeiter x
+// Löschen einer Ersatzanfrage von Mitarbeiter x
 router.delete('/:mitarbeiterID/ersatzeintragungen', (req, res) => {
 
   var ersatzAnfrage = {
